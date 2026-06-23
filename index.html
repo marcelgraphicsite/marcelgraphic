@@ -939,6 +939,7 @@
   display:inline-block;
 }
 .logo-mark:hover{ opacity:.6; transform:translateY(calc(-50% - 1px)); }
+.nav-controls{ position:absolute; right:14px; top:50%; transform:translateY(-50%); z-index:60; }
 
 :root{
   --bg:#f4f3ef;        /* warm paper, not Apple grey */
@@ -1070,10 +1071,16 @@ body::after{
 /* main "Marcel Struszczak" — static, anchored to the END of the section, with a paper halo so it reads over the black background */
 .pin-words{ position:relative; z-index:2; text-align:center; }
 .pin-word{
-  display:block; opacity:1; color:var(--ink); line-height:.88;
-  font-size:clamp(2.4rem,11vw,9rem);
+  display:block; opacity:0; color:var(--ink); line-height:.86;
+  font-size:clamp(3.8rem,18.5vw,10.5rem);
   text-align:center;
   text-shadow:none;
+  animation:pinReveal 1.3s cubic-bezier(.16,1,.3,1) .4s both;
+}
+@keyframes pinReveal{
+  0%{ opacity:0; transform:translateY(52px) scale(.93); filter:blur(12px); }
+  55%{ filter:blur(0); }
+  100%{ opacity:1; transform:translateY(0) scale(1); filter:blur(0); }
 }
 
 .pin-final{
@@ -1171,6 +1178,8 @@ body::after{
 
 /* ---------- DATA (language-agnostic) ---------- */
 const PROJECTS = [
+  { t:"Luxe Salon",    yr:"2026", kind:"beauty",     url:"luxe-salon.html",   img:"preview-luxe.png",   real:true },
+  { t:"Vesper Barber", yr:"2026", kind:"barber",    url:"vesper-barber.html", img:"preview-vesper.png", real:true },
   { t:"\u017bAR Burger",  yr:"2026", kind:"burger",    url:"zar-burger.html",  img:"preview-zar.png",   real:true },
   { t:"Gmina Warta", yr:"2025", kind:"municipal", url:"gmina-warta.html", img:"preview-gmina.png", real:true },
 ];
@@ -1200,7 +1209,7 @@ const I18N = {
     workH:"Wybrane projekty",
     workSub:"Realne wdrożenia — kliknij, aby otworzyć stronę na żywo.",
     concept:"koncept",
-    cats:{ municipal:"Strona gminy — wdrożenie", burger:"Burger House — landing",
+    cats:{ beauty:"Salon urody — landing", barber:"Barber atelier — landing", municipal:"Strona gminy — wdrożenie", burger:"Burger House — landing",
            restaurant:"Restauracja roślinna — koncept", salon:"Salon & rezerwacje — koncept",
            dashboard:"Aplikacja SaaS — koncept UI", shop:"Sklep z sneakersami — koncept" },
     live:"na żywo",
@@ -1254,7 +1263,7 @@ const I18N = {
     workH:"Selected projects",
     workSub:"Real builds — click to open the live site.",
     concept:"concept",
-    cats:{ municipal:"Municipality site — build", burger:"Burger house — landing",
+    cats:{ beauty:"Beauty salon — landing", barber:"Barber atelier — landing", municipal:"Municipality site — build", burger:"Burger house — landing",
            restaurant:"Plant-based restaurant — concept", salon:"Salon & booking — concept",
            dashboard:"SaaS app — UI concept", shop:"Sneaker store — concept" },
     live:"live",
@@ -1336,20 +1345,20 @@ function render(lang){
 <!-- NAV -->
 <header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
   <a href="#top" class="logo-mark" data-cursor>Marcel<br>Struszczak</a>
-  <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+  <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-center">
     <nav class="hidden sm:flex items-center gap-9 mono text-[12px]">
       <a href="#work" class="nav-link" data-cursor>${L.nav[0]}</a>
       <a href="#services" class="nav-link" data-cursor>${L.nav[1]}</a>
       <a href="#about" class="nav-link" data-cursor>${L.nav[2]}</a>
       <a href="#contact" class="nav-link" data-cursor>${L.nav[3]}</a>
     </nav>
-    <div class="flex items-center gap-4 ml-auto">
-      <div class="lang" role="group" aria-label="Language">
-        <button data-lang="pl" class="${lang==="pl"?"on":""}" data-cursor>PL</button>
-        <button data-lang="en" class="${lang==="en"?"on":""}" data-cursor>EN</button>
-      </div>
-      <a href="#contact" class="hidden sm:inline-flex text-[13px] font-medium rounded-full bg-[#17171a] text-white px-4 py-2 hover:opacity-80 transition mag" data-cursor>${L.cta}</a>
+  </div>
+  <div class="nav-controls flex items-center gap-4">
+    <div class="lang" role="group" aria-label="Language">
+      <button data-lang="pl" class="${lang==="pl"?"on":""}" data-cursor>PL</button>
+      <button data-lang="en" class="${lang==="en"?"on":""}" data-cursor>EN</button>
     </div>
+    <a href="#contact" class="hidden sm:inline-flex text-[13px] font-medium rounded-full bg-[#17171a] text-white px-4 py-2 hover:opacity-80 transition mag" data-cursor>${L.cta}</a>
   </div>
 </header>
 
@@ -1559,19 +1568,6 @@ function bindAll(){
     });
   });
 
-  // reliable navigation for project rows (mobile / touch safe)
-  document.querySelectorAll("a.row[href]").forEach(a=>{
-    const href=a.getAttribute("href");
-    if(!href || href==="#") return;
-    a.style.cursor="pointer";
-    a.addEventListener("click",ev=>{ ev.preventDefault(); window.location.href=href; });
-    // tap detection so scrolling never triggers navigation
-    let sx=0, sy=0, moved=false;
-    a.addEventListener("touchstart",e=>{ const t=e.changedTouches[0]; sx=t.clientX; sy=t.clientY; moved=false; },{passive:true});
-    a.addEventListener("touchmove",e=>{ const t=e.changedTouches[0]; if(Math.abs(t.clientX-sx)>10||Math.abs(t.clientY-sy)>10) moved=true; },{passive:true});
-    a.addEventListener("touchend",e=>{ if(!moved){ e.preventDefault(); window.location.href=href; } },{passive:false});
-  });
-
   // scroll progress bar
   const bar=document.getElementById("progress");
   onScroll(()=>{
@@ -1670,13 +1666,13 @@ function cinema(){
   document.body.classList.add("no-scroll");
 
   // black screen opens by itself — no text
-  setTimeout(()=>{ c.classList.add("open"); }, 420);
+  setTimeout(()=>{ c.classList.add("open"); }, 240);
   // restore scroll + remove overlay
   setTimeout(()=>{
     document.documentElement.classList.remove("no-scroll");
     document.body.classList.remove("no-scroll");
-  }, 820);
-  setTimeout(()=>{ c.remove(); }, 1700);
+  }, 520);
+  setTimeout(()=>{ c.remove(); }, 1080);
 }
 
 /* ---------- BOOT ---------- */

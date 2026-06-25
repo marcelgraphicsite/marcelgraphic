@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pl" class="dark scroll-smooth">
+<head>
+<!-- ════════════════════════════════════════════════════════════════
+     VESPER — Barber Atelier
+     Kierunek: męski / profesjonalny / industrialny luksus
+     Fonty (dobór: skill ui-ux-pro-max): Display Bricolage Grotesque · Sygnatura Barlow Condensed · Tekst Barlow
+     Paleta Luxury/Premium: czerń + złoto (jeden akcent) + off-white + burgund · WCAG AA
+     Guziki kanciaste z efektem "fill sweep" · narożniki techniczne · focus-visible dla klawiatury
+     Stack: Tailwind (CDN) + Alpine.js + GSAP — jeden plik
+     ════════════════════════════════════════════════════════════════ -->
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- SEO -->
+<title>VESPER — Barber Atelier | Strzyżenie, broda, golenie brzytwą · Warszawa</title>
+<meta name="description" content="VESPER Barber Atelier — premium barbershop dla mężczyzn. Strzyżenie, modelowanie brody, golenie brzytwą i rytuały pielęgnacyjne. ul. Mokotowska 12, Warszawa. Umów wizytę online."/>
+<meta name="author" content="VESPER Barber Atelier"/>
+<meta name="theme-color" content="#0A0A0A"/>
+<meta property="og:title" content="VESPER — Barber Atelier"/>
+<meta property="og:description" content="Precyzja i charakter. Premium barbershop, Warszawa."/>
+<meta property="og:type" content="business.business"/>
+<meta property="og:image" content="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1200&q=80"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HairSalon","name":"VESPER Barber Atelier","image":"https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1200&q=80","priceRange":"$$$","telephone":"+48 600 100 200","address":{"@type":"PostalAddress","streetAddress":"ul. Mokotowska 12","addressLocality":"Warszawa","postalCode":"00-561","addressCountry":"PL"},"openingHours":"Tu-Sa 10:00-20:00"}
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet"/>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode:'class',
+  theme:{ extend:{
+    colors:{ ink:'#0A0A0A', coal:'#111111', steel:'#1A1A1A', paper:'#F2EFE9', muted:'#8C8780', wine:'#6E1423', winel:'#8A1B2C', gold:'#C9A24B' },
+    fontFamily:{
+      display:['"Bricolage Grotesque"','sans-serif'],   /* duże nagłówki / wordmark (ulubiony) */
+      sign:['"Barlow Condensed"','sans-serif'],          /* sygnatury, guziki, nawigacja, ceny (skill: Sports/Fitness) */
+      sans:['"Barlow"','sans-serif'],                    /* tekst body — siostrzany do Barlow Condensed */
+    },
+    letterSpacing:{ tightest:'-0.045em' },
+  }},
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+<style>
+  html{ background:#0A0A0A; }
+  body{ font-family:'Barlow',sans-serif; font-size:16px; line-height:1.5; }   /* skill #6: base 16px / lh 1.5 */
+
+  .display{ font-family:'Bricolage Grotesque',sans-serif; letter-spacing:-.045em; line-height:.9; }
+  .sign{ font-family:'Barlow Condensed',sans-serif; }
+  .eyebrow{ font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; letter-spacing:.28em; font-weight:600; }
+
+  /* navbar glass */
+  .glass{ background:rgba(10,10,10,.6); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+
+  /* ── GUZIKI: kanciaste, męskie, z efektem zalewania ── */
+  .btn{ position:relative; overflow:hidden; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:.6rem;
+        font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; letter-spacing:.16em; font-weight:600; font-size:.92rem;
+        min-height:48px; padding:1.05rem 2.1rem; border:1px solid transparent; transition:color .4s,border-color .4s; }
+  .btn > *{ position:relative; z-index:1; }
+  .btn::before{ content:''; position:absolute; inset:0; z-index:0; transform:translateY(101%); transition:transform .45s cubic-bezier(.16,1,.3,1); }
+  .btn:hover::before{ transform:translateY(0); }
+  /* solidny (jasny) → zalewa złotem */
+  .btn-solid{ background:#F2EFE9; color:#0A0A0A; }
+  .btn-solid::before{ background:#C9A24B; }
+  /* obrysowy → zalewa się od dołu, tekst ciemnieje */
+  .btn-line{ background:transparent; color:#F2EFE9; border-color:rgba(242,239,233,.3); }
+  .btn-line::before{ background:#F2EFE9; }
+  .btn-line:hover{ color:#0A0A0A; border-color:#F2EFE9; }
+  /* na ciemnoczerwonym tle */
+  .btn-onwine{ background:#F2EFE9; color:#0A0A0A; }
+  .btn-onwine::before{ background:#0A0A0A; }
+  .btn-onwine:hover{ color:#F2EFE9; }
+
+  /* ── KARTY: ostre, z technicznymi narożnikami ── */
+  .ticked{ position:relative; }
+  .ticked::before,.ticked::after{ content:''; position:absolute; width:14px; height:14px; border-color:rgba(201,162,75,.55); opacity:0; transition:opacity .4s; }
+  .ticked::before{ top:14px; left:14px; border-top:1px solid; border-left:1px solid; }
+  .ticked::after{ bottom:14px; right:14px; border-bottom:1px solid; border-right:1px solid; }
+  .ticked:hover::before,.ticked:hover::after{ opacity:1; }
+
+  /* reveal */
+  .rv{ opacity:0; transform:translateY(28px); }
+
+  /* masonry */
+  .masonry{ column-gap:1rem; }
+  @media(min-width:640px){ .masonry{ columns:2; } }
+  @media(min-width:1024px){ .masonry{ columns:3; } }
+  .masonry>*{ break-inside:avoid; margin-bottom:1rem; }
+
+  /* hover zoom + odsłona koloru */
+  .img-zoom{ overflow:hidden; }
+  .img-zoom img{ transition:transform .8s cubic-bezier(.16,1,.3,1),filter .8s ease; }
+  .img-zoom:hover img{ transform:scale(1.05); }
+
+  /* nawigacja underline */
+  .nav-link{ position:relative; font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; letter-spacing:.14em; font-size:.95rem; font-weight:500; }
+  .nav-link::after{ content:''; position:absolute; left:0; bottom:-5px; width:0; height:1px; background:#C9A24B; transition:width .35s; }
+  .nav-link:hover::after{ width:100%; }
+
+  /* marquee */
+  .mq{ display:flex; white-space:nowrap; animation:mq 30s linear infinite; }
+  @keyframes mq{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  .hairline{ height:1px; background:linear-gradient(90deg,transparent,rgba(201,162,75,.5),transparent); }
+
+  ::selection{ background:#6E1423; color:#F2EFE9; }
+  ::-webkit-scrollbar{ width:10px; } ::-webkit-scrollbar-track{ background:#0A0A0A; }
+  ::-webkit-scrollbar-thumb{ background:#262626; } ::-webkit-scrollbar-thumb:hover{ background:#6E1423; }
+
+  /* dostępność (skill UX #1/#2 — Focus States, High): widoczny focus dla klawiatury */
+  a,button,input,select,textarea,[tabindex]{ outline:none; }
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{
+    outline:2px solid #C9A24B; outline-offset:3px; border-radius:1px; }
+  /* min. cel dotykowy 44px dla dni kalendarza */
+  .cal-day{ min-width:40px; min-height:40px; }
+
+  @media(prefers-reduced-motion:reduce){ *{animation:none!important;transition:none!important;} .rv{opacity:1!important;transform:none!important;} }
+</style>
+</head>
+
+<body class="bg-ink text-paper antialiased">
+<a href="index.html" style="position:fixed;bottom:20px;left:20px;z-index:999999;display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:rgba(17,17,17,.88);color:#fff;font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:600;text-decoration:none;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 8px 28px -10px rgba(0,0,0,.5);transition:transform .25s ease,opacity .25s ease" onmouseover="this.style.transform='translateX(-3px)';this.style.opacity='.9'" onmouseout="this.style.transform='none';this.style.opacity='1'">← Powrót do portfolio</a>
+
+<!-- ════ NAVBAR ════ -->
+<header x-data="{open:false,sc:false}" @scroll.window="sc=(window.scrollY>40)"
+        :class="sc?'glass border-b border-white/10':'bg-transparent'"
+        class="fixed top-0 inset-x-0 z-50 transition-all duration-500">
+  <nav class="max-w-7xl mx-auto px-5 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
+    <a href="#hero" class="display text-xl sm:text-2xl font-extrabold tracking-tightest">VESPER<span class="text-gold">.</span></a>
+    <div class="hidden md:flex items-center gap-9 text-paper/70">
+      <a href="#about" class="nav-link hover:text-paper transition">O nas</a>
+      <a href="#services" class="nav-link hover:text-paper transition">Usługi</a>
+      <a href="#gallery" class="nav-link hover:text-paper transition">Galeria</a>
+      <a href="#team" class="nav-link hover:text-paper transition">Zespół</a>
+      <a href="#contact" class="nav-link hover:text-paper transition">Kontakt</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="#book" class="btn btn-solid hidden sm:inline-flex !py-2.5 !px-5 !text-[.72rem]"><span>Umów się</span></a>
+      <button @click="open=!open" class="md:hidden p-2 -mr-2" aria-label="Menu">
+        <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"/></svg>
+        <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18 18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div x-show="open" x-transition.opacity @click="open=false" class="md:hidden glass border-t border-white/10">
+    <div class="px-6 py-6 flex flex-col gap-5 sign uppercase tracking-widest text-lg">
+      <a href="#about" class="hover:text-gold">O nas</a><a href="#services" class="hover:text-gold">Usługi</a>
+      <a href="#gallery" class="hover:text-gold">Galeria</a><a href="#team" class="hover:text-gold">Zespół</a>
+      <a href="#contact" class="hover:text-gold">Kontakt</a>
+      <a href="#book" class="btn btn-solid w-max mt-2"><span>Umów się</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ════ HERO (zachowany koncept) ════ -->
+<section id="hero" class="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1920&q=80" alt="Wnętrze barbershopu VESPER" class="w-full h-full object-cover grayscale" loading="eager"/>
+    <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-ink/70"></div>
+  </div>
+  <div class="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 w-full">
+    <p class="rv eyebrow text-gold text-xs sm:text-sm mb-6">Barber Atelier · Est. 2014 · Warszawa</p>
+    <h1 class="rv display text-[15vw] sm:text-[11vw] lg:text-[9rem] font-extrabold">
+      PRECYZJA<br><span class="text-paper/40">&</span> CHARAKTER
+    </h1>
+    <p class="rv mt-6 mx-auto max-w-xl text-base sm:text-lg text-paper/70 leading-relaxed">
+      Strzyżenie, broda i golenie brzytwą na najwyższym poziomie. Miejsce, gdzie rzemiosło spotyka rytuał.
+    </p>
+    <div class="rv mt-9 flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#book" class="btn btn-solid"><span>Umów wizytę</span><span>↗</span></a>
+      <a href="#services" class="btn btn-line"><span>Zobacz usługi</span></a>
+    </div>
+  </div>
+  <div class="absolute bottom-6 right-6 z-10 hidden sm:flex items-center gap-2 sign uppercase tracking-[.3em] text-xs text-paper/50">
+    <span>Scroll</span><span class="w-8 h-px bg-paper/50"></span>
+  </div>
+</section>
+
+<!-- ════ MARQUEE ════ -->
+<div class="bg-wine text-paper py-3 overflow-hidden border-y border-white/10">
+  <div class="mq sign uppercase tracking-[.28em] text-sm">
+    <span class="flex shrink-0">
+      <span class="mx-8">Strzyżenie klasyczne</span><span class="mx-8 text-gold">✦</span>
+      <span class="mx-8">Modelowanie brody</span><span class="mx-8 text-gold">✦</span>
+      <span class="mx-8">Golenie brzytwą</span><span class="mx-8 text-gold">✦</span>
+      <span class="mx-8">Rytuał gorącego ręcznika</span><span class="mx-8 text-gold">✦</span>
+    </span>
+    <span class="flex shrink-0" aria-hidden="true">
+      <span class="mx-8">Strzyżenie klasyczne</span><span class="mx-8 text-gold">✦</span>
+      <span class="mx-8">Modelowanie brody</span><span class="mx-8 text-gold">✦</span>
+      <span class="mx-8">Golenie brzytwą</span><span class="mx-8 text-gold">✦</span>
+      <span class="mx-8">Rytuał gorącego ręcznika</span><span class="mx-8 text-gold">✦</span>
+    </span>
+  </div>
+</div>
+
+<!-- ════ O NAS ════ -->
+<section id="about" class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-36">
+  <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+    <div class="rv img-zoom order-2 lg:order-1">
+      <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=80" alt="Barber przy pracy" class="w-full h-[460px] sm:h-[560px] object-cover grayscale hover:grayscale-0" loading="lazy"/>
+    </div>
+    <div class="order-1 lg:order-2">
+      <p class="rv eyebrow text-gold text-xs mb-6">— O nas</p>
+      <h2 class="rv display text-4xl sm:text-6xl font-extrabold mb-8">Rzemiosło, które<br>nie wybacza skrótów.</h2>
+      <p class="rv text-paper/70 leading-relaxed mb-5">VESPER zaczęło się od jednego fotela i przekonania, że dobre strzyżenie to nie usługa, a doświadczenie. Dziś jesteśmy atelier, w którym każdy detal — od ostrza brzytwy po temperaturę ręcznika — ma znaczenie.</p>
+      <p class="rv text-paper/70 leading-relaxed mb-10">Nie śpieszymy się. Słuchamy. Pracujemy w skupieniu, bo precyzja wymaga uwagi. To miejsce dla mężczyzn, którzy wiedzą, czego chcą.</p>
+      <div class="rv grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
+        <div><p class="sign text-5xl font-bold text-gold">10+</p><p class="eyebrow text-[.62rem] text-muted mt-2">lat / atelier</p></div>
+        <div><p class="sign text-5xl font-bold text-gold">12k</p><p class="eyebrow text-[.62rem] text-muted mt-2">klientów</p></div>
+        <div><p class="sign text-5xl font-bold text-gold">6</p><p class="eyebrow text-[.62rem] text-muted mt-2">barberów</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ USŁUGI ════ -->
+<section id="services" class="bg-coal border-y border-white/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-36">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
+      <div>
+        <p class="rv eyebrow text-gold text-xs mb-6">— Cennik</p>
+        <h2 class="rv display text-4xl sm:text-6xl font-extrabold">Usługi &amp; rytuały</h2>
+      </div>
+      <p class="rv max-w-sm text-paper/60 text-sm">Każda wizyta zawiera konsultację, napój i finisz stylizacyjny. Ceny „od".</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-px bg-white/10">
+      <!-- karta -->
+      <div class="ticked rv group bg-coal hover:bg-ink transition-colors duration-300 p-8 sm:p-10">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="sign text-2xl font-semibold uppercase tracking-wide group-hover:text-gold transition">Strzyżenie klasyczne</h3>
+          <span class="sign text-2xl font-bold text-gold whitespace-nowrap">120 zł</span>
+        </div>
+        <p class="text-paper/55 text-sm mt-3 leading-relaxed">Konsultacja, mycie, precyzyjne cięcie i stylizacja pod kształt twarzy.</p>
+        <p class="eyebrow text-[.6rem] text-muted mt-4">45 min</p>
+      </div>
+      <div class="ticked rv group bg-coal hover:bg-ink transition-colors duration-300 p-8 sm:p-10">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="sign text-2xl font-semibold uppercase tracking-wide group-hover:text-gold transition">Modelowanie brody</h3>
+          <span class="sign text-2xl font-bold text-gold whitespace-nowrap">80 zł</span>
+        </div>
+        <p class="text-paper/55 text-sm mt-3 leading-relaxed">Konturowanie brzytwą, przycięcie i pielęgnacja olejkiem oraz balsamem.</p>
+        <p class="eyebrow text-[.6rem] text-muted mt-4">30 min</p>
+      </div>
+      <div class="ticked rv group bg-coal hover:bg-ink transition-colors duration-300 p-8 sm:p-10">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="sign text-2xl font-semibold uppercase tracking-wide group-hover:text-gold transition">Golenie brzytwą</h3>
+          <span class="sign text-2xl font-bold text-gold whitespace-nowrap">100 zł</span>
+        </div>
+        <p class="text-paper/55 text-sm mt-3 leading-relaxed">Tradycyjny rytuał z gorącym ręcznikiem, olejkiem i kojącym balsamem.</p>
+        <p class="eyebrow text-[.6rem] text-muted mt-4">40 min</p>
+      </div>
+      <div class="ticked rv group bg-coal hover:bg-ink transition-colors duration-300 p-8 sm:p-10">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="sign text-2xl font-semibold uppercase tracking-wide group-hover:text-gold transition">Strzyżenie + broda</h3>
+          <span class="sign text-2xl font-bold text-gold whitespace-nowrap">180 zł</span>
+        </div>
+        <p class="text-paper/55 text-sm mt-3 leading-relaxed">Kompletny zabieg — pełna metamorfoza włosów i brody w jednej wizycie.</p>
+        <p class="eyebrow text-[.6rem] text-muted mt-4">70 min</p>
+      </div>
+      <div class="ticked rv group bg-coal hover:bg-ink transition-colors duration-300 p-8 sm:p-10">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="sign text-2xl font-semibold uppercase tracking-wide group-hover:text-gold transition">Koloryzacja / siwizna</h3>
+          <span class="sign text-2xl font-bold text-gold whitespace-nowrap">od 150 zł</span>
+        </div>
+        <p class="text-paper/55 text-sm mt-3 leading-relaxed">Subtelne tonowanie lub kamuflaż siwizny — naturalny, męski efekt.</p>
+        <p class="eyebrow text-[.6rem] text-muted mt-4">60 min</p>
+      </div>
+      <div class="ticked rv group bg-coal hover:bg-ink transition-colors duration-300 p-8 sm:p-10">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="sign text-2xl font-semibold uppercase tracking-wide group-hover:text-gold transition">Rytuał VESPER</h3>
+          <span class="sign text-2xl font-bold text-gold whitespace-nowrap">260 zł</span>
+        </div>
+        <p class="text-paper/55 text-sm mt-3 leading-relaxed">Pełne doświadczenie: strzyżenie, broda, golenie, peeling twarzy i masaż głowy.</p>
+        <p class="eyebrow text-[.6rem] text-muted mt-4">90 min</p>
+      </div>
+    </div>
+    <div class="rv mt-12"><a href="#book" class="btn btn-line"><span>Zarezerwuj termin</span><span>↗</span></a></div>
+  </div>
+</section>
+
+<!-- ════ GALERIA ════ -->
+<section id="gallery" class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-36">
+  <div class="mb-16">
+    <p class="rv eyebrow text-gold text-xs mb-6">— Galeria</p>
+    <h2 class="rv display text-4xl sm:text-6xl font-extrabold">Detal ma znaczenie</h2>
+  </div>
+  <div class="masonry">
+    <div class="rv img-zoom"><img src="https://images.unsplash.com/photo-1621607512214-68297480165e?auto=format&fit=crop&w=800&q=80" alt="Detal strzyżenia" class="w-full grayscale hover:grayscale-0" loading="lazy"/></div>
+    <div class="rv img-zoom"><img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=80" alt="Narzędzia barberskie" class="w-full" loading="lazy"/></div>
+    <div class="rv img-zoom"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=800&q=80" alt="Fotel barberski" class="w-full grayscale hover:grayscale-0" loading="lazy"/></div>
+    <div class="rv img-zoom"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=800&q=80" alt="Mężczyzna z brodą" class="w-full" loading="lazy"/></div>
+    <div class="rv img-zoom"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80" alt="Barber przy pracy" class="w-full grayscale hover:grayscale-0" loading="lazy"/></div>
+    <div class="rv img-zoom"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80" alt="Wnętrze barbershopu" class="w-full" loading="lazy"/></div>
+  </div>
+</section>
+
+<!-- ════ ZESPÓŁ ════ -->
+<section id="team" class="bg-coal border-y border-white/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-36">
+    <div class="mb-16">
+      <p class="rv eyebrow text-gold text-xs mb-6">— Zespół</p>
+      <h2 class="rv display text-4xl sm:text-6xl font-extrabold">Mistrzowie ostrza</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="rv group">
+        <div class="img-zoom mb-5"><img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&w=700&q=80" alt="Marek" class="w-full h-[420px] object-cover grayscale group-hover:grayscale-0" loading="lazy"/></div>
+        <div class="flex items-baseline justify-between"><h3 class="sign text-2xl font-semibold uppercase tracking-wide">Marek Wiśniewski</h3><span class="sign text-sm text-muted">№ 01</span></div>
+        <p class="eyebrow text-[.62rem] text-gold mt-2">Master · założyciel</p>
+        <p class="text-paper/55 text-sm mt-3">Klasyczne fade i golenie brzytwą. 14 lat praktyki.</p>
+      </div>
+      <div class="rv group">
+        <div class="img-zoom mb-5"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80" alt="Tomasz" class="w-full h-[420px] object-cover grayscale group-hover:grayscale-0" loading="lazy"/></div>
+        <div class="flex items-baseline justify-between"><h3 class="sign text-2xl font-semibold uppercase tracking-wide">Tomasz Lewandowski</h3><span class="sign text-sm text-muted">№ 02</span></div>
+        <p class="eyebrow text-[.62rem] text-gold mt-2">Senior barber</p>
+        <p class="text-paper/55 text-sm mt-3">Mistrz brody i teksturowanych cięć. Perfekcjonista detalu.</p>
+      </div>
+      <div class="rv group">
+        <div class="img-zoom mb-5"><img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=700&q=80" alt="Kacper" class="w-full h-[420px] object-cover grayscale group-hover:grayscale-0" loading="lazy"/></div>
+        <div class="flex items-baseline justify-between"><h3 class="sign text-2xl font-semibold uppercase tracking-wide">Kacper Nowak</h3><span class="sign text-sm text-muted">№ 03</span></div>
+        <p class="eyebrow text-[.62rem] text-gold mt-2">Barber · stylista</p>
+        <p class="text-paper/55 text-sm mt-3">Nowoczesne stylizacje i koloryzacja. Zawsze na bieżąco z trendami.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ OPINIE ════ -->
+<section id="reviews" class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-36">
+  <div class="mb-16 text-center">
+    <p class="rv eyebrow text-gold text-xs mb-6">— Opinie</p>
+    <h2 class="rv display text-4xl sm:text-6xl font-extrabold">Co mówią klienci</h2>
+  </div>
+  <div class="grid md:grid-cols-3 gap-8">
+    <figure class="ticked rv border border-white/10 p-8 hover:border-gold/40 transition">
+      <div class="sign text-gold text-lg tracking-widest mb-4">★★★★★</div>
+      <blockquote class="text-paper/80 leading-relaxed">„Najlepsze strzyżenie w mieście. Atmosfera, precyzja i dbałość o klienta na poziomie, jakiego nie spotkałem nigdzie indziej.”</blockquote>
+      <figcaption class="eyebrow text-[.62rem] text-muted mt-6">— Paweł K.</figcaption>
+    </figure>
+    <figure class="ticked rv border border-white/10 p-8 hover:border-gold/40 transition">
+      <div class="sign text-gold text-lg tracking-widest mb-4">★★★★★</div>
+      <blockquote class="text-paper/80 leading-relaxed">„Golenie brzytwą to czysty rytuał. Wychodzę odprężony i wyglądam bezbłędnie. Polecam każdemu.”</blockquote>
+      <figcaption class="eyebrow text-[.62rem] text-muted mt-6">— Michał R.</figcaption>
+    </figure>
+    <figure class="ticked rv border border-white/10 p-8 hover:border-gold/40 transition">
+      <div class="sign text-gold text-lg tracking-widest mb-4">★★★★★</div>
+      <blockquote class="text-paper/80 leading-relaxed">„Profesjonalizm w każdym calu. Marek dokładnie wie, co robi. VESPER to mój stały adres.”</blockquote>
+      <figcaption class="eyebrow text-[.62rem] text-muted mt-6">— Jakub W.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ════ BOOK NOW ════ -->
+<section id="book" class="bg-wine border-y border-white/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-36">
+    <div class="grid lg:grid-cols-2 gap-14 lg:gap-20">
+      <div>
+        <p class="rv eyebrow text-paper/70 text-xs mb-6">— Rezerwacja</p>
+        <h2 class="rv display text-4xl sm:text-6xl font-extrabold mb-8">Zarezerwuj<br>swój termin</h2>
+        <p class="rv text-paper/85 leading-relaxed mb-8 max-w-md">Wybierz dzień i godzinę, a my zadbamy o resztę. Potwierdzenie otrzymasz SMS-em. Wolisz telefon? <a href="tel:+48600100200" class="sign tracking-wide border-b border-paper/50 hover:border-gold hover:text-gold transition">+48 600 100 200</a>.</p>
+        <div class="rv bg-ink/30 border border-paper/20 p-6" x-data="cal()">
+          <div class="flex items-center justify-between mb-5 sign uppercase tracking-wide text-sm">
+            <button @click="prev()" class="px-2 hover:text-gold transition">‹ Poprz.</button>
+            <span class="font-semibold" x-text="label"></span>
+            <button @click="next()" class="px-2 hover:text-gold transition">Nast. ›</button>
+          </div>
+          <div class="grid grid-cols-7 gap-1 text-center sign uppercase text-[.65rem] text-paper/60 mb-2">
+            <span>Pn</span><span>Wt</span><span>Śr</span><span>Cz</span><span>Pt</span><span>So</span><span>Nd</span>
+          </div>
+          <div class="grid grid-cols-7 gap-1">
+            <template x-for="b in blanks" :key="'b'+b"><span></span></template>
+            <template x-for="d in days" :key="d">
+              <button @click="sel=d" :class="sel===d?'bg-paper text-ink font-bold':'hover:bg-paper/10'" class="cal-day aspect-square text-base sign flex items-center justify-center transition cursor-pointer" x-text="d"></button>
+            </template>
+          </div>
+          <p class="mt-4 sign uppercase tracking-wide text-xs text-paper/80" x-show="sel">Wybrano: <span class="text-gold" x-text="sel+' '+label"></span></p>
+        </div>
+      </div>
+      <form class="rv space-y-5" onsubmit="event.preventDefault(); this.reset(); document.getElementById('ok').classList.remove('hidden');">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label class="block"><span class="eyebrow text-[.6rem] text-paper/70">Imię i nazwisko</span><input required class="mt-2 w-full bg-ink/30 border border-paper/25 px-4 py-3 focus:border-gold outline-none transition" placeholder="Jan Kowalski"/></label>
+          <label class="block"><span class="eyebrow text-[.6rem] text-paper/70">Telefon</span><input type="tel" required class="mt-2 w-full bg-ink/30 border border-paper/25 px-4 py-3 focus:border-gold outline-none transition" placeholder="+48 600 000 000"/></label>
+        </div>
+        <label class="block"><span class="eyebrow text-[.6rem] text-paper/70">E-mail</span><input type="email" required class="mt-2 w-full bg-ink/30 border border-paper/25 px-4 py-3 focus:border-gold outline-none transition" placeholder="jan@email.com"/></label>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label class="block"><span class="eyebrow text-[.6rem] text-paper/70">Usługa</span>
+            <select required class="mt-2 w-full bg-ink/30 border border-paper/25 px-4 py-3 focus:border-gold outline-none transition">
+              <option value="">Wybierz…</option><option>Strzyżenie klasyczne</option><option>Modelowanie brody</option><option>Golenie brzytwą</option><option>Strzyżenie + broda</option><option>Koloryzacja</option><option>Rytuał VESPER</option>
+            </select></label>
+          <label class="block"><span class="eyebrow text-[.6rem] text-paper/70">Godzina</span><input type="time" required class="mt-2 w-full bg-ink/30 border border-paper/25 px-4 py-3 focus:border-gold outline-none transition"/></label>
+        </div>
+        <label class="block"><span class="eyebrow text-[.6rem] text-paper/70">Uwagi</span><textarea rows="3" class="mt-2 w-full bg-ink/30 border border-paper/25 px-4 py-3 focus:border-gold outline-none transition resize-none" placeholder="Np. preferowany barber…"></textarea></label>
+        <button type="submit" class="btn btn-onwine w-full sm:w-auto"><span>Potwierdź rezerwację</span><span>↗</span></button>
+        <p id="ok" class="hidden eyebrow text-[.7rem] text-paper">✓ Dziękujemy! Potwierdzimy termin telefonicznie.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ════ KONTAKT + MAPA ════ -->
+<section id="contact" class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-36">
+  <div class="grid lg:grid-cols-2 gap-14 items-start">
+    <div>
+      <p class="rv eyebrow text-gold text-xs mb-6">— Kontakt</p>
+      <h2 class="rv display text-4xl sm:text-6xl font-extrabold mb-10">Znajdź nas</h2>
+      <div class="rv space-y-7 text-paper/80">
+        <div><p class="eyebrow text-[.6rem] text-muted mb-1">Adres</p><p class="text-lg">ul. Mokotowska 12, 00-561 Warszawa</p></div>
+        <div><p class="eyebrow text-[.6rem] text-muted mb-1">Godziny</p><p class="text-lg">Wt – Sob · 10:00 – 20:00</p><p class="text-paper/45">Niedz. – Pon · zamknięte</p></div>
+        <div><p class="eyebrow text-[.6rem] text-muted mb-1">Telefon</p><a href="tel:+48600100200" class="text-lg sign tracking-wide hover:text-gold transition">+48 600 100 200</a></div>
+        <div><p class="eyebrow text-[.6rem] text-muted mb-1">E-mail</p><a href="mailto:kontakt@vesper.pl" class="text-lg sign tracking-wide hover:text-gold transition">kontakt@vesper.pl</a></div>
+        <div class="flex gap-3 pt-2 sign uppercase tracking-widest text-xs">
+          <a href="#" class="px-4 py-2 border border-white/20 hover:border-gold hover:text-gold transition">Instagram</a>
+          <a href="#" class="px-4 py-2 border border-white/20 hover:border-gold hover:text-gold transition">Facebook</a>
+          <a href="#" class="px-4 py-2 border border-white/20 hover:border-gold hover:text-gold transition">TikTok</a>
+        </div>
+      </div>
+    </div>
+    <div class="rv img-zoom border border-white/10 h-[420px] sm:h-[520px]">
+      <iframe title="Mapa VESPER" src="https://www.google.com/maps?q=Mokotowska%2012%20Warszawa&output=embed" class="w-full h-full grayscale invert-[.92] hover:grayscale-0 hover:invert-0 transition duration-500" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ════ STOPKA ════ -->
+<footer class="bg-coal border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16">
+    <div class="flex flex-col md:flex-row justify-between gap-10">
+      <div>
+        <a href="#hero" class="display text-3xl font-extrabold tracking-tightest">VESPER<span class="text-gold">.</span></a>
+        <p class="text-paper/50 text-sm mt-4 max-w-xs">Barber Atelier. Precyzja, charakter, rytuał. Warszawa, od 2014.</p>
+      </div>
+      <div class="flex gap-14 sign uppercase tracking-wide text-sm text-paper/70">
+        <div><p class="eyebrow text-[.6rem] text-muted mb-4">Menu</p>
+          <ul class="space-y-2"><li><a href="#about" class="hover:text-gold transition">O nas</a></li><li><a href="#services" class="hover:text-gold transition">Usługi</a></li><li><a href="#gallery" class="hover:text-gold transition">Galeria</a></li><li><a href="#book" class="hover:text-gold transition">Rezerwacja</a></li></ul>
+        </div>
+        <div><p class="eyebrow text-[.6rem] text-muted mb-4">Kontakt</p>
+          <ul class="space-y-2"><li>Mokotowska 12</li><li>Warszawa</li><li><a href="tel:+48600100200" class="hover:text-gold transition">600 100 200</a></li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="hairline my-10"></div>
+    <div class="flex flex-col sm:flex-row justify-between gap-4 eyebrow text-[.6rem] text-muted">
+      <p>© 2026 VESPER Barber Atelier</p><p>Zaprojektowano z dbałością o detal</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* GSAP reveal */
+document.addEventListener('DOMContentLoaded',()=>{
+  if(window.gsap&&window.ScrollTrigger){
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('.rv').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%'}}));
+    gsap.to('#hero .rv',{opacity:1,y:0,duration:1.1,stagger:.1,ease:'power3.out',delay:.15});
+  } else { document.querySelectorAll('.rv').forEach(el=>{el.style.opacity=1;el.style.transform='none';}); }
+});
+/* kalendarz placeholder */
+function cal(){ return {
+  date:new Date(), sel:null,
+  mn:['Styczeń','Luty','Marzec','Kwiecień','Maj','Czerwiec','Lipiec','Sierpień','Wrzesień','Październik','Listopad','Grudzień'],
+  get label(){ return this.mn[this.date.getMonth()]+' '+this.date.getFullYear(); },
+  get dim(){ return new Date(this.date.getFullYear(),this.date.getMonth()+1,0).getDate(); },
+  get days(){ return Array.from({length:this.dim},(_,i)=>i+1); },
+  get blanks(){ let f=new Date(this.date.getFullYear(),this.date.getMonth(),1).getDay(); f=f===0?6:f-1; return Array.from({length:f},(_,i)=>i+1); },
+  prev(){ this.date=new Date(this.date.getFullYear(),this.date.getMonth()-1,1); this.sel=null; },
+  next(){ this.date=new Date(this.date.getFullYear(),this.date.getMonth()+1,1); this.sel=null; },
+};}
+</script>
+<div style="padding:26px 24px;text-align:center;font-family:Inter,system-ui,sans-serif;font-size:12px;letter-spacing:.02em;color:#999;background:#0A0A0A;border-top:1px solid rgba(255,255,255,.08)">Zaprojektowane przez Marcel Struszczak, Prawa zastrzeżone</div>
+</body>
+</html>

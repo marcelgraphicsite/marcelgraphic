@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE Beauty Studio | Luksusowy Salon Urody</title>
+    <meta name="description" content="Profesjonalne stylizacje, zaawansowane zabiegi i pełen relaks. Odwiedź LUXE Beauty Studio i poczuj się jak królowa.">
+    <meta property="og:title" content="LUXE Beauty Studio">
+    <meta property="og:description" content="Twoja magia w jednym miejscu. Zarezerwuj wizytę już dziś.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN for simple one-file deployment) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Inicjalizacja motywu PRZED renderowaniem (zapobiega miganiu i działa niezależnie od innych skryptów) -->
+    <script>
+        (function() {
+            try {
+                var saved = localStorage.getItem('theme');
+                var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (saved === 'dark' || (!saved && prefersDark)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- Tailwind Config dla customowych kolorów i fontów -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        salon: {
+                            black: '#0a0a0a',    // Głęboka czerń
+                            gold: '#d4af77',     // Złoto
+                            goldLight: '#e6c898', // Jasne złoto do hover
+                            beige: '#f8f1e3',    // Kremowy beż
+                            pink: '#e8c4d3',     // Delikatny róż
+                            darkBg: '#121212',   // Tło dark mode
+                            darkSurface: '#1a1a1a' // Powierzchnia dark mode
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles & Utilities */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 640px) { .masonry-grid { column-count: 2; } }
+        @media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Smooth image loading */
+        img { transition: opacity 0.3s; }
+        img[loading] { opacity: 0; }
+        img.loaded { opacity: 1; }
+
+        /* Dedykowany, ekskluzywny font dla logo (styl Vogue) */
+        .logo-font {
+            font-family: 'Bodoni Moda', serif;
+            letter-spacing: 0.32em;
+            font-weight: 500;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f8f1e3; }
+        .dark ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #d4af77; border-radius: 4px; }
+        
+        /* Glassmorphism nav */
+        .glass-nav {
+            background: rgba(248, 241, 227, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 119, 0.2);
+        }
+        .dark .glass-nav {
+            background: rgba(10, 10, 10, 0.8);
+            border-bottom: 1px solid rgba(212, 175, 119, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans text-salon-black bg-salon-beige dark:bg-salon-darkBg dark:text-gray-200 transition-colors duration-300 antialiased selection:bg-salon-gold selection:text-white">
+<a href="index.html" style="position:fixed;bottom:20px;left:20px;z-index:999999;display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:rgba(17,17,17,.88);color:#fff;font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:600;text-decoration:none;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 8px 28px -10px rgba(0,0,0,.5);transition:transform .25s ease,opacity .25s ease" onmouseover="this.style.transform='translateX(-3px)';this.style.opacity='.9'" onmouseout="this.style.transform='none';this.style.opacity='1'">← Powrót do portfolio</a>
+
+    <!-- Zmienna dla nazwy salonu do łatwej edycji (w renderowaniu SSR normalnie to zmienna, tu hardcodowane wszędzie LUXE) -->
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <span class="logo-font text-2xl font-bold text-salon-black dark:text-white">
+                        LUXE
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-sm font-medium hover:text-salon-gold transition-colors">Strona główna</a>
+                    <a href="#services" class="text-sm font-medium hover:text-salon-gold transition-colors">Usługi</a>
+                    <a href="#about" class="text-sm font-medium hover:text-salon-gold transition-colors">O nas</a>
+                    <a href="#portfolio" class="text-sm font-medium hover:text-salon-gold transition-colors">Galeria</a>
+                    <a href="#contact" class="text-sm font-medium hover:text-salon-gold transition-colors">Kontakt</a>
+                </div>
+
+                <!-- Icons & Dark Mode -->
+                <div class="hidden md:flex items-center space-x-5">
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors" aria-label="Przełącz motyw">
+                        <!-- Słoneczko = tryb jasny (aktualny), Księżyc = tryb ciemny -->
+                        <i data-lucide="sun" class="w-5 h-5 dark:hidden text-salon-gold"></i>
+                        <i data-lucide="moon" class="w-5 h-5 hidden dark:block text-salon-gold"></i>
+                    </button>
+                    <a href="#contact" class="bg-salon-gold hover:bg-salon-goldLight text-salon-black text-sm font-medium px-5 py-2 rounded-full transition-colors">Umów wizytę</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <button id="theme-toggle-mobile" class="p-2">
+                        <i data-lucide="sun" class="w-5 h-5 dark:hidden text-salon-gold"></i>
+                        <i data-lucide="moon" class="w-5 h-5 hidden dark:block text-salon-gold"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-salon-beige dark:bg-salon-darkSurface border-t border-gray-200 dark:border-gray-800">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#home" class="block px-3 py-3 text-base font-medium border-b border-gray-200 dark:border-gray-800">Strona główna</a>
+                <a href="#services" class="block px-3 py-3 text-base font-medium border-b border-gray-200 dark:border-gray-800">Usługi</a>
+                <a href="#about" class="block px-3 py-3 text-base font-medium border-b border-gray-200 dark:border-gray-800">O nas</a>
+                <a href="#portfolio" class="block px-3 py-3 text-base font-medium border-b border-gray-200 dark:border-gray-800">Galeria</a>
+                <a href="#contact" class="block px-3 py-3 text-base font-medium">Kontakt</a>
+                
+                <div class="px-3 pt-4 border-t border-gray-200 dark:border-gray-800 mt-2">
+                    <a href="#contact" class="block text-center bg-salon-gold text-salon-black text-sm font-medium px-5 py-3 rounded-full">Umów wizytę</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=2000&q=80" alt="Luksusowe wnętrze LUXE Beauty Studio" class="absolute inset-0 w-full h-full object-cover object-center" onload="this.classList.add('loaded')">
+            <div class="absolute inset-0 bg-salon-black/40 dark:bg-salon-black/60"></div>
+            <!-- Gradient for smooth transition -->
+            <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-salon-beige dark:from-salon-darkBg to-transparent"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+            <span class="block text-salon-gold font-medium tracking-[0.2em] uppercase text-xs sm:text-sm mb-4 animate-fade-in-up" style="animation-delay: 0.1s; opacity: 0;">Witaj w świecie luksusu</span>
+            <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl text-white mb-6 leading-tight animate-fade-in-up" style="animation-delay: 0.3s; opacity: 0;">
+                Twoja magia <br><span class="italic text-salon-pink">w jednym miejscu</span>
+            </h1>
+            <p class="text-gray-200 text-lg sm:text-xl font-light mb-10 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.5s; opacity: 0;">
+                Profesjonalne stylizacje • Zaawansowane zabiegi • Pełen relaks
+            </p>
+            <div class="animate-fade-in-up" style="animation-delay: 0.7s; opacity: 0;">
+                <a href="#contact" class="inline-block bg-salon-gold hover:bg-salon-goldLight text-salon-black font-medium tracking-wide px-8 py-4 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl hover:shadow-salon-gold/20 relative group overflow-hidden">
+                    <span class="relative z-10">Umów wizytę</span>
+                    <!-- Pulsing effect behind button -->
+                    <div class="absolute inset-0 rounded-full border-2 border-salon-gold scale-100 opacity-0 group-hover:animate-pulse-slow"></div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <a href="#about" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 text-white/70 hover:text-salon-gold transition-colors flex flex-col items-center animate-bounce">
+            <span class="text-xs uppercase tracking-widest mb-2 font-light">Odkryj</span>
+            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+        </a>
+    </section>
+
+    <!-- O nas Section -->
+    <section id="about" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1 relative reveal">
+                    <!-- Decorative elements -->
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-salon-pink/20 dark:bg-salon-pink/10 rounded-full blur-2xl z-0"></div>
+                    <div class="absolute -bottom-8 -right-8 w-40 h-40 bg-salon-gold/20 dark:bg-salon-gold/10 rounded-full blur-3xl z-0"></div>
+                    
+                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=900&q=80" alt="Założycielka LUXE" class="relative z-10 w-full h-auto object-cover rounded-t-full rounded-b-lg shadow-2xl grayscale-[20%] hover:grayscale-0 transition-all duration-700">
+                    
+                    <!-- Floating badge -->
+                    <div class="absolute bottom-10 -right-6 md:-right-12 bg-white dark:bg-salon-darkSurface p-6 rounded-2xl shadow-xl z-20 border border-gray-100 dark:border-gray-800">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-salon-beige dark:bg-salon-black rounded-full flex items-center justify-center text-salon-gold">
+                                <i data-lucide="award" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="font-serif font-bold text-xl dark:text-white">10+ lat</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Doświadczenia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 md:order-2 reveal">
+                    <span class="text-salon-gold font-medium tracking-[0.2em] uppercase text-sm mb-4 block">Nasza Filozofia</span>
+                    <h2 class="font-serif text-4xl sm:text-5xl text-salon-black dark:text-white mb-6 leading-tight">
+                        Pozwól, żebyś poczuła się jak <span class="italic text-salon-gold">królowa</span>
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 font-light leading-relaxed">
+                        W LUXE Beauty Studio wierzymy, że piękno to nie tylko wygląd, to uczucie. Nasza przestrzeń została zaprojektowana w duchu harmonii Japandi – łącząc skandynawską funkcjonalność z japońskim minimalizmem i luksusem.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-10 font-light leading-relaxed">
+                        Zatrzymaj się, weź głęboki oddech. Nasz zespół ekspertów zadba o każdy detal Twojego wyglądu, używając wyłącznie wyselekcjonowanych produktów premium, by podkreślić to, co w Tobie najpiękniejsze.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-8 mb-10 border-t border-b border-gray-200 dark:border-gray-800 py-6">
+                        <div>
+                            <p class="font-serif text-3xl text-salon-black dark:text-white mb-1">4.98</p>
+                            <p class="text-sm text-salon-gold flex items-center">
+                                <i data-lucide="star" class="w-4 h-4 fill-current mr-1"></i> Średnia ocen
+                            </p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-3xl text-salon-black dark:text-white mb-1">Top 3</p>
+                            <p class="text-sm text-gray-500">Salony w mieście</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Odręczny podpis założycielki (SVG, skalowalny) -->
+                    <svg viewBox="0 0 300 80" class="h-14 w-auto text-salon-gold" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Podpis: Natalia">
+                        <path d="M8 60 C 18 20, 28 18, 30 45 C 31 58, 26 62, 24 50 C 22 38, 34 26, 44 40 C 50 48, 46 60, 44 52 C 42 40, 54 30, 62 44 L 64 58 C 64 44, 70 30, 78 38 C 84 44, 80 56, 80 48 C 80 36, 92 30, 98 42 C 102 50, 96 60, 96 52 L 98 30 M 96 52 C 100 44, 110 40, 116 48 C 120 54, 114 60, 114 54 C 114 46, 124 38, 132 46 M 142 18 C 138 40, 138 56, 144 56 C 152 56, 156 40, 150 44 C 146 47, 148 56, 156 54 C 168 51, 176 24, 182 26 C 176 40, 172 56, 178 56 C 188 56, 196 38, 200 44 C 202 52, 198 58, 198 52 C 198 42, 208 36, 214 46 M 226 20 C 222 42, 224 58, 230 56 C 240 53, 246 40, 240 44" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M250 64 C 270 60, 285 58, 295 60" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+                    </svg>
+                    <p class="text-sm text-gray-400 font-light mt-2">Natalia Kowalska — Założycielka</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usługi Section -->
+    <section id="services" class="py-24 bg-white dark:bg-salon-darkSurface transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <span class="text-salon-gold font-medium tracking-[0.2em] uppercase text-sm mb-4 block">Menu Usług</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-salon-black dark:text-white mb-4">Pielęgnacja na najwyższym poziomie</h2>
+                <p class="text-gray-500 dark:text-gray-400 font-light">Wybierz interesującą Cię kategorię i odkryj nasze dedykowane zabiegi.</p>
+            </div>
+
+            <!-- Filtry usług -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12 reveal">
+                <button class="px-6 py-2 rounded-full border border-salon-gold bg-salon-gold text-salon-black font-medium text-sm transition-all shadow-md">Wszystkie</button>
+                <button class="px-6 py-2 rounded-full border border-gray-300 dark:border-gray-700 hover:border-salon-gold text-gray-600 dark:text-gray-300 hover:text-salon-gold font-medium text-sm transition-all">Stylizacja Włosów</button>
+                <button class="px-6 py-2 rounded-full border border-gray-300 dark:border-gray-700 hover:border-salon-gold text-gray-600 dark:text-gray-300 hover:text-salon-gold font-medium text-sm transition-all">Manicure & Pedicure</button>
+                <button class="px-6 py-2 rounded-full border border-gray-300 dark:border-gray-700 hover:border-salon-gold text-gray-600 dark:text-gray-300 hover:text-salon-gold font-medium text-sm transition-all">Zabiegi Twarzy</button>
+                <button class="px-6 py-2 rounded-full border border-gray-300 dark:border-gray-700 hover:border-salon-gold text-gray-600 dark:text-gray-300 hover:text-salon-gold font-medium text-sm transition-all">Makijaż</button>
+            </div>
+
+            <!-- Karty usług (Grid) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="group bg-salon-beige dark:bg-salon-darkBg rounded-2xl p-8 hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-salon-gold/30 hover:shadow-xl reveal">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-white dark:bg-salon-darkSurface rounded-xl text-salon-gold group-hover:scale-110 transition-transform">
+                            <i data-lucide="scissors" class="w-6 h-6"></i>
+                        </div>
+                        <span class="bg-salon-pink/20 text-salon-pink dark:text-pink-300 text-xs font-bold px-3 py-1 rounded-full">BESTSELLER</span>
+                    </div>
+                    <h3 class="font-serif text-2xl text-salon-black dark:text-white mb-2">Balayage & Tonowanie</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-6 font-light line-clamp-2">Wielowymiarowa koloryzacja z użyciem technik z wolnej ręki, połączona z głęboką regeneracją Olaplex.</p>
+                    <div class="flex justify-between items-end border-t border-gray-200 dark:border-gray-800 pt-6">
+                        <div>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Od</p>
+                            <p class="font-serif text-xl font-medium dark:text-white">450 zł</p>
+                        </div>
+                        <a href="#contact" class="text-salon-gold font-medium text-sm group-hover:text-salon-black dark:group-hover:text-white group-hover:bg-salon-gold px-4 py-2 rounded-full transition-all flex items-center">
+                            Zarezerwuj <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group bg-salon-beige dark:bg-salon-darkBg rounded-2xl p-8 hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-salon-gold/30 hover:shadow-xl reveal">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-white dark:bg-salon-darkSurface rounded-xl text-salon-gold group-hover:scale-110 transition-transform">
+                            <i data-lucide="sparkles" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <h3 class="font-serif text-2xl text-salon-black dark:text-white mb-2">Manicure Japoński</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-6 font-light line-clamp-2">Intensywne wcieranie pasty z witaminami i minerałami dla naturalnie pięknych, błyszczących paznokci.</p>
+                    <div class="flex justify-between items-end border-t border-gray-200 dark:border-gray-800 pt-6">
+                        <div>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Cena</p>
+                            <p class="font-serif text-xl font-medium dark:text-white">120 zł</p>
+                        </div>
+                        <a href="#contact" class="text-salon-gold font-medium text-sm group-hover:text-salon-black dark:group-hover:text-white group-hover:bg-salon-gold px-4 py-2 rounded-full transition-all flex items-center">
+                            Zarezerwuj <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group bg-salon-beige dark:bg-salon-darkBg rounded-2xl p-8 hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-salon-gold/30 hover:shadow-xl reveal">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-white dark:bg-salon-darkSurface rounded-xl text-salon-gold group-hover:scale-110 transition-transform">
+                            <i data-lucide="droplet" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <h3 class="font-serif text-2xl text-salon-black dark:text-white mb-2">HydraFacial Glow</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-6 font-light line-clamp-2">Głębokie oczyszczanie, nawilżenie i odmłodzenie skóry za pomocą opatentowanej technologii wiru wodnego.</p>
+                    <div class="flex justify-between items-end border-t border-gray-200 dark:border-gray-800 pt-6">
+                        <div>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Od</p>
+                            <p class="font-serif text-xl font-medium dark:text-white">350 zł</p>
+                        </div>
+                        <a href="#contact" class="text-salon-gold font-medium text-sm group-hover:text-salon-black dark:group-hover:text-white group-hover:bg-salon-gold px-4 py-2 rounded-full transition-all flex items-center">
+                            Zarezerwuj <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 reveal">
+                <a href="#" class="inline-flex items-center text-salon-black dark:text-white font-medium hover:text-salon-gold transition-colors border-b border-salon-black dark:border-white hover:border-salon-gold pb-1">
+                    Zobacz pełny cennik w PDF <i data-lucide="download" class="w-4 h-4 ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Masonry Section -->
+    <section id="portfolio" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
+                <div class="max-w-xl">
+                    <h2 class="font-serif text-4xl sm:text-5xl text-salon-black dark:text-white mb-4">Galeria Metamorfoz</h2>
+                    <p class="text-gray-500 dark:text-gray-400 font-light">Nasze prace mówią same za siebie. Zobacz magię, którą tworzymy na co dzień.</p>
+                </div>
+                <div class="mt-6 md:mt-0 flex space-x-2">
+                    <button class="p-3 rounded-full bg-white dark:bg-salon-darkSurface border border-gray-200 dark:border-gray-800 hover:border-salon-gold transition-colors"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+                    <button class="p-3 rounded-full bg-white dark:bg-salon-darkSurface border border-gray-200 dark:border-gray-800 hover:border-salon-gold transition-colors"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+                </div>
+            </div>
+
+            <div class="masonry-grid reveal">
+                <!-- Portfolio Items (Placeholders using unsplash random for beauty) -->
+                <div class="masonry-item relative group overflow-hidden rounded-2xl cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80" alt="Przed i po" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-salon-gold text-xs font-bold uppercase tracking-wider mb-1">Stylizacja Włosów</span>
+                        <h4 class="text-white font-serif text-xl mb-2">Chłodny Blond Balayage</h4>
+                        <span class="text-white/80 text-sm font-light flex items-center">Wyk. Anna <i data-lucide="heart" class="w-3 h-3 ml-2 text-salon-pink"></i></span>
+                    </div>
+                </div>
+                
+                <div class="masonry-item relative group overflow-hidden rounded-2xl cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=600&q=80" alt="Zabieg" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-salon-gold text-xs font-bold uppercase tracking-wider mb-1">Zabiegi Twarzy</span>
+                        <h4 class="text-white font-serif text-xl mb-2">Głębokie Nawilżenie</h4>
+                    </div>
+                </div>
+
+                <div class="masonry-item relative group overflow-hidden rounded-2xl cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1457972729786-0411a3b2b626?auto=format&fit=crop&w=600&q=80" alt="Makijaż" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-salon-gold text-xs font-bold uppercase tracking-wider mb-1">Makijaż</span>
+                        <h4 class="text-white font-serif text-xl mb-2">Glamour Ślubny</h4>
+                    </div>
+                </div>
+                
+                 <div class="masonry-item relative group overflow-hidden rounded-2xl cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=600&q=80" alt="Manicure" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-salon-gold text-xs font-bold uppercase tracking-wider mb-1">Paznokcie</span>
+                        <h4 class="text-white font-serif text-xl mb-2">Minimalistyczny French</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-center mt-8 reveal">
+                 <button class="flex items-center space-x-2 text-salon-black dark:text-white hover:text-salon-gold font-medium">
+                    <i data-lucide="instagram" class="w-5 h-5"></i>
+                    <span>Śledź nas na Instagramie</span>
+                 </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Opinie -->
+    <section class="py-24 bg-salon-pink/10 dark:bg-salon-darkSurface border-y border-salon-pink/20 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-1 reveal">
+                    <h2 class="font-serif text-4xl text-salon-black dark:text-white mb-6">Co mówią nasze Klientki?</h2>
+                    <div class="flex items-center mb-4 space-x-1">
+                        <i data-lucide="star" class="w-6 h-6 fill-salon-gold text-salon-gold"></i>
+                        <i data-lucide="star" class="w-6 h-6 fill-salon-gold text-salon-gold"></i>
+                        <i data-lucide="star" class="w-6 h-6 fill-salon-gold text-salon-gold"></i>
+                        <i data-lucide="star" class="w-6 h-6 fill-salon-gold text-salon-gold"></i>
+                        <i data-lucide="star" class="w-6 h-6 fill-salon-gold text-salon-gold"></i>
+                    </div>
+                    <p class="text-xl font-medium dark:text-white mb-2">4.98 / 5.00</p>
+                    <p class="text-gray-500 font-light mb-8">Na podstawie ponad 320 opinii w Google i Booksy.</p>
+                    <a href="#" class="text-salon-gold font-medium border-b border-salon-gold pb-1 hover:text-salon-black dark:hover:text-white hover:border-salon-black dark:hover:border-white transition-all">Napisz opinię</a>
+                </div>
+                
+                <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6 reveal">
+                    <!-- Review 1 -->
+                    <div class="bg-white dark:bg-salon-darkBg p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                        <div class="flex space-x-1 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 fill-salon-gold text-salon-gold"></i><i data-lucide="star" class="w-4 h-4 fill-salon-gold text-salon-gold"></i><i data-lucide="star" class="w-4 h-4 fill-salon-gold text-salon-gold"></i><i data-lucide="star" class="w-4 h-4 fill-salon-gold text-salon-gold"></i><i data-lucide="star" class="w-4 h-4 fill-salon-gold text-salon-gold"></i>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 font-light italic mb-6">"Miejsce absolutnie magiczne! Przyszłam zestresowana po całym dniu, wyszłam z pięknymi włosami i zrelaksowana jak po SPA. Wystrój robi ogromne wrażenie."</p>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden">
+                                <img src="https://i.pravatar.cc/150?img=1" alt="Kasia" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <p class="font-medium text-sm dark:text-white">Katarzyna W.</p>
+                                <p class="text-xs text-gray-400">Tydzień temu</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="bg-white dark:bg-salon-darkBg p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                        <div class="flex space-x-1 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 fill-salon-gold text-salon-gold"></i><i data-lucide="star" class="w-4 h-4 fill-salon-gold text-salon-gold"></i><i data-lucide="star" class="w-4 h-4 fill-salon-gold text-salon-gold"></i><i data-lucide="star" class="w-4 h-4 fill-salon-gold text-salon-gold"></i><i data-lucide="star" class="w-4 h-4 fill-salon-gold text-salon-gold"></i>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 font-light italic mb-6">"Dziewczyny uratowały moje paznokcie przed ślubem. Profesjonalizm na każdym kroku, pyszna kawa i atmosfera luksusu. Mój nowy ulubiony salon w mieście."</p>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden">
+                                <img src="https://i.pravatar.cc/150?img=5" alt="Magda" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <p class="font-medium text-sm dark:text-white">Magdalena S.</p>
+                                <p class="text-xs text-gray-400">Miesiąc temu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment & Contact Form -->
+    <section id="contact" class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 w-full h-full bg-salon-black"></div>
+        <!-- Decorative golden line -->
+        <div class="absolute left-0 top-1/2 w-1 h-32 bg-salon-gold transform -translate-y-1/2 rounded-r-lg"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                
+                <!-- Contact Info -->
+                <div class="text-white reveal">
+                    <span class="text-salon-gold font-medium tracking-[0.2em] uppercase text-sm mb-4 block">Rezerwacja</span>
+                    <h2 class="font-serif text-4xl sm:text-5xl mb-6">Twój czas na relaks zaczyna się tutaj.</h2>
+                    <p class="text-gray-400 font-light mb-12 max-w-md">Skontaktuj się z nami telefonicznie, napisz wiadomość lub zarezerwuj termin online szybko i wygodnie.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="p-3 border border-gray-700 rounded-full text-salon-gold">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-lg">LUXE Beauty Studio</p>
+                                <p class="text-gray-400 font-light">ul. Złota 44, 00-120 Warszawa</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="p-3 border border-gray-700 rounded-full text-salon-gold">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-lg">+48 500 600 700</p>
+                                <p class="text-gray-400 font-light">Dzwoniąc zapytaj o wolne terminy</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="p-3 border border-gray-700 rounded-full text-salon-gold">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-lg">Godziny otwarcia</p>
+                                <p class="text-gray-400 font-light">Pn-Pt: 9:00 - 20:00<br>Sobota: 9:00 - 16:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Form -->
+                <div class="bg-white dark:bg-salon-darkSurface rounded-3xl p-8 sm:p-10 shadow-2xl reveal">
+                    <h3 class="font-serif text-2xl text-salon-black dark:text-white mb-6">Umów wizytę online</h3>
+                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('Wiadomość wysłana! Dziękujemy.');">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">Imię i nazwisko</label>
+                                <input type="text" class="w-full bg-salon-beige dark:bg-salon-darkBg border border-transparent focus:border-salon-gold dark:focus:border-salon-gold rounded-xl px-4 py-3 outline-none transition-colors dark:text-white" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">Telefon</label>
+                                <input type="tel" class="w-full bg-salon-beige dark:bg-salon-darkBg border border-transparent focus:border-salon-gold dark:focus:border-salon-gold rounded-xl px-4 py-3 outline-none transition-colors dark:text-white" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">Wybierz usługę</label>
+                            <div class="relative">
+                                <select class="w-full bg-salon-beige dark:bg-salon-darkBg border border-transparent focus:border-salon-gold dark:focus:border-salon-gold rounded-xl px-4 py-3 outline-none appearance-none transition-colors dark:text-white cursor-pointer">
+                                    <option>Stylizacja Włosów - Koloryzacja</option>
+                                    <option>Stylizacja Włosów - Strzyżenie</option>
+                                    <option>Manicure & Pedicure</option>
+                                    <option>Zabiegi Kosmetyczne Twarzy</option>
+                                    <option>Makijaż Okolicznościowy</option>
+                                </select>
+                                <i data-lucide="chevron-down" class="w-4 h-4 absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">Preferowana data</label>
+                                <input type="date" class="w-full bg-salon-beige dark:bg-salon-darkBg border border-transparent focus:border-salon-gold dark:focus:border-salon-gold rounded-xl px-4 py-3 outline-none transition-colors dark:text-white text-gray-500 cursor-pointer">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">Godzina</label>
+                                <div class="relative">
+                                    <select class="w-full bg-salon-beige dark:bg-salon-darkBg border border-transparent focus:border-salon-gold dark:focus:border-salon-gold rounded-xl px-4 py-3 outline-none appearance-none transition-colors dark:text-white cursor-pointer">
+                                        <option>Rano (9:00 - 12:00)</option>
+                                        <option>Popołudnie (12:00 - 16:00)</option>
+                                        <option>Wieczór (16:00 - 20:00)</option>
+                                    </select>
+                                    <i data-lucide="chevron-down" class="w-4 h-4 absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">Notatki (opcjonalnie)</label>
+                            <textarea rows="3" class="w-full bg-salon-beige dark:bg-salon-darkBg border border-transparent focus:border-salon-gold dark:focus:border-salon-gold rounded-xl px-4 py-3 outline-none transition-colors dark:text-white resize-none" placeholder="Masz pytania do stylisty?"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-salon-black dark:bg-white text-white dark:text-salon-black hover:bg-salon-gold dark:hover:bg-salon-gold hover:text-white transition-colors font-medium py-4 rounded-xl flex justify-center items-center group">
+                            Potwierdź rezerwację
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                        <p class="text-xs text-center text-gray-400 mt-4">Wysłanie formularza nie jest równoznaczne z rezerwacją. Oddzwonimy w celu potwierdzenia.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-salon-black pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Logo & About -->
+                <div class="col-span-1 md:col-span-1">
+                    <span class="logo-font text-3xl font-bold text-white mb-6 block">
+                        LUXE
+                    </span>
+                    <p class="text-gray-400 font-light text-sm mb-6 leading-relaxed">Miejsce, w którym luksus spotyka się z profesjonalizmem. Stworzone, by celebrować Twoje naturalne piękno.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-salon-gold transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-salon-gold transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-salon-gold transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-medium mb-6 uppercase tracking-wider text-sm">Na skróty</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-gray-400 hover:text-salon-gold text-sm transition-colors">Menu Usług</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-salon-gold text-sm transition-colors">Galeria</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-salon-gold text-sm transition-colors">Karty Podarunkowe</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-salon-gold text-sm transition-colors">Sklep z kosmetykami</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div>
+                    <h4 class="text-white font-medium mb-6 uppercase tracking-wider text-sm">Informacje</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-salon-gold text-sm transition-colors">Regulamin salonu</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-salon-gold text-sm transition-colors">Polityka prywatności</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-salon-gold text-sm transition-colors">Polityka cookies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-salon-gold text-sm transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-white font-medium mb-6 uppercase tracking-wider text-sm">Zapisz się do newslettera</h4>
+                    <p class="text-gray-400 text-sm mb-4 font-light">Otrzymuj informacje o promocjach i nowościach kosmetycznych.</p>
+                    <form class="flex" onsubmit="event.preventDefault();">
+                        <input type="email" placeholder="Twój email" class="bg-white/5 border border-white/10 text-white px-4 py-2 text-sm outline-none focus:border-salon-gold w-full rounded-l-lg" required>
+                        <button type="submit" class="bg-salon-gold text-salon-black px-4 py-2 text-sm font-medium hover:bg-salon-goldLight transition-colors rounded-r-lg">Zapisz</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-xs">© 2026 LUXE Beauty Studio. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Inicjalizacja ikon Lucide (zabezpieczona — błąd ikon nie zablokuje reszty skryptu)
+        if (window.lucide && typeof lucide.createIcons === 'function') {
+            try { lucide.createIcons(); } catch (e) { console.warn('Lucide:', e); }
+        }
+
+        // 1. Navbar Scroll Effect (Glassmorphism)
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-nav', 'py-0');
+            } else {
+                navbar.classList.remove('glass-nav', 'py-0');
+            }
+        });
+
+        // 2. Scroll Reveal Animation (Custom lightweight alternative to AOS)
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Animate only once
+                }
+            });
+        };
+
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
+        
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // 3. Dark Mode Toggle (motyw jest już ustawiony w <head>, tu tylko obsługa kliknięć)
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
+
+        const toggleTheme = () => {
+            document.documentElement.classList.toggle('dark');
+            try {
+                localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+            } catch (e) {}
+            // Odśwież ikony po zmianie motywu
+            if (window.lucide && typeof lucide.createIcons === 'function') {
+                try { lucide.createIcons(); } catch (e) {}
+            }
+        };
+
+        if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+        if (themeToggleBtnMobile) themeToggleBtnMobile.addEventListener('click', toggleTheme);
+
+        // 4. Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+<div style="padding:26px 24px;text-align:center;font-family:Inter,system-ui,sans-serif;font-size:12px;letter-spacing:.02em;color:#888;background:#111;border-top:1px solid rgba(0,0,0,.08)">Zaprojektowane przez Marcel Struszczak, Prawa zastrzeżone</div>
+</body>
+</html>

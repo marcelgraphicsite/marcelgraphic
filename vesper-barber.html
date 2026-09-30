@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="pl" class="dark scroll-smooth">
+<head>
+<!-- ════════════════════════════════════════════════════════════════
+     VESPER — Barber Atelier
+     Kierunek: męski / profesjonalny / industrialny luksus
+     Fonty (dobór: skill ui-ux-pro-max): Display Bricolage Grotesque · Sygnatura Barlow Condensed · Tekst Barlow
+     Paleta Luxury/Premium: czerń + złoto (jeden akcent) + off-white + burgund · WCAG AA
+     Guziki kanciaste z efektem "fill sweep" · narożniki techniczne · focus-visible dla klawiatury
+     Stack: Tailwind (CDN) + Alpine.js + GSAP — jeden plik
+     ════════════════════════════════════════════════════════════════ -->
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- SEO -->
+<title>VESPER — Barber Atelier | Strzyżenie, broda, golenie brzytwą · Warszawa</title>
+<meta name="description" content="VESPER Barber Atelier — premium barbershop dla mężczyzn. Strzyżenie, modelowanie brody, golenie brzytwą i rytuały pielęgnacyjne. ul. Mokotowska 12, Warszawa. Umów wizytę online."/>
+<meta name="author" content="VESPER Barber Atelier"/>
+<meta name="theme-color" content="#0A0A0A"/>
+<meta name="robots" content="noindex"/>
+<meta property="og:title" content="VESPER — Barber Atelier"/>
+<meta property="og:description" content="Precyzja i charakter. Premium barbershop, Warszawa."/>
+<meta property="og:type" content="business.business"/>
+<meta property="og:image" content="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1200&q=80"/>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet"/>
+
+<!-- Tailwind — skompilowany CSS (zamiast CDN) -->
+<style>*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:Barlow,sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0}.inset-x-0{left:0;right:0}.bottom-6{bottom:1.5rem}.right-6{right:1.5rem}.top-0{top:0}.z-10{z-index:10}.z-50{z-index:50}.order-1{order:1}.order-2{order:2}.mx-8{margin-left:2rem;margin-right:2rem}.mx-auto{margin-left:auto;margin-right:auto}.my-10{margin-top:2.5rem;margin-bottom:2.5rem}.-mr-2{margin-right:-.5rem}.mb-1{margin-bottom:.25rem}.mb-10{margin-bottom:2.5rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:.5rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-12{margin-top:3rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-9{margin-top:2.25rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.aspect-square{aspect-ratio:1/1}.h-16{height:4rem}.h-6{height:1.5rem}.h-\[420px\]{height:420px}.h-\[460px\]{height:460px}.h-full{height:100%}.h-px{height:1px}.min-h-screen{min-height:100vh}.w-6{width:1.5rem}.w-8{width:2rem}.w-full{width:100%}.w-max{width:-moz-max-content;width:max-content}.max-w-5xl{max-width:64rem}.max-w-7xl{max-width:80rem}.max-w-md{max-width:28rem}.max-w-sm{max-width:24rem}.max-w-xl{max-width:36rem}.max-w-xs{max-width:20rem}.shrink-0{flex-shrink:0}.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.resize-none{resize:none}.grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-cols-7{grid-template-columns:repeat(7,minmax(0,1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:.25rem}.gap-10{gap:2.5rem}.gap-14{gap:3.5rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.gap-9{gap:2.25rem}.gap-px{gap:1px}.space-y-2>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.5rem*var(--tw-space-y-reverse))}.space-y-5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem*var(--tw-space-y-reverse))}.space-y-7>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.75rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.75rem*var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.scroll-smooth{scroll-behavior:smooth}.whitespace-nowrap{white-space:nowrap}.border{border-width:1px}.border-y{border-top-width:1px}.border-b,.border-y{border-bottom-width:1px}.border-t{border-top-width:1px}.border-gold\/50{border-color:rgba(201,162,75,.5)}.border-paper\/20{border-color:hsla(40,26%,93%,.2)}.border-paper\/25{border-color:hsla(40,26%,93%,.25)}.border-paper\/50{border-color:hsla(40,26%,93%,.5)}.border-white\/10{border-color:hsla(0,0%,100%,.1)}.border-white\/20{border-color:hsla(0,0%,100%,.2)}.bg-coal{--tw-bg-opacity:1;background-color:rgb(17 17 17/var(--tw-bg-opacity,1))}.bg-ink{--tw-bg-opacity:1;background-color:rgb(10 10 10/var(--tw-bg-opacity,1))}.bg-ink\/30{background-color:hsla(0,0%,4%,.3)}.bg-ink\/40{background-color:hsla(0,0%,4%,.4)}.bg-paper{--tw-bg-opacity:1;background-color:rgb(242 239 233/var(--tw-bg-opacity,1))}.bg-paper\/50{background-color:hsla(40,26%,93%,.5)}.bg-transparent{background-color:transparent}.bg-white\/10{background-color:hsla(0,0%,100%,.1)}.bg-wine{--tw-bg-opacity:1;background-color:rgb(110 20 35/var(--tw-bg-opacity,1))}.bg-gradient-to-t{background-image:linear-gradient(to top,var(--tw-gradient-stops))}.from-ink{--tw-gradient-from:#0a0a0a var(--tw-gradient-from-position);--tw-gradient-to:hsla(0,0%,4%,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-ink\/45{--tw-gradient-to:hsla(0,0%,4%,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),hsla(0,0%,4%,.45) var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-ink\/70{--tw-gradient-to:hsla(0,0%,4%,.7) var(--tw-gradient-to-position)}.object-cover{-o-object-fit:cover;object-fit:cover}.p-2{padding:.5rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.\!px-5{padding-left:1.25rem!important;padding-right:1.25rem!important}.\!py-2\.5{padding-top:.625rem!important;padding-bottom:.625rem!important}.px-2{padding-left:.5rem;padding-right:.5rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-24{padding-top:6rem;padding-bottom:6rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pt-2{padding-top:.5rem}.pt-8{padding-top:2rem}.text-center{text-align:center}.\!text-\[\.72rem\]{font-size:.72rem!important}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-\[\.62rem\]{font-size:.62rem}.text-\[\.65rem\]{font-size:.65rem}.text-\[\.6rem\]{font-size:.6rem}.text-\[\.7rem\]{font-size:.7rem}.text-\[13\.4vw\]{font-size:13.4vw}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.tracking-\[\.28em\]{letter-spacing:.28em}.tracking-\[\.3em\]{letter-spacing:.3em}.tracking-tightest{letter-spacing:-.045em}.tracking-wide{letter-spacing:.025em}.tracking-widest{letter-spacing:.1em}.text-gold{--tw-text-opacity:1;color:rgb(201 162 75/var(--tw-text-opacity,1))}.text-ink{--tw-text-opacity:1;color:rgb(10 10 10/var(--tw-text-opacity,1))}.text-muted{--tw-text-opacity:1;color:rgb(140 135 128/var(--tw-text-opacity,1))}.text-paper{--tw-text-opacity:1;color:rgb(242 239 233/var(--tw-text-opacity,1))}.text-paper\/40{color:hsla(40,26%,93%,.4)}.text-paper\/50{color:hsla(40,26%,93%,.5)}.text-paper\/55{color:hsla(40,26%,93%,.55)}.text-paper\/60{color:hsla(40,26%,93%,.6)}.text-paper\/70{color:hsla(40,26%,93%,.7)}.text-paper\/80{color:hsla(40,26%,93%,.8)}.text-paper\/85{color:hsla(40,26%,93%,.85)}.underline{text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.outline-none{outline:2px solid transparent;outline-offset:2px}.grayscale{--tw-grayscale:grayscale(100%)}.grayscale,.invert-\[\.92\]{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.invert-\[\.92\]{--tw-invert:invert(.92)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.duration-300{transition-duration:.3s}.duration-500{transition-duration:.5s}.hover\:border-gold:hover{--tw-border-opacity:1;border-color:rgb(201 162 75/var(--tw-border-opacity,1))}.hover\:border-gold\/40:hover{border-color:rgba(201,162,75,.4)}.hover\:bg-ink:hover{--tw-bg-opacity:1;background-color:rgb(10 10 10/var(--tw-bg-opacity,1))}.hover\:bg-paper\/10:hover{background-color:hsla(40,26%,93%,.1)}.hover\:text-gold:hover{--tw-text-opacity:1;color:rgb(201 162 75/var(--tw-text-opacity,1))}.hover\:text-paper:hover{--tw-text-opacity:1;color:rgb(242 239 233/var(--tw-text-opacity,1))}.hover\:grayscale-0:hover{--tw-grayscale:grayscale(0)}.hover\:grayscale-0:hover,.hover\:invert-0:hover{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.hover\:invert-0:hover{--tw-invert:invert(0)}.focus\:border-gold:focus{--tw-border-opacity:1;border-color:rgb(201 162 75/var(--tw-border-opacity,1))}.group:hover .group-hover\:text-gold{--tw-text-opacity:1;color:rgb(201 162 75/var(--tw-text-opacity,1))}.group:hover .group-hover\:grayscale-0{--tw-grayscale:grayscale(0);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}@media (min-width:640px){.sm\:flex{display:flex}.sm\:inline-flex{display:inline-flex}.sm\:h-20{height:5rem}.sm\:h-\[520px\]{height:520px}.sm\:h-\[560px\]{height:560px}.sm\:w-auto{width:auto}.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-end{align-items:flex-end}.sm\:p-10{padding:2.5rem}.sm\:px-8{padding-left:2rem;padding-right:2rem}.sm\:py-36{padding-top:9rem;padding-bottom:9rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-6xl{font-size:3.75rem;line-height:1}.sm\:text-\[11vw\]{font-size:11vw}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:text-sm{font-size:.875rem;line-height:1.25rem}}@media (min-width:768px){.md\:flex{display:flex}.md\:hidden{display:none}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.md\:flex-row{flex-direction:row}}@media (min-width:1024px){.lg\:order-1{order:1}.lg\:order-2{order:2}.lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.lg\:gap-20{gap:5rem}.lg\:text-\[9rem\]{font-size:9rem}}</style>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.17.4/dist/cdn.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+<style>
+  html{ background:#0A0A0A; }
+  body{ font-family:'Barlow',sans-serif; font-size:16px; line-height:1.5; }   /* skill #6: base 16px / lh 1.5 */
+
+  .display{ font-family:'Bricolage Grotesque',sans-serif; letter-spacing:-.045em; line-height:.9; }
+  .sign{ font-family:'Barlow Condensed',sans-serif; }
+  .eyebrow{ font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; letter-spacing:.28em; font-weight:600; }
+
+  /* navbar glass */
+  .glass{ background:rgba(10,10,10,.6); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+
+  /* ── GUZIKI: kanciaste, męskie, z efektem zalewania ── */
+  .btn{ position:relative; overflow:hidden; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:.6rem;
+        font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; letter-spacing:.16em; font-weight:600; font-size:.92rem;
+        min-height:48px; padding:1.05rem 2.1rem; border:1px solid transparent; transition:color .4s,border-color .4s; }
+  .btn > *{ position:relative; z-index:1; }
+  .btn::before{ content:''; position:absolute; inset:0; z-index:0; transform:translateY(101%); transition:transform .45s cubic-bezier(.16,1,.3,1); }
+  .btn:hover::before{ transform:translateY(0); }
+  /* solidny (jasny) → zalewa złotem */
+  .btn-solid{ background:#F2EFE9; color:#0A0A0A; }
+  .btn-solid::before{ background:#C9A24B; }
+  /* obrysowy → zalewa się od dołu, tekst ciemnieje */
+  .btn-line{ background:transparent; color:#F2EFE9; border-color:rgba(242,239,233,.3); }
+  .btn-line::before{ background:#F2EFE9; }
+  .btn-line:hover{ color:#0A0A0A; border-color:#F2EFE9; }
+  /* na ciemnoczerwonym tle */
+  .btn-onwine{ background:#F2EFE9; color:#0A0A0A; }
+  .btn-onwine::before{ background:#0A0A0A; }
+  .btn-onwine:hover{ color:#F2EFE9; }
+
+  /* ── KARTY: ostre, z technicznymi narożnikami ── */
+  .ticked{ position:relative; }
+  .ticked::before,.ticked::after{ content:''; position:absolute; width:14px; height:14px; border-color:rgba(201,162,75,.55); opacity:0; transition:opacity .4s; }
+  .ticked::before{ top:14px; left:14px; border-top:1px solid; border-left:1px solid; }
+  .ticked::after{ bottom:14px; right:14px; border-bottom:1px solid; border-right:1px solid; }
+  .ticked:hover::before,.ticked:hover::after{ opacity:1; }
+
+  /* reveal */
+  .rv{ opacity:0; transform:translateY(28px); }
+
+  /* masonry */
+  .masonry{ column-gap:1rem; }
+  @media(min-width:640px){ .masonry{ columns:2; } }
+  @media(min-width:1024px){ .masonry{ columns:3; } }
+  .masonry>*{ break-inside:avoid; margin-bottom:1rem; }
+
+  /* hover zoom + odsłona koloru */
+  .img-zoom{ overflow:hidden; }
+  .img-zoom img{ transition:transform .8s cubic-bezier(.16,1,.3,1),filter .8s ease; }
+  .img-zoom:hover img{ transform:scale(1.05); }
+
+  /* nawigacja underline */
+  .nav-link{ position:relative; font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; letter-spacing:.14em; font-size:.95rem; font-weight:500; }
+  .nav-link::after{ content:''; position:absolute; left:0; bottom:-5px; width:0; height:1px; background:#C9A24B; transition:width .35s; }
+  .nav-link:hover::after{ width:100%; }
+
+  /* marquee */
+  .mq{ display:flex; white-space:nowrap; animation:mq 30s linear infinite; }
+  @keyframes mq{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  .hairline{ height:1px; background:linear-gradient(90deg,transparent,rgba(201,162,75,.5),transparent); }
+
+  ::selection{ background:#6E1423; color:#F2EFE9; }
+  ::-webkit-scrollbar{ width:10px; } ::-webkit-scrollbar-track{ background:#0A0A0A; }
+  ::-webkit-scrollbar-thumb{ background:#262626; } ::-webkit-scrollbar-thumb:hover{ background:#6E1423; }
+
+  /* dostępność (skill UX #1/#2 — Focus States, High): widoczny focus dla klawiatury */
+  a,button,input,select,textarea,[tabindex]{ outline:none; }
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{
+    outline:2px solid #C9A24B; outline-offset:3px; border-radius:1px; }
+  /* min. cel dotykowy 44px dla dni kalendarza */
+  .cal-day{ min-width:40px; min-height:40px; }
+
+  @media(prefers-reduced-motion:reduce){ *{animation:none!important;transition:none!important;} .rv{opacity:1!important;transform:none!important;} }
+
+  /* Alpine: nic nie miga przed startem skryptu */
+  [x-cloak]{ display:none!important; }
+  /* kalendarz: dni niedostępne */
+  .cal-day:disabled{ opacity:.28; cursor:not-allowed; text-decoration:line-through; text-decoration-thickness:1px; }
+  .cal-day.is-today{ box-shadow:inset 0 0 0 1px rgba(201,162,75,.7); }
+  .cal-nav:disabled{ opacity:.3; cursor:not-allowed; }
+  select option{ color:#0A0A0A; }
+</style>
+<noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
+<style id="ms-tr-css">
+@font-face{font-family:"Inter C";font-style:normal;font-weight:600;font-display:block;src:url(data:font/woff2;base64,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) format("woff2")}
+@font-face{font-family:"Mono C";font-style:normal;font-weight:400;font-display:block;src:url(data:font/woff2;base64,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) format("woff2")}
+.ms-tr{position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483646;overflow:hidden;background:#17171a;color:#f4f3ef;pointer-events:none;visibility:hidden;transform:translate3d(0,100%,0);font-family:"Inter C","Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased;letter-spacing:-.011em;text-align:left}
+.ms-tr__c{position:absolute;top:0;right:0;bottom:0;left:0;transform:translate3d(0,-100%,0)}
+.ms-tr__in{box-sizing:border-box;width:100%;max-width:calc(64rem + 48px);margin:0 auto;padding:30vh 24px 0;padding-top:calc(50vh - clamp(56px,13vw,176px)*.45 - 84px);display:grid;justify-items:start;gap:18px}
+@media (max-width:640px){.ms-tr__in{max-width:calc(64rem + 36px);padding-left:18px;padding-right:18px}}
+.ms-tr__n,.ms-tr__s{margin:0;font-family:"Mono C",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;line-height:1.5;font-weight:400;font-style:normal;color:#a3a19a}
+.ms-tr__n{letter-spacing:.06em}
+.ms-tr__s{letter-spacing:.01em;max-width:46ch}
+.ms-tr__t{margin:0;font-size:56px;font-size:clamp(56px,13vw,176px);font-weight:600;font-style:normal;letter-spacing:-.05em;line-height:.9;white-space:nowrap}
+.ms-tr__t.is-long{font-size:40px;font-size:clamp(40px,10vw,150px)}
+.ms-tr__sig{display:block;width:230px;width:min(230px,56vw);max-width:none;height:auto;overflow:visible;margin-top:4px}
+.ms-tr__sig path{fill:none;stroke:#f4f3ef;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.ms-tr.is-back{transform:translate3d(0,-100%,0)}
+.ms-tr.is-back .ms-tr__c{transform:translate3d(0,100%,0)}
+.ms-tr.is-in,.ms-tr.is-cover{visibility:visible;pointer-events:auto}
+.ms-tr.is-in,.ms-tr.is-in .ms-tr__c{transform:translate3d(0,0,0);transition:transform .64s cubic-bezier(.76,0,.24,1)}
+.ms-tr.is-cover,.ms-tr.is-cover .ms-tr__c{transform:translate3d(0,0,0);transition:none}
+.ms-tr.is-cover.is-out{transform:translate3d(0,-100%,0);transition:transform .8s cubic-bezier(.76,0,.24,1)}
+.ms-tr.is-cover.is-out .ms-tr__c{transform:translate3d(0,calc(100% - 64px),0);transition:transform .8s cubic-bezier(.76,0,.24,1)}
+.ms-tr__in>*{opacity:0;transform:translate3d(0,26px,0)}
+.ms-tr.is-in .ms-tr__in>*{opacity:1;transform:none;transition:opacity .42s cubic-bezier(.16,1,.3,1) .12s,transform .5s cubic-bezier(.16,1,.3,1) .1s}
+.ms-tr.is-in .ms-tr__in>:nth-child(3){transition-delay:.16s,.14s}
+.ms-tr.is-in .ms-tr__in>:nth-child(4){transition-delay:.19s,.17s}
+.ms-tr.is-cover .ms-tr__in>*{opacity:1;transform:none;transition:none}
+@media (prefers-reduced-motion:reduce){.ms-tr{display:none}}
+</style>
+</head>
+
+<body class="bg-ink text-paper antialiased">
+<div class="ms-tr" id="msTr" aria-hidden="true"><div class="ms-tr__c"><div class="ms-tr__in"><p class="ms-tr__n"></p><p class="ms-tr__t"></p><p class="ms-tr__s"></p><svg class="ms-tr__sig" viewBox="0 0 380 95" focusable="false"><path d="M13.6 61.4C13.9 63.1 13.9 64.9 14.6 66.4C15.4 68.1 16.9 69.6 18.4 71C20 72.5 22 73.7 24 74.8C26.2 76 28.5 77.1 31 78C33.6 78.9 36.4 79.6 39.2 80C42.1 80.4 45.1 80.6 48 80.6C50.7 80.6 53.5 80.6 56 80C58.3 79.5 60.4 78.5 62.4 77.4C64.5 76.3 66.4 74.8 68.2 73.2C70 71.6 71.6 69.9 73 68C74.4 66.1 75.6 63.9 76.6 61.6C77.6 59.2 78.4 56.6 79 54C79.6 51.4 79.9 48.6 80 46C80.1 43.4 79.9 40.9 79.4 38.4C78.9 35.9 78.1 33.3 77 31C75.9 28.7 74.6 26.4 73 24.4C71.4 22.4 69.4 20.5 67.4 19C65.4 17.5 63.3 16.1 61 15.2C58.6 14.2 55.7 13.7 53 13.4C50.3 13.1 47.7 13.1 45 13.3C42.3 13.5 39.5 13.8 37 14.4C34.6 15 32.1 15.9 30 17C28 18.1 26.1 19.4 24.6 21C23.1 22.6 21.8 24.6 21 26.6C20.2 28.6 19.8 30.8 19.6 33C19.4 35.3 19.5 37.9 19.8 40C20.1 41.8 20.3 43.8 21.2 44.8C22 45.7 23.2 46 24.6 46.2C26.6 46.5 29.5 45.6 32 45.2C34.6 44.8 37.4 44.3 40 43.8C42.6 43.3 45.1 42.9 47.6 42.4" data-l="232.8" style="stroke-dasharray:232.8 232.8;stroke-dashoffset:232.8"/><path d="M22.6 48.2C24.7 49.1 26.7 50 29 50.8C31.5 51.7 34.3 52.6 37 53.4C39.7 54.2 42.4 54.9 45 55.6C47.4 56.2 49.8 56.7 52 57.2C53.9 57.6 55.6 58 57.4 58.4" data-l="38.4" style="stroke-dasharray:38.4 38.4;stroke-dashoffset:38.4"/><path d="M19.2 62.4C21.8 62.5 24.3 62.6 27 62.6C29.9 62.6 33 62.5 36 62.4C39 62.3 42.1 62.1 45 61.8C47.7 61.5 50.6 61.2 53 60.8C55 60.5 56.7 60.1 58.6 59.8" data-l="41.8" style="stroke-dasharray:41.8 41.8;stroke-dashoffset:41.8"/><path d="M61.3 38.8C60.6 40.4 59.8 41.9 59.2 43.6C58.5 45.5 57.9 47.6 57.4 49.6C56.9 51.6 56.3 53.7 56.2 55.6C56.1 57.3 56.1 59 56.7 60.3C57.2 61.5 58.1 62.7 59.2 63.3C60.4 63.9 62.2 64 63.6 63.8C65.1 63.6 66.7 62.8 68 62C69.2 61.2 70.2 59.6 71.2 58.8C71.9 58.2 72.5 57.5 73.2 57.6" data-l="44.9" style="stroke-dasharray:44.9 44.9;stroke-dashoffset:44.9"/><path d="M55.4 50.9C57.3 50.7 59 50.5 61 50.4C63.2 50.3 65.5 50.3 67.8 50.2" data-l="13.8" style="stroke-dasharray:13.8 13.8;stroke-dashoffset:13.8"/><path d="M73.2 57.6C73.9 57.7 74.7 58.8 75.4 59.6C76.2 60.5 76.8 61.9 77.8 62.6C78.7 63.2 79.9 63.6 81 63.6C82.1 63.6 83.3 63 84.4 62.4C85.6 61.8 86.7 60.7 87.8 60C88.8 59.3 89.9 58.3 90.8 58.2C91.5 58.1 92.3 58.3 92.9 58.7C93.6 59.2 93.8 60.4 94.5 61C95.3 61.6 96.6 62.1 97.8 62.2C99.3 62.4 101.3 62 103 61.6C104.9 61.2 106.8 60.3 108.6 59.6C110.4 58.9 112.3 58 114 57.2C115.5 56.5 117 55.4 118.2 55.2C119.1 55.1 120.1 55.1 120.6 55.6C121.2 56.1 120.9 57.6 121.4 58.4C121.9 59.2 122.8 59.9 123.8 60.2C125 60.6 126.9 60.3 128.4 60C129.9 59.7 131.2 59.3 132.6 58.6C134.1 57.9 135.4 56.5 137 55.6C138.6 54.7 140.3 53.8 142 53.4C143.7 53 146.1 52.6 147.4 53C148.4 53.3 149.5 54.1 149.6 54.8C149.7 55.5 148.7 56.6 147.8 57.2C146.5 58 143.8 57.8 142 58.2C140.4 58.6 138.5 58.8 137.4 59.6C136.5 60.3 135.6 61.6 135.6 62.6C135.6 63.6 136.7 64.9 137.8 65.6C139.1 66.4 141.2 66.6 143 66.6C144.8 66.6 146.9 66.3 148.6 65.6C150.2 65 151.6 63.9 152.8 62.8C153.9 61.8 154.7 60.1 155.6 59.4C156.2 58.9 156.9 58.3 157.4 58.4C158 58.5 158.3 59.7 159 60.2C159.7 60.7 160.6 61.2 161.6 61.2C162.8 61.2 164.4 60.4 165.6 59.8C166.8 59.3 167.8 58.3 168.8 58C169.5 57.8 170.3 57.7 170.9 58C171.6 58.3 171.7 59.6 172.4 60.2C173.2 60.8 174.5 61.4 175.6 61.4C176.8 61.5 178.1 60.3 179.2 60.4C180.2 60.5 181.1 61.1 181.8 61.8C182.5 62.6 183 64.2 183.2 65.4C183.4 66.6 183.3 68.2 182.8 69C182.4 69.6 181.4 70.2 181 70C180.6 69.8 180.2 68.8 180.2 68C180.2 67 181 65.5 181.8 64.4C182.7 63.2 184 61.9 185.4 61C186.8 60.1 188.4 59.4 190 59C191.7 58.5 193.8 58.3 195.6 58.4C197.2 58.5 199 58.6 200.2 59.2C201.2 59.7 201.7 60.7 202.4 61.4C203 62 203.3 62.8 204 63C204.7 63.2 205.7 62.8 206.6 62.4C207.6 62 208.6 61.1 209.6 60.4C210.6 59.7 211.3 58.9 212.6 58.4C214.3 57.7 216.8 57.4 219 57.2C221.2 57 223.8 56.8 225.6 57.2C227 57.5 228.7 57.9 229.2 58.8C229.7 59.6 229.5 61 229 61.8C228.4 62.8 226.8 63.7 225.4 64.2C223.6 64.9 221 65.1 219 65C217.1 64.9 214.6 64.8 213.6 64C212.9 63.5 212.4 62.4 212.6 61.8C212.9 61.1 214.7 60.8 216 60.6C217.7 60.3 220 60.7 222 60.8C224 60.9 226.2 61.2 228 61.4C229.6 61.6 231.2 61.6 232.4 62C233.4 62.4 234.1 63.4 235 63.6C235.9 63.8 236.9 63.6 237.8 63.2C238.8 62.7 239.6 61.3 240.6 60.4C241.5 59.6 242.5 58.3 243.4 58C244.1 57.8 245 58 245.6 58.4C246.3 58.8 246.6 60.2 247.4 60.6C248.4 61.1 249.9 61 251.2 61C252.7 61 254.5 60.1 256 60.2C257.4 60.3 258.5 61.2 260 61.4C261.7 61.6 263.7 61.2 265.6 61C267.7 60.7 269.9 60.3 272 59.8C273.9 59.3 276.1 58.4 277.6 58.2C278.6 58.1 279.6 57.9 280.2 58.4C280.9 58.9 280.7 60.7 281.4 61.6C282.1 62.6 283.2 63.7 284.6 64.2C286.3 64.9 288.8 64.4 291 64.6C293.3 64.8 295.9 64.8 298 65.2C299.7 65.6 301 66.4 302.6 66.8C304.3 67.2 306.4 67.2 308 67.6C309.5 68 311 68.2 312 69C313 69.8 313.1 71.3 314 72.2C314.9 73.1 316.3 74 317.6 74.2C319 74.4 320.7 73.9 322 73.2C323.4 72.4 324.8 71 325.8 69.4C327.1 67.4 328 64.7 328.6 62C329.3 59 329.5 55.2 329.4 52C329.3 48.9 328.7 45.6 328 43C327.5 40.9 326.9 37.9 326 37.6C325.5 37.4 324.6 37.9 324.2 38.6C323.5 39.7 323.7 42.7 323.8 45C323.9 47.7 324.2 51.1 324.8 54C325.3 56.8 326.1 59.5 327 62C327.9 64.4 329.1 66.8 330 69C330.8 70.9 331.3 72.6 332 74.4" data-l="465.4" style="stroke-dasharray:465.4 465.4;stroke-dashoffset:465.4"/><path d="M332.2 64.2C333.7 62.8 335 61.1 336.6 60C338.1 58.9 340 57.8 341.6 57.4C343 57.1 345 56.9 345.6 57.6C346.1 58.2 345.9 59.9 345.4 60.8C344.7 62 342.5 63.1 341 63.8C339.6 64.5 336.7 64.4 336.6 65C336.5 65.6 338.4 66.5 339.6 67.4C341.1 68.5 343.2 69.7 345 71C347 72.4 349 74.1 351 75.6C353 77.1 355.1 78.6 357 80C358.7 81.3 360.3 82.4 362 83.6" data-l="63.6" style="stroke-dasharray:63.6 63.6;stroke-dashoffset:63.6"/></svg></div></div></div>
+<script>
+/* Przejście z kontekstem między projektem a portfolio: ta sama kurtyna i ten sam podpis-loader co na stronach głównych. */
+function msSig(c){var P=c.querySelectorAll('path'),L=[],T=0,t0=0,fin=null,raf=0,i;for(i=0;i<P.length;i++){L[i]=+P[i].getAttribute('data-l');T+=L[i]}function set(v){var d=v*T,j,l,k;for(j=0;j<P.length;j++){l=L[j];k=d<=0?0:d>=l?1:d/l;d-=l;P[j].style.strokeDashoffset=(l*(1-k)).toFixed(1)}}function pw(t){t-=100;return t<=0?0:.9*(1-Math.exp(-t/450))}function end(){var f=fin;fin=null;if(f&&f.cb){var cb=f.cb;f.cb=null;cb()}}function tick(){raf=0;var now=Date.now();if(fin){var k=Math.min(1,(now-fin.t)/fin.d);set(fin.p+(1-fin.p)*(1-Math.pow(1-k,3)));if(k>=1){end();return}}else if(t0)set(pw(now-t0));else return;raf=requestAnimationFrame(tick)}function go(){if(!raf)raf=requestAnimationFrame(tick)}return{start:function(t){t0=t||Date.now();fin=null;set(pw(Date.now()-t0));go()},finish:function(cb){var now=Date.now(),p=t0?pw(now-t0):0,d=150+380*(1-p),f={t:now,p:p,d:d,cb:cb};fin=f;go();setTimeout(function(){if(fin===f){set(1);end()}},d+450)},stop:function(){if(raf)cancelAnimationFrame(raf);raf=0;fin=null;t0=0},set:set}}
+(function(){
+  var tr=document.getElementById('msTr'); if(!tr) return;
+  try{document.fonts.load('600 1em "Inter C"');document.fonts.load('1em "Mono C"')}catch(e){}
+  var me=(location.pathname.split('/').pop()||'').replace(/\.html?$/i,'');
+  var EN=false; try{EN=localStorage.getItem('ms-lang')==='en'}catch(e){}
+  var L={
+    'luxe-salon':['\u2197','Luxe Salon',EN?'Concept project \u00b7 beauty salon':'Projekt koncepcyjny \u00b7 salon urody'],
+    'vesper-barber':['\u2197','Vesper Barber',EN?'Concept project \u00b7 barber':'Projekt koncepcyjny \u00b7 barber'],
+    'zar-burger':['\u2197','\u017bAR Burger',EN?'Concept project \u00b7 burger joint':'Projekt koncepcyjny \u00b7 burgerownia'],
+    index:['00',EN?'Home':'Start',EN?'Websites that work while you rest.':'Strony, kt\u00f3re pracuj\u0105, kiedy Ty odpoczywasz.'],
+    prace:['01',EN?'Work':'Prace',EN?'Scroll a project the way your customer would.':'Przewi\u0144 projekt tak, jak zrobi\u0142by to Tw\u00f3j klient.'],
+    kontakt:['05',EN?'Contact':'Kontakt',EN?'See your new website before you spend a penny.':'Zobacz swoj\u0105 now\u0105 stron\u0119, zanim wydasz z\u0142ot\u00f3wk\u0119.']
+  };
+  var p=tr.getElementsByTagName('p');
+  function label(k){var l=L[k]||['','',''];p[0].textContent='('+l[0]+')';p[1].textContent=l[1];p[1].className='ms-tr__t'+(l[1].length>9?' is-long':'');p[2].textContent=l[2];}
+  var framed=false; try{framed=window.top!==window.self}catch(e){framed=true}
+  if(framed){var st=document.createElement('style');st.textContent='.ms-demo,.ms-toast{display:none!important}html,body{overflow-x:hidden!important;max-width:100%}';document.head.appendChild(st);return;}
+  var sig=msSig(tr.querySelector('.ms-tr__sig'));
+  var RM=!!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
+  function out(){var done=false;return function(){if(done)return;done=true;requestAnimationFrame(function(){tr.classList.add('is-out');setTimeout(function(){tr.className='ms-tr';sig.stop();sig.set(0)},900)})}}
+  var s=null; try{s=JSON.parse(sessionStorage.getItem('ms-nav'))}catch(e){}
+  if(s&&s.to===me&&Date.now()-s.t<9000&&!RM){
+    try{sessionStorage.removeItem('ms-nav')}catch(e){}
+    label(me); tr.className='ms-tr is-cover'; sig.start(+s.t||Date.now());
+    var go=out(), fin=function(){sig.finish(go);setTimeout(go,1500)};
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fin);else fin();
+  }
+  document.addEventListener('click',function(e){
+    if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+    var a=e.target.closest&&e.target.closest('a[data-ms-go]'); if(!a||RM)return;
+    e.preventDefault(); var k=a.getAttribute('data-ms-go'); label(k);
+    var t0=Date.now();
+    try{sessionStorage.setItem('ms-nav',JSON.stringify({to:k,from:me,dir:'back',t:t0}))}catch(err){}
+    tr.className='ms-tr is-back'; void tr.offsetWidth; tr.classList.add('is-in'); sig.start(t0);
+    var href=a.href; setTimeout(function(){location.href=href},680);
+  });
+  window.addEventListener('pageshow',function(e){if(e.persisted&&tr.classList.contains('is-in')){tr.className='ms-tr is-cover';sig.finish(out())}});
+})();
+</script>
+
+
+<!-- ════ NAVBAR ════ -->
+<header x-data="{open:false,sc:false}" @scroll.window="sc=(window.scrollY>40)"
+        :class="sc?'glass border-b border-white/10':'bg-transparent'"
+        class="fixed top-0 inset-x-0 z-50 transition-all duration-500">
+  <nav class="max-w-7xl mx-auto px-5 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
+    <a href="#hero" class="display text-xl sm:text-2xl font-extrabold tracking-tightest">VESPER<span class="text-gold">.</span></a>
+    <div class="hidden md:flex items-center gap-9 text-paper/70">
+      <a href="#about" class="nav-link hover:text-paper transition">O nas</a>
+      <a href="#services" class="nav-link hover:text-paper transition">Usługi</a>
+      <a href="#gallery" class="nav-link hover:text-paper transition">Galeria</a>
+      <a href="#team" class="nav-link hover:text-paper transition">Zespół</a>
+      <a href="#contact" class="nav-link hover:text-paper transition">Kontakt</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="#book" class="btn btn-solid hidden sm:inline-flex !py-2.5 !px-5 !text-[.72rem]"><span>Umów się</span></a>
+      <button @click="open=!open" class="md:hidden p-2 -mr-2" :aria-expanded="open.toString()" :aria-label="open ? 'Zamknij menu' : 'Otwórz menu'" aria-label="Otwórz menu">
+        <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"/></svg>
+        <svg x-show="open" x-cloak class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18 18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div x-show="open" x-cloak x-transition.opacity @click="open=false" class="md:hidden glass border-t border-white/10">
+    <div class="px-6 py-6 flex flex-col gap-5 sign uppercase tracking-widest text-lg">
+      <a href="#about" class="hover:text-gold">O nas</a><a href="#services" class="hover:text-gold">Usługi</a>
+      <a href="#gallery" class="hover:text-gold">Galeria</a><a href="#team" class="hover:text-gold">Zespół</a>
+      <a href="#contact" class="hover:text-gold">Kontakt</a>
+      <a href="#book" class="btn btn-solid w-max mt-2"><span>Umów się</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ════ HERO (zachowany koncept) ════ -->
+<section id="hero" class="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1920&q=80" alt="Wnętrze barbershopu VESPER" class="w-full h-full object-cover grayscale" loading="eager"/>
+    <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-ink/70"></div>
+  </div>
+  <div class="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 w-full">
+    <p class="rv eyebrow text-gold text-xs sm:text-sm mb-6">Barber Atelier · Est. 2014 · Warszawa</p>
+    <h1 class="rv display text-[13.4vw] sm:text-[11vw] lg:text-[9rem] font-extrabold">
+      PRECYZJA<br><span class="text-paper/40">&</span> CHARAKTER
+    </h1>
+    <p class="rv mt-6 mx-auto max-w-xl text-base sm:text-lg text-paper/70 leading-relaxed">
+      Strzyżenie, broda i golenie brzytwą na najwyższym poziomie. Miejsce, gdzie rzemiosło spotyka rytuał.
+    </p>
+    <div class="rv mt-9 flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#book" class="btn btn-solid"><span>Umów wizytę</span><span>↗</span></a>
+      <a href="#services" class="btn btn-line"><span>Zobacz usługi</span></a>
+    </div>
+  </div>
+  <div class="absolute bottom-6 right-6 z-10 hidden sm:flex items-center gap-2 sign uppercase tracking-[.3em] text-xs text-paper/50">
+    <span>Scroll</span><span class="w-8 h-px bg-paper/50"></span>
+  </div>
+</section>
+
+<!-- ════ MARQUEE ════ -->
+<div class="bg-wine text-paper py-3 overflow-hidden border-y border-white/10">
+  <div class="mq sign uppercase tracking-[.28em] text-sm">
+    <span class="flex shrink-0">
+      <span class="mx-8">Strzyżenie klasyczne</span><span class="mx-8 text-gold">✦</span>
+      <span class="mx-8">Modelowanie brody</span><span class="mx-8 text-gold">✦</span>
+      <span class="mx-8">Golenie brzytwą</span><span class="mx-8 text-gold">✦</span>
+      <span class="mx-8">Rytuał gorącego ręcznika</span><span class="mx-8 text-gold">✦</span>
+    </span>
+    <span class="flex shrink-0" aria-hidden="true">
+      <span class="mx-8">Strzyżenie klasyczne</span><span class="mx-8 text-gold">✦</span>
+      <span class="mx-8">Modelowanie brody</span><span class="mx-8 text-gold">✦</span>
+      <span class="mx-8">Golenie brzytwą</span><span class="mx-8 text-gold">✦</span>
+      <span class="mx-8">Rytuał gorącego ręcznika</span><span class="mx-8 text-gold">✦</span>
+    </span>
+  </div>
+</div>
+
+<!-- ════ O NAS ════ -->
+<section id="about" class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-36">
+  <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+    <div class="rv img-zoom order-2 lg:order-1">
+      <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=80" alt="Barber przy pracy" class="w-full h-[460px] sm:h-[560px] object-cover grayscale hover:grayscale-0" loading="lazy"/>
+    </div>
+    <div class="order-1 lg:order-2">
+      <p class="rv eyebrow text-gold text-xs mb-6">— O nas</p>
+      <h2 class="rv display text-4xl sm:text-6xl font-extrabold mb-8">Rzemiosło, które<br>nie wybacza skrótów.</h2>
+      <p class="rv text-paper/70 leading-relaxed mb-5">VESPER zaczęło się od jednego fotela i przekonania, że dobre strzyżenie to nie usługa, a doświadczenie. Dziś jesteśmy atelier, w którym każdy detal — od ostrza brzytwy po temperaturę ręcznika — ma znaczenie.</p>
+      <p class="rv text-paper/70 leading-relaxed mb-10">Nie śpieszymy się. Słuchamy. Pracujemy w skupieniu, bo precyzja wymaga uwagi. To miejsce dla mężczyzn, którzy wiedzą, czego chcą.</p>
+      <div class="rv grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
+        <div><p class="sign text-5xl font-bold text-gold">10+</p><p class="eyebrow text-[.62rem] text-muted mt-2">lat / atelier</p></div>
+        <div><p class="sign text-5xl font-bold text-gold">12k</p><p class="eyebrow text-[.62rem] text-muted mt-2">klientów</p></div>
+        <div><p class="sign text-5xl font-bold text-gold">6</p><p class="eyebrow text-[.62rem] text-muted mt-2">barberów</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ USŁUGI ════ -->
+<section id="services" class="bg-coal border-y border-white/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-36">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
+      <div>
+        <p class="rv eyebrow text-gold text-xs mb-6">— Cennik</p>
+        <h2 class="rv display text-4xl sm:text-6xl font-extrabold">Usługi &amp; rytuały</h2>
+      </div>
+      <p class="rv max-w-sm text-paper/60 text-sm">Każda wizyta zawiera konsultację, napój i finisz stylizacyjny. Ceny „od".</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-px bg-white/10">
+      <!-- karta -->
+      <div class="ticked rv group bg-coal hover:bg-ink transition-colors duration-300 p-8 sm:p-10">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="sign text-2xl font-semibold uppercase tracking-wide group-hover:text-gold transition">Strzyżenie klasyczne</h3>
+          <span class="sign text-2xl font-bold text-gold whitespace-nowrap">120 zł</span>
+        </div>
+        <p class="text-paper/55 text-sm mt-3 leading-relaxed">Konsultacja, mycie, precyzyjne cięcie i stylizacja pod kształt twarzy.</p>
+        <p class="eyebrow text-[.6rem] text-muted mt-4">45 min</p>
+      </div>
+      <div class="ticked rv group bg-coal hover:bg-ink transition-colors duration-300 p-8 sm:p-10">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="sign text-2xl font-semibold uppercase tracking-wide group-hover:text-gold transition">Modelowanie brody</h3>
+          <span class="sign text-2xl font-bold text-gold whitespace-nowrap">80 zł</span>
+        </div>
+        <p class="text-paper/55 text-sm mt-3 leading-relaxed">Konturowanie brzytwą, przycięcie i pielęgnacja olejkiem oraz balsamem.</p>
+        <p class="eyebrow text-[.6rem] text-muted mt-4">30 min</p>
+      </div>
+      <div class="ticked rv group bg-coal hover:bg-ink transition-colors duration-300 p-8 sm:p-10">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="sign text-2xl font-semibold uppercase tracking-wide group-hover:text-gold transition">Golenie brzytwą</h3>
+          <span class="sign text-2xl font-bold text-gold whitespace-nowrap">100 zł</span>
+        </div>
+        <p class="text-paper/55 text-sm mt-3 leading-relaxed">Tradycyjny rytuał z gorącym ręcznikiem, olejkiem i kojącym balsamem.</p>
+        <p class="eyebrow text-[.6rem] text-muted mt-4">40 min</p>
+      </div>
+      <div class="ticked rv group bg-coal hover:bg-ink transition-colors duration-300 p-8 sm:p-10">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="sign text-2xl font-semibold uppercase tracking-wide group-hover:text-gold transition">Strzyżenie + broda</h3>
+          <span class="sign text-2xl font-bold text-gold whitespace-nowrap">180 zł</span>
+        </div>
+        <p class="text-paper/55 text-sm mt-3 leading-relaxed">Kompletny zabieg — pełna metamorfoza włosów i brody w jednej wizycie.</p>
+        <p class="eyebrow text-[.6rem] text-muted mt-4">70 min</p>
+      </div>
+      <div class="ticked rv group bg-coal hover:bg-ink transition-colors duration-300 p-8 sm:p-10">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="sign text-2xl font-semibold uppercase tracking-wide group-hover:text-gold transition">Koloryzacja / siwizna</h3>
+          <span class="sign text-2xl font-bold text-gold whitespace-nowrap">od 150 zł</span>
+        </div>
+        <p class="text-paper/55 text-sm mt-3 leading-relaxed">Subtelne tonowanie lub kamuflaż siwizny — naturalny, męski efekt.</p>
+        <p class="eyebrow text-[.6rem] text-muted mt-4">60 min</p>
+      </div>
+      <div class="ticked rv group bg-coal hover:bg-ink transition-colors duration-300 p-8 sm:p-10">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="sign text-2xl font-semibold uppercase tracking-wide group-hover:text-gold transition">Rytuał VESPER</h3>
+          <span class="sign text-2xl font-bold text-gold whitespace-nowrap">260 zł</span>
+        </div>
+        <p class="text-paper/55 text-sm mt-3 leading-relaxed">Pełne doświadczenie: strzyżenie, broda, golenie, peeling twarzy i masaż głowy.</p>
+        <p class="eyebrow text-[.6rem] text-muted mt-4">90 min</p>
+      </div>
+    </div>
+    <div class="rv mt-12"><a href="#book" class="btn btn-line"><span>Zarezerwuj termin</span><span>↗</span></a></div>
+  </div>
+</section>
+
+<!-- ════ GALERIA ════ -->
+<section id="gallery" class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-36">
+  <div class="mb-16">
+    <p class="rv eyebrow text-gold text-xs mb-6">— Galeria</p>
+    <h2 class="rv display text-4xl sm:text-6xl font-extrabold">Detal ma znaczenie</h2>
+  </div>
+  <div class="masonry">
+    <div class="rv img-zoom"><img src="https://images.unsplash.com/photo-1621607512214-68297480165e?auto=format&fit=crop&w=800&q=80" alt="Detal strzyżenia" class="w-full grayscale hover:grayscale-0" loading="lazy"/></div>
+    <div class="rv img-zoom"><img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=80" alt="Narzędzia barberskie" class="w-full" loading="lazy"/></div>
+    <div class="rv img-zoom"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=800&q=80" alt="Fotel barberski" class="w-full grayscale hover:grayscale-0" loading="lazy"/></div>
+    <div class="rv img-zoom"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=800&q=80" alt="Mężczyzna z brodą" class="w-full" loading="lazy"/></div>
+    <div class="rv img-zoom"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80" alt="Barber przy pracy" class="w-full grayscale hover:grayscale-0" loading="lazy"/></div>
+    <div class="rv img-zoom"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80" alt="Wnętrze barbershopu" class="w-full" loading="lazy"/></div>
+  </div>
+</section>
+
+<!-- ════ ZESPÓŁ ════ -->
+<section id="team" class="bg-coal border-y border-white/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-36">
+    <div class="mb-16">
+      <p class="rv eyebrow text-gold text-xs mb-6">— Zespół</p>
+      <h2 class="rv display text-4xl sm:text-6xl font-extrabold">Mistrzowie ostrza</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="rv group">
+        <div class="img-zoom mb-5"><img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&w=700&q=80" alt="Marek" class="w-full h-[420px] object-cover grayscale group-hover:grayscale-0" loading="lazy"/></div>
+        <div class="flex items-baseline justify-between"><h3 class="sign text-2xl font-semibold uppercase tracking-wide">Marek Wiśniewski</h3><span class="sign text-sm text-muted">№ 01</span></div>
+        <p class="eyebrow text-[.62rem] text-gold mt-2">Master · założyciel</p>
+        <p class="text-paper/55 text-sm mt-3">Klasyczne fade i golenie brzytwą. 14 lat praktyki.</p>
+      </div>
+      <div class="rv group">
+        <div class="img-zoom mb-5"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80" alt="Tomasz" class="w-full h-[420px] object-cover grayscale group-hover:grayscale-0" loading="lazy"/></div>
+        <div class="flex items-baseline justify-between"><h3 class="sign text-2xl font-semibold uppercase tracking-wide">Tomasz Lewandowski</h3><span class="sign text-sm text-muted">№ 02</span></div>
+        <p class="eyebrow text-[.62rem] text-gold mt-2">Senior barber</p>
+        <p class="text-paper/55 text-sm mt-3">Mistrz brody i teksturowanych cięć. Perfekcjonista detalu.</p>
+      </div>
+      <div class="rv group">
+        <div class="img-zoom mb-5"><img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=700&q=80" alt="Kacper" class="w-full h-[420px] object-cover grayscale group-hover:grayscale-0" loading="lazy"/></div>
+        <div class="flex items-baseline justify-between"><h3 class="sign text-2xl font-semibold uppercase tracking-wide">Kacper Nowak</h3><span class="sign text-sm text-muted">№ 03</span></div>
+        <p class="eyebrow text-[.62rem] text-gold mt-2">Barber · stylista</p>
+        <p class="text-paper/55 text-sm mt-3">Nowoczesne stylizacje i koloryzacja. Zawsze na bieżąco z trendami.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ OPINIE ════ -->
+<section id="reviews" class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-36">
+  <div class="mb-16 text-center">
+    <p class="rv eyebrow text-gold text-xs mb-6">— Opinie</p>
+    <h2 class="rv display text-4xl sm:text-6xl font-extrabold">Co mówią klienci</h2>
+  </div>
+  <div class="grid md:grid-cols-3 gap-8">
+    <figure class="ticked rv border border-white/10 p-8 hover:border-gold/40 transition">
+      <div class="sign text-gold text-lg tracking-widest mb-4">★★★★★</div>
+      <blockquote class="text-paper/80 leading-relaxed">„Najlepsze strzyżenie w mieście. Atmosfera, precyzja i dbałość o klienta na poziomie, jakiego nie spotkałem nigdzie indziej.”</blockquote>
+      <figcaption class="eyebrow text-[.62rem] text-muted mt-6">— Paweł K.</figcaption>
+    </figure>
+    <figure class="ticked rv border border-white/10 p-8 hover:border-gold/40 transition">
+      <div class="sign text-gold text-lg tracking-widest mb-4">★★★★★</div>
+      <blockquote class="text-paper/80 leading-relaxed">„Golenie brzytwą to czysty rytuał. Wychodzę odprężony i wyglądam bezbłędnie. Polecam każdemu.”</blockquote>
+      <figcaption class="eyebrow text-[.62rem] text-muted mt-6">— Michał R.</figcaption>
+    </figure>
+    <figure class="ticked rv border border-white/10 p-8 hover:border-gold/40 transition">
+      <div class="sign text-gold text-lg tracking-widest mb-4">★★★★★</div>
+      <blockquote class="text-paper/80 leading-relaxed">„Profesjonalizm w każdym calu. Marek dokładnie wie, co robi. VESPER to mój stały adres.”</blockquote>
+      <figcaption class="eyebrow text-[.62rem] text-muted mt-6">— Jakub W.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ════ BOOK NOW ════ -->
+<section id="book" class="bg-wine border-y border-white/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-36">
+    <div class="grid lg:grid-cols-2 gap-14 lg:gap-20">
+      <div>
+        <p class="rv eyebrow text-paper/70 text-xs mb-6">— Rezerwacja</p>
+        <h2 class="rv display text-4xl sm:text-6xl font-extrabold mb-8">Zarezerwuj<br>swój termin</h2>
+        <p class="rv text-paper/85 leading-relaxed mb-8 max-w-md">Wybierz dzień i godzinę, a my zadbamy o resztę. Potwierdzenie otrzymasz SMS-em. Wolisz telefon? <a href="tel:+48600100200" class="sign tracking-wide border-b border-paper/50 hover:border-gold hover:text-gold transition">+48 600 100 200</a>.</p>
+        <div class="rv bg-ink/30 border border-paper/20 p-6" x-data="cal()">
+          <div class="flex items-center justify-between mb-5 sign uppercase tracking-wide text-sm">
+            <button type="button" @click="prev()" :disabled="!canPrev" class="cal-nav px-2 hover:text-gold transition" aria-label="Poprzedni miesiąc">‹ Poprz.</button>
+            <span class="font-semibold" x-text="label" aria-live="polite"></span>
+            <button type="button" @click="next()" :disabled="!canNext" class="cal-nav px-2 hover:text-gold transition" aria-label="Następny miesiąc">Nast. ›</button>
+          </div>
+          <div class="grid grid-cols-7 gap-1 text-center sign uppercase text-[.65rem] text-paper/60 mb-2">
+            <span>Pn</span><span>Wt</span><span>Śr</span><span>Cz</span><span>Pt</span><span>So</span><span>Nd</span>
+          </div>
+          <div class="grid grid-cols-7 gap-1">
+            <template x-for="b in blanks" :key="'b'+b"><span></span></template>
+            <template x-for="d in days" :key="d">
+              <button type="button" @click="pick(d)" :disabled="off(d)" :aria-pressed="(sel===d).toString()" :aria-label="d + ' ' + gen" :class="[sel===d?'bg-paper text-ink font-bold':'hover:bg-paper/10', isToday(d)?'is-today':'']" class="cal-day aspect-square text-base sign flex items-center justify-center transition cursor-pointer" x-text="d"></button>
+            </template>
+          </div>
+          <p class="mt-4 sign uppercase tracking-wide text-xs text-paper/80" x-show="sel" x-cloak>Wybrano: <span class="text-gold" x-text="chosen"></span></p>
+          <p class="mt-4 sign uppercase tracking-wide text-xs text-paper/60" x-show="!sel">Pon. i niedz. — zamknięte</p>
+        </div>
+      </div>
+      <form class="rv space-y-5" id="bookForm" novalidate>
+        <input type="hidden" name="date" id="bk-date">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label class="block"><span class="eyebrow text-[.6rem] text-paper/70">Imię i nazwisko</span><input required name="name" autocomplete="name" class="mt-2 w-full bg-ink/30 border border-paper/25 px-4 py-3 focus:border-gold outline-none transition" placeholder="Jan Kowalski"/></label>
+          <label class="block"><span class="eyebrow text-[.6rem] text-paper/70">Telefon</span><input type="tel" required name="phone" autocomplete="tel" class="mt-2 w-full bg-ink/30 border border-paper/25 px-4 py-3 focus:border-gold outline-none transition" placeholder="+48 600 000 000"/></label>
+        </div>
+        <label class="block"><span class="eyebrow text-[.6rem] text-paper/70">E-mail</span><input type="email" required name="email" autocomplete="email" class="mt-2 w-full bg-ink/30 border border-paper/25 px-4 py-3 focus:border-gold outline-none transition" placeholder="jan@email.com"/></label>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label class="block"><span class="eyebrow text-[.6rem] text-paper/70">Usługa</span>
+            <select required name="service" id="bk-service" class="mt-2 w-full bg-ink/30 border border-paper/25 px-4 py-3 focus:border-gold outline-none transition">
+              <option value="">Wybierz…</option><option>Strzyżenie klasyczne</option><option>Modelowanie brody</option><option>Golenie brzytwą</option><option>Strzyżenie + broda</option><option>Koloryzacja / siwizna</option><option>Rytuał VESPER</option>
+            </select></label>
+          <label class="block"><span class="eyebrow text-[.6rem] text-paper/70">Godzina</span>
+            <select required name="time" id="bk-time" class="mt-2 w-full bg-ink/30 border border-paper/25 px-4 py-3 focus:border-gold outline-none transition">
+              <option value="">Wybierz…</option><option>10:00</option><option>10:30</option><option>11:00</option><option>11:30</option><option>12:00</option><option>12:30</option><option>13:00</option><option>13:30</option><option>14:00</option><option>14:30</option><option>15:00</option><option>15:30</option><option>16:00</option><option>16:30</option><option>17:00</option><option>17:30</option><option>18:00</option><option>18:30</option><option>19:00</option>
+            </select></label>
+        </div>
+        <label class="block"><span class="eyebrow text-[.6rem] text-paper/70">Uwagi</span><textarea rows="3" name="notes" class="mt-2 w-full bg-ink/30 border border-paper/25 px-4 py-3 focus:border-gold outline-none transition resize-none" placeholder="Np. preferowany barber…"></textarea></label>
+        <button type="submit" class="btn btn-onwine w-full sm:w-auto"><span>Potwierdź rezerwację</span><span>↗</span></button>
+        <p id="err" class="hidden eyebrow text-[.7rem] text-paper bg-ink/40 border border-paper/20 px-4 py-3" role="alert"></p>
+        <p id="ok" class="hidden eyebrow text-[.7rem] text-paper bg-ink/40 border border-gold/50 px-4 py-3 leading-relaxed" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ════ KONTAKT + MAPA ════ -->
+<section id="contact" class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-36">
+  <div class="grid lg:grid-cols-2 gap-14 items-start">
+    <div>
+      <p class="rv eyebrow text-gold text-xs mb-6">— Kontakt</p>
+      <h2 class="rv display text-4xl sm:text-6xl font-extrabold mb-10">Znajdź nas</h2>
+      <div class="rv space-y-7 text-paper/80">
+        <div><p class="eyebrow text-[.6rem] text-muted mb-1">Adres</p><p class="text-lg">ul. Mokotowska 12, 00-561 Warszawa</p></div>
+        <div><p class="eyebrow text-[.6rem] text-muted mb-1">Godziny</p><p class="text-lg">Wt – Sob · 10:00 – 20:00</p><p class="text-paper/60">Niedz. – Pon · zamknięte</p></div>
+        <div><p class="eyebrow text-[.6rem] text-muted mb-1">Telefon</p><a href="tel:+48600100200" class="text-lg sign tracking-wide hover:text-gold transition">+48 600 100 200</a></div>
+        <div><p class="eyebrow text-[.6rem] text-muted mb-1">E-mail</p><a href="mailto:kontakt@vesper.pl" class="text-lg sign tracking-wide hover:text-gold transition">kontakt@vesper.pl</a></div>
+        <div class="flex gap-3 pt-2 sign uppercase tracking-widest text-xs">
+          <a href="#" data-demo="W wersji dla klienta ten przycisk otwiera Instagram barbershopu." class="px-4 py-2 border border-white/20 hover:border-gold hover:text-gold transition">Instagram</a>
+          <a href="#" data-demo="W wersji dla klienta ten przycisk otwiera Facebooka barbershopu." class="px-4 py-2 border border-white/20 hover:border-gold hover:text-gold transition">Facebook</a>
+          <a href="#" data-demo="W wersji dla klienta ten przycisk otwiera TikToka barbershopu." class="px-4 py-2 border border-white/20 hover:border-gold hover:text-gold transition">TikTok</a>
+        </div>
+      </div>
+    </div>
+    <div class="rv img-zoom border border-white/10 h-[420px] sm:h-[520px]">
+      <iframe title="Mapa VESPER" src="https://www.google.com/maps?q=Mokotowska%2012%20Warszawa&output=embed" class="w-full h-full grayscale invert-[.92] hover:grayscale-0 hover:invert-0 transition duration-500" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ════ STOPKA ════ -->
+<footer class="bg-coal border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16">
+    <div class="flex flex-col md:flex-row justify-between gap-10">
+      <div>
+        <a href="#hero" class="display text-3xl font-extrabold tracking-tightest">VESPER<span class="text-gold">.</span></a>
+        <p class="text-paper/50 text-sm mt-4 max-w-xs">Barber Atelier. Precyzja, charakter, rytuał. Warszawa, od 2014.</p>
+      </div>
+      <div class="flex gap-14 sign uppercase tracking-wide text-sm text-paper/70">
+        <div><p class="eyebrow text-[.6rem] text-muted mb-4">Menu</p>
+          <ul class="space-y-2"><li><a href="#about" class="hover:text-gold transition">O nas</a></li><li><a href="#services" class="hover:text-gold transition">Usługi</a></li><li><a href="#gallery" class="hover:text-gold transition">Galeria</a></li><li><a href="#book" class="hover:text-gold transition">Rezerwacja</a></li></ul>
+        </div>
+        <div><p class="eyebrow text-[.6rem] text-muted mb-4">Kontakt</p>
+          <ul class="space-y-2"><li>Mokotowska 12</li><li>Warszawa</li><li><a href="tel:+48600100200" class="hover:text-gold transition">600 100 200</a></li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="hairline my-10"></div>
+    <div class="flex flex-col sm:flex-row justify-between gap-4 eyebrow text-[.6rem] text-muted">
+      <p>© 2026 VESPER Barber Atelier</p><p>Zaprojektowano z dbałością o detal</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* GSAP reveal */
+document.addEventListener('DOMContentLoaded',()=>{
+  if(window.gsap&&window.ScrollTrigger){
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('.rv').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%'}}));
+    gsap.to('#hero .rv',{opacity:1,y:0,duration:1.1,stagger:.1,ease:'power3.out',delay:.15});
+  } else { document.querySelectorAll('.rv').forEach(el=>{el.style.opacity=1;el.style.transform='none';}); }
+});
+/* kalendarz rezerwacji — bez przeszłych dni oraz poniedziałków i niedziel (zamknięte) */
+function cal(){ const now=new Date(); now.setHours(0,0,0,0); return {
+  date:new Date(now.getFullYear(),now.getMonth(),1), sel:null, today:now,
+  mn:['Styczeń','Luty','Marzec','Kwiecień','Maj','Czerwiec','Lipiec','Sierpień','Wrzesień','Październik','Listopad','Grudzień'],
+  mg:['stycznia','lutego','marca','kwietnia','maja','czerwca','lipca','sierpnia','września','października','listopada','grudnia'],
+  dn:['niedz.','pon.','wt.','śr.','czw.','pt.','sob.'],
+  get label(){ return this.mn[this.date.getMonth()]+' '+this.date.getFullYear(); },
+  get gen(){ return this.mg[this.date.getMonth()]+' '+this.date.getFullYear(); },
+  get dim(){ return new Date(this.date.getFullYear(),this.date.getMonth()+1,0).getDate(); },
+  get days(){ return Array.from({length:this.dim},(_,i)=>i+1); },
+  get blanks(){ let f=new Date(this.date.getFullYear(),this.date.getMonth(),1).getDay(); f=f===0?6:f-1; return Array.from({length:f},(_,i)=>i+1); },
+  get canPrev(){ return this.date > new Date(this.today.getFullYear(),this.today.getMonth(),1); },
+  get canNext(){ return this.date < new Date(this.today.getFullYear(),this.today.getMonth()+3,1); },
+  dayDate(d){ return new Date(this.date.getFullYear(),this.date.getMonth(),d); },
+  off(d){ const x=this.dayDate(d), w=x.getDay(); return x < this.today || w===0 || w===1; },
+  isToday(d){ return this.dayDate(d).getTime()===this.today.getTime(); },
+  get chosen(){ if(!this.sel) return ''; const x=this.dayDate(this.sel); return this.dn[x.getDay()]+', '+this.sel+' '+this.mg[x.getMonth()]; },
+  pick(d){ if(this.off(d)) return; this.sel=d; const x=this.dayDate(d); const iso=x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');
+    const h=document.getElementById('bk-date'); h.value=iso; h.dataset.label=this.chosen; document.getElementById('err').classList.add('hidden'); },
+  prev(){ if(!this.canPrev) return; this.date=new Date(this.date.getFullYear(),this.date.getMonth()-1,1); this.sel=null; document.getElementById('bk-date').value=''; },
+  next(){ if(!this.canNext) return; this.date=new Date(this.date.getFullYear(),this.date.getMonth()+1,1); this.sel=null; document.getElementById('bk-date').value=''; },
+};}
+/* formularz rezerwacji */
+document.addEventListener('DOMContentLoaded',()=>{
+  const f=document.getElementById('bookForm'); if(!f) return;
+  const err=document.getElementById('err'), ok=document.getElementById('ok');
+  f.addEventListener('submit',e=>{
+    e.preventDefault();
+    const el=k=>f.elements.namedItem(k); const d=el('date').value, name=el('name').value.trim(), phone=el('phone').value.replace(/\D/g,'');
+    let msg='';
+    if(!d) msg='Wybierz dzień w kalendarzu obok.';
+    else if(name.length<2) msg='Podaj imię i nazwisko.';
+    else if(phone.length<9) msg='Podaj numer telefonu — wyślemy SMS z potwierdzeniem.';
+    else if(!el('service').value) msg='Wybierz usługę.';
+    else if(!el('time').value) msg='Wybierz godzinę wizyty.';
+    if(msg){ err.textContent=msg; err.classList.remove('hidden'); ok.classList.add('hidden'); return; }
+    err.classList.add('hidden');
+    ok.textContent='✓ Dziękujemy, '+name.split(' ')[0]+'! '+el('service').value+' — '+(el('date').dataset.label||d)+', godz. '+el('time').value+'. Potwierdzimy termin SMS-em.';
+    ok.classList.remove('hidden');
+    f.reset();
+  });
+  /* „Zarezerwuj termin” pod usługami ustawia wybraną usługę */
+  document.querySelectorAll('#services .ticked').forEach(card=>{
+    card.style.cursor='pointer';
+    card.addEventListener('click',()=>{ const t=card.querySelector('h3').textContent.trim(); const sel=document.getElementById('bk-service');
+      [...sel.options].forEach(o=>{ if(o.textContent.trim().toLowerCase()===t.toLowerCase()) sel.value=o.value; });
+      if(sel.value) window.msToast && window.msToast('Wybrano: '+t+' — teraz dzień i godzina.');
+      document.getElementById('book').scrollIntoView({behavior:'smooth'}); });
+  });
+});
+</script>
+<div class="ms-credit" style="--ms-credit-bg:#0A0A0A">Projekt koncepcyjny · Zaprojektowane przez <a href="index.html" target="_top" data-ms-go="index">Marcela Struszczaka</a></div>
+
+<!-- ===== Pasek „projekt koncepcyjny” — Marcel Struszczak ===== -->
+<style>
+.ms-demo{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom));z-index:2147483000;display:flex;align-items:center;gap:4px;padding:5px;border-radius:999px;background:rgba(23,23,26,.88);-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);box-shadow:0 18px 40px -16px rgba(0,0,0,.6),inset 0 0 0 1px rgba(255,255,255,.09);font:500 13px/1 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;letter-spacing:0;text-transform:none;color:#f4f3ef;transform:translate(-50%,0);transition:transform .6s cubic-bezier(.16,1,.3,1),opacity .45s;white-space:nowrap}
+.ms-demo.is-hidden,.ms-demo.is-forced{transform:translate(-50%,170%);opacity:0;pointer-events:none}
+.ms-demo a{color:inherit;text-decoration:none;font:inherit}
+.ms-demo svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ms-demo__back{display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 13px 0 10px;border-radius:999px;transition:background-color .3s}
+.ms-demo__back:hover{background:rgba(255,255,255,.1)}
+.ms-demo__tag{display:inline-flex;align-items:center;gap:8px;padding:0 10px 0 4px;color:rgba(244,243,239,.72);font:400 11px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;letter-spacing:.05em;text-transform:uppercase}
+.ms-demo__tag i{width:6px;height:6px;border-radius:50%;background:rgba(244,243,239,.55)}
+.ms-demo__cta{display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 15px;border-radius:999px;background:#f4f3ef;color:#17171a!important;font-weight:500!important;transition:background-color .3s}
+.ms-demo__cta:hover{background:#fff}
+.ms-demo a:focus-visible{outline:2px solid #f4f3ef;outline-offset:2px}
+@media (max-width:600px){.ms-demo__tag{display:none}.ms-demo__back span{display:none}.ms-demo__back{padding:0 11px}}
+.ms-toast{position:fixed;left:50%;bottom:calc(74px + env(safe-area-inset-bottom));z-index:2147483001;display:flex;gap:10px;align-items:flex-start;width:max-content;max-width:min(92vw,420px);padding:12px 16px;border-radius:14px;background:#17171a;color:#f4f3ef;font:500 13.5px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;letter-spacing:0;text-transform:none;box-shadow:0 20px 44px -16px rgba(0,0,0,.6),inset 0 0 0 1px rgba(255,255,255,.08);transform:translate(-50%,16px);opacity:0;pointer-events:none;transition:transform .55s cubic-bezier(.16,1,.3,1),opacity .35s}
+.ms-toast::before{content:none}
+.ms-toast.is-in{transform:translate(-50%,0);opacity:1}
+.ms-credit{padding:24px 24px calc(84px + env(safe-area-inset-bottom));text-align:center;font:12px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;letter-spacing:.02em;text-transform:none;color:var(--ms-credit-c,#8b8a85);background:var(--ms-credit-bg,#111);border-top:1px solid rgba(255,255,255,.07)}
+.ms-credit a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.ms-credit a:hover{color:#fff}
+@media (prefers-reduced-motion:reduce){.ms-demo,.ms-toast{transition:none}}
+</style>
+<div class="ms-demo" id="msDemo" role="region" aria-label="Informacja o projekcie">
+  <a class="ms-demo__back" href="prace.html?projekt=vesper#podglad" target="_top" data-ms-go="prace" aria-label="Wróć do portfolio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>Portfolio</span></a>
+  <span class="ms-demo__tag"><i></i>Projekt koncepcyjny · Marcel Struszczak</span>
+  <a class="ms-demo__cta" href="kontakt.html?projekt=vesper" target="_top" data-ms-go="kontakt">Chcę taką stronę<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+</div>
+<div class="ms-toast" id="msToast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  var bar=document.getElementById('msDemo'), toast=document.getElementById('msToast'), last=window.scrollY, acc=0, tt;
+  function onScroll(){
+    var y=window.scrollY, dy=y-last; last=y;
+    acc = dy>0 ? Math.max(0,acc)+dy : Math.min(0,acc)+dy;
+    var nearBottom = window.innerHeight + y >= document.documentElement.scrollHeight - 120;
+    if (y < 140 || acc < -24 || nearBottom) bar.classList.remove('is-hidden');
+    else if (acc > 60) bar.classList.add('is-hidden');
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.msToast = function(msg){
+    toast.textContent = msg; toast.classList.add('is-in');
+    clearTimeout(tt); tt = setTimeout(function(){ toast.classList.remove('is-in'); }, 3000);
+  };
+  window.msDemoBar = { force: function(hide){ bar.classList.toggle('is-forced', !!hide); } };
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a[href="#"],[data-demo]') : null;
+    if (!a) return;
+    e.preventDefault();
+    window.msToast(a.getAttribute('data-demo') || 'To projekt koncepcyjny — w stronie dla klienta ten przycisk prowadzi we właściwe miejsce.');
+  });
+})();
+</script>
+
+</body>
+</html>

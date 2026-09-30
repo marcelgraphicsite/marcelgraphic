@@ -17,6 +17,7 @@
   const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
   const root = document.documentElement;
   const PAGE = root.dataset.page || 'index';
+  // „ogranicz ruch” w systemie: wyłącza tylko duży ruch (paralaksa, przewijanie w bok, pasek z hasłami) — łagodne animacje zostają
   const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const FINE = matchMedia('(hover: hover) and (pointer: fine)').matches;
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
@@ -50,6 +51,26 @@
   let gateOpen = false, openGate;
   const gate = new Promise(r => { openGate = () => { gateOpen = true; r(); }; }); // start animacji wejścia (po kurtynie)
   const menuCtl = { open: false, set() {} };
+
+  /* ---------- karta graficzna: bez sprzętowej akceleracji (albo z programowym sterownikiem) = od razu tryb lekki ---------- */
+  // Wtedy rozmycia, ziarno i ciągłe tło liczy procesor i strona się tnie — sprawdzamy raz na sesję, zanim cokolwiek ruszy.
+  mod('gpu', () => {
+    if (isLite() || sess.get('ms-gpu')) return;
+    let soft = false;
+    try {
+      const c = document.createElement('canvas');
+      const gl = c.getContext('webgl', { failIfMajorPerformanceCaveat: true }) || c.getContext('experimental-webgl', { failIfMajorPerformanceCaveat: true });
+      if (!gl) soft = true;
+      else {
+        const ext = gl.getExtension('WEBGL_debug_renderer_info');
+        const r = String(ext ? gl.getParameter(ext.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER) || '');
+        if (/swiftshader|llvmpipe|softpipe|software|basic render/i.test(r)) soft = true;
+        const lose = gl.getExtension('WEBGL_lose_context');
+        if (lose) lose.loseContext();
+      }
+    } catch (e) { soft = false; }
+    if (soft) setLite(); else sess.set('ms-gpu', '1');
+  });
 
   /* ---------- mapa podstron (kolejność = kierunek przejścia) ---------- */
   const ORDER = { index: 0, prace: 1, uslugi: 2, cennik: 3, 'o-mnie': 4, kontakt: 5, 'luxe-salon': 6, 'vesper-barber': 6, 'zar-burger': 6 };
@@ -131,6 +152,7 @@
     const md = $('meta[name="description"]');
     if (md && L.descs && L.descs[PAGE]) md.setAttribute('content', L.descs[PAGE]);
     $$('[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === LANG)));
+    $$('.lang').forEach(g => g.classList.toggle('is-en', LANG === 'en'));
     root.classList.toggle('lang-en', LANG === 'en');
     langHooks.forEach(f => { try { f(); } catch (e) { /* ok */ } });
   }
@@ -190,7 +212,7 @@
   function goTo(href, key) {
     if (leaving) return;
     const curtain = $('#curtain');
-    if (!curtain || RM) { location.href = href; return; }
+    if (!curtain) { location.href = href; return; }
     leaving = true;
     const L = (t().pages || {})[key] || { t: key, s: '' };
     const cT = $('.curtain__t', curtain);
@@ -404,7 +426,7 @@
     };
     draw(performance.now());
     kick(0);
-    scrollFns.push(() => kick(260));
+    scrollFns.push(() => { if (!isLite()) kick(260); }); // tryb lekki: tło nie przelicza się przy każdym przewinięciu
     gate.then(() => kick(2700));
     document.addEventListener('visibilitychange', () => { if (!document.hidden) kick(0); });
     addEventListener('pageshow', e => { if (e.persisted) kick(2700); });
@@ -556,7 +578,7 @@
       n.classList.remove('no-t'); n.classList.add('is-on');
       setTimeout(() => { c.classList.add('no-t'); c.classList.remove('is-out'); void c.offsetWidth; c.classList.remove('no-t'); }, 1050);
     };
-    const start = () => { if (!started || RM || timer || !visible || document.hidden || nodes.length < 2) return; timer = setInterval(next, 2600); };
+    const start = () => { if (!started || timer || !visible || document.hidden || nodes.length < 2) return; timer = setInterval(next, 2600); };
     const stop = () => { clearInterval(timer); timer = null; };
     build(t().rot);
     if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) start(); else stop(); }).observe(el);
@@ -661,7 +683,7 @@
   mod('play', () => {
     const els = $$('[data-play]');
     if (!els.length || !('IntersectionObserver' in window)) return;
-    const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('play', e.isIntersecting && !RM)), { threshold: 0.2 });
+    const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('play', e.isIntersecting)), { threshold: 0.2 });
     gate.then(() => els.forEach(el => io.observe(el)));
   });
 
@@ -692,7 +714,7 @@
       if (!e.isIntersecting) return;
       io.unobserve(e.target);
       const el = e.target, to = +el.dataset.count;
-      if (RM || to === 0) { el.textContent = to; return; }
+      if (to === 0) { el.textContent = to; return; }
       const t0 = performance.now(), dur = 1500;
       const tick = now => {
         const k = clamp((now - t0) / dur, 0, 1);
@@ -708,7 +730,7 @@
   /* ---------- „następna strona”: słowo wypełnia się atramentem przy dojeżdżaniu do końca ---------- */
   mod('nextFill', () => {
     const w = $('.next__word'), a = w && w.closest('.next');
-    if (!w || !a || RM) return;
+    if (!w || !a) return;
     let last = -1;
     w.style.setProperty('--nf', '0');
     scrollFns.push(() => {
@@ -753,7 +775,7 @@
       });
       svg.classList.add('is-ready');
       if (onCard) return;
-      if (RM || !('IntersectionObserver' in window)) { svg.classList.add('is-drawn'); return; }
+      if (!('IntersectionObserver' in window)) { svg.classList.add('is-drawn'); return; }
       const io = new IntersectionObserver(([e]) => {
         if (e.isIntersecting) { io.disconnect(); setTimeout(() => svg.classList.add('is-drawn'), 380); }
       }, { threshold: 0.35 });
@@ -823,7 +845,7 @@
 
   /* ---------- animowane liczby ---------- */
   function tweenNum(el, from, to) {
-    if (RM || from === to) { el.textContent = group(to); return; }
+    if (from === to) { el.textContent = group(to); return; }
     const t0 = performance.now(), dur = 600;
     const tick = now => {
       const k = clamp((now - t0) / dur, 0, 1), e = 1 - Math.pow(1 - k, 4);
@@ -1235,7 +1257,7 @@
         $('#stWant').dataset.pick = 'concept-' + proj;
         frame.title = t().frame(CONCEPTS[proj]);
       };
-      if (!animate || RM) { set(); return; }
+      if (!animate) { set(); return; }
       const box = $('#studioInfo');
       box.classList.remove('swap-in'); box.classList.add('swap-out');
       setTimeout(() => { set(); box.classList.remove('swap-out'); void box.offsetWidth; box.classList.add('swap-in'); }, 260);
@@ -1303,7 +1325,7 @@
   /* ---------- kursor (kropka; „Zobacz” nad projektami) ---------- */
   mod('cursor', () => {
     const c = $('#cursor');
-    if (!c || !FINE || RM) return;
+    if (!c || !FINE) return;
     let x = -100, y = -100, cx = x, cy = y, raf = 0, shown = false;
     const loop = () => {
       cx += (x - cx) * 0.35; cy += (y - cy) * 0.35;
@@ -1337,7 +1359,7 @@
 
   /* ---------- magnetyczne przyciski ---------- */
   mod('magnetic', () => {
-    if (!FINE || RM) return;
+    if (!FINE) return;
     $$('.mag').forEach(el => {
       el.addEventListener('mousemove', e => {
         const r = el.getBoundingClientRect();
@@ -1417,7 +1439,9 @@
 
   /* ---------- sprawdzenie płynności: jeśli sprzęt nie wyrabia, włącza się tryb lekki ---------- */
   mod('perf', () => {
-    if (isLite() || RM || !window.requestAnimationFrame) return;
+    if (isLite() || !window.requestAnimationFrame) return;
+    const slow = ds => { ds.sort((a, b) => a - b); const n = ds.length; return ds[Math.floor(n * 0.5)] > 24 || ds[Math.floor(n * 0.8)] > 42; };
+    // 1) w spoczynku, chwilę po wczytaniu
     let tries = 0;
     const sample = () => {
       if (isLite() || tries > 2) return;
@@ -1428,23 +1452,58 @@
         if (prev) ds.push(now - prev);
         prev = now;
         if (ds.length < 48) { requestAnimationFrame(f); return; }
-        ds.sort((a, b) => a - b);
-        if (ds[24] > 24 || ds[38] > 42) setLite();
+        if (slow(ds)) setLite();
       };
       requestAnimationFrame(f);
     };
     const go = () => setTimeout(sample, 1800);
     if (document.readyState === 'complete') go(); else addEventListener('load', go);
+    // 2) podczas przewijania — tu słaby sprzęt tnie się najbardziej (pomiar tylko w trakcie ruchu, do 3 serii)
+    let runs = 0, active = false, lastScroll = 0, ds = [], prev = 0;
+    const f = now => {
+      if (now - lastScroll > 220 || leaving) { active = false; prev = 0; return; }
+      if (prev) ds.push(now - prev);
+      prev = now;
+      if (ds.length >= 50) {
+        active = false; prev = 0; runs++;
+        if (slow(ds)) { setLite(); return; }
+        ds = [];
+        return;
+      }
+      requestAnimationFrame(f);
+    };
+    addEventListener('scroll', () => {
+      if (isLite() || runs >= 3 || !gateOpen) return;
+      lastScroll = performance.now();
+      if (!active) { active = true; requestAnimationFrame(f); }
+    }, { passive: true });
   });
 
   /* ---------- język ---------- */
   mod('lang', () => {
+    // zmiana języka: treść na chwilę gaśnie, podmienia się i wraca; ekran zostaje przy tym samym fragmencie strony
+    let swapping = false;
+    const anchorEl = () => {
+      const y = Math.min(innerHeight * 0.3, 240);
+      let el = document.elementFromPoint(innerWidth / 2, y);
+      while (el && el !== document.body && !/^(SECTION|HEADER|FOOTER|ARTICLE)$/.test(el.tagName)) el = el.parentElement;
+      return el && el !== document.body ? el : null;
+    };
     $$('[data-lang]').forEach(b => b.addEventListener('click', () => {
       const l = b.dataset.lang;
-      if (l === LANG && root.lang === l) return;
+      if ((l === LANG && root.lang === l) || swapping) return;
       store.set('ms-lang', l);
-      applyLang(l);
-      requestScroll();
+      $$('[data-lang]').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.lang === l)));
+      $$('.lang').forEach(g => g.classList.toggle('is-en', l === 'en'));
+      swapping = true;
+      root.classList.add('lang-out');
+      setTimeout(() => {
+        const a = scrollY > 40 ? anchorEl() : null, top = a ? a.getBoundingClientRect().top : 0;
+        applyLang(l);
+        if (a) { const d = a.getBoundingClientRect().top - top; if (Math.abs(d) > 1) scrollToY(scrollY + d, true); }
+        requestScroll();
+        requestAnimationFrame(() => { root.classList.remove('lang-out'); swapping = false; });
+      }, 190);
     }));
     if (initLang === 'en') applyLang('en');
     else langHooks.forEach(f => { try { f(); } catch (e) { /* ok */ } });

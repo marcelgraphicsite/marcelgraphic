@@ -57,10 +57,23 @@ Stare linki z wersji jednostronicowej (np. `…/marcelgraphic/#kontakt`, `#cenni
 
 ## Smaczki
 
-- Pod nazwiskiem na starcie od razu widać, czym się zajmujesz (znika przy przewijaniu).
-- Na komputerze litery nazwiska chudną pod kursorem (krój zmienny) — tylko myszka, telefony nie liczą nic.
+- Pod nazwiskiem na starcie hasło z wizytówki „Cyfrowy rozwój lokalnych firm” (tym samym krojem co na karcie; znika przy przewijaniu).
+- Na komputerze litery nazwiska chudną pod kursorem (krój zmienny) — tylko myszka, telefony nie liczą nic (w trybie lekkim wyłączone).
 - Wielkie słowo „następna strona” na dole każdej podstrony wypełnia się atramentem, im bliżej końca.
 - Na Androidzie wizytówka lekko wibruje przy obracaniu.
+
+## Animacje na każdym komputerze
+
+- „Ogranicz ruch” w systemie (np. Windows → Ułatwienia dostępu → „Pokaż animacje” wyłączone, częste na słabszych PC) NIE wyłącza już animacji: zostają przenikania, liczniki, podpis, ilustracje, a kurtyna przy zmianie strony przenika zamiast jechać. Znika tylko duży ruch (paralaksa, przewijanie w bok, jadący pasek).
+- Komputer bez sprzętowej akceleracji grafiki (wyłączona w przeglądarce, stary sterownik) jest wykrywany od razu i dostaje tryb lekki — bez rozmyć, ziarna i przeliczania tła przy scrollu.
+- Płynność mierzona jest też podczas przewijania (nie tylko w spoczynku) — jeśli sprzęt się tnie, tryb lekki włącza się sam.
+
+## SEO
+
+- Tytuły pod frazy: „strony internetowe dla firm”, „tworzenie stron www”, „cennik stron internetowych”, „portfolio stron internetowych”.
+- Dane strukturalne (JSON-LD) jako jeden graf: WebSite + firma (ProfessionalService z cennikiem) + Marcel (Person), usługi (Service), FAQ z cennika (FAQPage), O mnie (AboutPage), Kontakt (ContactPage), Prace (CollectionPage), okruszki na każdej podstronie.
+- Meta robots z dużymi podglądami obrazów, manifest (`site.webmanifest`), mapa strony z obrazami.
+- Do zrobienia po Twojej stronie: zgłoś `sitemap.xml` w Google Search Console, podlinkuj stronę w Wizytówce Google (Google Business Profile) i zbieraj tam opinie. Największy skok dałaby własna domena (np. marcelstruszczak.pl) — na adresie github.io nie da się dodać `robots.txt` w katalogu głównym domeny.
 
 ## Formularz — aktywacja (jednorazowo, 30 sekund)
 

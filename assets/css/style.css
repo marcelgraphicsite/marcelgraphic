@@ -738,7 +738,7 @@ legend{padding:0;margin-bottom:6px}
 .bcard.is-flipped{--flip:180deg}
 .bcard:focus-visible{outline:none}
 .bcard:focus-visible .bcard__face{outline:1.5px solid var(--ink);outline-offset:4px}
-.bcard__face{position:absolute;top:0;right:0;bottom:0;left:0;border-radius:5px;background:#fbfbf3;overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden;box-shadow:0 0 0 1px rgba(23,23,26,.07),0 1px 0 rgba(255,255,255,.9) inset,0 34px 60px -32px rgba(23,23,26,.5),0 14px 26px -18px rgba(23,23,26,.28)}
+.bcard__face{position:absolute;top:0;right:0;bottom:0;left:0;border-radius:5px;background:#fbfbf3;overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden;box-shadow:0 0 0 1px rgba(23,23,26,.1),0 1px 0 rgba(255,255,255,.9) inset}
 .bcard__face::before{content:"";position:absolute;top:0;right:0;bottom:0;left:0;opacity:.07;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .bcard__face::after{content:"";position:absolute;top:0;right:0;bottom:0;left:0;pointer-events:none;background:radial-gradient(70% 90% at var(--gx,30%) var(--gy,20%),rgba(255,255,255,.55),rgba(255,255,255,0) 60%);opacity:.7;mix-blend-mode:soft-light}
 .bcard__back{transform:rotateY(180deg)}

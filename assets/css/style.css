@@ -737,9 +737,9 @@ legend{padding:0;margin-bottom:6px}
 .bcard.is-tilting{transition:transform .3s ease-out}
 .bcard.is-flipped{--flip:180deg}
 .bcard:focus-visible{outline:none}
-.bcard:focus-visible .bcard__face{outline:1.5px solid var(--ink);outline-offset:4px}
-.bcard__face{position:absolute;top:0;right:0;bottom:0;left:0;border-radius:5px;background:#fbfbf3;overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden;box-shadow:0 0 0 1px rgba(23,23,26,.1)}
-.bcard__face::before{content:"";position:absolute;top:0;right:0;bottom:0;left:0;opacity:.1;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.bcard:focus-visible .bcard__face{outline:1.5px solid var(--ink);outline-offset:4px;border-radius:0}
+.bcard__face{position:absolute;top:0;right:0;bottom:0;left:0;border-radius:0;background:#fbfbf3;overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden;box-shadow:0 0 0 1px rgba(23,23,26,.1)}
+.bcard__face::before{content:none} /* jednolity kolor: bez faktury */
 .bcard__face::after{content:none} /* matowa karta (soft touch): bez połysku za kursorem */
 .bcard__back{transform:rotateY(180deg)}
 .bc-front{position:absolute;top:0;right:0;bottom:0;left:0;font-family:var(--card);font-weight:500;color:#42423a;font-feature-settings:"lnum" 1;text-align:center}

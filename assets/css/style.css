@@ -739,11 +739,11 @@ legend{padding:0;margin-bottom:6px}
 .bcard.is-flipped{--flip:180deg}
 .bcard:focus-visible{outline:none}
 .bcard:focus-visible .bcard__face{outline:1.5px solid var(--ink);outline-offset:4px;border-radius:0}
-.bcard__face{position:absolute;top:0;right:0;bottom:0;left:0;border-radius:0;background:#f1e9d6;overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden;box-shadow:none}
+.bcard__face{position:absolute;top:0;right:0;bottom:0;left:0;border-radius:0;background:#f7f7ef;overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden;box-shadow:none}
 .bcard__face::before{content:none} /* jednolity kolor: bez faktury */
 .bcard__face::after{content:none} /* matowa karta (soft touch): bez połysku za kursorem */
 .bcard__back{transform:rotateY(180deg)}
-.bc-front{position:absolute;top:0;right:0;bottom:0;left:0;font-family:var(--card);font-weight:500;color:#42423a;font-feature-settings:"lnum" 1;text-align:center}
+.bc-front{position:absolute;top:0;right:0;bottom:0;left:0;font-family:var(--card);font-weight:500;color:#26261e;font-feature-settings:"lnum" 1;text-align:center}
 .bc-front>span{position:absolute;left:0;right:0;line-height:1;white-space:nowrap}
 .bc-name{top:39.5%;font-size:calc(var(--cq,4.4px)*3.62);font-size:3.62cqw;letter-spacing:.04em}
 .bc-name small{font-size:calc(var(--cq,4.4px)*2.5);font-size:2.5cqw;letter-spacing:.075em;margin-right:.28em}

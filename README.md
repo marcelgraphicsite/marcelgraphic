@@ -26,9 +26,11 @@ Strona: https://marcelgraphicsite.github.io/marcelgraphic/
 
 ## Wdrożenie na GitHub Pages
 
-1. W repozytorium usuń stare pliki strony (zostaw ewentualnie tylko `README.md`, jeśli chcesz).
-2. Wgraj **całą** zawartość tej paczki (razem z folderem `assets`) do głównego katalogu repozytorium.
+1. Cała strona (razem z folderem `assets`) leży już w głównym katalogu repozytorium, stara wersja jednostronicowa jest zastąpiona.
+2. Scal gałąź z poprawkami do gałęzi, z której publikuje GitHub Pages (zwykle `main` — widać to w Settings → Pages).
 3. Po 1–2 minutach nowa wersja działa pod tym samym adresem.
+
+`gmina-warta.html` (stary projekt) zostaje na serwerze, żeby wcześniej wysłane linki dalej działały — nowe portfolio go nie linkuje.
 
 Stare linki z wersji jednostronicowej (np. `…/marcelgraphic/#kontakt`, `#cennik`, `#kalkulator`) same przekierowują na właściwą podstronę — nic, co już udostępniłeś, się nie zepsuje.
 
@@ -46,6 +48,12 @@ Stare linki z wersji jednostronicowej (np. `…/marcelgraphic/#kontakt`, `#cenni
 - Strona sama rozpoznaje słabszy sprzęt (albo mierzy płynność przez sekundę po wczytaniu) i włącza „tryb lekki”: animacje zostają, znika tylko to, co najbardziej obciąża procesor i kartę graficzną (ziarno papieru, rozmycie pod menu, ciągłe odświeżanie tła).
 - Na telefonach tło rusza się przy przewijaniu i przy zmianie strony, zamiast liczyć się bez przerwy — oszczędza baterię.
 - Płynne przewijanie myszką (Lenis) pobiera się tylko na komputerach.
+- Na telefonach nie ma rozmycia pod menu ani ziarna papieru — to najcięższe efekty dla słabszej karty graficznej, a na jasnym tle wyglądają tak samo.
+- Efekty w pętli (obracające się światło na czarnych kartach, ilustracje usług) pracują tylko wtedy, gdy są na ekranie — przewinięte poza ekran nie obciążają telefonu.
+- Start przejścia między stronami przelicza tylko kurtynę, nie całą stronę — brak przycięcia w chwili kliknięcia, także na starych telefonach.
+- iPhone z wycięciem (notch) trzymany poziomo: logo, menu, marginesy i nazwisko na starcie nie wchodzą pod wycięcie ani zaokrąglone rogi.
+- Starsze iPhone'y (iOS 14–15, np. 6s, 7, SE 1. gen.): wizytówka i nakładki mają zapasowe style, więc wyglądają tak samo jak na nowych.
+- Strona nie da się „przesunąć w bok” palcem na żadnym iOS (nic nie wystaje poza ekran, także na 320 px).
 
 ## Formularz — aktywacja (jednorazowo, 30 sekund)
 

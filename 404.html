@@ -14,7 +14,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{min-height:100%}
 body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;letter-spacing:-.011em;position:relative;overflow-x:hidden;min-height:100vh;min-height:100dvh;display:flex;align-items:center}
-body::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.035;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+body::after{content:"";position:fixed;top:0;right:0;bottom:0;left:0;pointer-events:none;opacity:.035;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .ghost{position:fixed;left:0;white-space:nowrap;font-weight:600;letter-spacing:-.04em;color:rgba(23,23,26,.05);line-height:1;pointer-events:none;font-size:clamp(4rem,13vw,12rem);animation:drift 40s linear infinite alternate}
 .g1{top:4%}.g2{top:38%;animation-direction:alternate-reverse}.g3{top:72%}
 @keyframes drift{from{transform:translateX(-4%)}to{transform:translateX(-34%)}}

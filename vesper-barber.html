@@ -116,6 +116,10 @@
   .cal-day.is-today{ box-shadow:inset 0 0 0 1px rgba(201,162,75,.7); }
   .cal-nav:disabled{ opacity:.3; cursor:not-allowed; }
   select option{ color:#0A0A0A; }
+  /* wąskie telefony (320 px): karty i przyciski nie rozpychają strony w bok */
+  .grid>*{ min-width:0; }
+  .ticked h3{ min-width:0; overflow-wrap:break-word; }
+  #contact .flex.gap-3{ flex-wrap:wrap; }
 </style>
 <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 <style id="ms-tr-css">

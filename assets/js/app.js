@@ -609,6 +609,14 @@
     if (cta && 'IntersectionObserver' in window) new IntersectionObserver(([e]) => cta.classList.toggle('is-vis', e.isIntersecting)).observe(cta);
   });
 
+  /* ---------- karta CTA (prace): obracające się światło tylko, gdy karta jest na ekranie ---------- */
+  mod('ctaSpin', () => {
+    const cards = $$('.cta-card');
+    if (!cards.length || !('IntersectionObserver' in window)) return;
+    const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('is-vis', e.isIntersecting)));
+    cards.forEach(c => io.observe(c));
+  });
+
   /* ---------- ilustracje usług: animują się tylko, gdy są widoczne ---------- */
   mod('play', () => {
     const els = $$('[data-play]');
@@ -1075,6 +1083,11 @@
     const card = $('#bcard');
     if (!card) return;
     const sig = $('.bc-sig', card);
+    // starsze przeglądarki (iOS < 16) nie znają jednostek cqw: litery liczone z szerokości karty
+    if (!(window.CSS && CSS.supports && CSS.supports('width', '1cqw'))) {
+      const fit = () => card.style.setProperty('--cq', (card.offsetWidth / 100).toFixed(3) + 'px');
+      fit(); resizeFns.push(fit);
+    }
     let flipped = false, flips = 0, flipT = 0;
     const flip = () => {
       flipped = !flipped;

@@ -55,6 +55,13 @@ Stare linki z wersji jednostronicowej (np. `…/marcelgraphic/#kontakt`, `#cenni
 - Starsze iPhone'y (iOS 14–15, np. 6s, 7, SE 1. gen.): wizytówka i nakładki mają zapasowe style, więc wyglądają tak samo jak na nowych.
 - Strona nie da się „przesunąć w bok” palcem na żadnym iOS (nic nie wystaje poza ekran, także na 320 px).
 
+## Smaczki
+
+- Pod nazwiskiem na starcie od razu widać, czym się zajmujesz (znika przy przewijaniu).
+- Na komputerze litery nazwiska chudną pod kursorem (krój zmienny) — tylko myszka, telefony nie liczą nic.
+- Wielkie słowo „następna strona” na dole każdej podstrony wypełnia się atramentem, im bliżej końca.
+- Na Androidzie wizytówka lekko wibruje przy obracaniu.
+
 ## Formularz — aktywacja (jednorazowo, 30 sekund)
 
 Formularz wysyła zgłoszenia na `marcel.graphicsite@gmail.com` przez darmowy FormSubmit.

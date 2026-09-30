@@ -468,7 +468,7 @@
   mod('pin', () => {
     const pin = $('#pin');
     if (!pin) return;
-    const ghosts = $$('.ghost-row', pin), blobs = $$('.blob', pin), hint = $('#scrollHint');
+    const ghosts = $$('.ghost-row', pin), blobs = $$('.blob', pin), hint = $('#scrollHint'), cap = $('#pinCap');
     let VH = innerHeight, W = innerWidth, last = -1;
     addEventListener('resize', () => {
       if (innerWidth !== W || Math.abs(innerHeight - VH) > 160) { W = innerWidth; VH = innerHeight; }
@@ -479,6 +479,7 @@
       if (Math.abs(p - last) < 0.0005) return;
       last = p;
       if (hint) hint.style.opacity = p > 0.06 ? '0' : '1';
+      if (cap) cap.style.opacity = p > 0.06 ? '0' : '';
       if (RM) return;
       ghosts.forEach((g, i) => {
         const x = i % 2 === 0 ? -p * 34 : (p - 1) * 34;
@@ -489,6 +490,45 @@
         b.style.transform = `translate3d(${(d * p * 60).toFixed(1)}px,${(d * p * -42).toFixed(1)}px,0) scale(${(1 + p * 0.35).toFixed(3)})`;
       });
     });
+  });
+
+  /* ---------- start: litery nazwiska chudną pod kursorem (tylko myszka; krój zmienny 300–700) ---------- */
+  mod('nameWeight', () => {
+    const word = $('.pin-word'), stage = word && word.closest('.pin-stage');
+    if (!word || !stage || !FINE || RM) return;
+    const letters = [];
+    Array.from(word.childNodes).forEach(n => {
+      if (n.nodeType !== 3) return;
+      const f = document.createDocumentFragment();
+      Array.from(n.textContent).forEach(ch => {
+        const sp = document.createElement('span');
+        sp.className = 'pl'; sp.textContent = ch;
+        f.appendChild(sp); letters.push(sp);
+      });
+      n.replaceWith(f);
+    });
+    const BASE = 600, THIN = 300;
+    const cur = letters.map(() => BASE);
+    let mx = -1e4, my = -1e4, raf = 0;
+    const tick = () => {
+      raf = 0;
+      // odczyt pozycji przed zapisem (układ policzony w poprzedniej klatce — bez wymuszania)
+      const pos = letters.map(l => { const r = l.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2]; });
+      const R = Math.max(140, innerWidth * 0.16);
+      let moving = false;
+      letters.forEach((l, i) => {
+        const d = Math.hypot(pos[i][0] - mx, pos[i][1] - my);
+        const k = isLite() ? 0 : Math.max(0, 1 - d / R);
+        const target = BASE - (BASE - THIN) * k * k * (3 - 2 * k);
+        cur[i] += (target - cur[i]) * 0.16;
+        if (Math.abs(target - cur[i]) > 0.6) moving = true; else cur[i] = target;
+      });
+      letters.forEach((l, i) => { l.style.fontWeight = Math.round(cur[i]); });
+      if (moving) raf = requestAnimationFrame(tick);
+    };
+    const go = () => { if (!raf) raf = requestAnimationFrame(tick); };
+    stage.addEventListener('pointermove', e => { if (e.pointerType !== 'mouse') return; mx = e.clientX; my = e.clientY; go(); }, { passive: true });
+    stage.addEventListener('pointerleave', () => { mx = my = -1e4; go(); });
   });
 
   /* ---------- start: rotujące słowo w nagłówku ---------- */
@@ -663,6 +703,22 @@
       requestAnimationFrame(tick);
     }), { threshold: 0.6 });
     gate.then(() => els.forEach(el => io.observe(el)));
+  });
+
+  /* ---------- „następna strona”: słowo wypełnia się atramentem przy dojeżdżaniu do końca ---------- */
+  mod('nextFill', () => {
+    const w = $('.next__word'), a = w && w.closest('.next');
+    if (!w || !a || RM) return;
+    let last = -1;
+    w.style.setProperty('--nf', '0');
+    scrollFns.push(() => {
+      const r = a.getBoundingClientRect();
+      if (r.top > innerHeight || r.bottom < 0) return;
+      const p = clamp((innerHeight - r.top) / (innerHeight * 0.55), 0, 1);
+      if (Math.abs(p - last) < 0.004) return;
+      last = p;
+      w.style.setProperty('--nf', p.toFixed(3));
+    });
   });
 
   /* ---------- o mnie: przesuwający się napis w tle ---------- */
@@ -1093,6 +1149,8 @@
       flipped = !flipped;
       card.classList.toggle('is-flipped', flipped);
       card.setAttribute('aria-pressed', String(flipped));
+      // telefon: krótka wibracja jak przy odwracaniu prawdziwej kartki (Android)
+      if (!FINE && navigator.vibrate) { try { navigator.vibrate(8); } catch (e) { /* ok */ } }
       if (flipped && sig && !sig.classList.contains('is-drawn')) setTimeout(() => sig.classList.add('is-drawn'), 380);
       flips++;
       clearTimeout(flipT);

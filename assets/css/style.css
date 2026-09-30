@@ -76,7 +76,8 @@ em.thin,.thin{font-style:normal;font-weight:300}
 .bg__cv{position:absolute;top:0;right:0;bottom:0;left:0;width:100%;height:100%;display:block}
 
 /* papierowe ziarno */
-body::after{content:"";position:fixed;top:0;right:0;bottom:0;left:0;z-index:55;pointer-events:none;opacity:.03;
+/* ziarno tylko na tle (pod treścią) — nie brudzi kart, zdjęć ani tekstu */
+body::after{content:"";position:fixed;top:0;right:0;bottom:0;left:0;z-index:-1;pointer-events:none;opacity:.03;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 /* ---------- przejścia między podstronami: kurtyna z kontekstem ---------- */
@@ -738,7 +739,7 @@ legend{padding:0;margin-bottom:6px}
 .bcard.is-flipped{--flip:180deg}
 .bcard:focus-visible{outline:none}
 .bcard:focus-visible .bcard__face{outline:1.5px solid var(--ink);outline-offset:4px;border-radius:0}
-.bcard__face{position:absolute;top:0;right:0;bottom:0;left:0;border-radius:0;background:#fbfbf3;overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden;box-shadow:0 0 0 1px rgba(23,23,26,.1)}
+.bcard__face{position:absolute;top:0;right:0;bottom:0;left:0;border-radius:0;background:#f7f7ef;overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden;box-shadow:none}
 .bcard__face::before{content:none} /* jednolity kolor: bez faktury */
 .bcard__face::after{content:none} /* matowa karta (soft touch): bez połysku za kursorem */
 .bcard__back{transform:rotateY(180deg)}

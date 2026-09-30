@@ -739,7 +739,7 @@ legend{padding:0;margin-bottom:6px}
 .bcard.is-flipped{--flip:180deg}
 .bcard:focus-visible{outline:none}
 .bcard:focus-visible .bcard__face{outline:1.5px solid var(--ink);outline-offset:4px;border-radius:0}
-.bcard__face{position:absolute;top:0;right:0;bottom:0;left:0;border-radius:0;background:#f7f7ef;overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden;box-shadow:none}
+.bcard__face{position:absolute;top:0;right:0;bottom:0;left:0;border-radius:0;background:#f1e9d6;overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden;box-shadow:none}
 .bcard__face::before{content:none} /* jednolity kolor: bez faktury */
 .bcard__face::after{content:none} /* matowa karta (soft touch): bez połysku za kursorem */
 .bcard__back{transform:rotateY(180deg)}

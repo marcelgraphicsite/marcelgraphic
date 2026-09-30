@@ -75,16 +75,14 @@ Stare linki z wersji jednostronicowej (np. `…/marcelgraphic/#kontakt`, `#cenni
 - Meta robots z dużymi podglądami obrazów, manifest (`site.webmanifest`), mapa strony z obrazami.
 - Do zrobienia po Twojej stronie: zgłoś `sitemap.xml` w Google Search Console, podlinkuj stronę w Wizytówce Google (Google Business Profile) i zbieraj tam opinie. Największy skok dałaby własna domena (np. marcelstruszczak.pl) — na adresie github.io nie da się dodać `robots.txt` w katalogu głównym domeny.
 
-## Formularz — aktywacja (jednorazowo, 30 sekund)
+## Formularz
 
-Formularz wysyła zgłoszenia na `marcel.graphicsite@gmail.com` przez darmowy FormSubmit.
+Zgłoszenia z `kontakt.html` idą na `marcel.graphicsite@gmail.com` przez darmowy Web3Forms — bez aktywacji, działa od razu.
 
-1. Po wdrożeniu wyślij sobie testowe zgłoszenie z `kontakt.html` (z adresu github.io, nie z pliku na dysku).
-2. Przyjdzie mail „Activate Form” — kliknij przycisk.
-3. Od teraz każde zgłoszenie trafia prosto na skrzynkę.
-
-Zanim formularz jest aktywny, strona otwiera klientowi program pocztowy z gotową wiadomością — nic nie przepada.
-Wyłączenie FormSubmit: w `assets/js/app.js` ustaw `FORM_ENDPOINT = ''`.
+- Klucz (`FORM_KEY` w `assets/js/app.js`) jest publiczny z założenia — tak działa Web3Forms. Zmiana adresu odbiorcy: nowy klucz z web3forms.com.
+- Temat maila: „… : Imię (Firma)”; „Odpowiedz” trafia prosto do klienta, jeśli podał e-mail.
+- Gdyby wysyłka się nie udała (brak sieci itp.), klientowi otwiera się program pocztowy z gotową wiadomością — nic nie przepada.
+- Wyłączenie: `FORM_ENDPOINT = ''`.
 
 ## Zmiana cen
 

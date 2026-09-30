@@ -7,9 +7,10 @@
   'use strict';
 
   /* ---------- ustawienia ---------- */
-  // Formularz wysyła przez FormSubmit. Pierwsze zgłoszenie przyśle maila z linkiem
-  // aktywacyjnym — kliknij go raz. Ustaw '' aby używać tylko programu pocztowego.
-  const FORM_ENDPOINT = 'https://formsubmit.co/ajax/marcel.graphicsite@gmail.com';
+  // Formularz wysyła przez Web3Forms na marcel.graphicsite@gmail.com (bez aktywacji).
+  // Klucz jest publiczny z założenia (Web3Forms tak działa). Ustaw FORM_ENDPOINT = '' aby używać tylko programu pocztowego.
+  const FORM_ENDPOINT = 'https://api.web3forms.com/submit';
+  const FORM_KEY = '4d55248c-bcb2-4fa6-bcdf-f1ceda8942ff';
   const EMAIL = 'marcel.graphicsite@gmail.com';
 
   /* ---------- helpers ---------- */
@@ -1134,15 +1135,17 @@
           const r = await fetch(FORM_ENDPOINT, {
             method: 'POST', signal: ctrl.signal,
             headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-            body: JSON.stringify({
-              _subject: `${F.mailSubject}: ${d.name}${d.biz ? ' (' + d.biz + ')' : ''}`, _template: 'table', _captcha: 'false',
+            body: JSON.stringify(Object.assign({
+              access_key: FORM_KEY,
+              subject: `${F.mailSubject}: ${d.name}${d.biz ? ' (' + d.biz + ')' : ''}`,
+              from_name: 'Strona — Marcel Struszczak',
               [F.lblName]: d.name, [F.lblBiz]: d.biz || '—', [F.lblContact]: d.contact, [F.lblNeeds]: d.needs || '—',
-              [F.lblLink]: d.link || '—', [F.lblMsg]: d.msg || '—', _replyto: /@/.test(d.contact) ? d.contact : undefined
-            })
+              [F.lblLink]: d.link || '—', [F.lblMsg]: d.msg || '—', [F.lblPage || 'Strona']: location.href.split('#')[0]
+            }, /@/.test(d.contact) ? { replyto: d.contact } : {}))
           });
           clearTimeout(to);
           const j = await r.json().catch(() => ({}));
-          ok = r.ok && String(j.success) === 'true';
+          ok = r.ok && (j.success === true || String(j.success) === 'true');
         } catch (err) { ok = false; }
       }
       btn.disabled = false; lbl.textContent = old;

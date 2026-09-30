@@ -210,6 +210,14 @@ html.lite .nav.is-scrolled{-webkit-backdrop-filter:none;backdrop-filter:none;bac
 @media (orientation:landscape) and (max-height:500px){.pin-word{font-size:clamp(3.4rem,12.5vw,10.5rem)}}
 html.is-arriving .pin-word{animation-delay:.3s}
 html.is-arriving:not(.is-revealing) .pin-word{animation-play-state:paused}
+/* smaczek: pod nazwiskiem od razu widać, czym się zajmuję (znika przy przewijaniu) */
+.pin-stage{flex-direction:column}
+.pin-cap{position:relative;z-index:2;margin-top:clamp(18px,2.4vw,30px);padding:0 var(--gut);text-align:center;letter-spacing:.14em;transition:opacity .4s ease;animation:pinReveal 1.1s var(--ease) .95s backwards}
+html.is-arriving .pin-cap{animation-delay:.75s}
+@media (max-width:640px){.pin-cap{font-size:10px;letter-spacing:.04em;white-space:nowrap}}
+@media (max-width:360px){.pin-cap{font-size:9.5px;letter-spacing:0}}
+html.is-arriving:not(.is-revealing) .pin-cap{animation-play-state:paused}
+.pin-word .pl{display:inline-block}
 @keyframes pinReveal{0%{opacity:0;transform:translate3d(0,52px,0)}100%{opacity:1;transform:none}}
 .scroll-hint{position:absolute;bottom:22px;right:26px;bottom:max(22px,env(safe-area-inset-bottom));right:max(26px,env(safe-area-inset-right));z-index:3;transition:opacity .4s ease;text-align:center}
 .scroll-hint .line{width:1px;height:34px;background:var(--ink);margin:0 auto 8px;transform-origin:top;animation:hintline 1.8s var(--ease-io) infinite}
@@ -813,6 +821,10 @@ html.lite .cta-card::before{animation:none}
 .next:hover .next__t{transform:translateX(14px)}
 .next:hover .next__t .arr{transform:translateX(14px) rotate(-45deg)}
 .next:hover .next__fill{transform:scaleX(1)}
+/* smaczek: słowo „następna strona” wypełnia się atramentem, im bliżej końca strony (--nf z app.js; bez JS = pełne) */
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .next__word{background:linear-gradient(90deg,var(--ink) 0 48%,rgba(23,23,26,.14) 52% 100%);background-size:200% 100%;background-position:calc((1 - var(--nf,1))*100%) 0;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+}
 
 /* ---------- stopka ---------- */
 .foot{position:relative;border-top:1px solid rgba(23,23,26,.1);padding:64px 0 28px;overflow:hidden}

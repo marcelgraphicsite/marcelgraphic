@@ -1,4 +1,28 @@
+# marcelgraphicsite.pl — Marcel Struszczak, strony internetowe, social media i opinie Google
+# Wszystkie wyszukiwarki mile widziane, także asystenci AI: mogą czytać i cytować ofertę.
+
 User-agent: *
+Allow: /
+
+# Wyszukiwarki i asystenci AI (jawnie dozwoleni)
+User-agent: Googlebot
+User-agent: Google-Extended
+User-agent: Bingbot
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: DuckAssistBot
+User-agent: Amazonbot
+User-agent: meta-externalagent
+User-agent: MistralAI-User
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://marcelgraphicsite.pl/sitemap.xml

@@ -68,12 +68,31 @@ Stare linki z wersji jednostronicowej (np. `…/marcelgraphic/#kontakt`, `#cenni
 - Komputer bez sprzętowej akceleracji grafiki (wyłączona w przeglądarce, stary sterownik) jest wykrywany od razu i dostaje tryb lekki — bez rozmyć, ziarna i przeliczania tła przy scrollu.
 - Płynność mierzona jest też podczas przewijania (nie tylko w spoczynku) — jeśli sprzęt się tnie, tryb lekki włącza się sam.
 
-## SEO
+## SEO, AEO i GEO (Google, odpowiedzi AI, lokalnie)
 
-- Tytuły pod frazy: „strony internetowe dla firm”, „tworzenie stron www”, „cennik stron internetowych”, „portfolio stron internetowych”.
-- Dane strukturalne (JSON-LD) jako jeden graf: WebSite + firma (ProfessionalService z cennikiem) + Marcel (Person), usługi (Service), FAQ z cennika (FAQPage), O mnie (AboutPage), Kontakt (ContactPage), Prace (CollectionPage), okruszki na każdej podstronie.
-- Meta robots z dużymi podglądami obrazów, manifest (`site.webmanifest`), mapa strony z obrazami.
-- Do zrobienia po Twojej stronie: zgłoś `sitemap.xml` w Google Search Console, podlinkuj stronę w Wizytówce Google (Google Business Profile) i zbieraj tam opinie. Największy skok dałaby własna domena (np. marcelstruszczak.pl) — na adresie github.io nie da się dodać `robots.txt` w katalogu głównym domeny.
+**Na stronie (zrobione):**
+- Tytuły pod frazy, które ludzie wpisują: „strony internetowe dla firm”, „tworzenie stron www”, „cennik stron internetowych”, „ile kosztuje strona internetowa”.
+- Dane strukturalne (JSON-LD) jako jeden graf: WebSite + firma (ProfessionalService: cennik, obszar działania — Sieradz i 100 km wokół, okoliczne miasta, cała Polska) + Marcel (Person), usługi (Service), proces współpracy (HowTo), FAQ (FAQPage), O mnie, Kontakt, Prace, poradnik (BlogPosting + FAQ), okruszki i daty aktualizacji na każdej stronie.
+- **Poradnik** (`poradnik` + 3 artykuły): odpowiedź na górze („W skrócie”), spis treści, tabele, FAQ — format, który Google pokazuje w odpowiedziach, a ChatGPT/Perplexity/Gemini chętnie cytują.
+- Osobny obrazek podglądu linku (Facebook, Messenger, WhatsApp) dla każdej podstrony i artykułu: `assets/img/og/`.
+- `robots.txt` jawnie wpuszcza roboty wyszukiwarek AI (ChatGPT, Perplexity, Claude, Gemini, Apple, Bing/Copilot).
+- `llms.txt` i `llms-full.txt` — wizytówka i pełna treść strony dla asystentów AI (ceny, proces, FAQ, artykuły).
+- `sitemap.xml` z obrazami, manifest, meta robots z dużymi podglądami, klucz IndexNow (`963cc2e7ad1b2927af49a2cfbcc214f7.txt`).
+
+**Po Twojej stronie (raz, ok. 30 minut — to daje najwięcej):**
+1. **Google Search Console** → dodaj usługę „Domena” `marcelgraphicsite.pl` (weryfikacja rekordem TXT w DNS u rejestratora) → Mapy witryn → zgłoś `sitemap.xml`.
+2. **Bing Webmaster Tools** → „Importuj z Google Search Console” (jedno kliknięcie). Z indeksu Binga korzystają ChatGPT (wyszukiwanie), Copilot i DuckDuckGo.
+3. **IndexNow** — po każdej większej zmianie otwórz w przeglądarce:
+   `https://api.indexnow.org/indexnow?url=https://marcelgraphicsite.pl/&key=963cc2e7ad1b2927af49a2cfbcc214f7`
+4. **Wizytówka Google (Profil Firmy w Google)** — załóż jako firma usługowa bez adresu (obszar: Sieradz + okolice + Polska), wpisz stronę `https://marcelgraphicsite.pl`, telefon `+48 511 808 498`, kategorie „Projektant stron WWW” i „Agencja marketingu internetowego”, dodaj zdjęcia. To najważniejszy czynnik w lokalnych wynikach.
+5. **Opinie** — poproś pierwszych klientów o opinię w Google (link „Poproś o opinie” z wizytówki).
+6. **Te same dane wszędzie** (NAP): nazwa, telefon, strona — w wizytówce Google, na Facebooku, Instagramie, LinkedInie i w katalogach firm (np. Panorama Firm, pkt.pl).
+7. **Linki zwrotne**: na każdej stronie zrobionej dla klienta zostaw w stopce „Projekt: Marcel Struszczak” z linkiem do `marcelgraphicsite.pl` (za zgodą klienta).
+8. W ustawieniach GitHub Pages zaznacz **Enforce HTTPS**.
+
+**Nowy artykuł w poradniku:** dopisz go w `_zrodla/poradnik_tresc.py` (tytuł, „W skrócie”, treść w Markdown, FAQ), potem uruchom:
+`python3 _zrodla/zbuduj_poradnik.py && python3 _zrodla/zbuduj_llms.py && NODE_PATH=$(npm root -g) node _zrodla/zbuduj_og.js`
+i dodaj adres do `sitemap.xml` oraz numer/napis kurtyny w `assets/js/app.js` (ORDER/NUMS) i `assets/js/i18n.js` (pages). Folder `_zrodla` nie jest publikowany.
 
 ## Formularz
 

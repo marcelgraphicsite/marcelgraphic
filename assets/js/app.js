@@ -74,8 +74,8 @@
   });
 
   /* ---------- mapa podstron (kolejność = kierunek przejścia) ---------- */
-  const ORDER = { index: 0, prace: 1, uslugi: 2, cennik: 3, 'o-mnie': 4, kontakt: 5, 'luxe-salon': 6, 'vesper-barber': 6, 'zar-burger': 6 };
-  const NUMS = { index: '00', prace: '01', uslugi: '02', cennik: '03', 'o-mnie': '04', kontakt: '05', 'luxe-salon': '↗', 'vesper-barber': '↗', 'zar-burger': '↗' };
+  const ORDER = { index: 0, prace: 1, uslugi: 2, cennik: 3, 'o-mnie': 4, kontakt: 5, 'luxe-salon': 6, 'vesper-barber': 6, 'zar-burger': 6, 'polityka-prywatnosci': 6 };
+  const NUMS = { index: '00', prace: '01', uslugi: '02', cennik: '03', 'o-mnie': '04', kontakt: '05', 'luxe-salon': '↗', 'vesper-barber': '↗', 'zar-burger': '↗', 'polityka-prywatnosci': '§' };
   const CONCEPTS = { luxe: 'Luxe Salon', vesper: 'Vesper Barber', zar: 'ŻAR Burger' };
   const keyOf = url => {
     const f = url.pathname.split('/').pop();

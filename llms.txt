@@ -1,33 +1,56 @@
 # Marcel Struszczak — strony internetowe, social media i opinie Google
 
-> Freelancer z Sieradza (woj. łódzkie), pracuje z lokalnymi firmami w całej Polsce zdalnie. Projektuje strony internetowe, prowadzi profile na Facebooku i Instagramie oraz wdraża karty i naklejki NFC do opinii Google. Na start darmowy mockup ze znakiem wodnym; płatność końcowa po akceptacji.
+> Marcel Struszczak (marcelgraphicsite.pl) projektuje strony internetowe dla firm, prowadzi profile firm na Facebooku i Instagramie oraz wdraża karty i naklejki NFC do opinii Google. Pracuje bezpośrednio z klientem, bez pośredników, z firmami z całej Polski (zdalnie); baza: Sieradz, woj. łódzkie. Na start bezpłatny projekt strony ze znakiem wodnym, płatność końcowa dopiero po akceptacji, możliwe raty.
 
-## Oferta i ceny (ceny startowe; finalną kwotę potwierdza po rozmowie)
-- Landing page (jedna strona): od 2 000 zł, realizacja 4–8 dni
-- Strona wizytówka: od 3 000 zł, realizacja 7–16 dni
-- Strona + sklep: wycena indywidualna
-- Social media (Facebook / Instagram): Start 600 zł/mies. (8 postów), Pro 800 zł/mies. (12–13 postów)
-- Karta NFC z podstawką: 60 zł/szt.; duża naklejka NFC: 80 zł/szt.
-- Domena + hosting + SSL: 200 zł za pierwszy rok, 500 zł/rok w kolejnych latach
-- Domena jest rejestrowana na e-mail klienta i należy do niego w 100%
+Hasło: „Cyfrowy rozwój lokalnych firm”. Branże: każda — od gastronomii po kancelarie. Odpowiedź na zapytanie w ciągu 24 godzin. Strona jest po polsku (z przełącznikiem PL/EN); można pisać po angielsku.
 
-## Najczęstsze pytania
-- Czy social media zastąpią stronę? Nie — i odwrotnie. Strona pokazuje charakter firmy nowym klientom (Google, bez logowania, cena i kontakt w kilka sekund) i należy do właściciela; social media budują relację ze stałymi klientami. Najlepiej działają razem.
-- Ile kosztuje strona? Landing od 2 000 zł, wizytówka od 3 000 zł; najpierw darmowy projekt, płatność końcowa po akceptacji, możliwe raty.
+## Oferta i ceny (ceny startowe; stan na 2026-10-01)
+- Landing page (jedna strona: oferta i kontakt): od 2 000 zł, realizacja 4–8 dni, 2 rundy poprawek
+- Strona wizytówka (rozbudowana strona firmowa: oferta, o firmie, cennik, FAQ, galeria, mapa, SEO i Wizytówka Google): od 3 000 zł, realizacja 7–16 dni, 5 rund poprawek
+- Strona + sklep internetowy (katalog, koszyk, płatności online BLIK i karta, szkolenie): wycena indywidualna
+- Dodatki: dodatkowa podstrona 300–500 zł; indywidualne grafiki i banery 200–400 zł; wersja językowa 400–600 zł; ekspresowa realizacja +25–50% ceny pakietu; drobna poprawka poza pakietem 80 zł; projekt ze znakiem wodnym bezpłatnie
+- Domena + hosting + SSL: 200 zł za pierwszy rok, 500 zł rocznie w kolejnych latach; domena rejestrowana na e-mail klienta (należy do klienta w 100%)
+- Social media, pakiet Start (8 postów i karuzel miesięcznie): 600 zł/mies. za Facebooka lub 800 zł/mies. za Facebooka i Instagram
+- Social media, pakiet Pro (12–13 postów i karuzel miesięcznie): 800 zł/mies. za Facebooka lub 1 100 zł/mies. za Facebooka i Instagram; bez długich umów, rozliczenie miesięczne
+- Karta NFC do opinii Google z podstawką: 60 zł/szt.; duża naklejka NFC: 80 zł/szt.; programowane pod profil firmy, wysyłka w całej Polsce
+- Płatność: zaliczka od 40% po akceptacji projektu, reszta po odbiorze gotowej strony, możliwe raty
+
+## Jak wygląda współpraca
+1. Rozmowa — telefonicznie, online albo na miejscu (jeśli klient działa niedaleko).
+2. Darmowy mockup — projekt strony ze znakiem wodnym, bez kosztów.
+3. Zaliczka od 40% — gwarancja terminu; płatność można rozłożyć na raty.
+4. Realizacja i poprawki — płatność końcowa dopiero po akceptacji.
+5. Start i opieka — domena, hosting i SSL po stronie Marcela; kontakt przy zmianach.
+
+## Najczęstsze pytania (krótko)
+- Ile kosztuje strona internetowa? Landing od 2 000 zł, Wizytówka od 3 000 zł, a sklep wyceniam indywidualnie. Finalna kwota zależy od liczby podstron, funkcji i materiałów — konkretną cenę podam po krótkiej rozmowie. Wstępnie policzysz ją w kalkulatorze na stronie Cennik (https://marcelgraphicsite.pl/cennik#kalkulator).
+- Co, jeśli projekt mi się nie spodoba? Nic nie tracisz. Zanim zapłacisz cokolwiek, dostajesz darmowy mockup ze znakiem wodnym i oceniasz cały projekt. Zaliczkę wpłacasz dopiero wtedy, gdy chcesz iść dalej.
+- Ile trwa realizacja? Landing to 4–8 dni, Wizytówka 7–16 dni, a termin sklepu ustalamy po rozmowie o zakresie. Potrzebujesz na wczoraj? Ekspresowa realizacja skraca czas nawet o połowę (+25–50% ceny pakietu).
+- Czy mogę zapłacić w ratach? Tak. Cena jest stała, ale płatność możesz rozłożyć na raty. Na start wystarczy zaliczka od 40%, a resztę płacisz po akceptacji gotowej strony.
+- Nie mam tekstów ani zdjęć. Co teraz? Spokojnie — na start wystarczą zdjęcia z Twojego Facebooka lub Instagrama. Na nich przygotowuję też darmowy projekt. Teksty ułożymy razem tak, żeby klient od razu wiedział, czemu warto wybrać właśnie Ciebie.
+- Czy strona i domena będą moje? Tak, w 100%. Domenę rejestruję na Twój e-mail, więc jest Twoją własnością od pierwszego dnia. Hostingiem i odnowieniami zajmuję się za Ciebie.
 
 ## Strony
 - [Start](https://marcelgraphicsite.pl/): oferta w skrócie
-- [Usługi](https://marcelgraphicsite.pl/uslugi): strony, social media, karty NFC, proces współpracy
-- [Cennik](https://marcelgraphicsite.pl/cennik): pakiety, kalkulator wyceny, FAQ
-- [Prace](https://marcelgraphicsite.pl/prace): trzy projekty koncepcyjne (salon urody, barber, burgerownia)
-- [O mnie](https://marcelgraphicsite.pl/o-mnie): kim jestem i jak pracuję
-- [Kontakt](https://marcelgraphicsite.pl/kontakt): formularz, e-mail, telefon
-- [Polityka prywatności](https://marcelgraphicsite.pl/polityka-prywatnosci)
+- [Usługi](https://marcelgraphicsite.pl/uslugi): strony internetowe, social media, karty NFC do opinii Google, proces współpracy
+- [Cennik](https://marcelgraphicsite.pl/cennik): pakiety, dodatki, kalkulator wyceny, FAQ
+- [Prace](https://marcelgraphicsite.pl/prace): trzy projekty koncepcyjne do przewinięcia na żywo (salon urody, barbershop, burgerownia) — koncepty, nie realizacje dla klientów
+- [O mnie](https://marcelgraphicsite.pl/o-mnie): kim jest Marcel i jak pracuje
+- [Kontakt](https://marcelgraphicsite.pl/kontakt): formularz (darmowy projekt), e-mail, telefon
+
+## Poradnik
+- [Ile kosztuje strona internetowa w 2026 roku?](https://marcelgraphicsite.pl/ile-kosztuje-strona-internetowa): Realne widełki na rynku, od czego zależy cena, koszty stałe, o których mało kto mówi — i jak nie przepłacić.
+- [Strona internetowa czy Facebook — co wybrać dla lokalnej firmy?](https://marcelgraphicsite.pl/strona-internetowa-czy-facebook): Strona zdobywa nowych klientów, social media zamieniają ich w stałych. Porównanie i plan na mały budżet.
+- [Jak zdobyć więcej opinii w Google? 7 sposobów dla lokalnej firmy](https://marcelgraphicsite.pl/jak-zdobyc-opinie-google): Kiedy prosić, jak skrócić drogę do opinii (link, QR, NFC), jak odpowiadać — i czego nigdy nie robić.
 
 ## Kontakt
 - E-mail: marcel.graphicsite@gmail.com
 - Telefon: +48 511 808 498
-- Facebook, Instagram, LinkedIn: linki w stopce strony
+- Formularz: https://marcelgraphicsite.pl/kontakt
+- Facebook: https://www.facebook.com/profile.php?id=61592328632477
+- Instagram: https://www.instagram.com/marcel.graphicsite/
+- LinkedIn: https://www.linkedin.com/in/marcel-struszczak-5144a53b9/
 
-## Uwaga
-Projekty w sekcji „Prace" to koncepty (fikcyjne firmy), nie realizacje dla klientów.
+## Optional
+- [Pełna treść strony w jednym pliku](https://marcelgraphicsite.pl/llms-full.txt)
+- [Polityka prywatności](https://marcelgraphicsite.pl/polityka-prywatnosci)

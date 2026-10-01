@@ -11,14 +11,18 @@
 - Domena + hosting + SSL: 200 zł za pierwszy rok, 500 zł/rok w kolejnych latach
 - Domena jest rejestrowana na e-mail klienta i należy do niego w 100%
 
+## Najczęstsze pytania
+- Czy social media zastąpią stronę? Nie — i odwrotnie. Strona pokazuje charakter firmy nowym klientom (Google, bez logowania, cena i kontakt w kilka sekund) i należy do właściciela; social media budują relację ze stałymi klientami. Najlepiej działają razem.
+- Ile kosztuje strona? Landing od 2 000 zł, wizytówka od 3 000 zł; najpierw darmowy projekt, płatność końcowa po akceptacji, możliwe raty.
+
 ## Strony
 - [Start](https://marcelgraphicsite.pl/): oferta w skrócie
-- [Usługi](https://marcelgraphicsite.pl/uslugi.html): strony, social media, karty NFC, proces współpracy
-- [Cennik](https://marcelgraphicsite.pl/cennik.html): pakiety, kalkulator wyceny, FAQ
-- [Prace](https://marcelgraphicsite.pl/prace.html): trzy projekty koncepcyjne (salon urody, barber, burgerownia)
-- [O mnie](https://marcelgraphicsite.pl/o-mnie.html): kim jestem i jak pracuję
-- [Kontakt](https://marcelgraphicsite.pl/kontakt.html): formularz, e-mail, telefon
-- [Polityka prywatności](https://marcelgraphicsite.pl/polityka-prywatnosci.html)
+- [Usługi](https://marcelgraphicsite.pl/uslugi): strony, social media, karty NFC, proces współpracy
+- [Cennik](https://marcelgraphicsite.pl/cennik): pakiety, kalkulator wyceny, FAQ
+- [Prace](https://marcelgraphicsite.pl/prace): trzy projekty koncepcyjne (salon urody, barber, burgerownia)
+- [O mnie](https://marcelgraphicsite.pl/o-mnie): kim jestem i jak pracuję
+- [Kontakt](https://marcelgraphicsite.pl/kontakt): formularz, e-mail, telefon
+- [Polityka prywatności](https://marcelgraphicsite.pl/polityka-prywatnosci)
 
 ## Kontakt
 - E-mail: marcel.graphicsite@gmail.com

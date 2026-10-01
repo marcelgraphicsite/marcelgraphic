@@ -80,7 +80,7 @@
   const keyOf = url => {
     const f = url.pathname.split('/').pop();
     if (!f) return 'index';
-    const m = f.match(/^([\w-]+)\.html?$/i);
+    const m = f.match(/^([\w-]+)(?:\.html?)?$/i);
     return m ? m[1].toLowerCase() : null;
   };
 
@@ -1221,9 +1221,9 @@
     const dev = $('#device'), frame = $('#devFrame'), poster = $('#devPoster'), play = $('#devPlay'), url = $('#devUrl');
     const tabs = $$('.ptab'), ind = $('.ptabs .tabs__ind'), devBtns = $$('[data-dev]');
     const PR = {
-      luxe: { file: 'luxe-salon.html', dom: 'luxe-salon.pl', img: 'luxe', n: '01' },
-      vesper: { file: 'vesper-barber.html', dom: 'vesper-barber.pl', img: 'vesper', n: '02' },
-      zar: { file: 'zar-burger.html', dom: 'zar-burger.pl', img: 'zar', n: '03' }
+      luxe: { file: 'luxe-salon', dom: 'luxe-salon.pl', img: 'luxe', n: '01' },
+      vesper: { file: 'vesper-barber', dom: 'vesper-barber.pl', img: 'vesper', n: '02' },
+      zar: { file: 'zar-burger', dom: 'zar-burger.pl', img: 'zar', n: '03' }
     };
     let proj = 'luxe', mode = innerWidth < 760 ? 'phone' : 'desk', live = false, loaded = '';
     const place = () => {

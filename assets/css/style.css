@@ -920,3 +920,5 @@ html.lite body::after{display:none}
 .legal ul{margin:0 0 14px;padding-left:1.2em;list-style:disc}
 .legal li{margin:0 0 8px}
 .legal a{text-decoration:underline;text-underline-offset:3px}
+.legal__en{padding:16px 18px;border:1px solid var(--line);border-radius:12px;font-size:15px}
+.legal__en:empty{display:none}

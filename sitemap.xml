@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url><loc>https://marcelgraphicsite.pl/</loc><image:image><image:loc>https://marcelgraphicsite.pl/assets/img/og.jpg</image:loc></image:image><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://marcelgraphicsite.pl/prace.html</loc><image:image><image:loc>https://marcelgraphicsite.pl/assets/img/luxe-1200.webp</image:loc></image:image><image:image><image:loc>https://marcelgraphicsite.pl/assets/img/vesper-1200.webp</image:loc></image:image><image:image><image:loc>https://marcelgraphicsite.pl/assets/img/zar-1200.webp</image:loc></image:image><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://marcelgraphicsite.pl/uslugi.html</loc><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://marcelgraphicsite.pl/cennik.html</loc><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://marcelgraphicsite.pl/o-mnie.html</loc><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://marcelgraphicsite.pl/kontakt.html</loc><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://marcelgraphicsite.pl/polityka-prywatnosci.html</loc><lastmod>2026-10-01</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://marcelgraphicsite.pl/prace</loc><image:image><image:loc>https://marcelgraphicsite.pl/assets/img/luxe-1200.webp</image:loc></image:image><image:image><image:loc>https://marcelgraphicsite.pl/assets/img/vesper-1200.webp</image:loc></image:image><image:image><image:loc>https://marcelgraphicsite.pl/assets/img/zar-1200.webp</image:loc></image:image><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://marcelgraphicsite.pl/uslugi</loc><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://marcelgraphicsite.pl/cennik</loc><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://marcelgraphicsite.pl/o-mnie</loc><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://marcelgraphicsite.pl/kontakt</loc><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://marcelgraphicsite.pl/polityka-prywatnosci</loc><lastmod>2026-10-01</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

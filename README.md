@@ -1,6 +1,6 @@
 # Marcel Struszczak — portfolio i oferta (wersja wielostronicowa)
 
-Strona: https://marcelgraphicsite.github.io/marcelgraphic/
+Strona: https://marcelgraphicsite.pl/
 
 ## Co jest w środku
 

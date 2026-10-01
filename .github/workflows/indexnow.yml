@@ -1,0 +1,27 @@
+# Po każdej zmianie strony powiadamia wyszukiwarki (Bing, a przez niego ChatGPT i Copilot,
+# oraz Yandex, Seznam, Naver) o wszystkich adresach z sitemap.xml — protokół IndexNow.
+name: IndexNow — powiadom wyszukiwarki
+
+on:
+  push:
+    branches: [zxxcv]
+    paths: ['**.html', 'sitemap.xml', 'llms.txt', 'llms-full.txt']
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Poczekaj, aż GitHub Pages opublikuje zmiany
+        if: github.event_name == 'push'
+        run: sleep 150
+      - name: Wyślij adresy do IndexNow
+        run: |
+          KEY=963cc2e7ad1b2927af49a2cfbcc214f7
+          URLS=$(grep -o '<loc>[^<]*</loc>' sitemap.xml | sed -e 's#<loc>##' -e 's#</loc>##' | jq -R . | jq -cs .)
+          echo "Adresy: $URLS"
+          BODY=$(jq -cn --arg key "$KEY" --argjson urls "$URLS" '{host:"marcelgraphicsite.pl",key:$key,keyLocation:("https://marcelgraphicsite.pl/"+$key+".txt"),urlList:$urls}')
+          CODE=$(curl -sS -o resp.txt -w '%{http_code}' -X POST https://api.indexnow.org/indexnow -H 'Content-Type: application/json; charset=utf-8' -d "$BODY")
+          echo "IndexNow odpowiedział: HTTP $CODE"; cat resp.txt || true
+          case "$CODE" in 200|202) echo "OK — wyszukiwarki dostały listę adresów." ;; *) exit 1 ;; esac

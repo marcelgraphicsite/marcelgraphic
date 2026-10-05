@@ -823,6 +823,19 @@ p, .menu-card p, .ticket p, .side-item small{ font-weight:450; }
 .ticket p{ margin-bottom:24px; }
 .ticket.is-added .ticket-order{ color:var(--bone); }
 
+/* zdjęcia trzymają proporcje: atrybut height nie może ich rozciągać */
+img{ max-width:100%; height:auto; }
+.layers-visual img{ height:auto; aspect-ratio:2/3; object-fit:cover; }
+.sides-img-main{ height:auto; }
+@media (max-width:860px){
+  .layers-visual img{ max-width:300px; }
+  .sides-media{ max-width:460px; }
+}
+
+.map-art{ overflow:hidden; }
+html,body{ overflow-x:hidden; }
+@supports (overflow:clip){ html,body{ overflow-x:clip; } }
+
 /* dodatki: kadr na burgera, nie na ciemne tło zdjęcia */
 .sides-img-sub{ height:auto; object-position:62% 70%; aspect-ratio:3/2; }
 .ticket-img img[src$="grillmaster.webp"]{ object-position:50% 78%; }
@@ -988,7 +1001,7 @@ function msSig(c){var P=c.querySelectorAll('path'),L=[],T=0,t0=0,fin=null,raf=0,
   <div class="about-inner wrap">
     <div class="about-visual reveal-left">
       <div class="grill-frame">
-        <img width="626" height="740" decoding="async" loading="lazy" src="assets/zar/grill.webp" alt="Burger ŻAR w dłoni grillmastera — wołowina na żywym ogniu">
+        <img width="1100" height="1300" decoding="async" loading="lazy" src="assets/zar/grill.webp" alt="Burger ŻAR w dłoni grillmastera — wołowina na żywym ogniu">
         <div class="grill-label">Grill węglowy · od 2014</div>
         <div class="grill-year">2014</div>
       </div>
@@ -1038,7 +1051,7 @@ function msSig(c){var P=c.querySelectorAll('path'),L=[],T=0,t0=0,fin=null,raf=0,
     <div class="menu-grid stagger">
 
       <article class="ticket">
-        <div class="ticket-img"><span class="ticket-no">01</span><span class="badge badge-best">Bestseller</span><img width="541" height="360" loading="lazy" decoding="async" src="assets/zar/hero.webp" alt="Węglowy Classic — burger z cheddarem i bekonem"></div>
+        <div class="ticket-img"><span class="ticket-no">01</span><span class="badge badge-best">Bestseller</span><img width="1082" height="720" loading="lazy" decoding="async" src="assets/zar/hero.webp" alt="Węglowy Classic — burger z cheddarem i bekonem"></div>
         <h3>Węglowy Classic</h3>
         <p>Wołowina 200g, cheddar, bekon, sos BBQ własnej roboty, marynowany ogórek.</p>
         <div class="ticket-footer">
@@ -1058,7 +1071,7 @@ function msSig(c){var P=c.querySelectorAll('path'),L=[],T=0,t0=0,fin=null,raf=0,
       </article>
 
       <article class="ticket">
-        <div class="ticket-img"><span class="ticket-no">03</span><span class="badge badge-spicy">Pikantny</span><img width="612" height="408" loading="lazy" decoding="async" src="assets/zar/kotlety.webp" alt="Kotlety wołowe na ruszcie nad żywym ogniem"></div>
+        <div class="ticket-img"><span class="ticket-no">03</span><span class="badge badge-spicy">Pikantny</span><img width="1100" height="733" loading="lazy" decoding="async" src="assets/zar/kotlety.webp" alt="Kotlety wołowe na ruszcie nad żywym ogniem"></div>
         <h3>Spalony Jalapeño</h3>
         <p>Wołowina, pepper jack, jalapeño, chili mayo, chrupiące chipsy z cebuli.</p>
         <div class="ticket-footer">
@@ -1068,7 +1081,7 @@ function msSig(c){var P=c.querySelectorAll('path'),L=[],T=0,t0=0,fin=null,raf=0,
       </article>
 
       <article class="ticket">
-        <div class="ticket-img"><span class="ticket-no">04</span><span class="badge badge-veg">Wege</span><img width="368" height="469" loading="lazy" decoding="async" src="assets/zar/skladniki.webp" alt="Warstwy burgera Wege Żar"></div>
+        <div class="ticket-img"><span class="ticket-no">04</span><span class="badge badge-veg">Wege</span><img width="736" height="938" loading="lazy" decoding="async" src="assets/zar/skladniki.webp" alt="Warstwy burgera Wege Żar"></div>
         <h3>Wege Żar</h3>
         <p>Kotlet z czarnej fasoli i buraka, ser, awokado, sos czosnkowy.</p>
         <div class="ticket-footer">
@@ -1159,19 +1172,19 @@ function msSig(c){var P=c.querySelectorAll('path'),L=[],T=0,t0=0,fin=null,raf=0,
     <div class="gallery-grid stagger">
       <!-- Large featured cell -->
       <div class="gallery-item gallery-img-item">
-        <img width="540" height="360" decoding="async" loading="lazy" src="assets/zar/stek.webp" alt="Stek na żywym ogniu węglowym">
+        <img width="1080" height="720" decoding="async" loading="lazy" src="assets/zar/stek.webp" alt="Stek na żywym ogniu węglowym">
         <div class="gallery-item-label">Żywy ogień</div>
       </div>
       <div class="gallery-item gallery-img-item">
-        <img width="500" height="889" decoding="async" loading="lazy" src="assets/zar/bulki.webp" alt="Bułki i kotlety pieczone nad węglem drzewnym">
+        <img width="1000" height="1778" decoding="async" loading="lazy" src="assets/zar/bulki.webp" alt="Bułki i kotlety pieczone nad węglem drzewnym">
         <div class="gallery-item-label">Świeże bułki</div>
       </div>
       <div class="gallery-item gallery-img-item">
-        <img width="612" height="408" decoding="async" loading="lazy" src="assets/zar/kotlety.webp" alt="Kotlety wołowe na żywym ogniu węglowym">
+        <img width="1100" height="733" decoding="async" loading="lazy" src="assets/zar/kotlety.webp" alt="Kotlety wołowe na żywym ogniu węglowym">
         <div class="gallery-item-label">Grill węglowy</div>
       </div>
       <div class="gallery-item gallery-img-item">
-        <img width="368" height="469" decoding="async" loading="lazy" src="assets/zar/skladniki.webp" alt="Warstwy burgera">
+        <img width="736" height="938" decoding="async" loading="lazy" src="assets/zar/skladniki.webp" alt="Warstwy burgera">
         <div class="gallery-item-label">Składniki</div>
       </div>
       <div class="gallery-item gallery-img-item">

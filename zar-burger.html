@@ -810,6 +810,11 @@ p, .menu-card p, .ticket p, .side-item small{ font-weight:450; }
 .ticker span em{ font-style:normal; color:var(--smoke); font-family:var(--mono); font-size:.55em; letter-spacing:.12em; }
 .ticker:hover .ticker-track{ animation-play-state:paused; }
 @keyframes tickerMove{ to{ transform:translateX(-50%); } }
+/* pasek w kolorze żaru zamiast białych liter */
+.ticker{ background:var(--ember); border-color:var(--ember); padding:14px 0; transform:rotate(-1.2deg); margin:10px -2% 0; }
+.ticker span{ color:var(--char); font-weight:700; }
+.ticker span b{ color:var(--char); }
+.ticker span em{ color:rgba(14,11,8,.62); font-weight:700; }
 
 /* karta dań: zdjęcie w każdym bilecie */
 .ticket{ display:flex; flex-direction:column; overflow:hidden; }

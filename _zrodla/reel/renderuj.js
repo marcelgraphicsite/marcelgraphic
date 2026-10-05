@@ -21,7 +21,7 @@ function loadMeta() {
   const M = {};
   for (const k of ['main', 'hook', 'old', 'phone']) {
     const p = path.join(TAKES, k, 'meta.json');
-    if (!fs.existsSync(p)) { M[k] = { frames: [{ x: 0, y: 0 }], clicks: [], taps: [], marks: {} }; continue; }
+    if (!fs.existsSync(p)) { if (!arg('stills') && !PREV) throw new Error('brak ujęcia: ' + p); M[k] = { frames: [{ x: 0, y: 0 }], clicks: [], taps: [], marks: {} }; continue; }
     const m = JSON.parse(fs.readFileSync(p, 'utf8'));
     m.frames = m.frames.map(f => ({ x: f.x, y: f.y, cur: f.cur, down: f.down, title: f.title, path: f.path }));
     M[k] = m;
@@ -99,7 +99,7 @@ async function all(workers) {
   // granice na pełnych klatkach
   parts.forEach(p => { p[0] = Math.round(p[0] * FPS) / FPS; p[1] = Math.round(p[1] * FPS) / FPS; });
   await Promise.all(parts.map((p, i) => new Promise((res, rej) => {
-    const c = spawn(process.execPath, [__filename, `--from=${p[0]}`, `--to=${p[1]}`, `--out=${path.join(dir, `s${i}.mp4`)}`].concat(PREV ? ['--prev'] : []), { stdio: 'inherit', env: process.env });
+    const c = spawn(process.execPath, [__filename, `--from=${p[0]}`, `--to=${p[1]}`, `--out=${path.join(dir, `s${i}.mp4`)}`, `--takes=${TAKES}`].concat(PREV ? ['--prev'] : []), { stdio: 'inherit', env: process.env });
     c.on('close', code => (code ? rej(new Error('segment ' + i)) : res()));
   })));
   fs.writeFileSync(path.join(dir, 'list.txt'), parts.map((p, i) => `file 's${i}.mp4'`).join('\n'));

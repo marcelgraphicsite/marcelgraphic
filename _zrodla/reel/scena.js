@@ -518,7 +518,7 @@
     }
     // robots.txt (f19)
     const F19 = SC.f19.start;
-    const rbA = T >= F19 + 3.6 && T < SC.outro.start ? seg(T, F19 + 3.6, 0.35, E.outCubic) : 0;
+    const rbA = T >= F19 + 3.6 && T < SC.outro.start + 0.7 ? seg(T, F19 + 3.6, 0.35, E.outCubic) * (1 - seg(T, SC.outro.start, 0.7, E.io)) : 0;
     st($('robots'), 'opacity', rbA.toFixed(3)); show($('robots'), rbA > 0.001);
     if (rbA > 0) {
       [...$('rRows').children].forEach((r, i) => {
@@ -584,7 +584,7 @@
   function renderNetbook(T) {
     const Z0 = SC.zmiany.start, L = T - Z0;
     const nb = $('nb'), note = $('note'), keys = $('nbKeys');
-    const on = T >= Z0 - 0.05 && T < Z0 + 5.6;
+    const on = T >= Z0 && T < Z0 + 5.6;
     show(nb, on); show(note, on && L < 4.6); show(keys, on && L > 3.6);
     if (!on) return;
     const x = ch('nx', T), ry = ch('nry', T);
@@ -597,7 +597,16 @@
     const gl = L > 3.75 && L < 4.15;
     st($('nbImg'), 'transform', gl ? `translateX(${px((rnd(Math.floor(L * 40), 3) - 0.5) * 60)})` : 'none');
     st($('nbImg'), 'filter', gl ? `contrast(1.6) hue-rotate(${Math.floor(rnd(Math.floor(L * 40), 5) * 180)}deg)` : 'none');
-    st($('nbOff'), 'opacity', (L > 4.05 ? 1 : 0).toFixed(2));
+    const ko = clamp((L - 3.98) / 0.12, 0, 1), kl = clamp((L - 4.1) / 0.14, 0, 1);
+    st($('nbImg'), 'transformOrigin', '50% 50%');
+    if (ko > 0) {
+      st($('nbImg'), 'transform', `scale(${(1 - kl * 0.98).toFixed(4)},${Math.max(0.006, 1 - E.inCubic(ko)).toFixed(4)})`);
+      st($('nbImg'), 'filter', `brightness(${(1 + ko * 1.6).toFixed(3)})`);
+    }
+    st($('nbImg'), 'opacity', (1 - clamp((L - 4.18) / 0.08, 0, 1)).toFixed(3));
+    st($('nbOff'), 'opacity', (ko > 0 ? 1 : 0).toFixed(2));
+    st($('nbOff'), 'zIndex', '-1');
+    st(document.querySelector('#nbScr .och'), 'opacity', (1 - ko).toFixed(3));
     // karteczka TODO: lekko faluje, odkleja się i spada
     const nx0 = 748 + x, ny0 = 726;
     const tn = Math.max(0, L - 3.15);
@@ -632,7 +641,7 @@
     const x = ch('px', T), s = ch('ps', T), rz = ch('prz', T), ry = ch('pry', T), bl = ch('pblur', T);
     // wibracja przy obróceniu wizytówki (Android)
     const vibT = SC.f18.start + PH_OFF + 6.1;
-    const vib = T > vibT && T < vibT + 0.28 ? Math.sin((T - vibT) * 120) * 1.4 * (1 - (T - vibT) / 0.28) : 0;
+    const vib = T > vibT && T < vibT + 0.42 ? Math.sin((T - vibT) * 52) * 0.9 * Math.pow(1 - (T - vibT) / 0.42, 2) : 0;
     st($('ph'), 'transform', `translate3d(${px(x - 210.5)},${px(py - 440)},0) rotateY(${ry.toFixed(3)}deg) rotateZ(${(rz + vib).toFixed(3)}deg) scale(${s.toFixed(4)})`);
     st($('ph'), 'filter', bl > 0.15 ? `blur(${bl.toFixed(2)}px)` : 'none');
     // zawartość

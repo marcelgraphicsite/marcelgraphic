@@ -247,7 +247,7 @@
     const F19 = SC.f19.start;
     cam(F19 + 0.1, { s: 1.12, wpt: [645, 1035], a: [540, 1010], w: 2.6 });
     key('my', F19 + 3.75, 0, { w: 4.2 }); key('ms', F19 + 3.75, 1, { w: 4.2 }); key('mblur', F19 + 3.75, 0, { w: 4.4 }); key('mop', F19 + 3.75, 1, { w: 5 });
-    key('px', F19 + 3.75, 905, { w: 4 }); key('py', F19 + 3.75, 1330, { w: 4 }); key('ps', F19 + 3.75, 0.66, { w: 4 }); key('pblur', F19 + 3.75, 4, { w: 4 });
+    key('px', F19 + 3.75, 1460, { w: 3.6 }); key('py', F19 + 3.75, 1180, { w: 3.6 }); key('ps', F19 + 3.75, 0.62, { w: 3.6 }); key('pblur', F19 + 3.75, 4, { w: 4 });
     key('prz', F19 + 3.75, 6, { w: 3.5 }); key('pry', F19 + 3.75, -12, { w: 3.5 });
     cam(F19 + 3.75, { s: 1.0, wpt: [540, 945], w: 3.2 });
     cam(F19 + 4.4, { s: 1.38, f: [640, 430], w: 2.6 });
@@ -496,8 +496,8 @@
 
     // nowa karta (f14)
     const F14 = SC.f14.start;
-    const ntOn = T >= F14 + 1.3 && T < F14 + 4.6;
-    const ntA = ntOn ? Math.min(seg(T, F14 + 1.3, 0.18, E.outCubic), 1 - seg(T, F14 + 4.55, 0.12)) : 0;
+    const ntOn = T >= F14 + 1.3 && T < F14 + 4.75;
+    const ntA = ntOn ? Math.min(seg(T, F14 + 1.3, 0.22, E.outCubic), 1 - seg(T, F14 + 4.4, 0.3)) : 0;
     st($('newtab'), 'opacity', ntA.toFixed(3)); show($('newtab'), ntA > 0.001);
     // tab 2 („Nowa karta”) wjeżdża i znika
     const t2 = $('tab2');

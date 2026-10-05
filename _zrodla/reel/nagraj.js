@@ -225,7 +225,8 @@ class Take {
       const dot = document.getElementById('cursor');
       return { title: document.title, path: location.pathname + location.search, sy: Math.round(scrollY), vx: visualViewport ? visualViewport.pageLeft : scrollX, vy: visualViewport ? visualViewport.pageTop : scrollY, cur, lang: document.documentElement.lang, dot: dot ? dot.className : '' };
     }, [DT, mx, my]).catch(() => null);
-    if (await this.leaving()) { /* nawigacja zaczęła się w tej klatce — dokończ ją przed zrzutem */ }
+    // nawigacja zaczęła się w tej klatce: zrzut dopiero z nowej strony (inaczej łapie pół-narysowany dokument)
+    if (await this.leaving()) await this.waitNewPage();
     const vxy = info ? [info.vx, info.vy] : [0, 0];
     if (info) { delete info.vx; delete info.vy; }
     this.meta.frames.push(Object.assign({ f: this.f, x: +mx.toFixed(2), y: +my.toFixed(2), down: this.down }, info || {}));

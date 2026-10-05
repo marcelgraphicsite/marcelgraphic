@@ -838,8 +838,15 @@ img{ max-width:100%; height:auto; }
 }
 
 .map-art{ overflow:hidden; }
-html,body{ overflow-x:hidden; }
-@supports (overflow:clip){ html,body{ overflow-x:clip; } }
+html{ overflow-x:hidden; }
+@supports (overflow:clip){ html{ overflow-x:clip; } }
+
+/* pasek przewijania w kolorach ŻAR-u zamiast białego */
+html{ color-scheme:dark; scrollbar-color:#9C3D14 var(--char); }
+::-webkit-scrollbar{ width:10px; height:10px; background:var(--char); }
+::-webkit-scrollbar-track{ background:var(--char); }
+::-webkit-scrollbar-thumb{ background:#9C3D14; border:2px solid var(--char); border-radius:0; }
+::-webkit-scrollbar-thumb:hover{ background:var(--ember); }
 
 /* dodatki: kadr na burgera, nie na ciemne tło zdjęcia */
 .sides-img-sub{ height:auto; object-position:62% 70%; aspect-ratio:3/2; }

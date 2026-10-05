@@ -23,6 +23,7 @@ Strona: https://marcelgraphicsite.pl/
 | `assets/zar/` | Zdjęcia do strony ŻAR |
 | `assets/marcel-struszczak.vcf` | Kontakt do zapisania w telefonie (przycisk „Zapisz kontakt”) |
 | `sitemap.xml` | Mapa strony do Google Search Console |
+| `_zrodla/reel/` | Reel „19 smaczków mojej nowej strony” — nagrywanie strony klatka po klatce, montaż na atrapie Maca, muzyka (niepublikowane, opis w środku) |
 
 ## Wdrożenie na GitHub Pages
 

@@ -1,0 +1,3 @@
+caveat-600-*.woff2      Caveat — Copyright The Caveat Project Authors (https://github.com/googlefonts/caveat)
+noto-emoji-reel.woff2   Noto Color Emoji (podzbiór: 👀 👇 😍) — Copyright Google LLC
+Oba kroje: SIL Open Font License 1.1 — https://openfontlicense.org

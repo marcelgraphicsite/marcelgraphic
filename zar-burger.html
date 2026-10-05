@@ -7,9 +7,19 @@
 <meta name="description" content="ŻAR — burgerownia smokehouse. Wołowina od lokalnych rolników, bułka pieczona codziennie, grill na węglu drzewnym.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0E0B08">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/zar/bevan-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/zar/oswald-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Bevan";font-style:italic;font-weight:400;font-display:swap;src:url(assets/fonts/zar/bevan-italic-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"Bevan";font-style:italic;font-weight:400;font-display:swap;src:url(assets/fonts/zar/bevan-italic-latin.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Bevan";font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/zar/bevan-normal-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"Bevan";font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/zar/bevan-normal-latin.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:500 700;font-display:swap;src:url(assets/fonts/zar/jetbrains-mono-normal-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:500 700;font-display:swap;src:url(assets/fonts/zar/jetbrains-mono-normal-latin.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Oswald";font-style:normal;font-weight:500 700;font-display:swap;src:url(assets/fonts/zar/oswald-normal-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"Oswald";font-style:normal;font-weight:500 700;font-display:swap;src:url(assets/fonts/zar/oswald-normal-latin.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Inter";font-style:normal;font-weight:300 700;font-display:swap;src:url(assets/fonts/inter-var.woff2) format("woff2")}
+</style>
 <link rel="preload" as="image" href="assets/zar/hero.webp">
 <style>
 
@@ -769,6 +779,11 @@ body::before{
   .hero-bg{ transform:none !important; }
 }
 
+/* ===== Grubsze litery: burgerownia, nie butik ===== */
+body{ font-weight:450; }
+p, .menu-card p, .ticket p, .side-item small{ font-weight:450; }
+[class*="tag"], [class*="eyebrow"], [class*="label"], .hours, .footer-brand p{ font-weight:600; }
+.nav-links{ font-weight:600; }
 /* ===== ODŚWIEŻENIE 2026: zdjęcia w karcie, status „otwarte”, pasek dań, mapa ===== */
 /* status otwarcia (liczony na żywo z godzin) */
 .hero-tags{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:28px; }

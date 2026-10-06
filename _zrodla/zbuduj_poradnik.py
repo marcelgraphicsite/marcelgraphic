@@ -28,8 +28,8 @@ from uslugi_tresc import USLUGI  # noqa: E402
 B = 'https://marcelgraphicsite.pl/'
 TODAY = datetime.date.today().isoformat()
 MIESIACE = ['stycznia', 'lutego', 'marca', 'kwietnia', 'maja', 'czerwca', 'lipca', 'sierpnia', 'września', 'października', 'listopada', 'grudnia']
-ORG = {'@type': 'ProfessionalService', '@id': B + '#firma', 'name': 'Marcel Struszczak — strony internetowe i social media',
-       'alternateName': ['Marcel GraphicSite', 'marcelgraphicsite.pl'], 'url': B,
+ORG = {'@type': 'ProfessionalService', '@id': B + '#firma', 'name': 'Marcel GraphicSite',
+       'alternateName': ['Marcel Struszczak — strony internetowe', 'marcelgraphicsite.pl', 'marcel.graphicsite'], 'url': B,
        'logo': B + 'assets/img/apple-touch-icon.png', 'image': B + 'assets/img/og.jpg',
        'telephone': '+48 511 808 498', 'email': 'marcel.graphicsite@gmail.com', 'priceRange': '60–3000+ zł',
        'address': {'@type': 'PostalAddress', 'addressLocality': 'Sieradz', 'postalCode': '98-200', 'addressRegion': 'łódzkie', 'addressCountry': 'PL'}}
@@ -130,7 +130,7 @@ CTA = '''<section class="sec" style="padding-top:0">
   </div>
 </section>'''
 
-AUTHOR = ('<aside class="author"><span class="author__mark" aria-hidden="true">MS</span><div><p><b>Marcel Struszczak</b></p>'
+AUTHOR = ('<aside class="author"><span class="author__mark" aria-hidden="true">MS</span><div><p><b>Marcel Struszczak</b> · Marcel GraphicSite</p>'
           '<p>Projektant stron internetowych z Sieradza. Projektuję strony, prowadzę social media i wdrażam karty NFC do opinii Google '
           'dla firm z całej Polski. <a href="o-mnie">Więcej o mnie</a> · <a href="poradnik">Wszystkie poradniki</a></p></div></aside>')
 
@@ -295,7 +295,7 @@ def build_feed():
     items = sorted(ARTYKULY, key=lambda a: (mod(a), pub(a)), reverse=True)
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
            '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">', '<channel>',
-           '  <title>Poradnik dla firm — Marcel Struszczak</title>',
+           '  <title>Poradnik dla firm — Marcel GraphicSite</title>',
            '  <link>%sporadnik</link>' % B,
            '  <description>%s</description>' % esc(PORADNIK['description']),
            '  <language>pl</language>',

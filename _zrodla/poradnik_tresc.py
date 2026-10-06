@@ -13,7 +13,7 @@ DZIS = '2026-10-06'          # data ostatniej dużej aktualizacji poradnika
 _ARTYKULY = [
     {
         'slug': 'ile-kosztuje-strona-internetowa',
-        'title': 'Ile kosztuje strona internetowa w 2026? Realne ceny dla firm | Marcel Struszczak',
+        'title': 'Ile kosztuje strona internetowa w 2026? Realne ceny dla firm | Marcel GraphicSite',
         'og_title': 'Ile kosztuje strona internetowa w 2026 roku?',
         'description': 'Landing od 2 000 zł, strona firmowa od 3 000 zł, sklep wyceniany indywidualnie. Od czego zależy cena strony, jakie są koszty stałe i jak nie przepłacić.',
         'h1': 'Ile kosztuje strona internetowa <em>w 2026 roku?</em>',
@@ -95,7 +95,7 @@ Zanim zapłacisz złotówkę, dostajesz **darmowy projekt ze znakiem wodnym**. Z
     },
     {
         'slug': 'strona-internetowa-czy-facebook',
-        'title': 'Strona internetowa czy Facebook? Co wybrać dla lokalnej firmy | Marcel Struszczak',
+        'title': 'Strona internetowa czy Facebook? Co wybrać dla lokalnej firmy | Marcel GraphicSite',
         'og_title': 'Strona internetowa czy Facebook — co wybrać?',
         'description': 'Social media nie zastąpią strony, a strona nie zastąpi social mediów. Za co odpowiada każde z nich, porównanie w tabeli i od czego zacząć przy małym budżecie.',
         'h1': 'Strona internetowa czy Facebook — <em>co wybrać?</em>',
@@ -170,7 +170,7 @@ Najlepiej działa duet: **strona zdobywa nowych klientów, a social media zamien
     },
     {
         'slug': 'jak-zdobyc-opinie-google',
-        'title': 'Jak zdobyć więcej opinii Google? 7 sposobów dla lokalnej firmy | Marcel Struszczak',
+        'title': 'Jak zdobyć więcej opinii Google? 7 sposobów dla lokalnej firmy | Marcel GraphicSite',
         'og_title': 'Jak zdobyć więcej opinii w Google? 7 sposobów',
         'description': 'Opinie w Google decydują, czy klient wybierze Ciebie, czy konkurencję. 7 prostych sposobów: link do opinii, kod QR, karta NFC, odpowiedzi na opinie — i czego nie robić.',
         'h1': 'Jak zdobyć więcej opinii <em>w Google?</em>',
@@ -252,7 +252,7 @@ _NOWE = [
     {
         'slug': 'landing-page-czy-strona-wizytowka',
         'data': DZIS,
-        'title': 'Landing page czy strona wizytówka — co wybrać? | Marcel Struszczak',
+        'title': 'Landing page czy strona wizytówka — co wybrać? | Marcel GraphicSite',
         'og_title': 'Landing page czy strona wizytówka — co wybrać?',
         'description': 'Landing page to jedna strona z jednym celem, strona wizytówka to pełna strona firmowa. Porównanie: cena, czas, SEO i dla kogo — oraz kiedy zacząć od landingu.',
         'h1': 'Landing page czy strona wizytówka — <em>co wybrać?</em>',
@@ -337,7 +337,7 @@ Nadal nie wiesz? Napisz — doradzę po krótkiej rozmowie, a darmowy projekt po
     {
         'slug': 'jak-zalozyc-wizytowke-google',
         'data': DZIS,
-        'title': 'Jak założyć Wizytówkę Google? Krok po kroku (2026) | Marcel Struszczak',
+        'title': 'Jak założyć Wizytówkę Google? Krok po kroku (2026) | Marcel GraphicSite',
         'og_title': 'Jak założyć Wizytówkę Google — krok po kroku',
         'description': 'Załóż darmowy Profil Firmy w Google: nazwa, kategoria, adres lub obszar działania i weryfikacja wideo. Krok po kroku — i błędy, przez które wizytówka znika.',
         'h1': 'Jak założyć Wizytówkę Google — <em>krok po kroku</em>',
@@ -434,7 +434,7 @@ Nie nagrywaj twarzy innych osób. Google sprawdza nagranie do 5 dni roboczych.
     {
         'slug': 'czy-twoja-firma-jest-widoczna-w-google',
         'data': DZIS,
-        'title': 'Czy Twoja firma jest widoczna w Google? Test w 10 minut | Marcel Struszczak',
+        'title': 'Czy Twoja firma jest widoczna w Google? Test w 10 minut | Marcel GraphicSite',
         'og_title': 'Czy Twoja firma jest widoczna w Google? Test w 10 minut',
         'description': 'Sprawdź, czy klienci znajdą Twoją firmę: wyszukiwarka, Mapy, opinie, strona na telefonie i asystenci AI. 8 kroków, które zrobisz na telefonie w 10 minut.',
         'h1': 'Czy Twoja firma jest widoczna <em>w Google?</em>',
@@ -521,7 +521,7 @@ Widoczność w Google to nie jeden trik, tylko trzy rzeczy, które działają ra
     {
         'slug': 'strona-internetowa-dla-restauracji',
         'data': DZIS,
-        'title': 'Strona internetowa dla restauracji — co musi mieć? | Marcel Struszczak',
+        'title': 'Strona internetowa dla restauracji — co musi mieć? | Marcel GraphicSite',
         'og_title': 'Strona internetowa dla restauracji — co musi mieć?',
         'description': 'Menu jako tekst, godziny, mapa, zamówienia i rezerwacje, prawdziwe zdjęcia. 10 rzeczy, które musi mieć strona restauracji, żeby goście wybierali Ciebie.',
         'h1': 'Strona internetowa dla restauracji — <em>co musi mieć?</em>',
@@ -630,7 +630,7 @@ Jak to wygląda w praktyce, pokazuję w koncepcie [ŻAR Burger](zar-burger) — 
     {
         'slug': 'strona-internetowa-dla-salonu-urody',
         'data': DZIS,
-        'title': 'Strona internetowa dla salonu urody — co musi mieć? | Marcel Struszczak',
+        'title': 'Strona internetowa dla salonu urody — co musi mieć? | Marcel GraphicSite',
         'og_title': 'Strona internetowa dla salonu urody — co musi mieć?',
         'description': 'Cennik, rezerwacja online, galeria metamorfoz, zespół i opinie. Co musi mieć strona salonu urody, fryzjera lub barbera, żeby klienci rezerwowali u Ciebie.',
         'h1': 'Strona internetowa dla salonu urody — <em>co musi mieć?</em>',
@@ -742,7 +742,7 @@ NA_USLUGACH = ['ile-kosztuje-strona-internetowa', 'landing-page-czy-strona-wizyt
 
 PORADNIK = {
     'slug': 'poradnik',
-    'title': 'Poradnik dla firm — strony, social media, opinie Google | Marcel Struszczak',
+    'title': 'Poradnik dla firm — strony, social media, opinie Google | Marcel GraphicSite',
     'og_title': 'Poradnik dla firm. Bez lania wody.',
     'description': 'Konkretne odpowiedzi dla właścicieli firm: ceny stron, landing czy wizytówka, Wizytówka Google, opinie i co musi mieć strona restauracji albo salonu.',
     'h1': 'Poradnik. <em>Bez lania wody.</em>',

@@ -14,7 +14,7 @@ USLUGI = [
     {
         'slug': 'strony-internetowe-sieradz',
         'data': DZIS,
-        'title': 'Strony internetowe Sieradz — tworzenie stron www dla firm | Marcel Struszczak',
+        'title': 'Strony internetowe Sieradz — tworzenie stron www dla firm | Marcel GraphicSite',
         'og_title': 'Strony internetowe w Sieradzu — Marcel Struszczak',
         'description': 'Tworzę strony internetowe dla firm z Sieradza i okolic: od 2 000 zł, gotowe w 4–16 dni. Spotkam się na miejscu i pokażę darmowy projekt, zanim zapłacisz.',
         'h1': 'Strony internetowe <em>w Sieradzu.</em>',
@@ -27,7 +27,7 @@ USLUGI = [
         'keywords': ['strony internetowe Sieradz', 'tworzenie stron internetowych Sieradz', 'projektowanie stron www Sieradz',
                      'strona www dla firmy Sieradz', 'strony internetowe Zduńska Wola', 'strony internetowe powiat sieradzki'],
         'tldr': [
-            '<strong>Kto:</strong> Marcel Struszczak, projektant stron z Sieradza. Pracujesz bezpośrednio ze mną — bez pośredników.',
+            '<strong>Kto:</strong> Marcel GraphicSite, czyli Marcel Struszczak — projektant stron z Sieradza. Pracujesz bezpośrednio ze mną, bez pośredników.',
             '<strong>Ceny:</strong> landing page od 2 000 zł, strona wizytówka od 3 000 zł, sklep — wycena indywidualna. Domena, hosting i SSL: 200 zł w pierwszym roku, potem 500 zł rocznie.',
             '<strong>Czas:</strong> landing 4–8 dni, wizytówka 7–16 dni.',
             '<strong>Na start:</strong> darmowy projekt ze znakiem wodnym. Płacisz dopiero, gdy chcesz iść dalej — możliwe raty.',
@@ -125,7 +125,7 @@ W lokalnych wynikach Google najwięcej uwagi zbiera mapka z firmami — czyli **
     {
         'slug': 'karty-nfc-opinie-google',
         'data': DZIS,
-        'title': 'Karty NFC do opinii Google — od 60 zł, wysyłka w Polsce | Marcel Struszczak',
+        'title': 'Karty NFC do opinii Google — od 60 zł, wysyłka w Polsce | Marcel GraphicSite',
         'og_title': 'Karty NFC do opinii Google — od 60 zł',
         'description': 'Karta NFC z podstawką 60 zł, duża naklejka 80 zł. Programuję je pod Twój profil w Google: klient przykłada telefon i od razu wystawia opinię. Wysyłka w Polsce.',
         'h1': 'Karty NFC do opinii <em>Google.</em>',
@@ -226,7 +226,7 @@ Więcej sposobów znajdziesz w artykule [jak zdobyć więcej opinii w Google](ja
     {
         'slug': 'prowadzenie-social-media',
         'data': DZIS,
-        'title': 'Prowadzenie social mediów dla firm — od 600 zł / mies. | Marcel Struszczak',
+        'title': 'Prowadzenie social mediów dla firm — od 600 zł / mies. | Marcel GraphicSite',
         'og_title': 'Prowadzenie social mediów dla firm',
         'description': 'Facebook i Instagram dla lokalnych firm: 8 lub 12–13 postów i karuzel miesięcznie w stylu Twojej marki. Od 600 zł / mies., bez umów na lata.',
         'h1': 'Prowadzenie social mediów <em>dla firm.</em>',

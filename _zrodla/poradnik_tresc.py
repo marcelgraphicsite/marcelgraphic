@@ -196,7 +196,7 @@ Google sam podaje, że liczba i ocena opinii wpływają na to, jak wysoko firma 
 
 ### 1. Poproś osobiście — we właściwym momencie
 
-Najlepszy moment to chwila, w której klient jest zadowolony: koniec udanej wizyty, odbiór zamówienia, podziękowanie. Wystarczy jedno zdanie: „Jeśli było dobrze, będę wdzięczny za opinię w Google — to bardzo pomaga małej firmie”.
+Najlepszy moment to chwila, w której klient jest zadowolony: koniec udanej wizyty, odbiór zamówienia, podziękowanie. Wystarczy jedno zdanie: „Będę wdzięczny za opinię w Google — to bardzo pomaga małej firmie”.
 
 ### 2. Wyślij bezpośredni link do opinii
 
@@ -208,7 +208,7 @@ Kod QR z linkiem do opinii na ladzie, stoliku, paragonie albo ulotce. Klient ska
 
 ### 4. Użyj karty lub naklejki NFC
 
-Klient przykłada telefon do karty i od razu otwiera się okno opinii Twojej firmy — bez aplikacji, bez szukania i bez skanowania. Działa na większości współczesnych smartfonów: iPhone’y od modelu XS odczytują NFC bez aplikacji, a na Androidzie wystarczy włączone NFC. Jedna uwaga: NFC nie działa na metalu, więc kartę stawia się na ladzie lub stoliku, a naklejkę na szybie lub drzwiach. Jak to działa w praktyce i ile kosztuje, opisuję na stronie [karty NFC do opinii Google](karty-nfc-opinie-google).
+Klient przykłada telefon do karty i od razu otwiera się okno opinii Twojej firmy — bez aplikacji, bez szukania i bez skanowania. Działa na większości współczesnych smartfonów: iPhone’y XR/XS i nowsze odczytują NFC bez aplikacji (wystarczy stuknąć powiadomienie), a na Androidzie wystarczy włączone NFC. Jedna uwaga: NFC nie działa na metalu, więc kartę stawia się na ladzie lub stoliku, a naklejkę na szybie lub drzwiach. Jak to działa w praktyce i ile kosztuje, opisuję na stronie [karty NFC do opinii Google](karty-nfc-opinie-google).
 
 ### 5. Dodaj prośbę w stałych miejscach
 
@@ -238,7 +238,7 @@ Opinie to tylko jeden element widoczności lokalnej firmy. Jeśli zastanawiasz s
         'faq': [
             ('Jak znaleźć link do opinii mojej firmy w Google?', 'Zaloguj się na konto, na którym masz Profil Firmy w Google, wyszukaj nazwę swojej firmy i wybierz „Poproś o opinie”. Dostaniesz krótki link, który możesz wysyłać klientom albo zamienić w kod QR.'),
             ('Czy można usunąć negatywną opinię w Google?', 'Nie samodzielnie. Możesz zgłosić opinię, która łamie zasady Google (np. spam, obraźliwe treści albo opinia o innej firmie). W pozostałych przypadkach najlepsze, co możesz zrobić, to rzeczowo odpowiedzieć.'),
-            ('Czy karta NFC do opinii działa na każdym telefonie?', 'Na większości współczesnych smartfonów tak: iPhone od modelu XS odczytuje ją bez aplikacji, a na Androidzie NFC musi być włączone. Dla telefonów bez NFC warto mieć obok kod QR.'),
+            ('Czy karta NFC do opinii działa na każdym telefonie?', 'Na większości współczesnych smartfonów tak: iPhone XR/XS i nowsze odczytują ją bez aplikacji, a na Androidzie NFC musi być włączone. Dla telefonów bez NFC warto mieć obok kod QR.'),
             ('Ile kosztuje karta NFC do opinii Google?', 'U mnie karta NFC z podstawką kosztuje 60 zł, a duża naklejka NFC 80 zł — każdą programuję pod profil Twojej firmy. Wysyłam w całej Polsce.'),
         ],
         'related': ['jak-zalozyc-wizytowke-google', 'czy-twoja-firma-jest-widoczna-w-google'],
@@ -314,7 +314,7 @@ To częsta pomyłka. **Wizytówka Google** (Profil Firmy w Google) to darmowy wp
 
 ## A może od razu sklep?
 
-Jeśli chcesz sprzedawać online — produkty, bony podarunkowe, zamówienia z płatnością BLIK lub kartą — potrzebujesz strony ze sklepem. Wyceniam ją indywidualnie, po rozmowie o zakresie.
+Jeśli chcesz sprzedawać online — produkty albo bony podarunkowe — i przyjmować płatności BLIK lub kartą, potrzebujesz strony ze sklepem. Wyceniam ją indywidualnie, po rozmowie o zakresie.
 
 ## Jak zdecydować w 3 pytaniach
 
@@ -326,7 +326,7 @@ Nadal nie wiesz? Napisz — doradzę po krótkiej rozmowie, a darmowy projekt po
 ''',
         'faq': [
             ('Czy landing page jest dobry do SEO?', 'Pod jedno konkretne hasło — tak. Ale strona z jednym tematem pokaże się na mniej zapytań niż rozbudowana strona firmowa. Jeśli zależy Ci na klientach z Google, lepsza będzie strona wizytówka.'),
-            ('Czy z landing page można później zrobić stronę wizytówkę?', 'Tak. Landing możesz rozbudować o kolejne sekcje i podstrony — u mnie dodatkowa podstrona kosztuje 300–500 zł.'),
+            ('Czy z landing page można później zrobić stronę wizytówkę?', 'Tak. Landing możesz rozbudować o kolejne sekcje i podstrony — u mnie dodatkowa podstrona kosztuje 300–500 zł. Indywidualny projekt, galeria, mapa i SEO z Wizytówką Google to już zakres pakietu Wizytówka.'),
             ('Czym różni się strona wizytówka od Wizytówki Google?', 'Strona wizytówka to Twoja własna strona internetowa. Wizytówka Google (Profil Firmy w Google) to darmowy wpis w Mapach i wynikach Google. Najlepiej mieć jedno i drugie.'),
             ('Ile kosztuje landing page, a ile strona wizytówka?', 'U mnie landing page kosztuje od 2 000 zł (4–8 dni), a strona wizytówka od 3 000 zł (7–16 dni). Do tego domena, hosting i SSL: 200 zł w pierwszym roku, potem 500 zł rocznie.'),
         ],
@@ -470,7 +470,7 @@ Nad zwykłymi wynikami Google często pokazuje mapkę z kilkoma firmami. To najc
 
 ### 3. Wpisz „[usługa] w pobliżu”
 
-Tak szuka wielu klientów, zwłaszcza gdy są już w drodze. Ten wynik zależy głównie od Wizytówki Google: kategorii, opinii i odległości.
+Tak szuka wielu klientów, zwłaszcza gdy są już w drodze. Ten wynik zależy głównie od odległości i od Wizytówki Google: kategorii i opinii.
 
 ### 4. Wpisz nazwę swojej firmy
 
@@ -500,7 +500,7 @@ Coraz więcej osób pyta ChatGPT, Gemini albo Perplexity, zamiast przeglądać w
 | Masz mniej opinii niż konkurencja | proś o opinię po każdej usłudze: link, kod QR albo karta NFC |
 | Wpis `site:` nie pokazuje Twojej strony | dodaj stronę do Google Search Console i zgłoś mapę witryny |
 | Strona jest wolna albo nieczytelna na telefonie | nowa, lekka strona projektowana najpierw na telefon |
-| W różnych miejscach są różne dane | ujednolić nazwę, adres i telefon wszędzie |
+| W różnych miejscach są różne dane | wszędzie podaj te same: nazwę, adres i telefon |
 | Asystenci AI Cię nie znają | strona z konkretami (oferta, ceny, miasto), wizytówki w Google i Bing, wpisy w katalogach firm |
 
 ## Najważniejsze na koniec
@@ -592,7 +592,7 @@ Opinie widać obok Twojego lokalu w Mapach Google — często zanim ktoś wejdzi
 
 ### 10. Podstawy SEO lokalnego
 
-Tytuł strony z rodzajem kuchni i miastem (np. „Burgery Sieradz — ŻAR”), te same dane kontaktowe wszędzie i dane strukturalne dla restauracji (menu, godziny, rodzaj kuchni). Dzięki temu Google i asystenci AI wiedzą dokładnie, czym jesteś i gdzie Cię znaleźć.
+Tytuł strony z rodzajem kuchni i miastem (np. „Burgery Sieradz — nazwa Twojego lokalu”), te same dane kontaktowe wszędzie i dane strukturalne dla restauracji (menu, godziny, rodzaj kuchni). Dzięki temu Google i asystenci AI wiedzą dokładnie, czym jesteś i gdzie Cię znaleźć.
 
 ## Czego unikać na stronie restauracji
 
@@ -606,20 +606,20 @@ Tytuł strony z rodzajem kuchni i miastem (np. „Burgery Sieradz — ŻAR”), 
 
 | Potrzeba | Pakiet | Cena u mnie | Czas |
 |---|---|---|---|
-| Menu, godziny, mapa i kontakt (food truck, mały lokal) | Landing page | od 2 000 zł | 4–8 dni |
-| Pełna strona: menu, galeria, rezerwacje, o lokalu, SEO | Strona wizytówka | od 3 000 zł | 7–16 dni |
+| Menu, godziny, adres i kontakt (food truck, mały lokal) | Landing page | od 2 000 zł | 4–8 dni |
+| Pełna strona: menu, galeria, formularz rezerwacji, o lokalu, SEO | Strona wizytówka | od 3 000 zł | 7–16 dni |
 | Zamówienia i płatności online na stronie | Strona + sklep | wycena indywidualna | po ustaleniu zakresu |
 
 Zanim zapłacisz złotówkę, dostajesz darmowy projekt ze znakiem wodnym — najczęściej na zdjęciach z Twojego Facebooka lub Instagrama. Więcej o cenach: [ile kosztuje strona internetowa](ile-kosztuje-strona-internetowa).
 
 ## Przykład: koncept ŻAR Burger
 
-Jak to wygląda w praktyce, pokazuję w koncepcie [ŻAR Burger](zar-burger) — stronie burgerowni, którą możesz przewinąć na żywo. Menu w kartach ze zdjęciami dań, status „otwarte teraz” liczony na bieżąco, pasek z daniami i rysowana mapa dojazdu. To projekt koncepcyjny, a nie realizacja dla klienta — ale dokładnie tak może wyglądać Twój lokal. Wszystkie projekty zobaczysz w [portfolio](prace).
+Jak to wygląda w praktyce, pokazuję w koncepcie [ŻAR Burger](zar-burger) — stronie burgerowni, którą możesz przewinąć na żywo. Menu w kartach ze zdjęciami dań, status „otwarte teraz” liczony na bieżąco, pasek z daniami i rysowana mapa dojazdu. To projekt koncepcyjny, a nie realizacja dla klienta — ale dokładnie tak może wyglądać strona Twojego lokalu. Wszystkie projekty zobaczysz w [portfolio](prace).
 ''',
         'faq': [
             ('Czy menu w PDF wystarczy na stronie restauracji?', 'Lepiej nie. PDF trzeba powiększać na telefonie, długo się ładuje, a Google i asystenci AI nie zawsze odczytają jego treść. Menu jako zwykły tekst na stronie jest wygodniejsze dla gości i lepsze dla widoczności.'),
             ('Czy restauracja może przyjmować zamówienia online bez Pyszne.pl?', 'Tak — przez własny system zamówień na stronie, bez prowizji dla pośrednika. To większa praca na start (koszyk, płatności), dlatego wyceniam ją indywidualnie. Wiele lokali łączy własne zamówienia z platformami.'),
-            ('Ile kosztuje strona internetowa dla restauracji?', 'U mnie landing page z menu, godzinami i mapą kosztuje od 2 000 zł, a pełna strona wizytówka z galerią i rezerwacjami od 3 000 zł. Zamówienia z płatnościami online wyceniam indywidualnie.'),
+            ('Ile kosztuje strona internetowa dla restauracji?', 'U mnie landing page z menu, godzinami i adresem kosztuje od 2 000 zł, a pełna strona wizytówka z galerią i formularzem rezerwacji od 3 000 zł. Zamówienia z płatnościami online wyceniam indywidualnie.'),
             ('Ile trwa zrobienie strony dla restauracji?', 'Landing page 4–8 dni, strona wizytówka 7–16 dni. Jeśli zależy Ci na czasie, ekspresowa realizacja skraca termin nawet o połowę.'),
             ('Czy potrzebuję profesjonalnej sesji zdjęciowej?', 'Na start nie. Dobre zdjęcia z telefonu przy dziennym świetle wystarczą — na nich przygotuję też darmowy projekt strony. Sesję zawsze można dołożyć później.'),
         ],
@@ -663,14 +663,14 @@ Podziel usługi na kategorie (twarz, ciało, dłonie i stopy, brwi i rzęsy, wł
 To najważniejszy przycisk na stronie. Masz trzy drogi:
 
 - **Własny kalendarz rezerwacji na stronie** — w Twoim stylu i bez pośrednika, za to trzeba go pilnować.
-- **Przycisk „Umów wizytę” prowadzący do Booksy** — wiele klientek zna tę aplikację, ale to abonament i miejsce, w którym klientka widzi też inne salony.
+- **Przycisk „Umów wizytę” prowadzący do Booksy** — wiele klientek zna tę aplikację, ale to abonament, klientka musi mieć tam konto i widzi też inne salony.
 - **WhatsApp albo telefon** — najprostsze na start, gdy rezerwacji nie jest dużo.
 
-Niezależnie od wyboru: rezerwacja powinna zająć 2–3 kliknięcia i nie wymagać zakładania konta.
+Niezależnie od wyboru: rezerwacja powinna zająć 2–3 kliknięcia, a na Twojej stronie nie wymagać zakładania konta.
 
 ### 3. Galeria prac i metamorfoz
 
-To ona sprzedaje najbardziej. Pokaż efekty „przed i po”, w dobrym świetle, przy różnych usługach. Zdjęcia klientek publikuj tylko za ich zgodą — najlepiej pisemną — bo wizerunek to dane osobowe.
+To ona sprzedaje najbardziej. Pokaż efekty „przed i po”, w dobrym świetle, przy różnych usługach. Zdjęcia klientek publikuj tylko za ich zgodą — najlepiej pisemną — bo tego wymaga prawo do wizerunku (art. 81 prawa autorskiego).
 
 ### 4. Zespół
 
@@ -701,7 +701,7 @@ Kolory, zdjęcia i klimat strony powinny zgadzać się z tym, co klientka zobacz
 ## Czego unikać
 
 - **Zdjęć ze stocka** — klientka chce zobaczyć Twoje prace, a nie cudze.
-- **Rezerwacji, która wymaga zakładania konta.**
+- **Rezerwacji na stronie, która wymaga zakładania konta.**
 - **Cennika w PDF** albo braku cennika.
 - **Nieaktualnych godzin i promocji sprzed roku.**
 
@@ -709,16 +709,16 @@ Kolory, zdjęcia i klimat strony powinny zgadzać się z tym, co klientka zobacz
 
 | Potrzeba | Pakiet | Cena u mnie | Czas |
 |---|---|---|---|
-| Cennik, przycisk rezerwacji, kontakt i mapa | Landing page | od 2 000 zł | 4–8 dni |
-| Pełna strona: galeria, zespół, cennik, rezerwacja, SEO | Strona wizytówka | od 3 000 zł | 7–16 dni |
+| Cennik, przycisk rezerwacji, kontakt i adres | Landing page | od 2 000 zł | 4–8 dni |
+| Pełna strona: galeria, zespół, cennik, przycisk rezerwacji, SEO | Strona wizytówka | od 3 000 zł | 7–16 dni |
 | Sprzedaż bonów i produktów online | Strona + sklep | wycena indywidualna | po ustaleniu zakresu |
 
-Jak może wyglądać strona Twojego salonu, pokazuję w koncepcie [Luxe Salon](luxe-salon): spokojny klimat japandi, cennik usług, rezerwacja jednym kliknięciem, galeria metamorfoz i tryb ciemny. Zanim cokolwiek zapłacisz, przygotuję darmowy projekt na zdjęciach z Twojego Instagrama.
+Jak może wyglądać strona Twojego salonu, pokazuję w koncepcie [Luxe Salon](luxe-salon): spokojny klimat japandi, cennik usług, przycisk „Zarezerwuj” przy każdej usłudze, galeria metamorfoz i tryb ciemny. Zanim cokolwiek zapłacisz, przygotuję darmowy projekt na zdjęciach z Twojego Instagrama.
 ''',
         'faq': [
             ('Czy salon potrzebuje strony, skoro ma Booksy i Instagrama?', 'Tak. Instagram pokazuje klimat, Booksy przyjmuje rezerwacje, a strona zbiera wszystko w jednym miejscu i pokazuje Cię w Google — tam, gdzie szuka wiele nowych klientek. Booksy podepniesz do strony przyciskiem „Umów wizytę”.'),
             ('Jak połączyć stronę z Booksy?', 'Najprościej przyciskiem „Umów wizytę”, który prowadzi do Twojego profilu w Booksy. Klientka klika i od razu wybiera termin.'),
-            ('Czy mogę pokazywać na stronie zdjęcia klientek?', 'Tylko za ich zgodą — najlepiej pisemną, bo wizerunek to dane osobowe. Bezpieczna alternatywa to zdjęcia samych efektów, bez twarzy.'),
+            ('Czy mogę pokazywać na stronie zdjęcia klientek?', 'Tylko za ich zgodą — najlepiej pisemną, bo tego wymaga prawo do wizerunku (art. 81 prawa autorskiego). Bezpieczna alternatywa to zdjęcia samych efektów, bez twarzy.'),
             ('Ile kosztuje strona internetowa dla salonu urody?', 'U mnie landing page z cennikiem i przyciskiem rezerwacji kosztuje od 2 000 zł, a pełna strona z galerią i zespołem od 3 000 zł. Sprzedaż bonów online wyceniam indywidualnie.'),
             ('Ile trwa zrobienie strony dla salonu?', 'Landing page 4–8 dni, strona wizytówka 7–16 dni. Na start dostajesz darmowy projekt ze znakiem wodnym.'),
         ],

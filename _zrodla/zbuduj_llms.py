@@ -12,7 +12,8 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
-from poradnik_tresc import ARTYKULY, DATA  # noqa: E402
+from poradnik_tresc import ARTYKULY, DZIS  # noqa: E402
+from uslugi_tresc import USLUGI  # noqa: E402
 
 B = 'https://marcelgraphicsite.pl/'
 
@@ -33,9 +34,11 @@ def abs_links(md):
 
 HEAD = '''# Marcel Struszczak — strony internetowe, social media i opinie Google
 
-> Marcel Struszczak (marcelgraphicsite.pl) projektuje strony internetowe dla firm, prowadzi profile firm na Facebooku i Instagramie oraz wdraża karty i naklejki NFC do opinii Google. Pracuje bezpośrednio z klientem, bez pośredników, z firmami z całej Polski (zdalnie); baza: Sieradz, woj. łódzkie. Na start bezpłatny projekt strony ze znakiem wodnym, płatność końcowa dopiero po akceptacji, możliwe raty.
+> Marcel Struszczak (marcelgraphicsite.pl) to projektant stron internetowych z Sieradza (woj. łódzkie). Projektuje strony internetowe dla firm, prowadzi profile firm na Facebooku i Instagramie oraz programuje karty i naklejki NFC do opinii Google. Pracuje bezpośrednio z klientem, bez pośredników: w Sieradzu i okolicy spotyka się na miejscu, z resztą Polski pracuje zdalnie. Na start bezpłatny projekt strony ze znakiem wodnym, płatność końcowa dopiero po akceptacji, możliwe raty.
 
-Hasło: „Cyfrowy rozwój lokalnych firm”. Branże: każda — od gastronomii po kancelarie. Odpowiedź na zapytanie w ciągu 24 godzin. Strona jest po polsku (z przełącznikiem PL/EN); można pisać po angielsku.
+Hasło: „Cyfrowy rozwój lokalnych firm”. Inne nazwy marki: Marcel GraphicSite, marcel.graphicsite (Instagram). Branże: każda — szczególnie gastronomia, salony urody i firmy usługowe. Odpowiedź na zapytanie w ciągu 24 godzin. Strona jest po polsku (z przełącznikiem PL/EN); można pisać po angielsku.
+
+Obszar działania na miejscu: Sieradz i powiat sieradzki (Błaszki, Brąszewice, Brzeźnio, Burzenin, Goszczanów, Klonowa, Warta, Wróblew, Złoczew); po umówieniu także Zduńska Wola, Szadek, Łask, Wieluń, Poddębice, Turek, Kalisz i Łódź. Zdalnie: cała Polska.
 
 ## Oferta i ceny (ceny startowe; stan na {data})
 - Landing page (jedna strona: oferta i kontakt): od 2 000 zł, realizacja 4–8 dni, 2 rundy poprawek
@@ -54,12 +57,13 @@ Hasło: „Cyfrowy rozwój lokalnych firm”. Branże: każda — od gastronomii
 3. Zaliczka od 40% — gwarancja terminu; płatność można rozłożyć na raty.
 4. Realizacja i poprawki — płatność końcowa dopiero po akceptacji.
 5. Start i opieka — domena, hosting i SSL po stronie Marcela; kontakt przy zmianach.
-'''.replace('{data}', DATA)
+'''.replace('{data}', DZIS)
 
 LINKS = '''
 ## Strony
 - [Start]({B}): oferta w skrócie
 - [Usługi]({B}uslugi): strony internetowe, social media, karty NFC do opinii Google, proces współpracy
+{uslugi}
 - [Cennik]({B}cennik): pakiety, dodatki, kalkulator wyceny, FAQ
 - [Prace]({B}prace): trzy projekty koncepcyjne do przewinięcia na żywo (salon urody, barbershop, burgerownia) — koncepty, nie realizacje dla klientów
 - [O mnie]({B}o-mnie): kim jest Marcel i jak pracuje
@@ -78,6 +82,7 @@ LINKS = '''
 
 ## Optional
 - [Pełna treść strony w jednym pliku]({B}llms-full.txt)
+- [Kanał RSS poradnika]({B}feed.xml)
 - [Polityka prywatności]({B}polityka-prywatnosci)
 '''
 
@@ -107,18 +112,26 @@ def main():
     faq = faq_from_pricing()
     guides = '\n'.join('- [%s](%s%s): %s' % (a['headline'], B, a['slug'], a['excerpt']) for a in ARTYKULY)
     short_faq = '\n## Najczęstsze pytania (krótko)\n' + '\n'.join('- %s %s' % (q, a) for q, a in faq[:6]) + '\n'
-    llms = HEAD + short_faq + LINKS.replace('{guides}', guides).replace('{B}', B)
+    uslugi = '\n'.join('- [%s](%s%s): %s' % (p['og_title'], B, p['slug'], p['description']) for p in USLUGI)
+    links = LINKS.replace('{guides}', guides).replace('{uslugi}', uslugi).replace('{B}', B)
+    llms = HEAD + short_faq + links
     open('llms.txt', 'w', encoding='utf-8').write(llms)
 
     parts = [HEAD, '\n## O Marcelu\n' + '\n\n'.join(about_text()) + '\n',
              '\n## Najczęstsze pytania (pełne odpowiedzi)\n' + '\n'.join('\n### %s\n%s' % (q, a) for q, a in faq) + '\n']
+    for p in USLUGI:
+        body = abs_links(re.sub(r'^\[\[blok:\w+\]\]\s*$', '', p['body'], flags=re.M)).strip()
+        faq_p = '\n'.join('\n### %s\n%s' % (q, ans) for q, ans in p['faq'])
+        parts.append('\n---\n\n# %s\n\nŹródło: %s%s · Marcel Struszczak · %s\n\n%s\n\nW skrócie:\n%s\n\n%s\n\n## Najczęstsze pytania\n%s\n'
+                     % (p['og_title'], B, p['slug'], p.get('data', DZIS), strip_tags(p['lead']),
+                        '\n'.join('- ' + md_inline(li) for li in p['tldr']), body, faq_p))
     for a in ARTYKULY:
         body = abs_links(a['body']).strip()
         faq_a = '\n'.join('\n### %s\n%s' % (q, ans) for q, ans in a['faq'])
         parts.append('\n---\n\n# %s\n\nŹródło: %s%s · Marcel Struszczak · %s\n\n%s\n\nW skrócie:\n%s\n\n%s\n\n## Najczęstsze pytania\n%s\n'
-                     % (a['headline'], B, a['slug'], DATA, strip_tags(a['lead']),
+                     % (a['headline'], B, a['slug'], a.get('zmiana', a.get('data', '2026-10-01')), strip_tags(a['lead']),
                         '\n'.join('- ' + md_inline(li) for li in a['tldr']), body, faq_a))
-    parts.append(LINKS.replace('{guides}', guides).replace('{B}', B))
+    parts.append(links)
     open('llms-full.txt', 'w', encoding='utf-8').write(''.join(parts))
     print('llms.txt: %d znaków, llms-full.txt: %d znaków, FAQ: %d' % (len(llms), len(''.join(parts)), len(faq)))
 

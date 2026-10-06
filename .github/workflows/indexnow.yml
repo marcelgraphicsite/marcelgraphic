@@ -5,7 +5,7 @@ name: IndexNow — powiadom wyszukiwarki
 on:
   push:
     branches: [zxxcv]
-    paths: ['**.html', 'sitemap.xml', 'llms.txt', 'llms-full.txt']
+    paths: ['**.html', 'sitemap.xml', 'feed.xml', 'llms.txt', 'llms-full.txt']
   workflow_dispatch:
 
 jobs:

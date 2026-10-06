@@ -1,10 +1,12 @@
 # Marcel Struszczak — strony internetowe, social media i opinie Google
 
-> Marcel Struszczak (marcelgraphicsite.pl) projektuje strony internetowe dla firm, prowadzi profile firm na Facebooku i Instagramie oraz wdraża karty i naklejki NFC do opinii Google. Pracuje bezpośrednio z klientem, bez pośredników, z firmami z całej Polski (zdalnie); baza: Sieradz, woj. łódzkie. Na start bezpłatny projekt strony ze znakiem wodnym, płatność końcowa dopiero po akceptacji, możliwe raty.
+> Marcel Struszczak (marcelgraphicsite.pl) to projektant stron internetowych z Sieradza (woj. łódzkie). Projektuje strony internetowe dla firm, prowadzi profile firm na Facebooku i Instagramie oraz programuje karty i naklejki NFC do opinii Google. Pracuje bezpośrednio z klientem, bez pośredników: w Sieradzu i okolicy spotyka się na miejscu, z resztą Polski pracuje zdalnie. Na start bezpłatny projekt strony ze znakiem wodnym, płatność końcowa dopiero po akceptacji, możliwe raty.
 
-Hasło: „Cyfrowy rozwój lokalnych firm”. Branże: każda — od gastronomii po kancelarie. Odpowiedź na zapytanie w ciągu 24 godzin. Strona jest po polsku (z przełącznikiem PL/EN); można pisać po angielsku.
+Hasło: „Cyfrowy rozwój lokalnych firm”. Inne nazwy marki: Marcel GraphicSite, marcel.graphicsite (Instagram). Branże: każda — szczególnie gastronomia, salony urody i firmy usługowe. Odpowiedź na zapytanie w ciągu 24 godzin. Strona jest po polsku (z przełącznikiem PL/EN); można pisać po angielsku.
 
-## Oferta i ceny (ceny startowe; stan na 2026-10-01)
+Obszar działania na miejscu: Sieradz i powiat sieradzki (Błaszki, Brąszewice, Brzeźnio, Burzenin, Goszczanów, Klonowa, Warta, Wróblew, Złoczew); po umówieniu także Zduńska Wola, Szadek, Łask, Wieluń, Poddębice, Turek, Kalisz i Łódź. Zdalnie: cała Polska.
+
+## Oferta i ceny (ceny startowe; stan na 2026-10-06)
 - Landing page (jedna strona: oferta i kontakt): od 2 000 zł, realizacja 4–8 dni, 2 rundy poprawek
 - Strona wizytówka (rozbudowana strona firmowa: oferta, o firmie, cennik, FAQ, galeria, mapa, SEO i Wizytówka Google): od 3 000 zł, realizacja 7–16 dni, 5 rund poprawek
 - Strona + sklep internetowy (katalog, koszyk, płatności online BLIK i karta, szkolenie): wycena indywidualna
@@ -33,6 +35,9 @@ Hasło: „Cyfrowy rozwój lokalnych firm”. Branże: każda — od gastronomii
 ## Strony
 - [Start](https://marcelgraphicsite.pl/): oferta w skrócie
 - [Usługi](https://marcelgraphicsite.pl/uslugi): strony internetowe, social media, karty NFC do opinii Google, proces współpracy
+- [Strony internetowe w Sieradzu — Marcel Struszczak](https://marcelgraphicsite.pl/strony-internetowe-sieradz): Tworzę strony internetowe dla firm z Sieradza i okolic: od 2 000 zł, gotowe w 4–16 dni. Spotkam się na miejscu i pokażę darmowy projekt, zanim zapłacisz.
+- [Karty NFC do opinii Google — od 60 zł](https://marcelgraphicsite.pl/karty-nfc-opinie-google): Karta NFC z podstawką 60 zł, duża naklejka 80 zł. Programuję je pod Twój profil w Google: klient przykłada telefon i od razu wystawia opinię. Wysyłka w Polsce.
+- [Prowadzenie social mediów dla firm](https://marcelgraphicsite.pl/prowadzenie-social-media): Facebook i Instagram dla lokalnych firm: 8 lub 12–13 postów i karuzel miesięcznie w stylu Twojej marki. Od 600 zł / mies., bez umów na lata.
 - [Cennik](https://marcelgraphicsite.pl/cennik): pakiety, dodatki, kalkulator wyceny, FAQ
 - [Prace](https://marcelgraphicsite.pl/prace): trzy projekty koncepcyjne do przewinięcia na żywo (salon urody, barbershop, burgerownia) — koncepty, nie realizacje dla klientów
 - [O mnie](https://marcelgraphicsite.pl/o-mnie): kim jest Marcel i jak pracuje
@@ -40,8 +45,13 @@ Hasło: „Cyfrowy rozwój lokalnych firm”. Branże: każda — od gastronomii
 
 ## Poradnik
 - [Ile kosztuje strona internetowa w 2026 roku?](https://marcelgraphicsite.pl/ile-kosztuje-strona-internetowa): Realne widełki na rynku, od czego zależy cena, koszty stałe, o których mało kto mówi — i jak nie przepłacić.
+- [Landing page czy strona wizytówka — co wybrać dla firmy?](https://marcelgraphicsite.pl/landing-page-czy-strona-wizytowka): Jedna strona z jednym celem czy pełna strona firmowa? Porównanie ceny, czasu realizacji i widoczności w Google.
+- [Jak założyć Wizytówkę Google (Profil Firmy w Google) — krok po kroku](https://marcelgraphicsite.pl/jak-zalozyc-wizytowke-google): Nazwa, kategoria, obszar działania i weryfikacja wideo — jak założyć Profil Firmy w Google i nie dać się zawiesić.
+- [Czy Twoja firma jest widoczna w Google? Test w 10 minut](https://marcelgraphicsite.pl/czy-twoja-firma-jest-widoczna-w-google): 8 kroków na telefonie: wyszukiwarka, Mapy, opinie, strona i asystenci AI. Zobacz, gdzie tracisz klientów.
 - [Strona internetowa czy Facebook — co wybrać dla lokalnej firmy?](https://marcelgraphicsite.pl/strona-internetowa-czy-facebook): Strona zdobywa nowych klientów, social media zamieniają ich w stałych. Porównanie i plan na mały budżet.
 - [Jak zdobyć więcej opinii w Google? 7 sposobów dla lokalnej firmy](https://marcelgraphicsite.pl/jak-zdobyc-opinie-google): Kiedy prosić, jak skrócić drogę do opinii (link, QR, NFC), jak odpowiadać — i czego nigdy nie robić.
+- [Strona internetowa dla restauracji — co musi mieć?](https://marcelgraphicsite.pl/strona-internetowa-dla-restauracji): Menu, godziny, zamówienia, rezerwacje i zdjęcia — 10 rzeczy, dzięki którym gość wybiera Twój lokal.
+- [Strona internetowa dla salonu urody — co musi mieć?](https://marcelgraphicsite.pl/strona-internetowa-dla-salonu-urody): Cennik, rezerwacja online, galeria metamorfoz i opinie — co sprawia, że klientka rezerwuje właśnie u Ciebie.
 
 ## Kontakt
 - E-mail: marcel.graphicsite@gmail.com
@@ -53,4 +63,5 @@ Hasło: „Cyfrowy rozwój lokalnych firm”. Branże: każda — od gastronomii
 
 ## Optional
 - [Pełna treść strony w jednym pliku](https://marcelgraphicsite.pl/llms-full.txt)
+- [Kanał RSS poradnika](https://marcelgraphicsite.pl/feed.xml)
 - [Polityka prywatności](https://marcelgraphicsite.pl/polityka-prywatnosci)

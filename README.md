@@ -22,7 +22,10 @@ Strona: https://marcelgraphicsite.pl/
 | `assets/img/` | Miniatury projektów, ikony, `og.jpg` (podgląd linku na FB/Messengerze) |
 | `assets/zar/` | Zdjęcia do strony ŻAR |
 | `assets/marcel-struszczak.vcf` | Kontakt do zapisania w telefonie (przycisk „Zapisz kontakt”) |
-| `sitemap.xml` | Mapa strony do Google Search Console |
+| `sitemap.xml` | Mapa strony do Google Search Console (generowana przez `_zrodla/zbuduj_poradnik.py`) |
+| `strony-internetowe-sieradz.html`, `karty-nfc-opinie-google.html`, `prowadzenie-social-media.html` | Strony usług (generowane z `_zrodla/uslugi_tresc.py`) |
+| `poradnik.html` + artykuły | Poradnik (generowany z `_zrodla/poradnik_tresc.py`) |
+| `feed.xml` | Kanał RSS poradnika |
 
 ## Wdrożenie na GitHub Pages
 
@@ -71,28 +74,26 @@ Stare linki z wersji jednostronicowej (np. `…/marcelgraphic/#kontakt`, `#cenni
 ## SEO, AEO i GEO (Google, odpowiedzi AI, lokalnie)
 
 **Na stronie (zrobione):**
-- Tytuły pod frazy, które ludzie wpisują: „strony internetowe dla firm”, „tworzenie stron www”, „cennik stron internetowych”, „ile kosztuje strona internetowa”.
-- Dane strukturalne (JSON-LD) jako jeden graf: WebSite + firma (ProfessionalService: cennik, obszar działania — Sieradz i 100 km wokół, okoliczne miasta, cała Polska) + Marcel (Person), usługi (Service), proces współpracy (HowTo), FAQ (FAQPage), O mnie, Kontakt, Prace, poradnik (BlogPosting + FAQ), okruszki i daty aktualizacji na każdej stronie.
-- **Poradnik** (`poradnik` + 3 artykuły): odpowiedź na górze („W skrócie”), spis treści, tabele, FAQ — format, który Google pokazuje w odpowiedziach, a ChatGPT/Perplexity/Gemini chętnie cytują.
-- Osobny obrazek podglądu linku (Facebook, Messenger, WhatsApp) dla każdej podstrony i artykułu: `assets/img/og/`.
+- **Strony usług pod konkretne hasła:** `strony-internetowe-sieradz` (lokalnie: Sieradz, powiat sieradzki, okoliczne miasta), `karty-nfc-opinie-google` (cała Polska), `prowadzenie-social-media`. Każda: odpowiedź na górze („W skrócie”), karty z cenami (kopiowane z `cennik.html` przy budowaniu), FAQ, dane strukturalne Service (+ Product dla kart NFC).
+- **Poradnik** (`poradnik` + 8 artykułów): ceny stron, landing czy wizytówka, Wizytówka Google krok po kroku, test widoczności w Google, strona czy Facebook, opinie Google, strona dla restauracji, strona dla salonu urody. Format „W skrócie” + spis treści + tabele + FAQ — tak, żeby Google i asystenci AI (ChatGPT, Gemini, Perplexity) mogli cytować konkretne odpowiedzi.
+- Linkowanie wewnętrzne: stopka „Oferta” na każdej stronie, karty „Z poradnika” na stronie głównej i w Usługach, linki z cennika i z O mnie do stron usług.
+- Dane strukturalne (JSON-LD) jako jeden graf: WebSite + firma (ProfessionalService z obszarem działania: Sieradz, powiat sieradzki, okoliczne miasta, województwo, Polska) + Marcel (Person) + usługi (Service, Offer) + artykuły (BlogPosting + FAQPage) + okruszki i daty na każdej stronie.
+- Nazwy marki dla wyszukiwarek i AI: „Marcel Struszczak”, „Marcel GraphicSite”, „marcelgraphicsite.pl”, „marcel.graphicsite”.
+- Osobny obrazek podglądu linku dla każdej podstrony i artykułu: `assets/img/og/`.
 - `robots.txt` jawnie wpuszcza roboty wyszukiwarek AI (ChatGPT, Perplexity, Claude, Gemini, Apple, Bing/Copilot).
-- `llms.txt` i `llms-full.txt` — wizytówka i pełna treść strony dla asystentów AI (ceny, proces, FAQ, artykuły).
-- `sitemap.xml` z obrazami, manifest, meta robots z dużymi podglądami, klucz IndexNow (`963cc2e7ad1b2927af49a2cfbcc214f7.txt`).
+- `llms.txt` i `llms-full.txt` — wizytówka i pełna treść strony dla asystentów AI (ceny, obszar działania, usługi, FAQ, artykuły).
+- `sitemap.xml` (generowana: wszystkie strony bez „noindex”, data = ostatni commit pliku), `feed.xml` (kanał RSS poradnika), IndexNow (automat w `.github/workflows/indexnow.yml` po każdym pushu na gałąź strony).
+- Google Search Console: plik weryfikacyjny `google1a4fd6f90fdf66e4.html` — **nie usuwaj go**, bo Search Console straci weryfikację.
 
-**Po Twojej stronie (raz, ok. 30 minut — to daje najwięcej):**
-1. **Google Search Console** → dodaj usługę „Domena” `marcelgraphicsite.pl` (weryfikacja rekordem TXT w DNS u rejestratora) → Mapy witryn → zgłoś `sitemap.xml`.
-2. **Bing Webmaster Tools** → „Importuj z Google Search Console” (jedno kliknięcie). Z indeksu Binga korzystają ChatGPT (wyszukiwanie), Copilot i DuckDuckGo.
-3. **IndexNow** — po każdej większej zmianie otwórz w przeglądarce:
-   `https://api.indexnow.org/indexnow?url=https://marcelgraphicsite.pl/&key=963cc2e7ad1b2927af49a2cfbcc214f7`
-4. **Wizytówka Google (Profil Firmy w Google)** — załóż jako firma usługowa bez adresu (obszar: Sieradz + okolice + Polska), wpisz stronę `https://marcelgraphicsite.pl`, telefon `+48 511 808 498`, kategorie „Projektant stron WWW” i „Agencja marketingu internetowego”, dodaj zdjęcia. To najważniejszy czynnik w lokalnych wynikach.
-5. **Opinie** — poproś pierwszych klientów o opinię w Google (link „Poproś o opinie” z wizytówki).
-6. **Te same dane wszędzie** (NAP): nazwa, telefon, strona — w wizytówce Google, na Facebooku, Instagramie, LinkedInie i w katalogach firm (np. Panorama Firm, pkt.pl).
-7. **Linki zwrotne**: na każdej stronie zrobionej dla klienta zostaw w stopce „Projekt: Marcel Struszczak” z linkiem do `marcelgraphicsite.pl` (za zgodą klienta).
-8. W ustawieniach GitHub Pages zaznacz **Enforce HTTPS**.
+**Po Twojej stronie — to daje najwięcej (plan z gotowymi tekstami dostałeś osobno):**
+1. Google Search Console + Bing Webmaster Tools (zrobione 6.10.2026) → „Sprawdzanie adresu URL” → „Poproś o zindeksowanie” dla nowych stron.
+2. Profil Firmy w Google (firma usługowa, ukryty adres, obszar: Sieradz i okolice), potem Bing Places i Apple Business.
+3. Fixly, Oferteo i Useme — ich strony już są wysoko na „projektowanie stron internetowych Sieradz”.
+4. Opinie od klientów, te same dane (nazwa, telefon, strona) wszędzie, link „Projekt: Marcel Struszczak” na stronach klientów.
 
-**Nowy artykuł w poradniku:** dopisz go w `_zrodla/poradnik_tresc.py` (tytuł, „W skrócie”, treść w Markdown, FAQ), potem uruchom:
+**Nowy artykuł albo nowa strona usługi:** dopisz w `_zrodla/poradnik_tresc.py` (artykuł) albo `_zrodla/uslugi_tresc.py` (usługa), dodaj obrazek w `_zrodla/zbuduj_og.js`, numer/napis kurtyny w `assets/js/app.js` (ORDER/NUMS) i `assets/js/i18n.js` (pages), potem uruchom:
 `python3 _zrodla/zbuduj_poradnik.py && python3 _zrodla/zbuduj_llms.py && NODE_PATH=$(npm root -g) node _zrodla/zbuduj_og.js`
-i dodaj adres do `sitemap.xml` oraz numer/napis kurtyny w `assets/js/app.js` (ORDER/NUMS) i `assets/js/i18n.js` (pages). Folder `_zrodla` nie jest publikowany.
+(`zbuduj_poradnik.py` przy okazji odświeża sitemap.xml, feed.xml i karty „Z poradnika”). Folder `_zrodla` nie jest publikowany.
 
 ## Formularz
 

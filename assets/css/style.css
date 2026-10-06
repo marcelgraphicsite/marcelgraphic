@@ -840,8 +840,8 @@ html.lite .cta-card::before{animation:none}
 .foot__claim{font-size:clamp(26px,3.4vw,40px);font-weight:600;letter-spacing:-.04em;line-height:1.05;max-width:16ch}
 .foot__claim em{font-style:normal;font-weight:300}
 .foot__cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 24px;padding:44px 0}
-@media (min-width:900px){.foot__cols{grid-template-columns:repeat(4,minmax(0,1fr))}}
-.foot__cols h4{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);font-weight:400;margin-bottom:14px}
+@media (min-width:900px){.foot__cols{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.foot__cols h4,.foot__cols .fh{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);font-weight:400;margin-bottom:14px}
 .foot__cols li{margin-bottom:8px;font-size:14px}
 .foot__cols a{color:var(--ink-2);transition:color .3s}
 .foot__cols a:hover{color:var(--ink)}
@@ -989,3 +989,14 @@ html.lite body::after{display:none}
 .guide:hover .guide__m i{transform:translateX(5px)}
 .guides-more{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:22px}
 
+/* SEO 2026-10: linki do stron usług, strona lokalna, bloki cennika na stronach usług */
+.side__a{color:inherit;border-bottom:1px solid transparent;transition:border-color .3s,color .3s}
+.side__a:hover{color:var(--ink);border-color:var(--line-2)}
+.minis dd a{color:inherit;border-bottom:1px solid var(--line-2);transition:border-color .3s}
+.minis dd a:hover{border-color:var(--ink)}
+.tp-more{margin-top:22px}
+.svc-block{padding-top:8px}
+.svc-block .tintro{margin-bottom:8px}
+.svc-block+.sec{padding-top:24px}
+.prose .tp-more a,.prose .link-u{text-decoration:none}
+.sec__more .link-u+.link-u{margin-left:16px}

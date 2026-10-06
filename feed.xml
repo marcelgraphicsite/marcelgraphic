@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Poradnik dla firm — Marcel Struszczak</title>
+  <link>https://marcelgraphicsite.pl/poradnik</link>
+  <description>Konkretne odpowiedzi dla właścicieli firm: ceny stron, landing czy wizytówka, Wizytówka Google, opinie i co musi mieć strona restauracji albo salonu.</description>
+  <language>pl</language>
+  <lastBuildDate>Tue, 06 Oct 2026 09:00:00 +0200</lastBuildDate>
+  <atom:link href="https://marcelgraphicsite.pl/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Landing page czy strona wizytówka — co wybrać dla firmy?</title>
+    <link>https://marcelgraphicsite.pl/landing-page-czy-strona-wizytowka</link>
+    <guid isPermaLink="true">https://marcelgraphicsite.pl/landing-page-czy-strona-wizytowka</guid>
+    <pubDate>Tue, 06 Oct 2026 09:00:00 +0200</pubDate>
+    <description>Landing page to jedna strona z jednym celem, strona wizytówka to pełna strona firmowa. Porównanie: cena, czas, SEO i dla kogo — oraz kiedy zacząć od landingu.</description>
+    <category>rodzaje stron</category>
+  </item>
+  <item>
+    <title>Jak założyć Wizytówkę Google (Profil Firmy w Google) — krok po kroku</title>
+    <link>https://marcelgraphicsite.pl/jak-zalozyc-wizytowke-google</link>
+    <guid isPermaLink="true">https://marcelgraphicsite.pl/jak-zalozyc-wizytowke-google</guid>
+    <pubDate>Tue, 06 Oct 2026 09:00:00 +0200</pubDate>
+    <description>Załóż darmowy Profil Firmy w Google: nazwa, kategoria, adres lub obszar działania i weryfikacja wideo. Krok po kroku — i błędy, przez które wizytówka znika.</description>
+    <category>Wizytówka Google</category>
+  </item>
+  <item>
+    <title>Czy Twoja firma jest widoczna w Google? Test w 10 minut</title>
+    <link>https://marcelgraphicsite.pl/czy-twoja-firma-jest-widoczna-w-google</link>
+    <guid isPermaLink="true">https://marcelgraphicsite.pl/czy-twoja-firma-jest-widoczna-w-google</guid>
+    <pubDate>Tue, 06 Oct 2026 09:00:00 +0200</pubDate>
+    <description>Sprawdź, czy klienci znajdą Twoją firmę: wyszukiwarka, Mapy, opinie, strona na telefonie i asystenci AI. 8 kroków, które zrobisz na telefonie w 10 minut.</description>
+    <category>widoczność</category>
+  </item>
+  <item>
+    <title>Strona internetowa dla restauracji — co musi mieć?</title>
+    <link>https://marcelgraphicsite.pl/strona-internetowa-dla-restauracji</link>
+    <guid isPermaLink="true">https://marcelgraphicsite.pl/strona-internetowa-dla-restauracji</guid>
+    <pubDate>Tue, 06 Oct 2026 09:00:00 +0200</pubDate>
+    <description>Menu jako tekst, godziny, mapa, zamówienia i rezerwacje, prawdziwe zdjęcia. 10 rzeczy, które musi mieć strona restauracji, żeby goście wybierali Ciebie.</description>
+    <category>gastronomia</category>
+  </item>
+  <item>
+    <title>Strona internetowa dla salonu urody — co musi mieć?</title>
+    <link>https://marcelgraphicsite.pl/strona-internetowa-dla-salonu-urody</link>
+    <guid isPermaLink="true">https://marcelgraphicsite.pl/strona-internetowa-dla-salonu-urody</guid>
+    <pubDate>Tue, 06 Oct 2026 09:00:00 +0200</pubDate>
+    <description>Cennik, rezerwacja online, galeria metamorfoz, zespół i opinie. Co musi mieć strona salonu urody, fryzjera lub barbera, żeby klienci rezerwowali u Ciebie.</description>
+    <category>beauty</category>
+  </item>
+  <item>
+    <title>Ile kosztuje strona internetowa w 2026 roku?</title>
+    <link>https://marcelgraphicsite.pl/ile-kosztuje-strona-internetowa</link>
+    <guid isPermaLink="true">https://marcelgraphicsite.pl/ile-kosztuje-strona-internetowa</guid>
+    <pubDate>Thu, 01 Oct 2026 09:00:00 +0200</pubDate>
+    <description>Landing od 2 000 zł, strona firmowa od 3 000 zł, sklep wyceniany indywidualnie. Od czego zależy cena strony, jakie są koszty stałe i jak nie przepłacić.</description>
+    <category>ceny</category>
+  </item>
+  <item>
+    <title>Strona internetowa czy Facebook — co wybrać dla lokalnej firmy?</title>
+    <link>https://marcelgraphicsite.pl/strona-internetowa-czy-facebook</link>
+    <guid isPermaLink="true">https://marcelgraphicsite.pl/strona-internetowa-czy-facebook</guid>
+    <pubDate>Thu, 01 Oct 2026 09:00:00 +0200</pubDate>
+    <description>Social media nie zastąpią strony, a strona nie zastąpi social mediów. Za co odpowiada każde z nich, porównanie w tabeli i od czego zacząć przy małym budżecie.</description>
+    <category>strona i social media</category>
+  </item>
+  <item>
+    <title>Jak zdobyć więcej opinii w Google? 7 sposobów dla lokalnej firmy</title>
+    <link>https://marcelgraphicsite.pl/jak-zdobyc-opinie-google</link>
+    <guid isPermaLink="true">https://marcelgraphicsite.pl/jak-zdobyc-opinie-google</guid>
+    <pubDate>Thu, 01 Oct 2026 09:00:00 +0200</pubDate>
+    <description>Opinie w Google decydują, czy klient wybierze Ciebie, czy konkurencję. 7 prostych sposobów: link do opinii, kod QR, karta NFC, odpowiedzi na opinie — i czego nie robić.</description>
+    <category>opinie Google</category>
+  </item>
+</channel>
+</rss>

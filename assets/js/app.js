@@ -74,8 +74,8 @@
   });
 
   /* ---------- mapa podstron (kolejność = kierunek przejścia) ---------- */
-  const ORDER = { index: 0, prace: 1, uslugi: 2, cennik: 3, 'o-mnie': 4, kontakt: 5, 'luxe-salon': 6, 'vesper-barber': 6, 'zar-burger': 6, poradnik: 6, 'ile-kosztuje-strona-internetowa': 6.5, 'strona-internetowa-czy-facebook': 6.5, 'jak-zdobyc-opinie-google': 6.5, 'polityka-prywatnosci': 7 };
-  const NUMS = { index: '00', prace: '01', uslugi: '02', cennik: '03', 'o-mnie': '04', kontakt: '05', 'luxe-salon': '↗', 'vesper-barber': '↗', 'zar-burger': '↗', poradnik: '06', 'ile-kosztuje-strona-internetowa': '06', 'strona-internetowa-czy-facebook': '06', 'jak-zdobyc-opinie-google': '06', 'polityka-prywatnosci': '07' };
+  const ORDER = { index: 0, prace: 1, uslugi: 2, cennik: 3, 'o-mnie': 4, kontakt: 5, 'luxe-salon': 6, 'vesper-barber': 6, 'zar-burger': 6, poradnik: 6, 'ile-kosztuje-strona-internetowa': 6.5, 'strona-internetowa-czy-facebook': 6.5, 'jak-zdobyc-opinie-google': 6.5, 'polityka-prywatnosci': 7, 'strony-internetowe-sieradz': 2.5, 'prowadzenie-social-media': 2.5, 'karty-nfc-opinie-google': 2.5, 'strona-internetowa-dla-restauracji': 6.5, 'strona-internetowa-dla-salonu-urody': 6.5, 'jak-zalozyc-wizytowke-google': 6.5, 'landing-page-czy-strona-wizytowka': 6.5, 'czy-twoja-firma-jest-widoczna-w-google': 6.5 };
+  const NUMS = { index: '00', prace: '01', uslugi: '02', cennik: '03', 'o-mnie': '04', kontakt: '05', 'luxe-salon': '↗', 'vesper-barber': '↗', 'zar-burger': '↗', poradnik: '06', 'ile-kosztuje-strona-internetowa': '06', 'strona-internetowa-czy-facebook': '06', 'jak-zdobyc-opinie-google': '06', 'polityka-prywatnosci': '07', 'strony-internetowe-sieradz': '02', 'prowadzenie-social-media': '02', 'karty-nfc-opinie-google': '02', 'strona-internetowa-dla-restauracji': '06', 'strona-internetowa-dla-salonu-urody': '06', 'jak-zalozyc-wizytowke-google': '06', 'landing-page-czy-strona-wizytowka': '06', 'czy-twoja-firma-jest-widoczna-w-google': '06' };
   const CONCEPTS = { luxe: 'Luxe Salon', vesper: 'Vesper Barber', zar: 'ŻAR Burger' };
   const keyOf = url => {
     const f = url.pathname.split('/').pop();

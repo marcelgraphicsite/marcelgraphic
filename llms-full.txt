@@ -1,10 +1,12 @@
 # Marcel Struszczak — strony internetowe, social media i opinie Google
 
-> Marcel Struszczak (marcelgraphicsite.pl) projektuje strony internetowe dla firm, prowadzi profile firm na Facebooku i Instagramie oraz wdraża karty i naklejki NFC do opinii Google. Pracuje bezpośrednio z klientem, bez pośredników, z firmami z całej Polski (zdalnie); baza: Sieradz, woj. łódzkie. Na start bezpłatny projekt strony ze znakiem wodnym, płatność końcowa dopiero po akceptacji, możliwe raty.
+> Marcel Struszczak (marcelgraphicsite.pl) to projektant stron internetowych z Sieradza (woj. łódzkie). Projektuje strony internetowe dla firm, prowadzi profile firm na Facebooku i Instagramie oraz programuje karty i naklejki NFC do opinii Google. Pracuje bezpośrednio z klientem, bez pośredników: w Sieradzu i okolicy spotyka się na miejscu, z resztą Polski pracuje zdalnie. Na start bezpłatny projekt strony ze znakiem wodnym, płatność końcowa dopiero po akceptacji, możliwe raty.
 
-Hasło: „Cyfrowy rozwój lokalnych firm”. Branże: każda — od gastronomii po kancelarie. Odpowiedź na zapytanie w ciągu 24 godzin. Strona jest po polsku (z przełącznikiem PL/EN); można pisać po angielsku.
+Hasło: „Cyfrowy rozwój lokalnych firm”. Inne nazwy marki: Marcel GraphicSite, marcel.graphicsite (Instagram). Branże: każda — szczególnie gastronomia, salony urody i firmy usługowe. Odpowiedź na zapytanie w ciągu 24 godzin. Strona jest po polsku (z przełącznikiem PL/EN); można pisać po angielsku.
 
-## Oferta i ceny (ceny startowe; stan na 2026-10-01)
+Obszar działania na miejscu: Sieradz i powiat sieradzki (Błaszki, Brąszewice, Brzeźnio, Burzenin, Goszczanów, Klonowa, Warta, Wróblew, Złoczew); po umówieniu także Zduńska Wola, Szadek, Łask, Wieluń, Poddębice, Turek, Kalisz i Łódź. Zdalnie: cała Polska.
+
+## Oferta i ceny (ceny startowe; stan na 2026-10-06)
 - Landing page (jedna strona: oferta i kontakt): od 2 000 zł, realizacja 4–8 dni, 2 rundy poprawek
 - Strona wizytówka (rozbudowana strona firmowa: oferta, o firmie, cennik, FAQ, galeria, mapa, SEO i Wizytówka Google): od 3 000 zł, realizacja 7–16 dni, 5 rund poprawek
 - Strona + sklep internetowy (katalog, koszyk, płatności online BLIK i karta, szkolenie): wycena indywidualna
@@ -29,7 +31,7 @@ Mam oko do detalu i nie umiem się od niego oderwać. Kompozycja, typografia, ko
 
 Klient ocenia Twoją firmę w kilka sekund — zanim zadzwoni, zanim przyjdzie, zanim zostawi u Ciebie pieniądze. Moja robota to sprawić, żeby te kilka sekund działało na Twoją korzyść.
 
-Pracujesz bezpośrednio ze mną: bez pośredników, bez czekania tygodniami i bez technicznego bełkotu. Mówisz, czego potrzebuje Twoja firma — resztę biorę na siebie.
+Pracujesz bezpośrednio ze mną: bez pośredników, bez czekania tygodniami i bez technicznego bełkotu. Mówisz, czego potrzebuje Twoja firma — resztę biorę na siebie. Jeśli działasz w Sieradzu lub okolicy, spotkamy się na miejscu.
 
 ## Najczęstsze pytania (pełne odpowiedzi)
 
@@ -68,9 +70,266 @@ Nie znikam. Domena, hosting i certyfikat SSL to 200 zł za pierwszy rok, a potem
 
 ---
 
+# Strony internetowe w Sieradzu — Marcel Struszczak
+
+Źródło: https://marcelgraphicsite.pl/strony-internetowe-sieradz · Marcel Struszczak · 2026-10-06
+
+Jestem z Sieradza i projektuję strony dla lokalnych firm — restauracji, salonów, warsztatów i usługodawców. Spotkamy się u Ciebie, pokażę darmowy projekt na laptopie, a Ty zdecydujesz, czy idziemy dalej.
+
+W skrócie:
+- **Kto:** Marcel Struszczak, projektant stron z Sieradza. Pracujesz bezpośrednio ze mną — bez pośredników.
+- **Ceny:** landing page od 2 000 zł, strona wizytówka od 3 000 zł, sklep — wycena indywidualna. Domena, hosting i SSL: 200 zł w pierwszym roku.
+- **Czas:** landing 4–8 dni, wizytówka 7–16 dni.
+- **Na start:** darmowy projekt ze znakiem wodnym. Płacisz dopiero, gdy chcesz iść dalej — możliwe raty.
+- **Gdzie:** Sieradz i okolice — spotkamy się u Ciebie. Zduńska Wola, Łask, Wieluń i reszta Polski — zdalnie albo po umówieniu.
+
+## Strona, którą klienci z Sieradza znajdą w Google
+
+Kiedy ktoś w Sieradzu szuka fryzjera, mechanika albo pizzy, wpisuje w Google usługę i nazwę miasta — najczęściej na telefonie. Google pokazuje wtedy mapkę z kilkoma firmami, a pod nią strony internetowe. Klient wybiera w kilka sekund: patrzy na opinie, zdjęcia, ceny i na to, jak firma wygląda w sieci.
+
+Dlatego strona lokalnej firmy nie jest od tego, żeby „po prostu była”. Ma jedno zadanie: żeby klient, który Cię znalazł, zadzwonił, zarezerwował albo przyjechał — do Ciebie, a nie do konkurencji.
+
+## Co dostajesz
+
+- **Projekt w kolorach Twojej marki** — w pakiecie Wizytówka w pełni indywidualny, a nie kolejny szablon.
+- **Stronę dopracowaną na telefonie** — tam zobaczy ją większość Twoich klientów.
+- **Jeden jasny cel** — telefon, rezerwacja, zamówienie albo wiadomość na WhatsAppie jednym kliknięciem.
+- **Podstawy widoczności w Google** — tytuły, opisy i dane dla wyszukiwarek, a w pakiecie Wizytówka także podpięcie Profilu Firmy w Google (Wizytówki Google).
+- **Domenę na Ciebie** — rejestruję ją na Twój e-mail, więc od pierwszego dnia jest w 100% Twoja.
+- **Hosting i SSL bez Twojego udziału** — ogarniam techniczne sprawy, a 30 dni przed odnowieniem przypominam o płatności.
+
+
+## Jak pracuję z firmami z Sieradza
+
+1. **Rozmowa** — telefonicznie albo u Ciebie w firmie. Poznaję Twój biznes i to, co ma dać Ci strona.
+2. **Darmowy projekt** — przygotowuję projekt ze znakiem wodnym, najczęściej na zdjęciach z Twojego Facebooka lub Instagrama. Pokazuję go na laptopie albo wysyłam link.
+3. **Zaliczka od 40%** — dopiero wtedy, gdy projekt Ci się podoba. Resztę możesz rozłożyć na raty.
+4. **Realizacja i poprawki** — landing w 4–8 dni, wizytówka w 7–16 dni. Płatność końcowa po akceptacji gotowej strony.
+5. **Start i opieka** — domena, hosting, SSL i Wizytówka Google. Mieszkam w Sieradzu, więc nie znikam po oddaniu strony.
+
+## Gdzie działam
+
+Na co dzień pracuję w **Sieradzu i całym powiecie sieradzkim**: Błaszki, Brąszewice, Brzeźnio, Burzenin, Goszczanów, Klonowa, Warta, Wróblew i Złoczew. W Sieradzu i najbliższej okolicy spotkam się u Ciebie w firmie.
+
+Robię też strony dla firm ze **Zduńskiej Woli, Szadku, Łasku, Wielunia, Poddębic, Turku, Kalisza i Łodzi** — tu spotykamy się po umówieniu albo działamy zdalnie. Z resztą Polski pracuję online: telefon, WhatsApp i e-mail wystarczą, żeby zrobić świetną stronę.
+
+## Dlaczego lokalnie, a nie agencja z drugiego końca Polski
+
+- **Widzimy się twarzą w twarz.** Projekt oglądasz razem ze mną, a nie w mailu od opiekuna klienta.
+- **Rozmawiasz z osobą, która robi Twoją stronę.** Bez handlowca, project managera i przekazywania sprawy dalej.
+- **Jestem na miejscu.** Gdy trzeba coś zmienić, nie czekasz tygodniami na odpowiedź.
+- **Odpowiadam w ciągu 24 godzin.**
+
+## Ile kosztuje strona internetowa w Sieradzu
+
+| Pakiet | Cena | Czas | Dla kogo |
+|---|---|---|---|
+| Landing page | od 2 000 zł | 4–8 dni | jedna główna usługa, szybki start, mały budżet |
+| Strona wizytówka | od 3 000 zł | 7–16 dni | firma z kilkoma usługami, która chce klientów z Google |
+| Strona + sklep | wycena indywidualna | po ustaleniu zakresu | sprzedaż online, płatności BLIK i kartą |
+
+Do tego domena, hosting i SSL: **200 zł za pierwszy rok, potem 500 zł rocznie**. Ceny są takie same dla firm z Sieradza i z całej Polski, a spotkanie na miejscu nic nie kosztuje. Szczegóły rozpisałem w artykule [ile kosztuje strona internetowa](https://marcelgraphicsite.pl/ile-kosztuje-strona-internetowa), a wstępną kwotę policzysz w [kalkulatorze wyceny](https://marcelgraphicsite.pl/cennik#kalkulator). Nie wiesz, który pakiet wybrać? Przeczytaj [landing page czy strona wizytówka](https://marcelgraphicsite.pl/landing-page-czy-strona-wizytowka).
+
+## Strona to połowa sukcesu. Druga połowa to Wizytówka Google
+
+W lokalnych wynikach Google najwięcej uwagi zbiera mapka z firmami — czyli **Profile Firmy w Google** (dawniej Google Moja Firma). Strona i zadbana wizytówka działają razem: wizytówka pokazuje Cię w Mapach, a strona przekonuje klienta, że to Ty jesteś najlepszym wyborem.
+
+- Jak założyć wizytówkę krok po kroku — [Wizytówka Google: instrukcja](https://marcelgraphicsite.pl/jak-zalozyc-wizytowke-google).
+- Jak zbierać więcej opinii — [7 sposobów na opinie w Google](https://marcelgraphicsite.pl/jak-zdobyc-opinie-google) i [karty NFC do opinii](https://marcelgraphicsite.pl/karty-nfc-opinie-google).
+- Gdzie dziś tracisz klientów — [test widoczności w Google w 10 minut](https://marcelgraphicsite.pl/czy-twoja-firma-jest-widoczna-w-google).
+
+## Najczęstsze pytania
+
+### Ile kosztuje strona internetowa w Sieradzu?
+Landing page od 2 000 zł, strona wizytówka od 3 000 zł, a sklep wyceniam indywidualnie. Do tego domena, hosting i SSL: 200 zł w pierwszym roku, potem 500 zł rocznie. Ceny są takie same jak dla firm z reszty Polski.
+
+### Czy możemy spotkać się osobiście?
+Tak. W Sieradzu i okolicy przyjadę do Twojej firmy i pokażę projekt na laptopie. Jeśli wolisz, wszystko załatwimy przez telefon, WhatsApp albo e-mail.
+
+### Czy robisz strony dla firm ze Zduńskiej Woli, Łasku albo Wielunia?
+Tak. Pracuję z firmami z całego regionu — spotykamy się po umówieniu albo działamy zdalnie. Ceny i terminy są takie same jak w Sieradzu.
+
+### Ile trwa zrobienie strony internetowej?
+Landing page 4–8 dni, strona wizytówka 7–16 dni. Ekspresowa realizacja skraca czas nawet o połowę (+25–50% ceny pakietu).
+
+### Kiedy moja nowa strona pojawi się w Google?
+Zwykle od kilku dni do kilku tygodni od publikacji. Wysokie pozycje na popularne hasła to praca na miesiące — pomagają w niej Wizytówka Google, opinie i konkretna treść na stronie.
+
+### Czy pomożesz z Wizytówką Google?
+Tak. W pakiecie Wizytówka podpinam stronę do Twojego Profilu Firmy w Google i pomagam go uzupełnić. Jeśli wizytówki jeszcze nie masz, przeprowadzę Cię przez jej założenie.
+
+### Nie mam zdjęć ani tekstów. Co teraz?
+Na start wystarczą zdjęcia z Twojego Facebooka lub Instagrama — na nich przygotuję też darmowy projekt. Teksty ułożymy razem.
+
+---
+
+# Karty NFC do opinii Google — od 60 zł
+
+Źródło: https://marcelgraphicsite.pl/karty-nfc-opinie-google · Marcel Struszczak · 2026-10-06
+
+Klient przykłada telefon do karty i od razu widzi okno opinii Twojej firmy. Bez szukania, bez aplikacji, bez przepisywania linków. Każdą kartę programuję osobiście pod Twój profil.
+
+W skrócie:
+- **Jak działa:** w karcie jest chip NFC z linkiem do opinii Twojej firmy. Klient przykłada telefon i od razu widzi okno z gwiazdkami.
+- **Ceny:** karta NFC z podstawką 60 zł, duża naklejka NFC 80 zł. Każdą programuję pod Twój Profil Firmy w Google.
+- **Telefony:** iPhone od modelu XS i Android z włączonym NFC — bez żadnej aplikacji.
+- **Dostawa:** wysyłka w całej Polsce albo montaż na miejscu w Sieradzu i okolicy.
+- **Uwaga:** NFC nie działa na metalu — doradzę, gdzie postawić kartę, żeby działała za każdym razem.
+
+## Jak działa karta NFC do opinii Google
+
+W każdej karcie i naklejce jest mały chip NFC — ta sama technologia, której używasz, płacąc telefonem. Zapisuję w nim bezpośredni link do opinii Twojej firmy w Google.
+
+1. Klient przykłada telefon do karty.
+2. Telefon od razu otwiera okno opinii Twojej firmy — z gwiazdkami i polem na komentarz.
+3. Klient wybiera gwiazdki, dopisuje kilka słów i gotowe.
+
+Karta nie ma baterii i nie potrzebuje prądu ani internetu. Internet musi mieć tylko telefon klienta — żeby otworzyć stronę z opinią.
+
+## Karta czy naklejka — co wybrać?
+
+| | Karta NFC z podstawką | Duża naklejka NFC |
+|---|---|---|
+| Cena | 60 zł | 80 zł |
+| Gdzie | lada, kasa, stolik, recepcja | drzwi, witryna, lada |
+| Zalety | podasz ją klientowi do ręki, łatwo ją przestawić | widoczna z daleka, nie zginie |
+| Programowanie | pod Twój profil w Google | pod Twój profil w Google |
+
+Jeśli masz jedno miejsce obsługi, wystarczy karta przy kasie. Jeśli klienci czekają w kilku miejscach (stoliki, poczekalnia, stanowiska), weź kilka kart albo kartę i naklejkę — każdą programuję pod ten sam profil.
+
+## Gdzie postawić kartę, żeby działała
+
+- **Tam, gdzie klient i tak czeka:** przy kasie, na ladzie, na stoliku, w recepcji, przy odbiorze zamówień.
+- **Nie na metalu.** Metal blokuje NFC — na metalowej ladzie postaw kartę na podstawce, a naklejkę przyklej na szybę albo drewno.
+- **Na widoku.** Napis „Oceń nas w Google” mówi klientowi, co ma zrobić.
+- **Z jednym zdaniem od Ciebie.** „Jeśli było dobrze, przyłóż telefon do karty — to dla nas bardzo ważne”. Prośba powiedziana na głos działa najlepiej.
+
+## Na jakich telefonach działa
+
+- **iPhone od modelu XS** — wystarczy przyłożyć górną część telefonu do karty, bez aplikacji.
+- **Android** — większość smartfonów ma NFC; musi być włączone w ustawieniach (na wielu telefonach już jest, bo służy do płatności).
+- **Telefon bez NFC** — warto mieć obok kod QR z tym samym linkiem do opinii.
+
+## Jak zamówić
+
+1. **Napisz albo zadzwoń** — podaj nazwę firmy z Google i liczbę kart lub naklejek.
+2. **Programuję każdą sztukę** pod link do opinii Twojej firmy i sprawdzam, czy otwiera właściwe okno.
+3. **Wysyłam w całej Polsce** albo przywożę i montuję na miejscu w Sieradzu i okolicy.
+
+## Opinie zgodnie z zasadami Google
+
+Karta tylko skraca drogę do opinii — zasady są te same co zawsze:
+
+- **nie dawaj nic w zamian** za opinię (rabat, gratis) — to łamie zasady Google;
+- **proś wszystkich klientów**, nie tylko tych zadowolonych;
+- **nie pisz opinii sam** i nie kupuj ich — w Polsce fałszywe opinie są zakazaną, nieuczciwą praktyką rynkową.
+
+Więcej sposobów znajdziesz w artykule [jak zdobyć więcej opinii w Google](https://marcelgraphicsite.pl/jak-zdobyc-opinie-google). Nie masz jeszcze wizytówki? Zacznij od [Wizytówki Google krok po kroku](https://marcelgraphicsite.pl/jak-zalozyc-wizytowke-google).
+
+## Najczęstsze pytania
+
+### Jak działa karta NFC do opinii Google?
+W karcie jest chip NFC z zapisanym linkiem do opinii Twojej firmy. Klient przykłada telefon do karty i od razu otwiera mu się okno opinii w Google — bez szukania firmy i bez aplikacji.
+
+### Czy karta NFC działa na iPhonie?
+Tak — iPhone od modelu XS odczytuje kartę bez żadnej aplikacji. Na Androidzie wystarczy włączone NFC. Dla telefonów bez NFC warto mieć obok kod QR.
+
+### Czy karta potrzebuje baterii albo internetu?
+Nie. Karta działa bez baterii i bez prądu. Internet musi mieć tylko telefon klienta, żeby otworzyć stronę z opinią.
+
+### Czy karta zadziała na metalowej ladzie?
+Nie bezpośrednio na metalu — metal blokuje sygnał NFC. Postaw kartę na podstawce albo przyklej naklejkę na szybę lub drewno. Doradzę, gdzie ją umieścić.
+
+### Ile kosztuje karta NFC do opinii Google?
+Karta NFC z podstawką kosztuje 60 zł, a duża naklejka NFC 80 zł za sztukę. Każdą programuję pod Twój Profil Firmy w Google i wysyłam w całej Polsce.
+
+### Czy mogę zamówić kilka kart do jednej firmy?
+Tak. Każdą kartę i naklejkę programuję pod ten sam profil — możesz postawić je przy kasie, na stolikach i na drzwiach.
+
+### Czy zbieranie opinii przez kartę NFC jest zgodne z zasadami Google?
+Tak, o ile nie dajesz nic w zamian za opinię i prosisz o nią wszystkich klientów, a nie tylko zadowolonych. Karta tylko skraca drogę do okna opinii.
+
+---
+
+# Prowadzenie social mediów dla firm
+
+Źródło: https://marcelgraphicsite.pl/prowadzenie-social-media · Marcel Struszczak · 2026-10-06
+
+Profil, który wygląda jak marka, a nie jak przypadek. Przygotowuję i publikuję posty oraz karuzele na Facebooku i Instagramie — Ty prowadzisz firmę, ja profil.
+
+W skrócie:
+- **Pakiet Start:** 8 postów i karuzel miesięcznie (ok. 2 w tygodniu) — 600 zł za Facebooka, 800 zł za Facebooka i Instagram.
+- **Pakiet Pro:** 12–13 postów i karuzel miesięcznie (ok. 3 w tygodniu) — 800 zł za Facebooka, 1 100 zł za Facebooka i Instagram.
+- **W cenie:** grafiki w stylu Twojej marki, opisy i hashtagi pod Twoją branżę, publikacja według harmonogramu.
+- **Bez umów na lata:** rozliczamy się co miesiąc.
+- **Dla kogo:** lokalne firmy, które chcą regularnie przypominać się klientom, ale nie mają na to czasu.
+
+## Co dostajesz w pakiecie
+
+- **Posty graficzne i karuzele** — 8 albo 12–13 w miesiącu, zależnie od pakietu.
+- **Spójny styl** — kolory, czcionki i układ dopasowane do Twojej marki, więc profil wygląda jak jedna całość.
+- **Opisy i hashtagi** — pisane pod Twoją branżę i Twoich klientów, a nie ogólnikowe „zapraszamy”.
+- **Harmonogram** — posty wychodzą regularnie, w ustalone dni. Nie musisz o niczym pamiętać.
+
+Pakiety obejmują posty graficzne i karuzele. Rozliczamy się co miesiąc — bez umów na lata.
+
+## Jak to wygląda w praktyce
+
+1. **Rozmowa na start** — Twoja oferta, klienci, ton komunikacji (na „Ty” czy na „Pan/Pani”) i to, co chcesz promować w pierwszym miesiącu.
+2. **Styl profilu** — ustalamy kolory, układ grafik i sposób pisania, żeby każdy post był rozpoznawalny.
+3. **Posty i publikacja** — przygotowuję grafiki i opisy, a potem publikuję je według harmonogramu.
+4. **Kolejny miesiąc** — dopasowujemy tematy do sezonu, nowości i promocji w Twojej firmie.
+
+## Start czy Pro — który pakiet wybrać?
+
+| | Start | Pro |
+|---|---|---|
+| Postów i karuzel w miesiącu | 8 (ok. 2 w tygodniu) | 12–13 (ok. 3 w tygodniu) |
+| Facebook | 600 zł / mies. | 800 zł / mies. |
+| Facebook + Instagram | 800 zł / mies. | 1 100 zł / mies. |
+| Cena za post (Facebook) | ok. 75 zł | ok. 67 zł |
+
+Jeśli w Twojej firmie co tydzień dzieje się coś nowego — nowe dania, promocje, sezonowe usługi — wybierz **Pro**. Jeśli chcesz po prostu regularnie przypominać się klientom, wystarczy **Start**.
+
+## „Zrobię to sam w ChatGPT w 5 minut” — czy warto płacić?
+
+Możesz. Sztuczna inteligencja świetnie pomaga pisać teksty — sam z niej korzystam. Ale post zrobiony w 5 minut zwykle wygląda jak zrobiony w 5 minut. Klient ocenia Twoją firmę po profilu w kilka sekund, a o tym, czy profil wygląda jak marka, decydują:
+
+- **spójny wygląd** — te same kolory, układ i jakość w każdym poście,
+- **regularność** — co tydzień, a nie zrywami, gdy akurat jest czas,
+- **pomysł** — tematy, które pokazują Twoją firmę od najlepszej strony i prowadzą do rezerwacji.
+
+Jeśli masz na to czas i oko do grafiki — rób sam. Jeśli wolisz zająć się firmą — od tego jestem ja.
+
+## Social media i strona — razem działają najlepiej
+
+Social media utrzymują relację z ludźmi, którzy już Cię znają. Nowych klientów z Google zdobywają strona internetowa i Wizytówka Google. Najlepiej działa duet: strona przyciąga, profil przypomina. Porównanie znajdziesz w artykule [strona internetowa czy Facebook](https://marcelgraphicsite.pl/strona-internetowa-czy-facebook), a ceny stron w [cenniku](https://marcelgraphicsite.pl/cennik#www). Jeśli działasz w Sieradzu lub okolicy, zobacz też [strony internetowe w Sieradzu](https://marcelgraphicsite.pl/strony-internetowe-sieradz).
+
+## Najczęstsze pytania
+
+### Ile kosztuje prowadzenie social mediów?
+Pakiet Start (8 postów i karuzel miesięcznie): 600 zł za Facebooka lub 800 zł za Facebooka i Instagram. Pakiet Pro (12–13 postów i karuzel): 800 zł za Facebooka lub 1 100 zł za Facebooka i Instagram.
+
+### Czy muszę podpisać umowę na rok?
+Nie. Rozliczamy się co miesiąc, bez umów na lata.
+
+### Czy mogę zacząć od samego Facebooka?
+Tak. Możesz zacząć od Facebooka, a Instagram dołożyć później — pakiet zmieniamy z miesiąca na miesiąc.
+
+### Co, jeśli nie mam dobrych zdjęć?
+Na start wystarczą zdjęcia, które już masz — z telefonu albo z Twojego profilu. Resztę dopracuję w grafikach.
+
+### Czy prowadzisz social media firm spoza Sieradza?
+Tak. Social media prowadzę zdalnie dla firm z całej Polski — wystarczą telefon, WhatsApp i e-mail.
+
+### Dlaczego mam płacić, skoro posty zrobię w ChatGPT?
+Możesz robić je sam — ale post zrobiony w 5 minut zwykle tak wygląda. Ja dbam o spójny wygląd, regularność i opisy, które prowadzą do rezerwacji, a Ty masz to z głowy.
+
+---
+
 # Ile kosztuje strona internetowa w 2026 roku?
 
-Źródło: https://marcelgraphicsite.pl/ile-kosztuje-strona-internetowa · Marcel Struszczak · 2026-10-01
+Źródło: https://marcelgraphicsite.pl/ile-kosztuje-strona-internetowa · Marcel Struszczak · 2026-10-06
 
 Krótko: porządna strona dla lokalnej firmy to zwykle wydatek od 2 do kilku tysięcy złotych jednorazowo plus kilkaset złotych rocznie za domenę i hosting. Poniżej rozkładam cenę na czynniki pierwsze — bez marketingowej mgły.
 
@@ -122,7 +381,7 @@ U mnie domena, hosting i SSL to **200 zł za pierwszy rok, a potem 500 zł roczn
 | Strona wizytówka | od 3 000 zł | 7–16 dni | rozbudowana strona (oferta, o firmie, cennik, FAQ), galeria, mapa, SEO i Wizytówka Google, 5 rund poprawek |
 | Strona + sklep | wycena indywidualna | po ustaleniu zakresu | katalog z cenami, koszyk, płatności online (BLIK, karta), szkolenie z obsługi |
 
-Zanim zapłacisz złotówkę, dostajesz **darmowy projekt ze znakiem wodnym**. Zaliczkę (od 40%) wpłacasz dopiero, gdy chcesz iść dalej, a resztę po akceptacji gotowej strony. Płatność można rozłożyć na raty. Wstępną kwotę policzysz w [kalkulatorze wyceny](https://marcelgraphicsite.pl/cennik#kalkulator).
+Zanim zapłacisz złotówkę, dostajesz **darmowy projekt ze znakiem wodnym**. Zaliczkę (od 40%) wpłacasz dopiero, gdy chcesz iść dalej, a resztę po akceptacji gotowej strony. Płatność można rozłożyć na raty. Wstępną kwotę policzysz w [kalkulatorze wyceny](https://marcelgraphicsite.pl/cennik#kalkulator). Nie wiesz, który pakiet wybrać? Zobacz porównanie [landing page czy strona wizytówka](https://marcelgraphicsite.pl/landing-page-czy-strona-wizytowka).
 
 ## Jak nie przepłacić i nie kupić bubla
 
@@ -149,9 +408,276 @@ Tak. Zaliczka od 40% na start, reszta po akceptacji gotowej strony — i tę kwo
 
 ---
 
+# Landing page czy strona wizytówka — co wybrać dla firmy?
+
+Źródło: https://marcelgraphicsite.pl/landing-page-czy-strona-wizytowka · Marcel Struszczak · 2026-10-06
+
+Najkrótsza odpowiedź: landing, jeśli masz jedną główną usługę i chcesz szybko wystartować. Wizytówka, jeśli masz kilka usług i chcesz być widoczny w Google na więcej zapytań. Poniżej różnice w liczbach.
+
+W skrócie:
+- **Landing page** = jedna strona z jednym celem (telefon, zapis, zamówienie). U mnie od 2 000 zł, 4–8 dni.
+- **Strona wizytówka** = pełna strona firmowa: oferta, o firmie, cennik, FAQ, galeria, mapa. Od 3 000 zł, 7–16 dni.
+- **W Google lepiej radzi sobie wizytówka** — więcej treści to więcej zapytań, na które możesz się pokazać.
+- **Landing sprawdza się** przy reklamach, jednej usłudze i starcie z małym budżetem.
+- **Landing możesz później rozbudować** — dodatkowa podstrona kosztuje u mnie 300–500 zł.
+
+## Czym jest landing page
+
+Landing page (strona docelowa) to **jedna strona z jednym zadaniem**. Klient trafia na nią z reklamy, z Instagrama albo z Google i ma zrobić jedną rzecz: zadzwonić, zapisać się albo zamówić. Wszystko inne — menu z pięcioma zakładkami, blog, długa historia firmy — tylko by rozpraszało.
+
+Typowy landing to kilka sekcji jedna pod drugą: mocny nagłówek, oferta, korzyści, opinie, kontakt. W moim pakiecie Landing dostajesz stronę z ofertą i kontaktem na gotowym szablonie dopasowanym do kolorów Twojej marki, formularz albo link do WhatsAppa i 2 rundy poprawek.
+
+## Czym jest strona wizytówka
+
+Strona wizytówka to **pełna strona firmowa**. Pokazuje całą ofertę, opowiada o firmie i odpowiada na pytania, zanim klient je zada. Ma więcej sekcji — ofertę, o firmie, cennik, FAQ, galerię, mapę — i nawigację, która od razu prowadzi tam, gdzie klient chce.
+
+W moim pakiecie Wizytówka dostajesz indywidualny projekt graficzny, animacje przy przewijaniu, galerię, mapę Google, podstawowe SEO z podpięciem Wizytówki Google i 5 rund poprawek. Stronę można rozbudować o kolejne podstrony.
+
+## Landing page czy wizytówka — porównanie
+
+| | Landing page | Strona wizytówka |
+|---|---|---|
+| Cel | jedna akcja: telefon, zapis, zamówienie | przedstawia całą firmę i ofertę |
+| Zawartość | nagłówek, oferta, kontakt | oferta, o firmie, cennik, FAQ, galeria, mapa |
+| Projekt graficzny | szablon w kolorach Twojej marki | indywidualny |
+| Cena u mnie | od 2 000 zł | od 3 000 zł |
+| Czas realizacji | 4–8 dni | 7–16 dni |
+| Poprawki w cenie | 2 rundy | 5 rund |
+| Widoczność w Google | podstawowa | szersza: SEO i Wizytówka Google |
+
+## Kiedy wybrać landing page
+
+- **Masz jedną główną usługę** — np. food truck, korepetycje, montaż klimatyzacji.
+- **Puszczasz reklamy** na Facebooku albo w Google i potrzebujesz strony, która zamienia kliknięcia w zapytania.
+- **Startujesz z małym budżetem** i chcesz być w sieci w kilka dni.
+- **Testujesz nowy pomysł** i nie wiesz jeszcze, czy wypali.
+
+## Kiedy wybrać stronę wizytówkę
+
+- **Masz kilka usług** i każda zasługuje na własne miejsce.
+- **Chcesz, żeby klienci znajdowali Cię w Google** — więcej treści to więcej zapytań, na które możesz się pokazać.
+- **Klienci porównują Cię z konkurencją** — potrzebujesz galerii, cennika i odpowiedzi na pytania.
+- **Budujesz markę na lata**, a nie jedną kampanię.
+
+## Wizytówka Google to nie strona wizytówka
+
+To częsta pomyłka. **Wizytówka Google** (Profil Firmy w Google) to darmowy wpis w Mapach i w wynikach Google. **Strona wizytówka** to Twoja własna strona internetowa. Potrzebujesz obu: wizytówka sprowadza klienta, a strona przekonuje go do wyboru. Jak założyć tę pierwszą, opisuję w poradniku [Wizytówka Google krok po kroku](https://marcelgraphicsite.pl/jak-zalozyc-wizytowke-google).
+
+## A może od razu sklep?
+
+Jeśli chcesz sprzedawać online — produkty, bony podarunkowe, zamówienia z płatnością BLIK lub kartą — potrzebujesz strony ze sklepem. Wyceniam ją indywidualnie, po rozmowie o zakresie.
+
+## Jak zdecydować w 3 pytaniach
+
+1. **Ile masz usług?** Jedna — landing. Kilka — wizytówka.
+2. **Skąd mają przychodzić klienci?** Z reklam — landing. Z Google — wizytówka.
+3. **Ile masz czasu i budżetu?** Mało — landing teraz, rozbudowa później. Więcej — od razu wizytówka.
+
+Nadal nie wiesz? Napisz — doradzę po krótkiej rozmowie, a darmowy projekt pokaże Ci, jak to będzie wyglądać. Ceny i dodatki sprawdzisz w [cenniku](https://marcelgraphicsite.pl/cennik#www), a pełny obraz kosztów w artykule [ile kosztuje strona internetowa](https://marcelgraphicsite.pl/ile-kosztuje-strona-internetowa).
+
+## Najczęstsze pytania
+
+### Czy landing page jest dobry do SEO?
+Pod jedno konkretne hasło — tak. Ale strona z jednym tematem pokaże się na mniej zapytań niż rozbudowana strona firmowa. Jeśli zależy Ci na klientach z Google, lepsza będzie strona wizytówka.
+
+### Czy z landing page można później zrobić stronę wizytówkę?
+Tak. Landing możesz rozbudować o kolejne sekcje i podstrony — u mnie dodatkowa podstrona kosztuje 300–500 zł.
+
+### Czym różni się strona wizytówka od Wizytówki Google?
+Strona wizytówka to Twoja własna strona internetowa. Wizytówka Google (Profil Firmy w Google) to darmowy wpis w Mapach i wynikach Google. Najlepiej mieć jedno i drugie.
+
+### Ile kosztuje landing page, a ile strona wizytówka?
+U mnie landing page kosztuje od 2 000 zł (4–8 dni), a strona wizytówka od 3 000 zł (7–16 dni). Do tego domena, hosting i SSL: 200 zł w pierwszym roku, potem 500 zł rocznie.
+
+---
+
+# Jak założyć Wizytówkę Google (Profil Firmy w Google) — krok po kroku
+
+Źródło: https://marcelgraphicsite.pl/jak-zalozyc-wizytowke-google · Marcel Struszczak · 2026-10-06
+
+Wizytówka Google — dziś oficjalnie Profil Firmy w Google, dawniej Google Moja Firma — to darmowy wpis, dzięki któremu Twoja firma pojawia się w Mapach i w lokalnych wynikach wyszukiwania. Założysz ją w kwadrans, weryfikacja trwa dłużej. Oto cała droga.
+
+W skrócie:
+- **Wizytówka jest darmowa** — zakładasz ją na stronie google.com/business, na swoim koncie Google.
+- **Nazwa musi być prawdziwa** — bez dopisków w stylu „najlepszy fryzjer Sieradz”.
+- **Dojeżdżasz do klientów?** Ukryj adres i ustaw obszar działania (do 20 miejscowości).
+- **Weryfikacja:** Google sam wybiera metodę — często to krótkie nagranie wideo, sprawdzane do 5 dni roboczych.
+- **Po weryfikacji** uzupełnij godziny, zdjęcia, opis i usługi — i zbieraj opinie od pierwszego dnia.
+
+## Co daje Wizytówka Google
+
+Kiedy ktoś wpisuje „mechanik Sieradz” albo „fryzjer w pobliżu”, Google pokazuje mapkę z kilkoma firmami. To właśnie wizytówki. Klient widzi w nich od razu:
+
+- nazwę, kategorię i opinie,
+- godziny otwarcia i numer telefonu z przyciskiem „Zadzwoń”,
+- trasę dojazdu albo obszar, w którym działasz,
+- zdjęcia, usługi i link do Twojej strony.
+
+Wizytówka jest **darmowa**, a dla wielu lokalnych firm to najważniejsze miejsce w całym internecie. Uważaj na telefony „z Google” z ofertą płatnej weryfikacji albo „pozycjonowania wizytówki” — Google nie pobiera opłat za Profil Firmy.
+
+## Zanim zaczniesz — przygotuj
+
+- **Konto Google** — najlepiej osobne, firmowe, do którego zawsze będziesz mieć dostęp.
+- **Nazwę firmy** — dokładnie taką, jakiej używasz na szyldzie, wizytówkach i dokumentach.
+- **Kategorię główną** — jak najbardziej konkretną, np. „Pizzeria”, a nie „Restauracja”.
+- **Adres albo obszar działania** — w zależności od tego, czy klienci przychodzą do Ciebie.
+- **Telefon i adres strony internetowej.**
+- **Kilka zdjęć** — logo, wnętrze, efekty pracy, zespół.
+
+## Jak założyć Wizytówkę Google — krok po kroku
+
+1. **Wejdź na google.com/business** i zaloguj się na konto Google.
+2. **Wpisz nazwę firmy.** Jeśli Google podpowie, że taka firma już jest w Mapach, nie zakładaj drugiej wizytówki — poproś o dostęp do istniejącej.
+3. **Wybierz kategorię główną.** Kolejne kategorie dodasz później.
+4. **Zdecyduj o lokalizacji.** Jeśli klienci przychodzą do Ciebie (sklep, salon, lokal), wpisz adres i sprawdź pinezkę na mapie. Jeśli to Ty jeździsz do klientów, nie pokazuj adresu i ustaw **obszar działania**: miasta albo kody pocztowe, maksymalnie 20 pozycji, najdalej mniej więcej 2 godziny jazdy od siedziby.
+5. **Podaj telefon i adres strony.**
+6. **Zweryfikuj firmę.** Google sam wybiera metodę — często jest to nagranie wideo, czasem telefon, SMS albo e-mail.
+7. **Uzupełnij profil** — o tym niżej.
+
+## Weryfikacja wideo — jak ją przejść
+
+Jeśli Google poprosi o wideo, nagrywasz je telefonem jednym ujęciem — bez cięć i montażu, co najmniej 30 sekund. Na nagraniu pokaż:
+
+- **gdzie jesteś** — ulicę, numer budynku, pobliskie znaki albo punkty orientacyjne;
+- **że firma istnieje** — szyld, wnętrze, sprzęt albo narzędzia pracy;
+- **że to Ty nią zarządzasz** — np. zaplecze, kasę, otwieranie lokalu albo dokumenty firmy (bez numerów kont i danych osobowych).
+
+Nie nagrywaj twarzy innych osób. Google sprawdza nagranie do 5 dni roboczych.
+
+## Co uzupełnić po weryfikacji
+
+- **Godziny otwarcia** — także godziny specjalne w święta.
+- **Opis firmy** (do 750 znaków) — konkretnie: co robisz, dla kogo i gdzie. Bez wykrzykników i pisania wielkimi literami.
+- **Usługi albo produkty** — z krótkim opisem, a jeśli możesz, z ceną.
+- **Zdjęcia** — logo, zdjęcie w tle, wnętrze, zespół, efekty pracy. Dodawaj nowe regularnie.
+- **Link do strony, menu albo rezerwacji.**
+- **Dodatkowe kategorie** — tylko te, które naprawdę pasują.
+
+## Błędy, przez które wizytówka może zostać zawieszona
+
+- **Dopiski w nazwie** — np. „Salon Ania — fryzjer Sieradz tanio”. Nazwa ma być taka jak w rzeczywistości.
+- **Adres wirtualny, skrytka pocztowa albo cudzy lokal.**
+- **Firma działająca wyłącznie online** — Profil Firmy jest dla firm, które spotykają się z klientami.
+- **Duże zmiany zaraz po weryfikacji** — nowa nazwa, adres czy kategoria mogą wymusić ponowną weryfikację.
+- **Dwie wizytówki tej samej firmy.**
+- **Kupowanie opinii albo nagradzanie za opinie.**
+
+## Co dalej: jak wypaść lepiej niż konkurencja
+
+1. **Zbieraj opinie od pierwszego dnia** i odpowiadaj na każdą — [7 sposobów na więcej opinii](https://marcelgraphicsite.pl/jak-zdobyc-opinie-google), w tym [karty NFC do opinii](https://marcelgraphicsite.pl/karty-nfc-opinie-google).
+2. **Dodawaj zdjęcia i aktualności** — pokazują, że firma działa.
+3. **Podepnij stronę internetową** z tymi samymi danymi co w wizytówce: nazwa, adres, telefon. Wizytówka sprowadza klienta, a strona przekonuje go do wyboru.
+4. **Sprawdź efekt** — [test widoczności w Google w 10 minut](https://marcelgraphicsite.pl/czy-twoja-firma-jest-widoczna-w-google).
+
+## Najczęstsze pytania
+
+### Ile kosztuje Wizytówka Google?
+Nic — Profil Firmy w Google jest darmowy. Jeśli ktoś dzwoni „z Google” i chce pieniędzy za założenie albo weryfikację wizytówki, to nie jest Google.
+
+### Ile trwa weryfikacja wizytówki?
+To zależy od metody. Nagranie wideo Google sprawdza do 5 dni roboczych; weryfikacja telefonem, SMS-em albo e-mailem bywa szybsza.
+
+### Czy mogę założyć wizytówkę bez adresu?
+Tak, jeśli dojeżdżasz do klientów — wtedy ukrywasz adres i ustawiasz obszar działania. Firmy działające wyłącznie online nie mogą mieć Profilu Firmy w Google.
+
+### Czym różni się Wizytówka Google od strony wizytówki?
+Wizytówka Google to darmowy profil firmy w Mapach i wynikach Google. Strona wizytówka to Twoja własna strona internetowa. Najlepiej działają razem.
+
+### Czy pomożesz mi z wizytówką?
+Tak. W pakiecie Wizytówka podpinam stronę do Twojego Profilu Firmy w Google i pomagam go uzupełnić. Jeśli wizytówki jeszcze nie masz, przeprowadzę Cię przez jej założenie.
+
+---
+
+# Czy Twoja firma jest widoczna w Google? Test w 10 minut
+
+Źródło: https://marcelgraphicsite.pl/czy-twoja-firma-jest-widoczna-w-google · Marcel Struszczak · 2026-10-06
+
+Zrób ten test na telefonie — tak, jak robią to Twoi klienci. Zajmie 10 minut i pokaże, gdzie tracisz klientów: w wyszukiwarce, w Mapach czy w odpowiedziach asystentów AI.
+
+W skrócie:
+- **Szukaj jak klient:** na telefonie, w karcie incognito — „usługa + miasto”.
+- **Sprawdź mapkę z firmami** nad wynikami — to najcenniejsze miejsce w lokalnym Google.
+- **Wpisz nazwę swojej firmy:** czy widać wizytówkę, godziny, telefon, stronę i opinie?
+- **Zapytaj ChatGPT, Gemini albo Perplexity**, kogo polecają w Twojej branży i Twoim mieście.
+- **Każdy krok, którego nie przejdziesz,** to klienci, którzy dziś wybierają konkurencję.
+
+## Zanim zaczniesz
+
+- **Użyj telefonu** — większość Twoich klientów szuka właśnie na nim.
+- **Otwórz kartę incognito** (prywatną). Google dopasowuje wyniki do Twojej historii, więc na zwykłej karcie możesz widzieć swoją firmę wyżej niż klienci.
+- **Bądź w swoim mieście** albo dopisuj jego nazwę do zapytań. Wyniki lokalne zależą od tego, gdzie jesteś.
+
+## Test w 8 krokach
+
+### 1. Wpisz usługę i miasto
+
+Na przykład „fryzjer Sieradz”, „pizza Zduńska Wola” albo „mechanik Łask”. Czy jesteś na pierwszej stronie wyników? Zapisz trzy firmy, które widać najwyżej — to Twoja realna konkurencja.
+
+### 2. Sprawdź mapkę z firmami
+
+Nad zwykłymi wynikami Google często pokazuje mapkę z kilkoma firmami. To najcenniejsze miejsce w lokalnych wynikach. Jeśli Cię tam nie ma, kliknij „Więcej firm” i sprawdź, na którym miejscu jesteś.
+
+### 3. Wpisz „[usługa] w pobliżu”
+
+Tak szuka wielu klientów, zwłaszcza gdy są już w drodze. Ten wynik zależy głównie od Wizytówki Google: kategorii, opinii i odległości.
+
+### 4. Wpisz nazwę swojej firmy
+
+Powinna pojawić się Twoja wizytówka: nazwa, kategoria, godziny, telefon, strona i zdjęcia. Sprawdź, czy wszystko jest aktualne. Jeśli wizytówki nie ma — [załóż ją krok po kroku](https://marcelgraphicsite.pl/jak-zalozyc-wizytowke-google).
+
+### 5. Sprawdź opinie
+
+Ile ich masz, jaka jest średnia, kiedy pojawiła się ostatnia i czy na nie odpowiadasz. Porównaj to z trzema firmami z kroku 1. Jeśli wypadasz słabiej — [7 sposobów na więcej opinii](https://marcelgraphicsite.pl/jak-zdobyc-opinie-google).
+
+### 6. Otwórz swoją stronę na telefonie
+
+Czy ładuje się szybko? Czy w kilka sekund widać, co robisz, ile to kosztuje i jak się skontaktować? Czy numer telefonu da się kliknąć? Szybkość sprawdzisz za darmo w narzędziu PageSpeed Insights (pagespeed.web.dev).
+
+### 7. Sprawdź, czy Google zna Twoją stronę
+
+Wpisz w Google `site:twojafirma.pl` (z adresem swojej strony). Jeśli nie ma żadnych wyników, Google nie zaindeksował strony i nikt jej nie znajdzie. Rozwiązanie: dodaj stronę do Google Search Console i zgłoś mapę witryny.
+
+### 8. Zapytaj asystenta AI
+
+Coraz więcej osób pyta ChatGPT, Gemini albo Perplexity, zamiast przeglądać wyniki. Zapytaj: „Polecisz [usługę] w [mieście]?”. Asystenci budują odpowiedź z tego, co znajdą w sieci: stron firm, map, opinii i katalogów. Jeśli Cię nie wymieniają, zwykle brakuje im konkretów — strony z ofertą i miastem, kompletnej wizytówki albo opinii.
+
+## Wynik: co poprawić najpierw
+
+| Problem | Co zrobić |
+|---|---|
+| Nie ma Cię w mapce z firmami | załóż albo uzupełnij Wizytówkę Google |
+| Masz mniej opinii niż konkurencja | proś o opinię po każdej usłudze: link, kod QR albo karta NFC |
+| Wpis `site:` nie pokazuje Twojej strony | dodaj stronę do Google Search Console i zgłoś mapę witryny |
+| Strona jest wolna albo nieczytelna na telefonie | nowa, lekka strona projektowana najpierw na telefon |
+| W różnych miejscach są różne dane | ujednolić nazwę, adres i telefon wszędzie |
+| Asystenci AI Cię nie znają | strona z konkretami (oferta, ceny, miasto), wizytówki w Google i Bing, wpisy w katalogach firm |
+
+## Najważniejsze na koniec
+
+Widoczność w Google to nie jeden trik, tylko trzy rzeczy, które działają razem: **Wizytówka Google, opinie i dobra strona**. Jeśli test wypadł słabo, zacznij od wizytówki (jest darmowa), a potem zadbaj o stronę. Chcesz zobaczyć, jak mogłaby wyglądać Twoja nowa strona? [Napisz do mnie](https://marcelgraphicsite.pl/kontakt) — przygotuję darmowy projekt.
+
+## Najczęstsze pytania
+
+### Dlaczego widzę swoją firmę wysoko w Google, a klienci nie?
+Google dopasowuje wyniki do historii wyszukiwania i lokalizacji. Ty często odwiedzasz swoją stronę, więc widzisz ją wyżej. Sprawdzaj w karcie incognito i na innym telefonie.
+
+### Ile czasu potrzeba, żeby nowa strona pojawiła się w Google?
+Zwykle od kilku dni do kilku tygodni. Przyspieszysz to, dodając stronę do Google Search Console i zgłaszając mapę witryny.
+
+### Czy płatne reklamy Google poprawiają pozycję w bezpłatnych wynikach?
+Nie. Reklamy i wyniki bezpłatne działają osobno — reklama znika razem z budżetem, a pozycję w bezpłatnych wynikach budują strona, Wizytówka Google i opinie.
+
+### Jak za darmo sprawdzić pozycję mojej strony w Google?
+W Google Search Console, w raporcie „Skuteczność”. Zobaczysz tam zapytania, na które pokazuje się Twoja strona, liczbę kliknięć i średnią pozycję.
+
+### Jak sprawdzić, czy ChatGPT zna moją firmę?
+Zapytaj go o polecenie firmy z Twojej branży w Twoim mieście, a potem wprost o Twoją firmę. Jeśli odpowiedzi są puste albo błędne, zadbaj o stronę z konkretami, wizytówki w Google i Bing oraz wpisy w katalogach firm.
+
+---
+
 # Strona internetowa czy Facebook — co wybrać dla lokalnej firmy?
 
-Źródło: https://marcelgraphicsite.pl/strona-internetowa-czy-facebook · Marcel Struszczak · 2026-10-01
+Źródło: https://marcelgraphicsite.pl/strona-internetowa-czy-facebook · Marcel Struszczak · 2026-10-06
 
 Najkrótsza odpowiedź: nie „albo”, tylko „i”. Strona nie zastąpi social mediów, a social media nie zastąpią strony — bo każde z nich robi coś zupełnie innego.
 
@@ -196,7 +722,7 @@ Ale: o tym, kto zobaczy Twój post, decyduje algorytm, a nie Ty. Wpisy szybko gi
 
 Może — zwłaszcza na samym początku. Tracisz jednak dużą część klientów, którzy szukają usług w Google i nigdy nie trafią na Twój profil. Uzależniasz się też od jednej platformy: jeśli zmieni zasady albo zablokuje konto, znikasz z dnia na dzień.
 
-Jeśli nie masz jeszcze strony, minimum to **Wizytówka Google** (Profil Firmy w Google) — jest darmowa i pokazuje Cię w Mapach oraz w lokalnych wynikach wyszukiwania. Strona to naturalny kolejny krok: wizytówka kieruje do niej ludzi, a strona zamienia ich w klientów.
+Jeśli nie masz jeszcze strony, minimum to **Wizytówka Google** (Profil Firmy w Google) — jest darmowa i pokazuje Cię w Mapach oraz w lokalnych wynikach wyszukiwania ([jak ją założyć krok po kroku](https://marcelgraphicsite.pl/jak-zalozyc-wizytowke-google)). Strona to naturalny kolejny krok: wizytówka kieruje do niej ludzi, a strona zamienia ich w klientów.
 
 ## Od czego zacząć przy małym budżecie
 
@@ -225,7 +751,7 @@ Tak — projektuję strony i prowadzę Facebooka oraz Instagrama dla firm, więc
 
 # Jak zdobyć więcej opinii w Google? 7 sposobów dla lokalnej firmy
 
-Źródło: https://marcelgraphicsite.pl/jak-zdobyc-opinie-google · Marcel Struszczak · 2026-10-01
+Źródło: https://marcelgraphicsite.pl/jak-zdobyc-opinie-google · Marcel Struszczak · 2026-10-06
 
 Zadowoleni klienci chętnie zostawiają opinie — pod warunkiem, że poprosisz ich we właściwym momencie, a cała sprawa zajmie im kilka sekund. Oto 7 sposobów, które to załatwiają.
 
@@ -257,7 +783,7 @@ Kod QR z linkiem do opinii na ladzie, stoliku, paragonie albo ulotce. Klient ska
 
 ### 4. Użyj karty lub naklejki NFC
 
-Klient przykłada telefon do karty i od razu otwiera się okno opinii Twojej firmy — bez aplikacji, bez szukania i bez skanowania. Działa na większości współczesnych smartfonów: iPhone’y od modelu XS odczytują NFC bez aplikacji, a na Androidzie wystarczy włączone NFC. Jedna uwaga: NFC nie działa na metalu, więc kartę stawia się na ladzie lub stoliku, a naklejkę na szybie lub drzwiach.
+Klient przykłada telefon do karty i od razu otwiera się okno opinii Twojej firmy — bez aplikacji, bez szukania i bez skanowania. Działa na większości współczesnych smartfonów: iPhone’y od modelu XS odczytują NFC bez aplikacji, a na Androidzie wystarczy włączone NFC. Jedna uwaga: NFC nie działa na metalu, więc kartę stawia się na ladzie lub stoliku, a naklejkę na szybie lub drzwiach. Jak to działa w praktyce i ile kosztuje, opisuję na stronie [karty NFC do opinii Google](https://marcelgraphicsite.pl/karty-nfc-opinie-google).
 
 ### 5. Dodaj prośbę w stałych miejscach
 
@@ -298,9 +824,220 @@ Na większości współczesnych smartfonów tak: iPhone od modelu XS odczytuje j
 ### Ile kosztuje karta NFC do opinii Google?
 U mnie karta NFC z podstawką kosztuje 60 zł, a duża naklejka NFC 80 zł — każdą programuję pod profil Twojej firmy. Wysyłam w całej Polsce.
 
+---
+
+# Strona internetowa dla restauracji — co musi mieć?
+
+Źródło: https://marcelgraphicsite.pl/strona-internetowa-dla-restauracji · Marcel Struszczak · 2026-10-06
+
+Gość decyduje w kilka sekund: menu, ceny, godziny i dojazd. Jeśli tego nie znajdzie, wybierze lokal obok. Oto 10 rzeczy, które musi mieć strona restauracji — i kilka, które tylko przeszkadzają.
+
+W skrócie:
+- **Menu z cenami jako tekst** na stronie — nie PDF i nie zdjęcie karty.
+- **Godziny, adres z mapą i telefon** widoczne od razu na telefonie.
+- **Jeden wyraźny przycisk:** zamów, zarezerwuj albo zadzwoń.
+- **Prawdziwe zdjęcia** potraw i wnętrza zamiast zdjęć ze stocka.
+- **Te same dane** na stronie, w Wizytówce Google i na Facebooku.
+
+## Po co restauracji strona, skoro ma Facebooka
+
+Kiedy ktoś jest głodny, wpisuje w Google „pizza”, „burger” albo „obiad” i nazwę miasta. Google pokazuje mapkę z lokalami i strony internetowe, a profil na Facebooku przegrywa tu ze stroną i Wizytówką Google. Do tego menu na Facebooku to często zdjęcie karty sprzed roku, a godziny giną w starych postach.
+
+Strona to miejsce, w którym gość w kilka sekund znajduje wszystko, czego potrzebuje, żeby przyjść albo zamówić. Facebook i Instagram nadal są potrzebne — do pokazywania nowości i budowania relacji. Więcej o tym duecie piszę w artykule [strona internetowa czy Facebook](https://marcelgraphicsite.pl/strona-internetowa-czy-facebook).
+
+## 10 rzeczy, które musi mieć strona restauracji
+
+### 1. Menu z cenami — jako tekst
+
+Menu to najczęściej otwierana część strony restauracji. Pokaż je jako zwykły tekst: nazwy dań, krótki opis i cena. Taki tekst wygodnie czyta się na telefonie, łatwo go zaktualizować, a Google i asystenci AI rozumieją, co serwujesz — i mogą pokazać Cię komuś, kto szuka „burgera z jalapeño” albo „pizzy na cienkim cieście”.
+
+Menu w PDF albo jako zdjęcie karty to kłopot: trzeba je powiększać palcami, długo się ładuje, a wyszukiwarka nie zawsze odczyta, co jest w środku.
+
+### 2. Godziny otwarcia — aktualne
+
+Godziny powinny być widoczne od razu, także w święta i dni wolne. Te same godziny wpisz w Wizytówce Google. Rozbieżności to najprostszy sposób, żeby stracić gościa, który przyjechał pod zamknięte drzwi.
+
+### 3. Adres, mapa i dojazd
+
+Adres z mapą, informacja o parkingu i wejściu. Na telefonie — przycisk, który od razu otwiera nawigację.
+
+### 4. Jeden główny przycisk
+
+Zdecyduj, czego najbardziej chcesz od gościa: zamówienia, rezerwacji czy telefonu. Ten przycisk powinien być widoczny cały czas, także podczas przewijania na telefonie. Numer telefonu musi być klikalny, żeby dzwonić jednym dotknięciem.
+
+### 5. Zamówienia online
+
+Masz dwie drogi:
+
+- **Link do platformy** (np. Pyszne.pl, Glovo czy Wolt) — szybko i bez dodatkowej pracy, ale platforma pobiera prowizję od zamówień.
+- **Własne zamówienia na stronie** — bez prowizji dla pośrednika, za to z większą pracą na start: koszyk, płatności, obsługa.
+
+Wiele lokali łączy obie drogi. Jeśli przyjmujesz zamówienia online, gość powinien znać skład i alergeny, zanim zamówi — tego wymagają przepisy o informowaniu konsumentów o żywności.
+
+### 6. Rezerwacje stolików
+
+W małym lokalu wystarczy telefon albo krótki formularz. Jeśli rezerwacji jest dużo, system z wyborem godziny i liczby osób oszczędza czas Tobie i obsłudze.
+
+### 7. Prawdziwe zdjęcia
+
+Twoje dania, Twoje wnętrze, Twój zespół. Zdjęcia ze stocka gość rozpozna od razu — i przestanie wierzyć reszcie strony. Na start wystarczą dobre zdjęcia z telefonu, zrobione przy dziennym świetle.
+
+### 8. Szybkość na telefonie
+
+Większość gości zobaczy stronę na telefonie, często na mobilnym internecie. Lekkie zdjęcia, żadnych filmów odtwarzanych w tle i żadnych wyskakujących okien zasłaniających menu.
+
+### 9. Opinie i Wizytówka Google
+
+Opinie widać obok Twojego lokalu w Mapach Google — często zanim ktoś wejdzie na stronę. Podlinkuj wizytówkę na stronie i aktywnie zbieraj opinie: [7 sposobów na więcej opinii](https://marcelgraphicsite.pl/jak-zdobyc-opinie-google). Najprościej robi się to [kartą NFC przy kasie](https://marcelgraphicsite.pl/karty-nfc-opinie-google).
+
+### 10. Podstawy SEO lokalnego
+
+Tytuł strony z rodzajem kuchni i miastem (np. „Burgery Sieradz — ŻAR”), te same dane kontaktowe wszędzie i dane strukturalne dla restauracji (menu, godziny, rodzaj kuchni). Dzięki temu Google i asystenci AI wiedzą dokładnie, czym jesteś i gdzie Cię znaleźć.
+
+## Czego unikać na stronie restauracji
+
+- **Muzyki i filmów, które włączają się same.**
+- **Menu w PDF albo jako zdjęcia karty.**
+- **Nieaktualnych cen i godzin** — gość, który zapłaci więcej niż na stronie, nie wróci.
+- **Wyskakujących okien**, które zasłaniają menu na telefonie.
+- **Strony, którą trzeba powiększać palcami**, żeby cokolwiek przeczytać.
+
+## Ile kosztuje strona internetowa dla restauracji
+
+| Potrzeba | Pakiet | Cena u mnie | Czas |
+|---|---|---|---|
+| Menu, godziny, mapa i kontakt (food truck, mały lokal) | Landing page | od 2 000 zł | 4–8 dni |
+| Pełna strona: menu, galeria, rezerwacje, o lokalu, SEO | Strona wizytówka | od 3 000 zł | 7–16 dni |
+| Zamówienia i płatności online na stronie | Strona + sklep | wycena indywidualna | po ustaleniu zakresu |
+
+Zanim zapłacisz złotówkę, dostajesz darmowy projekt ze znakiem wodnym — najczęściej na zdjęciach z Twojego Facebooka lub Instagrama. Więcej o cenach: [ile kosztuje strona internetowa](https://marcelgraphicsite.pl/ile-kosztuje-strona-internetowa).
+
+## Przykład: koncept ŻAR Burger
+
+Jak to wygląda w praktyce, pokazuję w koncepcie [ŻAR Burger](https://marcelgraphicsite.pl/zar-burger) — stronie burgerowni, którą możesz przewinąć na żywo. Menu w kartach ze zdjęciami dań, status „otwarte teraz” liczony na bieżąco, pasek z daniami i rysowana mapa dojazdu. To projekt koncepcyjny, a nie realizacja dla klienta — ale dokładnie tak może wyglądać Twój lokal. Wszystkie projekty zobaczysz w [portfolio](https://marcelgraphicsite.pl/prace).
+
+## Najczęstsze pytania
+
+### Czy menu w PDF wystarczy na stronie restauracji?
+Lepiej nie. PDF trzeba powiększać na telefonie, długo się ładuje, a Google i asystenci AI nie zawsze odczytają jego treść. Menu jako zwykły tekst na stronie jest wygodniejsze dla gości i lepsze dla widoczności.
+
+### Czy restauracja może przyjmować zamówienia online bez Pyszne.pl?
+Tak — przez własny system zamówień na stronie, bez prowizji dla pośrednika. To większa praca na start (koszyk, płatności), dlatego wyceniam ją indywidualnie. Wiele lokali łączy własne zamówienia z platformami.
+
+### Ile kosztuje strona internetowa dla restauracji?
+U mnie landing page z menu, godzinami i mapą kosztuje od 2 000 zł, a pełna strona wizytówka z galerią i rezerwacjami od 3 000 zł. Zamówienia z płatnościami online wyceniam indywidualnie.
+
+### Ile trwa zrobienie strony dla restauracji?
+Landing page 4–8 dni, strona wizytówka 7–16 dni. Jeśli zależy Ci na czasie, ekspresowa realizacja skraca termin nawet o połowę.
+
+### Czy potrzebuję profesjonalnej sesji zdjęciowej?
+Na start nie. Dobre zdjęcia z telefonu przy dziennym świetle wystarczą — na nich przygotuję też darmowy projekt strony. Sesję zawsze można dołożyć później.
+
+---
+
+# Strona internetowa dla salonu urody — co musi mieć?
+
+Źródło: https://marcelgraphicsite.pl/strona-internetowa-dla-salonu-urody · Marcel Struszczak · 2026-10-06
+
+Klientka wybiera salon oczami: zdjęcia, ceny, wolne terminy. Instagram pokazuje klimat, ale to strona zamienia oglądanie w rezerwację. Oto, co musi się na niej znaleźć — to samo dotyczy fryzjera, barbera i stylistki paznokci.
+
+W skrócie:
+- **Cennik usług z czasem trwania** — klientka chce wiedzieć, ile zapłaci, zanim zadzwoni.
+- **Rezerwacja w 2–3 kliknięciach:** własny kalendarz, przycisk do Booksy albo chociaż WhatsApp.
+- **Galeria prac i metamorfoz** — tylko prawdziwe zdjęcia, za zgodą klientek.
+- **Zespół, dojazd, godziny i opinie z Google** budują zaufanie przed pierwszą wizytą.
+- **Ten sam styl co na Instagramie** — strona ma wyglądać jak Twój salon.
+
+## Instagram czy strona? Jedno i drugie
+
+Instagram to wizytówka klimatu salonu — i dobrze, że go masz. Ale klientka, która szuka „kosmetyczki”, „manicure” albo „fryzjera” w swoim mieście, często zaczyna w Google. Tam liczą się strona i Wizytówka Google, a profil na Instagramie może się w ogóle nie pojawić. Strona zbiera w jednym miejscu to, czego na Instagramie trzeba szukać: ceny, terminy, dojazd i rezerwację.
+
+## Co musi mieć strona salonu urody
+
+### 1. Cennik usług
+
+Podziel usługi na kategorie (twarz, ciało, dłonie i stopy, brwi i rzęsy, włosy) i przy każdej podaj cenę oraz czas trwania. Jeśli cena zależy od długości włosów albo zakresu zabiegu — napisz „od”. „Ceny ustalane indywidualnie” przy każdej usłudze zniechęca: klientka woli salon, w którym od razu wie, na co się przygotować.
+
+### 2. Rezerwacja online
+
+To najważniejszy przycisk na stronie. Masz trzy drogi:
+
+- **Własny kalendarz rezerwacji na stronie** — w Twoim stylu i bez pośrednika, za to trzeba go pilnować.
+- **Przycisk „Umów wizytę” prowadzący do Booksy** — wiele klientek zna tę aplikację, ale to abonament i miejsce, w którym klientka widzi też inne salony.
+- **WhatsApp albo telefon** — najprostsze na start, gdy rezerwacji nie jest dużo.
+
+Niezależnie od wyboru: rezerwacja powinna zająć 2–3 kliknięcia i nie wymagać zakładania konta.
+
+### 3. Galeria prac i metamorfoz
+
+To ona sprzedaje najbardziej. Pokaż efekty „przed i po”, w dobrym świetle, przy różnych usługach. Zdjęcia klientek publikuj tylko za ich zgodą — najlepiej pisemną — bo wizerunek to dane osobowe.
+
+### 4. Zespół
+
+Imię, specjalizacja i zdjęcie każdej osoby. Klientka chętniej rezerwuje wizytę u „Ani od rzęs” niż u anonimowego „specjalisty”.
+
+### 5. Opinie
+
+Pokaż prawdziwe opinie z Google i podlinkuj swoją wizytówkę. Karta NFC w recepcji pozwala zostawić opinię jednym dotknięciem telefonu — [jak działają karty NFC do opinii](https://marcelgraphicsite.pl/karty-nfc-opinie-google).
+
+### 6. Dojazd, parking i godziny
+
+Adres z mapą, informacja o parkingu, wejściu i piętrze. Godziny takie same jak w Wizytówce Google.
+
+### 7. Bony podarunkowe
+
+Jeśli je sprzedajesz — pokaż je na stronie. To gotowy prezent, którego ktoś szuka przed świętami albo urodzinami. Sprzedaż bonów online z płatnością to już funkcja sklepu.
+
+### 8. Styl jak w salonie
+
+Kolory, zdjęcia i klimat strony powinny zgadzać się z tym, co klientka zobaczy na miejscu i na Instagramie. Spójność buduje zaufanie, zanim ktoś przekroczy próg.
+
+## Fryzjer, barber, paznokcie — na co zwrócić uwagę
+
+- **Fryzjer:** cennik zależny od długości włosów i jasna informacja, co jest w cenie (mycie, modelowanie).
+- **Barber:** rezerwacja do konkretnego barbera, usługi łączone (strzyżenie i broda) i męski, mocny klimat — tak jak w moim koncepcie [Vesper Barber](https://marcelgraphicsite.pl/vesper-barber) z kalendarzem wizyt i mapą dojazdu.
+- **Paznokcie i rzęsy:** duża galeria wzorów i stylizacji — to główny powód, dla którego ktoś wybiera właśnie Ciebie.
+
+## Czego unikać
+
+- **Zdjęć ze stocka** — klientka chce zobaczyć Twoje prace, a nie cudze.
+- **Rezerwacji, która wymaga zakładania konta.**
+- **Cennika w PDF** albo braku cennika.
+- **Nieaktualnych godzin i promocji sprzed roku.**
+
+## Ile kosztuje strona salonu urody
+
+| Potrzeba | Pakiet | Cena u mnie | Czas |
+|---|---|---|---|
+| Cennik, przycisk rezerwacji, kontakt i mapa | Landing page | od 2 000 zł | 4–8 dni |
+| Pełna strona: galeria, zespół, cennik, rezerwacja, SEO | Strona wizytówka | od 3 000 zł | 7–16 dni |
+| Sprzedaż bonów i produktów online | Strona + sklep | wycena indywidualna | po ustaleniu zakresu |
+
+Jak może wyglądać strona Twojego salonu, pokazuję w koncepcie [Luxe Salon](https://marcelgraphicsite.pl/luxe-salon): spokojny klimat japandi, cennik usług, rezerwacja jednym kliknięciem, galeria metamorfoz i tryb ciemny. Zanim cokolwiek zapłacisz, przygotuję darmowy projekt na zdjęciach z Twojego Instagrama.
+
+## Najczęstsze pytania
+
+### Czy salon potrzebuje strony, skoro ma Booksy i Instagrama?
+Tak. Instagram pokazuje klimat, Booksy przyjmuje rezerwacje, a strona zbiera wszystko w jednym miejscu i pokazuje Cię w Google — tam, gdzie szuka wiele nowych klientek. Booksy podepniesz do strony przyciskiem „Umów wizytę”.
+
+### Jak połączyć stronę z Booksy?
+Najprościej przyciskiem „Umów wizytę”, który prowadzi do Twojego profilu w Booksy. Klientka klika i od razu wybiera termin.
+
+### Czy mogę pokazywać na stronie zdjęcia klientek?
+Tylko za ich zgodą — najlepiej pisemną, bo wizerunek to dane osobowe. Bezpieczna alternatywa to zdjęcia samych efektów, bez twarzy.
+
+### Ile kosztuje strona internetowa dla salonu urody?
+U mnie landing page z cennikiem i przyciskiem rezerwacji kosztuje od 2 000 zł, a pełna strona z galerią i zespołem od 3 000 zł. Sprzedaż bonów online wyceniam indywidualnie.
+
+### Ile trwa zrobienie strony dla salonu?
+Landing page 4–8 dni, strona wizytówka 7–16 dni. Na start dostajesz darmowy projekt ze znakiem wodnym.
+
 ## Strony
 - [Start](https://marcelgraphicsite.pl/): oferta w skrócie
 - [Usługi](https://marcelgraphicsite.pl/uslugi): strony internetowe, social media, karty NFC do opinii Google, proces współpracy
+- [Strony internetowe w Sieradzu — Marcel Struszczak](https://marcelgraphicsite.pl/strony-internetowe-sieradz): Tworzę strony internetowe dla firm z Sieradza i okolic: od 2 000 zł, gotowe w 4–16 dni. Spotkam się na miejscu i pokażę darmowy projekt, zanim zapłacisz.
+- [Karty NFC do opinii Google — od 60 zł](https://marcelgraphicsite.pl/karty-nfc-opinie-google): Karta NFC z podstawką 60 zł, duża naklejka 80 zł. Programuję je pod Twój profil w Google: klient przykłada telefon i od razu wystawia opinię. Wysyłka w Polsce.
+- [Prowadzenie social mediów dla firm](https://marcelgraphicsite.pl/prowadzenie-social-media): Facebook i Instagram dla lokalnych firm: 8 lub 12–13 postów i karuzel miesięcznie w stylu Twojej marki. Od 600 zł / mies., bez umów na lata.
 - [Cennik](https://marcelgraphicsite.pl/cennik): pakiety, dodatki, kalkulator wyceny, FAQ
 - [Prace](https://marcelgraphicsite.pl/prace): trzy projekty koncepcyjne do przewinięcia na żywo (salon urody, barbershop, burgerownia) — koncepty, nie realizacje dla klientów
 - [O mnie](https://marcelgraphicsite.pl/o-mnie): kim jest Marcel i jak pracuje
@@ -308,8 +1045,13 @@ U mnie karta NFC z podstawką kosztuje 60 zł, a duża naklejka NFC 80 zł — k
 
 ## Poradnik
 - [Ile kosztuje strona internetowa w 2026 roku?](https://marcelgraphicsite.pl/ile-kosztuje-strona-internetowa): Realne widełki na rynku, od czego zależy cena, koszty stałe, o których mało kto mówi — i jak nie przepłacić.
+- [Landing page czy strona wizytówka — co wybrać dla firmy?](https://marcelgraphicsite.pl/landing-page-czy-strona-wizytowka): Jedna strona z jednym celem czy pełna strona firmowa? Porównanie ceny, czasu realizacji i widoczności w Google.
+- [Jak założyć Wizytówkę Google (Profil Firmy w Google) — krok po kroku](https://marcelgraphicsite.pl/jak-zalozyc-wizytowke-google): Nazwa, kategoria, obszar działania i weryfikacja wideo — jak założyć Profil Firmy w Google i nie dać się zawiesić.
+- [Czy Twoja firma jest widoczna w Google? Test w 10 minut](https://marcelgraphicsite.pl/czy-twoja-firma-jest-widoczna-w-google): 8 kroków na telefonie: wyszukiwarka, Mapy, opinie, strona i asystenci AI. Zobacz, gdzie tracisz klientów.
 - [Strona internetowa czy Facebook — co wybrać dla lokalnej firmy?](https://marcelgraphicsite.pl/strona-internetowa-czy-facebook): Strona zdobywa nowych klientów, social media zamieniają ich w stałych. Porównanie i plan na mały budżet.
 - [Jak zdobyć więcej opinii w Google? 7 sposobów dla lokalnej firmy](https://marcelgraphicsite.pl/jak-zdobyc-opinie-google): Kiedy prosić, jak skrócić drogę do opinii (link, QR, NFC), jak odpowiadać — i czego nigdy nie robić.
+- [Strona internetowa dla restauracji — co musi mieć?](https://marcelgraphicsite.pl/strona-internetowa-dla-restauracji): Menu, godziny, zamówienia, rezerwacje i zdjęcia — 10 rzeczy, dzięki którym gość wybiera Twój lokal.
+- [Strona internetowa dla salonu urody — co musi mieć?](https://marcelgraphicsite.pl/strona-internetowa-dla-salonu-urody): Cennik, rezerwacja online, galeria metamorfoz i opinie — co sprawia, że klientka rezerwuje właśnie u Ciebie.
 
 ## Kontakt
 - E-mail: marcel.graphicsite@gmail.com
@@ -321,4 +1063,5 @@ U mnie karta NFC z podstawką kosztuje 60 zł, a duża naklejka NFC 80 zł — k
 
 ## Optional
 - [Pełna treść strony w jednym pliku](https://marcelgraphicsite.pl/llms-full.txt)
+- [Kanał RSS poradnika](https://marcelgraphicsite.pl/feed.xml)
 - [Polityka prywatności](https://marcelgraphicsite.pl/polityka-prywatnosci)

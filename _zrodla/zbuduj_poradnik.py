@@ -34,7 +34,8 @@ ORG = {'@type': 'ProfessionalService', '@id': B + '#firma', 'name': 'Marcel Grap
        'telephone': '+48 511 808 498', 'email': 'marcel.graphicsite@gmail.com', 'priceRange': '60–3000+ zł',
        'address': {'@type': 'PostalAddress', 'addressLocality': 'Sieradz', 'postalCode': '98-200', 'addressRegion': 'łódzkie', 'addressCountry': 'PL'}}
 PER = {'@type': 'Person', '@id': B + '#marcel', 'name': 'Marcel Struszczak', 'url': B + 'o-mnie',
-       'jobTitle': 'Projektant stron internetowych', 'homeLocation': {'@type': 'City', 'name': 'Sieradz'}}
+       'jobTitle': 'Projektant stron internetowych', 'homeLocation': {'@type': 'City', 'name': 'Sieradz'},
+       'brand': {'@type': 'Brand', 'name': 'Marcel GraphicSite', 'url': B}}
 BY_SLUG = {a['slug']: a for a in ARTYKULY}
 PL_MAP = str.maketrans('ąćęłńóśźżĄĆĘŁŃÓŚŹŻ', 'acelnoszzACELNOSZZ')
 BLOK = re.compile(r'^\[\[blok:(\w+)\]\]\s*$', re.M)

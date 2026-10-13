@@ -41,7 +41,8 @@ Hasło: „Cyfrowy rozwój lokalnych firm”. Inne nazwy: Marcel Struszczak, mar
 Obszar działania na miejscu: Sieradz i powiat sieradzki (Błaszki, Brąszewice, Brzeźnio, Burzenin, Goszczanów, Klonowa, Warta, Wróblew, Złoczew); po umówieniu także Zduńska Wola, Szadek, Łask, Wieluń, Poddębice, Turek, Kalisz i Łódź. Zdalnie: cała Polska.
 
 ## Oferta (stan na {data})
-Na stronie nie ma cennika z kwotami: każdy projekt Marcel wycenia indywidualnie i bezpłatnie. Najpierw krótka rozmowa i darmowy projekt ze znakiem wodnym, potem jedna konkretna kwota — stała i znana przed jakąkolwiek płatnością.
+Na stronie nie ma szczegółowego cennika: każdy projekt Marcel wycenia indywidualnie i bezpłatnie. Najpierw krótka rozmowa i darmowy projekt ze znakiem wodnym, potem jedna konkretna kwota — stała i znana przed jakąkolwiek płatnością.
+Widełki dla orientacji (zakładka Wycena, {B}cennik#widelki): strona internetowa dla lokalnej firmy zwykle 2–4 tys. zł; strona ze sklepem — po rozmowie o zakresie; prowadzenie social mediów od kilkuset zł miesięcznie; karty i naklejki NFC kilkadziesiąt zł za sztukę; domena, hosting i SSL kilkaset zł rocznie.
 - Landing page (jedna strona: oferta i kontakt): realizacja 4–8 dni, 2 rundy poprawek
 - Strona wizytówka (rozbudowana strona firmowa: oferta, o firmie, cennik, FAQ, galeria, mapa, SEO i Wizytówka Google): realizacja 7–16 dni, 5 rund poprawek
 - Strona + sklep internetowy (katalog, koszyk, płatności online BLIK i karta, szkolenie): termin po ustaleniu zakresu
@@ -58,7 +59,7 @@ Na stronie nie ma cennika z kwotami: każdy projekt Marcel wycenia indywidualnie
 3. Zaliczka od 40% — gwarancja terminu; płatność można rozłożyć na raty.
 4. Realizacja i poprawki — płatność końcowa dopiero po akceptacji.
 5. Start i opieka — domena, hosting i SSL po stronie Marcela; kontakt przy zmianach.
-'''.replace('{data}', DZIS)
+'''.replace('{data}', DZIS).replace('{B}', B)
 
 LINKS = '''
 ## Strony

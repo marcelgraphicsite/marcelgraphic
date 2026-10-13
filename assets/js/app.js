@@ -326,6 +326,26 @@
     idle(() => { const n = $('a.next'); if (n) pf(n); });
   });
 
+  /* ---------- świeża wersja podstrony (tuż po aktualizacji strony) ---------- */
+  // GitHub Pages pozwala przeglądarce trzymać podstronę w pamięci do 10 minut, a wstępne pobieranie
+  // (wyżej) bierze ją jeszcze wcześniej. Tuż po aktualizacji część podstron mogłaby więc pokazać starą
+  // wersję (np. stare menu), a część nową. W tle pytamy serwer o datę podstrony: jeśli jest nowsza
+  // niż ta, którą widać, odświeżamy raz (znacznik w sessionStorage — bez ryzyka pętli).
+  mod('fresh', () => {
+    if (!window.fetch || !/^https?:$/.test(location.protocol)) return;
+    const seen = Date.parse(document.lastModified);
+    if (!seen) return;
+    const check = () => fetch(location.pathname, { method: 'HEAD', cache: 'no-store' }).then(r => {
+      const lm = Date.parse(r.headers.get('last-modified') || '');
+      if (!r.ok || !lm || lm - seen < 2000) return;
+      const key = 'ms-fresh' + location.pathname, v = String(lm);
+      if (sess.get(key) === v) return;
+      sess.set(key, v);
+      if (sess.get(key) === v) location.reload();
+    }).catch(() => { /* offline — zostaje to, co jest */ });
+    (window.requestIdleCallback || (f => setTimeout(f, 1200)))(check, { timeout: 3000 });
+  });
+
   /* ---------- kurtyna intro (pierwsza wizyta na starcie) ---------- */
   mod('cinema', () => {
     const c = $('#cinema');

@@ -7,7 +7,8 @@ Hasło: „Cyfrowy rozwój lokalnych firm”. Inne nazwy: Marcel Struszczak, mar
 Obszar działania na miejscu: Sieradz i powiat sieradzki (Błaszki, Brąszewice, Brzeźnio, Burzenin, Goszczanów, Klonowa, Warta, Wróblew, Złoczew); po umówieniu także Zduńska Wola, Szadek, Łask, Wieluń, Poddębice, Turek, Kalisz i Łódź. Zdalnie: cała Polska.
 
 ## Oferta (stan na 2026-10-06)
-Na stronie nie ma cennika z kwotami: każdy projekt Marcel wycenia indywidualnie i bezpłatnie. Najpierw krótka rozmowa i darmowy projekt ze znakiem wodnym, potem jedna konkretna kwota — stała i znana przed jakąkolwiek płatnością.
+Na stronie nie ma szczegółowego cennika: każdy projekt Marcel wycenia indywidualnie i bezpłatnie. Najpierw krótka rozmowa i darmowy projekt ze znakiem wodnym, potem jedna konkretna kwota — stała i znana przed jakąkolwiek płatnością.
+Widełki dla orientacji (zakładka Wycena, https://marcelgraphicsite.pl/cennik#widelki): strona internetowa dla lokalnej firmy zwykle 2–4 tys. zł; strona ze sklepem — po rozmowie o zakresie; prowadzenie social mediów od kilkuset zł miesięcznie; karty i naklejki NFC kilkadziesiąt zł za sztukę; domena, hosting i SSL kilkaset zł rocznie.
 - Landing page (jedna strona: oferta i kontakt): realizacja 4–8 dni, 2 rundy poprawek
 - Strona wizytówka (rozbudowana strona firmowa: oferta, o firmie, cennik, FAQ, galeria, mapa, SEO i Wizytówka Google): realizacja 7–16 dni, 5 rund poprawek
 - Strona + sklep internetowy (katalog, koszyk, płatności online BLIK i karta, szkolenie): termin po ustaleniu zakresu
@@ -26,7 +27,7 @@ Na stronie nie ma cennika z kwotami: każdy projekt Marcel wycenia indywidualnie
 5. Start i opieka — domena, hosting i SSL po stronie Marcela; kontakt przy zmianach.
 
 ## Najczęstsze pytania (krótko)
-- Ile kosztuje strona internetowa? Każdą stronę wyceniam indywidualnie — kwota zależy od liczby podstron, funkcji i tego, czy masz już teksty i zdjęcia. Najpierw dostajesz darmowy projekt, a po krótkiej rozmowie jedną konkretną kwotę. Wycena jest bezpłatna i do niczego nie zobowiązuje.
+- Ile kosztuje strona internetowa? Każdą stronę wyceniam indywidualnie — kwota zależy od liczby podstron, funkcji i tego, czy masz już teksty i zdjęcia. Dla orientacji: strona dla lokalnej firmy to zwykle 2–4 tys. zł, a sklep więcej. Najpierw dostajesz darmowy projekt, a po krótkiej rozmowie jedną konkretną kwotę. Wycena jest bezpłatna i do niczego nie zobowiązuje.
 - Co, jeśli projekt mi się nie spodoba? Nic nie tracisz. Zanim zapłacisz cokolwiek, dostajesz darmowy mockup ze znakiem wodnym i oceniasz cały projekt. Zaliczkę wpłacasz dopiero wtedy, gdy chcesz iść dalej.
 - Ile trwa realizacja? Landing to 4–8 dni, Wizytówka 7–16 dni, a termin sklepu ustalamy po rozmowie o zakresie. Potrzebujesz na wczoraj? Ekspresowa realizacja skraca czas nawet o połowę — uwzględnię ją w wycenie.
 - Czy mogę zapłacić w ratach? Tak. Kwota z wyceny jest stała, ale płatność możesz rozłożyć na raty. Na start wystarczy zaliczka od 40%, a resztę płacisz po akceptacji gotowej strony.

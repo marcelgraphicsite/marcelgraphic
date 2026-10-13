@@ -76,7 +76,7 @@ Robię też strony dla firm ze **Zduńskiej Woli, Szadku, Łasku, Wielunia, Podd
 
 ## Ile kosztuje strona internetowa w Sieradzu
 
-Każdą stronę wyceniam indywidualnie — kwota zależy od liczby podstron, funkcji i tego, czy masz już teksty i zdjęcia. Wycena jest bezpłatna: po rozmowie albo spotkaniu dostajesz jedną konkretną kwotę, razem z kosztem domeny, hostingu i SSL. Zasady są takie same dla firm z Sieradza i z całej Polski, a spotkanie na miejscu nic nie kosztuje.
+Każdą stronę wyceniam indywidualnie — kwota zależy od liczby podstron, funkcji i tego, czy masz już teksty i zdjęcia. Wycena jest bezpłatna: po rozmowie albo spotkaniu dostajesz jedną konkretną kwotę, razem z kosztem domeny, hostingu i SSL. Zasady są takie same dla firm z Sieradza i z całej Polski, a spotkanie na miejscu nic nie kosztuje. Widełki dla orientacji znajdziesz w zakładce [Wycena](cennik#widelki).
 
 | Pakiet | Czas | Dla kogo |
 |---|---|---|
@@ -95,7 +95,7 @@ W lokalnych wynikach Google najwięcej uwagi zbiera mapka z firmami — czyli **
 - Gdzie dziś tracisz klientów — [test widoczności w Google w 10 minut](czy-twoja-firma-jest-widoczna-w-google).
 ''',
         'faq': [
-            ('Ile kosztuje strona internetowa w Sieradzu?', 'Każdą stronę wyceniam indywidualnie — kwota zależy od liczby podstron, funkcji i materiałów. Wycena jest bezpłatna: po rozmowie albo spotkaniu dostajesz jedną konkretną kwotę, razem z kosztem domeny, hostingu i SSL. Zasady są takie same jak dla firm z reszty Polski.'),
+            ('Ile kosztuje strona internetowa w Sieradzu?', 'Każdą stronę wyceniam indywidualnie — kwota zależy od liczby podstron, funkcji i materiałów. Wycena jest bezpłatna: po rozmowie albo spotkaniu dostajesz jedną konkretną kwotę, razem z kosztem domeny, hostingu i SSL. Zasady są takie same jak dla firm z reszty Polski. Widełki dla orientacji znajdziesz w zakładce Wycena.'),
             ('Czy możemy spotkać się osobiście?', 'Tak. W Sieradzu i okolicy przyjadę do Twojej firmy i pokażę projekt na laptopie. Jeśli wolisz, wszystko załatwimy przez telefon, WhatsApp albo e-mail.'),
             ('Czy robisz strony dla firm ze Zduńskiej Woli, Łasku albo Wielunia?', 'Tak. Pracuję z firmami z całego regionu — spotykamy się po umówieniu albo działamy zdalnie. Zasady wyceny i terminy są takie same jak w Sieradzu.'),
             ('Ile trwa zrobienie strony internetowej?', 'Landing page 4–8 dni, strona wizytówka 7–16 dni. Ekspresowa realizacja skraca czas nawet o połowę — uwzględnię ją w wycenie.'),
@@ -203,7 +203,7 @@ Więcej sposobów znajdziesz w artykule [jak zdobyć więcej opinii w Google](ja
             ('Czy karta NFC działa na iPhonie?', 'Tak — iPhone XR/XS i nowsze odczytują kartę bez aplikacji; link otwiera się po stuknięciu powiadomienia. Na Androidzie wystarczy włączone NFC. Dla telefonów bez NFC warto mieć obok kod QR.'),
             ('Czy karta potrzebuje baterii albo internetu?', 'Nie. Karta działa bez baterii i bez prądu. Internet musi mieć tylko telefon klienta, żeby otworzyć stronę z opinią.'),
             ('Czy karta zadziała na metalowej ladzie?', 'Nie bezpośrednio na metalu — metal blokuje sygnał NFC. Postaw kartę na podstawce albo przyklej naklejkę na szybę lub drewno. Doradzę, gdzie ją umieścić.'),
-            ('Ile kosztuje karta NFC do opinii Google?', 'Wyceniam indywidualnie — kwota zależy od liczby kart i naklejek. Napisz, ile sztuk potrzebujesz, a podam konkretną kwotę. Każdą programuję pod Twój Profil Firmy w Google i wysyłam w całej Polsce.'),
+            ('Ile kosztuje karta NFC do opinii Google?', 'Wyceniam indywidualnie — kwota zależy od liczby kart i naklejek. Napisz, ile sztuk potrzebujesz, a podam konkretną kwotę. Każdą programuję pod Twój Profil Firmy w Google i wysyłam w całej Polsce. Widełki dla orientacji znajdziesz w zakładce Wycena.'),
             ('Czy mogę zamówić kilka kart do jednej firmy?', 'Tak. Każdą kartę i naklejkę programuję pod ten sam profil — możesz rozmieścić je przy kasie, na stolikach i na drzwiach.'),
             ('Czy zbieranie opinii przez kartę NFC jest zgodne z zasadami Google?', 'Tak, o ile nie dajesz nic w zamian za opinię i prosisz o nią wszystkich klientów, a nie tylko zadowolonych. Karta tylko skraca drogę do okna opinii.'),
         ],
@@ -286,7 +286,7 @@ Jeśli masz na to czas i oko do grafiki — rób sam. Jeśli wolisz zająć się
 Social media utrzymują relację z ludźmi, którzy już Cię znają. Nowych klientów z Google zdobywają strona internetowa i Wizytówka Google. Najlepiej działa duet: strona przyciąga, profil przypomina. Porównanie znajdziesz w artykule [strona internetowa czy Facebook](strona-internetowa-czy-facebook), a pakiety stron w zakładce [Wycena](cennik#www). Jeśli działasz w Sieradzu lub okolicy, zobacz też [strony internetowe w Sieradzu](strony-internetowe-sieradz).
 ''',
         'faq': [
-            ('Ile kosztuje prowadzenie social mediów?', 'Wyceniam indywidualnie — kwota zależy od pakietu (8 albo 12–13 postów i karuzel miesięcznie) i od tego, czy prowadzę sam Facebook, czy Facebook i Instagram. Wycena jest bezpłatna, a rozliczamy się co miesiąc, bez umów na lata.'),
+            ('Ile kosztuje prowadzenie social mediów?', 'Wyceniam indywidualnie — kwota zależy od pakietu (8 albo 12–13 postów i karuzel miesięcznie) i od tego, czy prowadzę sam Facebook, czy Facebook i Instagram. Wycena jest bezpłatna, a rozliczamy się co miesiąc, bez umów na lata. Widełki dla orientacji znajdziesz w zakładce Wycena.'),
             ('Czy muszę podpisać umowę na rok?', 'Nie. Rozliczamy się co miesiąc, bez umów na lata.'),
             ('Czy mogę zacząć od samego Facebooka?', 'Tak. Możesz zacząć od Facebooka, a Instagram dołożyć później — pakiet możesz zmienić od kolejnego miesiąca.'),
             ('Co, jeśli nie mam dobrych zdjęć?', 'Na start wystarczą zdjęcia, które już masz — z telefonu albo z Twojego profilu. Resztę dopracuję w grafikach.'),

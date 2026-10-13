@@ -7,7 +7,8 @@ Hasło: „Cyfrowy rozwój lokalnych firm”. Inne nazwy: Marcel Struszczak, mar
 Obszar działania na miejscu: Sieradz i powiat sieradzki (Błaszki, Brąszewice, Brzeźnio, Burzenin, Goszczanów, Klonowa, Warta, Wróblew, Złoczew); po umówieniu także Zduńska Wola, Szadek, Łask, Wieluń, Poddębice, Turek, Kalisz i Łódź. Zdalnie: cała Polska.
 
 ## Oferta (stan na 2026-10-06)
-Na stronie nie ma cennika z kwotami: każdy projekt Marcel wycenia indywidualnie i bezpłatnie. Najpierw krótka rozmowa i darmowy projekt ze znakiem wodnym, potem jedna konkretna kwota — stała i znana przed jakąkolwiek płatnością.
+Na stronie nie ma szczegółowego cennika: każdy projekt Marcel wycenia indywidualnie i bezpłatnie. Najpierw krótka rozmowa i darmowy projekt ze znakiem wodnym, potem jedna konkretna kwota — stała i znana przed jakąkolwiek płatnością.
+Widełki dla orientacji (zakładka Wycena, https://marcelgraphicsite.pl/cennik#widelki): strona internetowa dla lokalnej firmy zwykle 2–4 tys. zł; strona ze sklepem — po rozmowie o zakresie; prowadzenie social mediów od kilkuset zł miesięcznie; karty i naklejki NFC kilkadziesiąt zł za sztukę; domena, hosting i SSL kilkaset zł rocznie.
 - Landing page (jedna strona: oferta i kontakt): realizacja 4–8 dni, 2 rundy poprawek
 - Strona wizytówka (rozbudowana strona firmowa: oferta, o firmie, cennik, FAQ, galeria, mapa, SEO i Wizytówka Google): realizacja 7–16 dni, 5 rund poprawek
 - Strona + sklep internetowy (katalog, koszyk, płatności online BLIK i karta, szkolenie): termin po ustaleniu zakresu
@@ -37,7 +38,7 @@ Pracujesz bezpośrednio ze mną: bez pośredników, bez czekania tygodniami i be
 ## Najczęstsze pytania (pełne odpowiedzi)
 
 ### Ile kosztuje strona internetowa?
-Każdą stronę wyceniam indywidualnie — kwota zależy od liczby podstron, funkcji i tego, czy masz już teksty i zdjęcia. Najpierw dostajesz darmowy projekt, a po krótkiej rozmowie jedną konkretną kwotę. Wycena jest bezpłatna i do niczego nie zobowiązuje.
+Każdą stronę wyceniam indywidualnie — kwota zależy od liczby podstron, funkcji i tego, czy masz już teksty i zdjęcia. Dla orientacji: strona dla lokalnej firmy to zwykle 2–4 tys. zł, a sklep więcej. Najpierw dostajesz darmowy projekt, a po krótkiej rozmowie jedną konkretną kwotę. Wycena jest bezpłatna i do niczego nie zobowiązuje.
 
 ### Co, jeśli projekt mi się nie spodoba?
 Nic nie tracisz. Zanim zapłacisz cokolwiek, dostajesz darmowy mockup ze znakiem wodnym i oceniasz cały projekt. Zaliczkę wpłacasz dopiero wtedy, gdy chcesz iść dalej.
@@ -123,7 +124,7 @@ Robię też strony dla firm ze **Zduńskiej Woli, Szadku, Łasku, Wielunia, Podd
 
 ## Ile kosztuje strona internetowa w Sieradzu
 
-Każdą stronę wyceniam indywidualnie — kwota zależy od liczby podstron, funkcji i tego, czy masz już teksty i zdjęcia. Wycena jest bezpłatna: po rozmowie albo spotkaniu dostajesz jedną konkretną kwotę, razem z kosztem domeny, hostingu i SSL. Zasady są takie same dla firm z Sieradza i z całej Polski, a spotkanie na miejscu nic nie kosztuje.
+Każdą stronę wyceniam indywidualnie — kwota zależy od liczby podstron, funkcji i tego, czy masz już teksty i zdjęcia. Wycena jest bezpłatna: po rozmowie albo spotkaniu dostajesz jedną konkretną kwotę, razem z kosztem domeny, hostingu i SSL. Zasady są takie same dla firm z Sieradza i z całej Polski, a spotkanie na miejscu nic nie kosztuje. Widełki dla orientacji znajdziesz w zakładce [Wycena](https://marcelgraphicsite.pl/cennik#widelki).
 
 | Pakiet | Czas | Dla kogo |
 |---|---|---|
@@ -144,7 +145,7 @@ W lokalnych wynikach Google najwięcej uwagi zbiera mapka z firmami — czyli **
 ## Najczęstsze pytania
 
 ### Ile kosztuje strona internetowa w Sieradzu?
-Każdą stronę wyceniam indywidualnie — kwota zależy od liczby podstron, funkcji i materiałów. Wycena jest bezpłatna: po rozmowie albo spotkaniu dostajesz jedną konkretną kwotę, razem z kosztem domeny, hostingu i SSL. Zasady są takie same jak dla firm z reszty Polski.
+Każdą stronę wyceniam indywidualnie — kwota zależy od liczby podstron, funkcji i materiałów. Wycena jest bezpłatna: po rozmowie albo spotkaniu dostajesz jedną konkretną kwotę, razem z kosztem domeny, hostingu i SSL. Zasady są takie same jak dla firm z reszty Polski. Widełki dla orientacji znajdziesz w zakładce Wycena.
 
 ### Czy możemy spotkać się osobiście?
 Tak. W Sieradzu i okolicy przyjadę do Twojej firmy i pokażę projekt na laptopie. Jeśli wolisz, wszystko załatwimy przez telefon, WhatsApp albo e-mail.
@@ -243,7 +244,7 @@ Nie. Karta działa bez baterii i bez prądu. Internet musi mieć tylko telefon k
 Nie bezpośrednio na metalu — metal blokuje sygnał NFC. Postaw kartę na podstawce albo przyklej naklejkę na szybę lub drewno. Doradzę, gdzie ją umieścić.
 
 ### Ile kosztuje karta NFC do opinii Google?
-Wyceniam indywidualnie — kwota zależy od liczby kart i naklejek. Napisz, ile sztuk potrzebujesz, a podam konkretną kwotę. Każdą programuję pod Twój Profil Firmy w Google i wysyłam w całej Polsce.
+Wyceniam indywidualnie — kwota zależy od liczby kart i naklejek. Napisz, ile sztuk potrzebujesz, a podam konkretną kwotę. Każdą programuję pod Twój Profil Firmy w Google i wysyłam w całej Polsce. Widełki dla orientacji znajdziesz w zakładce Wycena.
 
 ### Czy mogę zamówić kilka kart do jednej firmy?
 Tak. Każdą kartę i naklejkę programuję pod ten sam profil — możesz rozmieścić je przy kasie, na stolikach i na drzwiach.
@@ -308,7 +309,7 @@ Social media utrzymują relację z ludźmi, którzy już Cię znają. Nowych kli
 ## Najczęstsze pytania
 
 ### Ile kosztuje prowadzenie social mediów?
-Wyceniam indywidualnie — kwota zależy od pakietu (8 albo 12–13 postów i karuzel miesięcznie) i od tego, czy prowadzę sam Facebook, czy Facebook i Instagram. Wycena jest bezpłatna, a rozliczamy się co miesiąc, bez umów na lata.
+Wyceniam indywidualnie — kwota zależy od pakietu (8 albo 12–13 postów i karuzel miesięcznie) i od tego, czy prowadzę sam Facebook, czy Facebook i Instagram. Wycena jest bezpłatna, a rozliczamy się co miesiąc, bez umów na lata. Widełki dla orientacji znajdziesz w zakładce Wycena.
 
 ### Czy muszę podpisać umowę na rok?
 Nie. Rozliczamy się co miesiąc, bez umów na lata.
@@ -387,7 +388,7 @@ Nie mam jednego cennika dla wszystkich — każdą stronę wyceniam indywidualni
 | Strona wizytówka | 7–16 dni | rozbudowana strona (oferta, o firmie, cennik, FAQ), galeria, mapa, SEO i Wizytówka Google, 5 rund poprawek |
 | Strona + sklep | po ustaleniu zakresu | katalog z cenami, koszyk, płatności online (BLIK, karta), szkolenie z obsługi |
 
-Zaliczkę (od 40%) wpłacasz dopiero, gdy projekt Ci się podoba i chcesz iść dalej, a resztę po akceptacji gotowej strony. Płatność można rozłożyć na raty. Zapytanie złożysz w 30 sekund w [formularzu wyceny](https://marcelgraphicsite.pl/cennik#kalkulator). Nie wiesz, który pakiet wybrać? Zobacz porównanie [landing page czy strona wizytówka](https://marcelgraphicsite.pl/landing-page-czy-strona-wizytowka).
+Zaliczkę (od 40%) wpłacasz dopiero, gdy projekt Ci się podoba i chcesz iść dalej, a resztę po akceptacji gotowej strony. Płatność można rozłożyć na raty. Widełki dla orientacji znajdziesz w zakładce [Wycena](https://marcelgraphicsite.pl/cennik#widelki), a zapytanie złożysz w 30 sekund w [formularzu wyceny](https://marcelgraphicsite.pl/cennik#kalkulator). Nie wiesz, który pakiet wybrać? Zobacz porównanie [landing page czy strona wizytówka](https://marcelgraphicsite.pl/landing-page-czy-strona-wizytowka).
 
 ## Jak nie przepłacić i nie kupić bubla
 
@@ -407,7 +408,7 @@ Tak, w kreatorze — ale płacisz swoim czasem, często abonamentem i efektem �
 Projekt i wykonanie — tak. Co roku płacisz tylko za domenę, hosting i certyfikat SSL — u mnie ten koszt znasz z góry, bo jest w wycenie.
 
 ### Ile kosztuje strona internetowa u Ciebie?
-Każdą stronę wyceniam indywidualnie — kwota zależy od liczby podstron, funkcji i materiałów. Wycena jest bezpłatna: najpierw dostajesz darmowy projekt, a po krótkiej rozmowie jedną konkretną kwotę.
+Każdą stronę wyceniam indywidualnie — kwota zależy od liczby podstron, funkcji i materiałów. Wycena jest bezpłatna: najpierw dostajesz darmowy projekt, a po krótkiej rozmowie jedną konkretną kwotę. Widełki dla orientacji znajdziesz w zakładce Wycena.
 
 ### Ile trwa zrobienie strony internetowej?
 Landing page 4–8 dni, strona wizytówka 7–16 dni, sklep — po ustaleniu zakresu. Ekspresowa realizacja skraca czas nawet o połowę.
@@ -495,7 +496,7 @@ Tak. Landing możesz rozbudować o kolejne sekcje i podstrony — każdą wyceni
 Strona wizytówka to Twoja własna strona internetowa. Wizytówka Google (Profil Firmy w Google) to darmowy wpis w Mapach i wynikach Google. Najlepiej mieć jedno i drugie.
 
 ### Ile kosztuje landing page, a ile strona wizytówka?
-Każdą stronę wyceniam indywidualnie, więc kwota zależy od zakresu, a nie od samej nazwy pakietu. Landing jest zwykle tańszy i szybszy (4–8 dni), wizytówka to więcej pracy (7–16 dni). Wycena jest bezpłatna, a koszt domeny i hostingu znasz z góry.
+Każdą stronę wyceniam indywidualnie, więc kwota zależy od zakresu, a nie od samej nazwy pakietu. Landing jest zwykle tańszy i szybszy (4–8 dni), wizytówka to więcej pracy (7–16 dni). Wycena jest bezpłatna, a koszt domeny i hostingu znasz z góry. Widełki dla orientacji znajdziesz w zakładce Wycena.
 
 ---
 
@@ -830,7 +831,7 @@ Nie samodzielnie. Możesz zgłosić opinię, która łamie zasady Google (np. sp
 Na większości współczesnych smartfonów tak: iPhone XR/XS i nowsze odczytują ją bez aplikacji, a na Androidzie NFC musi być włączone. Dla telefonów bez NFC warto mieć obok kod QR.
 
 ### Ile kosztuje karta NFC do opinii Google?
-U mnie wycena zależy od liczby kart i naklejek — napisz, ile sztuk potrzebujesz, a podam konkretną kwotę. Każdą programuję pod profil Twojej firmy i wysyłam w całej Polsce.
+U mnie wycena zależy od liczby kart i naklejek — napisz, ile sztuk potrzebujesz, a podam konkretną kwotę. Każdą programuję pod profil Twojej firmy i wysyłam w całej Polsce. Widełki dla orientacji znajdziesz w zakładce Wycena.
 
 ---
 
@@ -933,7 +934,7 @@ Lepiej nie. PDF trzeba powiększać na telefonie, długo się ładuje, a Google 
 Tak — przez własny system zamówień na stronie, bez prowizji dla pośrednika. To większa praca na start (koszyk, płatności), dlatego wyceniam ją indywidualnie. Wiele lokali łączy własne zamówienia z platformami.
 
 ### Ile kosztuje strona internetowa dla restauracji?
-Wyceniam indywidualnie — kwota zależy od zakresu: czy wystarczy menu z godzinami i adresem (landing page), czy potrzebujesz pełnej strony z galerią i rezerwacjami (strona wizytówka), czy zamówień z płatnościami online. Wycena jest bezpłatna, a na start dostajesz darmowy projekt.
+Wyceniam indywidualnie — kwota zależy od zakresu: czy wystarczy menu z godzinami i adresem (landing page), czy potrzebujesz pełnej strony z galerią i rezerwacjami (strona wizytówka), czy zamówień z płatnościami online. Wycena jest bezpłatna, a na start dostajesz darmowy projekt. Widełki dla orientacji znajdziesz w zakładce Wycena.
 
 ### Ile trwa zrobienie strony dla restauracji?
 Landing page 4–8 dni, strona wizytówka 7–16 dni. Jeśli zależy Ci na czasie, ekspresowa realizacja skraca termin nawet o połowę.
@@ -1037,7 +1038,7 @@ Najprościej przyciskiem „Umów wizytę”, który prowadzi do Twojego profilu
 Tylko za ich zgodą — najlepiej pisemną, bo tego wymaga prawo do wizerunku (art. 81 prawa autorskiego). Bezpieczna alternatywa to zdjęcia samych efektów, bez twarzy.
 
 ### Ile kosztuje strona internetowa dla salonu urody?
-Wyceniam indywidualnie — kwota zależy od zakresu: landing page z cennikiem i przyciskiem rezerwacji, pełna strona z galerią i zespołem albo sprzedaż bonów online. Wycena jest bezpłatna, a na start dostajesz darmowy projekt na zdjęciach z Twojego Instagrama.
+Wyceniam indywidualnie — kwota zależy od zakresu: landing page z cennikiem i przyciskiem rezerwacji, pełna strona z galerią i zespołem albo sprzedaż bonów online. Wycena jest bezpłatna, a na start dostajesz darmowy projekt na zdjęciach z Twojego Instagrama. Widełki dla orientacji znajdziesz w zakładce Wycena.
 
 ### Ile trwa zrobienie strony dla salonu?
 Landing page 4–8 dni, strona wizytówka 7–16 dni. Na start dostajesz darmowy projekt ze znakiem wodnym.

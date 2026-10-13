@@ -170,10 +170,15 @@ def phead_svc(h1, lead, side_html, crumb):
 </section>''' % (esc(crumb), h1, lead, side_html)
 
 
+def link_wycena(h):
+    """W odpowiedziach FAQ odsyłacz „w zakładce Wycena” prowadzi do widełek (w danych strukturalnych zostaje zwykły tekst)."""
+    return h.replace('w zakładce Wycena', 'w zakładce <a href="cennik#widelki">Wycena</a>')
+
+
 def faq_html(faq):
     qa = ''.join(
         '<div class="qa"><h3><button type="button" aria-expanded="false" aria-controls="gq%d" id="gqb%d"><span>%s</span><i aria-hidden="true">+</i></button></h3>'
-        '<div class="qa__a" id="gq%d" role="region" aria-labelledby="gqb%d"><div><p>%s</p></div></div></div>' % (i, i, esc(q), i, i, esc(ans))
+        '<div class="qa__a" id="gq%d" role="region" aria-labelledby="gqb%d"><div><p>%s</p></div></div></div>' % (i, i, esc(q), i, i, link_wycena(esc(ans)))
         for i, (q, ans) in enumerate(faq, 1))
     return '<section class="faq-mini" aria-labelledby="pytania"><h2 id="pytania">Najczęstsze pytania</h2>%s</section>' % qa
 

@@ -79,7 +79,7 @@ Nie mam jednego cennika dla wszystkich — każdą stronę wyceniam indywidualni
 | Strona wizytówka | 7–16 dni | rozbudowana strona (oferta, o firmie, cennik, FAQ), galeria, mapa, SEO i Wizytówka Google, 5 rund poprawek |
 | Strona + sklep | po ustaleniu zakresu | katalog z cenami, koszyk, płatności online (BLIK, karta), szkolenie z obsługi |
 
-Zaliczkę (od 40%) wpłacasz dopiero, gdy projekt Ci się podoba i chcesz iść dalej, a resztę po akceptacji gotowej strony. Płatność można rozłożyć na raty. Zapytanie złożysz w 30 sekund w [formularzu wyceny](cennik#kalkulator). Nie wiesz, który pakiet wybrać? Zobacz porównanie [landing page czy strona wizytówka](landing-page-czy-strona-wizytowka).
+Zaliczkę (od 40%) wpłacasz dopiero, gdy projekt Ci się podoba i chcesz iść dalej, a resztę po akceptacji gotowej strony. Płatność można rozłożyć na raty. Widełki dla orientacji znajdziesz w zakładce [Wycena](cennik#widelki), a zapytanie złożysz w 30 sekund w [formularzu wyceny](cennik#kalkulator). Nie wiesz, który pakiet wybrać? Zobacz porównanie [landing page czy strona wizytówka](landing-page-czy-strona-wizytowka).
 
 ## Jak nie przepłacić i nie kupić bubla
 
@@ -93,7 +93,7 @@ Zaliczkę (od 40%) wpłacasz dopiero, gdy projekt Ci się podoba i chcesz iść 
         'faq': [
             ('Czy da się zrobić stronę internetową za darmo?', 'Tak, w kreatorze — ale płacisz swoim czasem, często abonamentem i efektem „jak z szablonu”. Domena z nazwą Twojej firmy i tak jest płatna.'),
             ('Czy strona internetowa to wydatek jednorazowy?', 'Projekt i wykonanie — tak. Co roku płacisz tylko za domenę, hosting i certyfikat SSL — u mnie ten koszt znasz z góry, bo jest w wycenie.'),
-            ('Ile kosztuje strona internetowa u Ciebie?', 'Każdą stronę wyceniam indywidualnie — kwota zależy od liczby podstron, funkcji i materiałów. Wycena jest bezpłatna: najpierw dostajesz darmowy projekt, a po krótkiej rozmowie jedną konkretną kwotę.'),
+            ('Ile kosztuje strona internetowa u Ciebie?', 'Każdą stronę wyceniam indywidualnie — kwota zależy od liczby podstron, funkcji i materiałów. Wycena jest bezpłatna: najpierw dostajesz darmowy projekt, a po krótkiej rozmowie jedną konkretną kwotę. Widełki dla orientacji znajdziesz w zakładce Wycena.'),
             ('Ile trwa zrobienie strony internetowej?', 'Landing page 4–8 dni, strona wizytówka 7–16 dni, sklep — po ustaleniu zakresu. Ekspresowa realizacja skraca czas nawet o połowę.'),
             ('Czy mogę zapłacić za stronę w ratach?', 'Tak. Zaliczka od 40% na start, reszta po akceptacji gotowej strony — i tę kwotę możesz rozłożyć na raty.'),
         ],
@@ -248,7 +248,7 @@ Opinie to tylko jeden element widoczności lokalnej firmy. Jeśli zastanawiasz s
             ('Jak znaleźć link do opinii mojej firmy w Google?', 'Zaloguj się na konto, na którym masz Profil Firmy w Google, wyszukaj nazwę swojej firmy i wybierz „Poproś o opinie”. Dostaniesz krótki link, który możesz wysyłać klientom albo zamienić w kod QR.'),
             ('Czy można usunąć negatywną opinię w Google?', 'Nie samodzielnie. Możesz zgłosić opinię, która łamie zasady Google (np. spam, obraźliwe treści albo opinia o innej firmie). W pozostałych przypadkach najlepsze, co możesz zrobić, to rzeczowo odpowiedzieć.'),
             ('Czy karta NFC do opinii działa na każdym telefonie?', 'Na większości współczesnych smartfonów tak: iPhone XR/XS i nowsze odczytują ją bez aplikacji, a na Androidzie NFC musi być włączone. Dla telefonów bez NFC warto mieć obok kod QR.'),
-            ('Ile kosztuje karta NFC do opinii Google?', 'U mnie wycena zależy od liczby kart i naklejek — napisz, ile sztuk potrzebujesz, a podam konkretną kwotę. Każdą programuję pod profil Twojej firmy i wysyłam w całej Polsce.'),
+            ('Ile kosztuje karta NFC do opinii Google?', 'U mnie wycena zależy od liczby kart i naklejek — napisz, ile sztuk potrzebujesz, a podam konkretną kwotę. Każdą programuję pod profil Twojej firmy i wysyłam w całej Polsce. Widełki dla orientacji znajdziesz w zakładce Wycena.'),
         ],
         'related': ['jak-zalozyc-wizytowke-google', 'czy-twoja-firma-jest-widoczna-w-google'],
         'zmiana': WYCENA,
@@ -337,7 +337,7 @@ Nadal nie wiesz? Napisz — doradzę po krótkiej rozmowie, a darmowy projekt po
             ('Czy landing page jest dobry do SEO?', 'Pod jedno konkretne hasło — tak. Ale strona z jednym tematem pokaże się na mniej zapytań niż rozbudowana strona firmowa. Jeśli zależy Ci na klientach z Google, lepsza będzie strona wizytówka.'),
             ('Czy z landing page można później zrobić stronę wizytówkę?', 'Tak. Landing możesz rozbudować o kolejne sekcje i podstrony — każdą wyceniam z góry, zanim zaczniemy. Indywidualny projekt, galeria, mapa i SEO z Wizytówką Google to już zakres pakietu Wizytówka.'),
             ('Czym różni się strona wizytówka od Wizytówki Google?', 'Strona wizytówka to Twoja własna strona internetowa. Wizytówka Google (Profil Firmy w Google) to darmowy wpis w Mapach i wynikach Google. Najlepiej mieć jedno i drugie.'),
-            ('Ile kosztuje landing page, a ile strona wizytówka?', 'Każdą stronę wyceniam indywidualnie, więc kwota zależy od zakresu, a nie od samej nazwy pakietu. Landing jest zwykle tańszy i szybszy (4–8 dni), wizytówka to więcej pracy (7–16 dni). Wycena jest bezpłatna, a koszt domeny i hostingu znasz z góry.'),
+            ('Ile kosztuje landing page, a ile strona wizytówka?', 'Każdą stronę wyceniam indywidualnie, więc kwota zależy od zakresu, a nie od samej nazwy pakietu. Landing jest zwykle tańszy i szybszy (4–8 dni), wizytówka to więcej pracy (7–16 dni). Wycena jest bezpłatna, a koszt domeny i hostingu znasz z góry. Widełki dla orientacji znajdziesz w zakładce Wycena.'),
         ],
         'related': ['ile-kosztuje-strona-internetowa', 'jak-zalozyc-wizytowke-google'],
         'curtain': ('Landing czy wizytówka', 'Którą stronę wybrać dla swojej firmy.', 'Landing or showcase', 'Which website fits your business.'),
@@ -629,7 +629,7 @@ Jak to wygląda w praktyce, pokazuję w koncepcie [ŻAR Burger](zar-burger) — 
         'faq': [
             ('Czy menu w PDF wystarczy na stronie restauracji?', 'Lepiej nie. PDF trzeba powiększać na telefonie, długo się ładuje, a Google i asystenci AI nie zawsze odczytają jego treść. Menu jako zwykły tekst na stronie jest wygodniejsze dla gości i lepsze dla widoczności.'),
             ('Czy restauracja może przyjmować zamówienia online bez Pyszne.pl?', 'Tak — przez własny system zamówień na stronie, bez prowizji dla pośrednika. To większa praca na start (koszyk, płatności), dlatego wyceniam ją indywidualnie. Wiele lokali łączy własne zamówienia z platformami.'),
-            ('Ile kosztuje strona internetowa dla restauracji?', 'Wyceniam indywidualnie — kwota zależy od zakresu: czy wystarczy menu z godzinami i adresem (landing page), czy potrzebujesz pełnej strony z galerią i rezerwacjami (strona wizytówka), czy zamówień z płatnościami online. Wycena jest bezpłatna, a na start dostajesz darmowy projekt.'),
+            ('Ile kosztuje strona internetowa dla restauracji?', 'Wyceniam indywidualnie — kwota zależy od zakresu: czy wystarczy menu z godzinami i adresem (landing page), czy potrzebujesz pełnej strony z galerią i rezerwacjami (strona wizytówka), czy zamówień z płatnościami online. Wycena jest bezpłatna, a na start dostajesz darmowy projekt. Widełki dla orientacji znajdziesz w zakładce Wycena.'),
             ('Ile trwa zrobienie strony dla restauracji?', 'Landing page 4–8 dni, strona wizytówka 7–16 dni. Jeśli zależy Ci na czasie, ekspresowa realizacja skraca termin nawet o połowę.'),
             ('Czy potrzebuję profesjonalnej sesji zdjęciowej?', 'Na start nie. Dobre zdjęcia z telefonu przy dziennym świetle wystarczą — na nich przygotuję też darmowy projekt strony. Sesję zawsze można dołożyć później.'),
         ],
@@ -732,7 +732,7 @@ Jak może wyglądać strona Twojego salonu, pokazuję w koncepcie [Luxe Salon](l
             ('Czy salon potrzebuje strony, skoro ma Booksy i Instagrama?', 'Tak. Instagram pokazuje klimat, Booksy przyjmuje rezerwacje, a strona zbiera wszystko w jednym miejscu i pokazuje Cię w Google — tam, gdzie szuka wiele nowych klientek. Booksy podepniesz do strony przyciskiem „Umów wizytę”.'),
             ('Jak połączyć stronę z Booksy?', 'Najprościej przyciskiem „Umów wizytę”, który prowadzi do Twojego profilu w Booksy. Klientka klika i od razu wybiera termin.'),
             ('Czy mogę pokazywać na stronie zdjęcia klientek?', 'Tylko za ich zgodą — najlepiej pisemną, bo tego wymaga prawo do wizerunku (art. 81 prawa autorskiego). Bezpieczna alternatywa to zdjęcia samych efektów, bez twarzy.'),
-            ('Ile kosztuje strona internetowa dla salonu urody?', 'Wyceniam indywidualnie — kwota zależy od zakresu: landing page z cennikiem i przyciskiem rezerwacji, pełna strona z galerią i zespołem albo sprzedaż bonów online. Wycena jest bezpłatna, a na start dostajesz darmowy projekt na zdjęciach z Twojego Instagrama.'),
+            ('Ile kosztuje strona internetowa dla salonu urody?', 'Wyceniam indywidualnie — kwota zależy od zakresu: landing page z cennikiem i przyciskiem rezerwacji, pełna strona z galerią i zespołem albo sprzedaż bonów online. Wycena jest bezpłatna, a na start dostajesz darmowy projekt na zdjęciach z Twojego Instagrama. Widełki dla orientacji znajdziesz w zakładce Wycena.'),
             ('Ile trwa zrobienie strony dla salonu?', 'Landing page 4–8 dni, strona wizytówka 7–16 dni. Na start dostajesz darmowy projekt ze znakiem wodnym.'),
         ],
         'related': ['jak-zdobyc-opinie-google', 'landing-page-czy-strona-wizytowka'],

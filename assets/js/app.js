@@ -103,9 +103,6 @@
     PL_ATTR.set(el, m);
   });
   const group = n => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, LANG === 'en' ? ',' : ' ');
-  const cur = () => (LANG === 'en' ? 'PLN' : 'zł');
-  const money = n => `${group(n)} ${cur()}`;
-  const range = (a, b) => (a === b ? money(a) : `${group(a)}–${group(b)} ${cur()}`);
 
   /* ---------- nagłówki: podział na słowa (wjeżdżają po kolei) ---------- */
   function splitWords(el) {
@@ -844,58 +841,12 @@
     if (document.fonts) document.fonts.ready.then(place);
   });
 
-  /* ---------- animowane liczby ---------- */
-  function tweenNum(el, from, to) {
-    if (from === to) { el.textContent = group(to); return; }
-    const t0 = performance.now(), dur = 600;
-    const tick = now => {
-      const k = clamp((now - t0) / dur, 0, 1), e = 1 - Math.pow(1 - k, 4);
-      el.textContent = group(from + (to - from) * e);
-      if (k < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  }
-
-  /* ---------- social: przełącznik platformy ---------- */
-  let plat = 'fb';
-  mod('social', () => {
-    const btns = $$('[data-plat]');
-    if (!btns.length) return;
-    const update = animate => {
-      btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.plat === plat)));
-      $$('[data-social]').forEach(card => {
-        const price = +card.dataset[plat === 'fb' ? 'fb' : 'fbig'];
-        const el = $('[data-social-price]', card), prev = +(el.dataset.v || price);
-        el.dataset.v = price;
-        if (animate) tweenNum(el, prev, price); else el.textContent = group(price);
-        $('[data-social-pp]', card).textContent = t().perPost(Math.round(price / +card.dataset.posts));
-      });
-    };
-    btns.forEach(b => b.addEventListener('click', () => { plat = b.dataset.plat; update(true); }));
-    langHooks.push(() => update(false));
-  });
-
-  /* ---------- kalkulator (ceny czytane z kart cennika) ---------- */
-  let lastSummary = '', lastHead = '', calcRender = () => {}, S = { on: {} };
+  /* ---------- zapytanie o wycenę: zbiera potrzeby i czas realizacji (bez kwot) ---------- */
+  let lastSummary = '', calcRender = () => {}, S = { on: {} };
   mod('calc', () => {
     const calcEl = $('#calc');
     if (!calcEl) return;
-    const card = sel => $(sel);
-    const addon = k => { const li = $(`[data-addon="${k}"]`); return { min: +li.dataset.min, max: +li.dataset.max }; };
-    const P = {
-      pkg: {
-        landing: { price: +card('[data-pkg="landing"]').dataset.price, days: card('[data-pkg="landing"]').dataset.days },
-        wizytowka: { price: +card('[data-pkg="wizytowka"]').dataset.price, days: card('[data-pkg="wizytowka"]').dataset.days },
-        sklep: { price: 0, days: '' }
-      },
-      sub: addon('subpage'), gfx: addon('graphics'), lng: addon('lang'), exp: addon('express'),
-      host: +card('[data-host="first"]').dataset.price,
-      social: {
-        start: { fb: +card('[data-social="start"]').dataset.fb, fbig: +card('[data-social="start"]').dataset.fbig },
-        pro: { fb: +card('[data-social="pro"]').dataset.fb, fbig: +card('[data-social="pro"]').dataset.fbig }
-      },
-      card: +card('[data-nfc="card"]').dataset.price, sticker: +card('[data-nfc="sticker"]').dataset.price
-    };
+    const days = k => { const c = $(`[data-pkg="${k}"]`); return (c && c.dataset.days) || ''; };
     S = { on: { www: true, social: false, nfc: false }, subpages: 0, cards: 1, stickers: 0 };
     const val = name => { const i = $(`input[name="${name}"]:checked`, calcEl); return i ? i.value : null; };
     const chk = name => $(`input[name="${name}"]`, calcEl).checked;
@@ -920,56 +871,35 @@
       sync();
     });
     calcEl.addEventListener('change', () => calcRender());
-    const once = $('#sumOnce');
     calcRender = () => {
       const L = t().calc, lines = [];
-      let min = 0, approx = false, custom = false, monthly = 0, time = '—';
+      let time = '—';
       if (S.on.www) {
-        const pk = val('pkg');
-        if (pk === 'sklep') { custom = true; lines.push([L.names.sklep, L.custom]); time = L.tbd; }
-        else {
-          const p = P.pkg[pk]; min += p.price; approx = true;
-          lines.push([L.names[pk], `${L.from} ${money(p.price)}`]);
-          const [a, b] = p.days.split('-').map(Number);
+        const pk = val('pkg'), d = days(pk);
+        if (d) {
+          const [a, b] = d.split('-').map(Number);
           time = chk('express') ? `${Math.ceil(a / 2)}–${Math.ceil(b / 2)} ${L.days}` : `${a}–${b} ${L.days}`;
-        }
-        if (S.subpages) { min += S.subpages * P.sub.min; approx = true; lines.push([`${L.subpages} × ${S.subpages}`, range(S.subpages * P.sub.min, S.subpages * P.sub.max)]); }
-        if (chk('lang')) { min += P.lng.min; approx = true; lines.push([L.lang, range(P.lng.min, P.lng.max)]); }
-        if (chk('graphics')) { min += P.gfx.min; approx = true; lines.push([L.graphics, range(P.gfx.min, P.gfx.max)]); }
-        if (chk('express')) {
-          if (pk === 'sklep') lines.push([L.express, L.custom]);
-          else {
-            const base = P.pkg[pk].price, a = Math.round(base * P.exp.min / 100), b = Math.round(base * P.exp.max / 100);
-            min += a; approx = true; lines.push([L.express, range(a, b)]);
-          }
-        }
-        if (chk('hosting')) { min += P.host; lines.push([L.host, money(P.host)]); }
+        } else time = L.tbd;
+        lines.push([L.names[pk], time]);
+        if (S.subpages) lines.push([L.subpages, `× ${S.subpages}`]);
+        if (chk('lang')) lines.push([L.lang, '']);
+        if (chk('graphics')) lines.push([L.graphics, '']);
+        if (chk('express')) lines.push([L.express, '']);
+        if (chk('hosting')) lines.push([L.host, '']);
       }
       if (S.on.social) {
         const sp = val('spkg'), pl = val('plat');
-        monthly = P.social[sp][pl];
-        lines.push([`${L.social} ${sp === 'pro' ? 'Pro' : 'Start'} · ${pl === 'fb' ? 'FB' : 'FB + IG'}`, `${money(monthly)} ${L.perMonth}`]);
+        lines.push([`${L.social} ${sp === 'pro' ? 'Pro' : 'Start'}`, pl === 'fb' ? 'Facebook' : 'Facebook + Instagram']);
       }
       if (S.on.nfc) {
-        if (S.cards) { min += S.cards * P.card; lines.push([`${L.card} × ${S.cards}`, money(S.cards * P.card)]); }
-        if (S.stickers) { min += S.stickers * P.sticker; lines.push([`${L.sticker} × ${S.stickers}`, money(S.stickers * P.sticker)]); }
+        if (S.cards) lines.push([L.card, `× ${S.cards}`]);
+        if (S.stickers) lines.push([L.sticker, `× ${S.stickers}`]);
       }
-      const prev = +(once.dataset.v || 0);
-      if (!min && custom) {
-        once.classList.add('txt'); once.innerHTML = `<b>${L.custom}</b>`; once.dataset.v = 0;
-      } else {
-        once.classList.remove('txt');
-        once.innerHTML = `${approx ? `<small>${L.from}</small>` : ''}<b>${group(prev)}</b><span>${cur()}</span>${custom ? `<i>+ ${L.shopShort}</i>` : ''}`;
-        tweenNum($('b', once), prev, min); once.dataset.v = min;
-      }
-      $('#sumMonthly').textContent = monthly ? `${money(monthly)} ${L.perMonth}` : '—';
       $('#sumTime').textContent = time;
       $('#sumLines').innerHTML = lines.length
-        ? lines.map(([a, b]) => `<li><span>${a}</span><b>${b}</b></li>`).join('')
+        ? lines.map(([a, b]) => `<li><span>${a}</span><b>${b || '✓'}</b></li>`).join('')
         : `<li><span>${L.empty}</span></li>`;
-      const txt = lines.map(([a, b]) => `• ${a}: ${b}`).join('\n');
-      lastHead = min ? `${approx ? L.from + ' ' : ''}${money(min)}${custom ? ' + ' + L.shopShort : ''}` : (custom ? L.custom : '');
-      lastSummary = lines.length ? `${L.mailIntro}\n${txt}${lastHead ? `\n${L.onceLbl}: ${lastHead}` : ''}${monthly ? `\n${L.monthlyLbl}: ${money(monthly)}` : ''}` : '';
+      lastSummary = lines.length ? `${L.mailIntro}\n${lines.map(([a, b]) => `• ${a}${b ? ': ' + b : ''}`).join('\n')}` : '';
     };
     langHooks.push(() => calcRender());
   });
@@ -983,10 +913,7 @@
       const k = b.dataset.pick, P2 = t().pick, PL2 = t().pickLabel;
       if (k === 'social-start' || k === 'social-pro') {
         const pk = k === 'social-pro' ? 'Pro' : 'Start';
-        const c = $(`[data-social="${k === 'social-pro' ? 'pro' : 'start'}"]`);
-        const price = c ? +c.dataset[plat === 'fb' ? 'fb' : 'fbig'] : 0;
-        const pl = plat === 'fb' ? 'Facebook' : 'Facebook + Instagram';
-        save(P2.social(pk, pl, money(price)), ['social'], PL2.social(pk, pl));
+        save(P2.social(pk), ['social'], PL2.social(pk));
       } else if (k.indexOf('nfc') === 0) save(P2[k], ['nfc'], PL2[k]);
       else if (k.indexOf('concept-') === 0) { const n = CONCEPTS[k.slice(8)] || ''; save(P2.concept(n), ['www'], PL2.concept(n)); }
       else if (P2[k]) save(P2[k], ['www'], PL2[k]);
@@ -994,7 +921,7 @@
     const send = $('#sumSend');
     if (send) send.addEventListener('click', () => {
       calcRender();
-      if (lastSummary) save(lastSummary, Object.keys(S.on).filter(k => S.on[k]), `${t().pickLabel.calc}${lastHead ? ': ' + lastHead : ''}`);
+      if (lastSummary) save(lastSummary, Object.keys(S.on).filter(k => S.on[k]), t().pickLabel.calc);
     }, true);
 
     const form = $('#leadForm'), msg = $('#f-msg');

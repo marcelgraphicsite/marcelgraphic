@@ -2,12 +2,14 @@
 """Treść poradnika (źródło). Strony HTML buduje zbuduj_poradnik.py.
 
 Każdy artykuł: odpowiedź na górze („W skrócie”), treść w Markdown, FAQ.
-Ceny i terminy muszą zgadzać się z cennikiem (cennik.html) — bez zmyślonych statystyk.
+Terminy i zakres pakietów muszą zgadzać się z cennik.html. Własnych cen nie podajemy (wycena indywidualna i bezpłatna);
+widełki rynkowe w artykule o kosztach to informacja ogólna. Bez zmyślonych statystyk.
 """
 
 DATA = '2026-10-01'          # domyślna data publikacji (pierwsze 3 artykuły)
 DATA_TXT = '1 października 2026'
 DZIS = '2026-10-06'          # data ostatniej dużej aktualizacji poradnika
+WYCENA = '2026-10-13'        # ceny usług zamienione na wycenę indywidualną
 
 # Artykuł może mieć własne 'data' (publikacja) i 'zmiana' (ostatnia aktualizacja) w formacie RRRR-MM-DD.
 _ARTYKULY = [
@@ -15,7 +17,7 @@ _ARTYKULY = [
         'slug': 'ile-kosztuje-strona-internetowa',
         'title': 'Ile kosztuje strona internetowa w 2026? Realne ceny dla firm | Marcel GraphicSite',
         'og_title': 'Ile kosztuje strona internetowa w 2026 roku?',
-        'description': 'Landing od 2 000 zł, strona firmowa od 3 000 zł, sklep wyceniany indywidualnie. Od czego zależy cena strony, jakie są koszty stałe i jak nie przepłacić.',
+        'description': 'Realne widełki cen stron internetowych w 2026: od kreatora i szablonu po freelancera i agencję. Od czego zależy cena, jakie są koszty stałe i jak nie przepłacić.',
         'h1': 'Ile kosztuje strona internetowa <em>w 2026 roku?</em>',
         'headline': 'Ile kosztuje strona internetowa w 2026 roku?',
         'lead': 'Krótko: porządna strona dla lokalnej firmy to zwykle wydatek od 2 do kilku tysięcy złotych jednorazowo plus kilkaset złotych rocznie za domenę i hosting. Poniżej rozkładam cenę na czynniki pierwsze — bez marketingowej mgły.',
@@ -23,11 +25,11 @@ _ARTYKULY = [
         'og_kicker': 'Poradnik · ceny',
         'keywords': ['ile kosztuje strona internetowa', 'cena strony internetowej', 'koszt strony www dla firmy', 'strona internetowa cennik 2026', 'landing page cena'],
         'tldr': [
-            '<strong>Landing page</strong> (jedna strona): od 2 000 zł, gotowa w 4–8 dni.',
-            '<strong>Strona wizytówka</strong> (rozbudowana strona firmowa): od 3 000 zł, 7–16 dni.',
-            '<strong>Sklep internetowy</strong>: wycena indywidualna, po ustaleniu zakresu.',
-            '<strong>Co roku</strong> płacisz tylko za domenę, hosting i SSL — u mnie 200 zł w pierwszym roku, potem 500 zł.',
+            '<strong>Kreator</strong> (Wix, Squarespace): 0 zł na start, ale płacisz abonamentem i swoim czasem.',
+            '<strong>Gotowy szablon</strong> wdrożony przez kogoś to zwykle ok. 500–1 500 zł, <strong>freelancer z projektem na miarę</strong> — ok. 2 000–6 000 zł, a <strong>agencja</strong> — od kilku do kilkunastu tysięcy zł.',
+            '<strong>Co roku</strong> płacisz tylko za domenę, hosting i SSL — sama strona to wydatek jednorazowy.',
             '<strong>Cenę podnoszą</strong>: liczba podstron, wersje językowe, indywidualne grafiki, rezerwacje online i ekspresowy termin.',
+            '<strong>U mnie</strong> każdą stronę wyceniam indywidualnie i bezpłatnie — najpierw dostajesz darmowy projekt, potem jedną konkretną kwotę.',
         ],
         'body': '''
 ## Ile kosztuje strona internetowa — widełki na rynku
@@ -45,12 +47,12 @@ To widełki orientacyjne — rynek jest szeroki, a ostateczna kwota zawsze zale�
 
 ## Od czego zależy cena strony
 
-1. **Liczba podstron i sekcji.** Jedna strona z ofertą i kontaktem to inna praca niż serwis z cennikiem, galerią i blogiem. U mnie dodatkowa podstrona kosztuje 300–500 zł.
+1. **Liczba podstron i sekcji.** Jedna strona z ofertą i kontaktem to inna praca niż serwis z cennikiem, galerią i blogiem.
 2. **Projekt na miarę czy szablon.** Szablon jest tańszy, ale Twoja firma wygląda wtedy jak setki innych. Projekt na miarę buduje markę — kolory, zdjęcia i klimat są Twoje.
 3. **Teksty i zdjęcia.** Jeśli ich nie masz, ktoś musi je przygotować. Na start często wystarczą zdjęcia z Facebooka lub Instagrama.
 4. **Funkcje.** Rezerwacje online, kalendarz wizyt, formularze, sklep i płatności to dodatkowe godziny pracy i testów.
-5. **Wersje językowe.** Każdy język to tłumaczenie i dopasowanie układu — u mnie 400–600 zł za język.
-6. **Termin.** Ekspresowa realizacja (nawet o połowę szybciej) to +25–50% ceny pakietu.
+5. **Wersje językowe.** Każdy język to tłumaczenie i dopasowanie układu.
+6. **Termin.** Ekspresowa realizacja (nawet o połowę szybciej) to zwykle dopłata do ceny pakietu.
 7. **Widoczność w Google.** Podstawowe SEO — tytuły, opisy, dane dla wyszukiwarek i podpięcie Wizytówki Google — powinno być w cenie każdej strony firmowej. Jeśli ktoś liczy za to osobno, dopytaj, co dokładnie robi.
 
 ## Koszty stałe, o których mało kto mówi
@@ -61,17 +63,23 @@ Sama strona to wydatek jednorazowy, ale żeby działała, potrzebuje trzech rzec
 - **Hosting**, czyli miejsce, w którym strona „mieszka”.
 - **Certyfikat SSL** — kłódka w przeglądarce. Bez niej przeglądarki ostrzegają, że strona nie jest bezpieczna.
 
-U mnie domena, hosting i SSL to **200 zł za pierwszy rok, a potem 500 zł rocznie**. Domenę rejestruję na Twój e-mail, więc od pierwszego dnia jest w 100% Twoja, a 30 dni przed odnowieniem dostajesz ode mnie przypomnienie. Drobna zmiana poza pakietem (tekst, kolor, zdjęcie) kosztuje 80 zł.
+U mnie koszt domeny, hostingu i SSL znasz z góry — jest w wycenie strony. Domenę rejestruję na Twój e-mail, więc od pierwszego dnia jest w 100% Twoja, a 30 dni przed odnowieniem dostajesz ode mnie przypomnienie.
 
-## Ile kosztuje strona u mnie — konkretnie
+## Ile kosztuje strona u mnie? Wycena indywidualna
 
-| Pakiet | Cena | Czas | Co dostajesz |
-|---|---|---|---|
-| Landing page | od 2 000 zł | 4–8 dni | jedna strona z ofertą i kontaktem, kolory Twojej marki, formularz lub WhatsApp, 2 rundy poprawek |
-| Strona wizytówka | od 3 000 zł | 7–16 dni | rozbudowana strona (oferta, o firmie, cennik, FAQ), galeria, mapa, SEO i Wizytówka Google, 5 rund poprawek |
-| Strona + sklep | wycena indywidualna | po ustaleniu zakresu | katalog z cenami, koszyk, płatności online (BLIK, karta), szkolenie z obsługi |
+Nie mam jednego cennika dla wszystkich — każdą stronę wyceniam indywidualnie, bo restauracja z menu i rezerwacjami to inna praca niż prosta strona usługodawcy. Wycena jest bezpłatna i wygląda tak:
 
-Zanim zapłacisz złotówkę, dostajesz **darmowy projekt ze znakiem wodnym**. Zaliczkę (od 40%) wpłacasz dopiero, gdy chcesz iść dalej, a resztę po akceptacji gotowej strony. Płatność można rozłożyć na raty. Wstępną kwotę policzysz w [kalkulatorze wyceny](cennik#kalkulator). Nie wiesz, który pakiet wybrać? Zobacz porównanie [landing page czy strona wizytówka](landing-page-czy-strona-wizytowka).
+1. **Krótka rozmowa** — telefon, WhatsApp albo spotkanie. Mówisz, czego potrzebujesz, a ja dopytuję o resztę.
+2. **Darmowy projekt** — zanim zapłacisz złotówkę, dostajesz projekt ze znakiem wodnym i oceniasz, czy Ci się podoba.
+3. **Jedna konkretna kwota** — razem z kosztem domeny i hostingu, stała i bez dopłat w trakcie.
+
+| Pakiet | Czas | Co dostajesz |
+|---|---|---|
+| Landing page | 4–8 dni | jedna strona z ofertą i kontaktem, kolory Twojej marki, formularz lub WhatsApp, 2 rundy poprawek |
+| Strona wizytówka | 7–16 dni | rozbudowana strona (oferta, o firmie, cennik, FAQ), galeria, mapa, SEO i Wizytówka Google, 5 rund poprawek |
+| Strona + sklep | po ustaleniu zakresu | katalog z cenami, koszyk, płatności online (BLIK, karta), szkolenie z obsługi |
+
+Zaliczkę (od 40%) wpłacasz dopiero, gdy projekt Ci się podoba i chcesz iść dalej, a resztę po akceptacji gotowej strony. Płatność można rozłożyć na raty. Zapytanie złożysz w 30 sekund w [formularzu wyceny](cennik#kalkulator). Nie wiesz, który pakiet wybrać? Zobacz porównanie [landing page czy strona wizytówka](landing-page-czy-strona-wizytowka).
 
 ## Jak nie przepłacić i nie kupić bubla
 
@@ -84,12 +92,13 @@ Zanim zapłacisz złotówkę, dostajesz **darmowy projekt ze znakiem wodnym**. Z
 ''',
         'faq': [
             ('Czy da się zrobić stronę internetową za darmo?', 'Tak, w kreatorze — ale płacisz swoim czasem, często abonamentem i efektem „jak z szablonu”. Domena z nazwą Twojej firmy i tak jest płatna.'),
-            ('Czy strona internetowa to wydatek jednorazowy?', 'Projekt i wykonanie — tak. Co roku płacisz tylko za domenę, hosting i certyfikat SSL (u mnie 200 zł w pierwszym roku, potem 500 zł rocznie).'),
+            ('Czy strona internetowa to wydatek jednorazowy?', 'Projekt i wykonanie — tak. Co roku płacisz tylko za domenę, hosting i certyfikat SSL — u mnie ten koszt znasz z góry, bo jest w wycenie.'),
+            ('Ile kosztuje strona internetowa u Ciebie?', 'Każdą stronę wyceniam indywidualnie — kwota zależy od liczby podstron, funkcji i materiałów. Wycena jest bezpłatna: najpierw dostajesz darmowy projekt, a po krótkiej rozmowie jedną konkretną kwotę.'),
             ('Ile trwa zrobienie strony internetowej?', 'Landing page 4–8 dni, strona wizytówka 7–16 dni, sklep — po ustaleniu zakresu. Ekspresowa realizacja skraca czas nawet o połowę.'),
             ('Czy mogę zapłacić za stronę w ratach?', 'Tak. Zaliczka od 40% na start, reszta po akceptacji gotowej strony — i tę kwotę możesz rozłożyć na raty.'),
         ],
         'related': ['landing-page-czy-strona-wizytowka', 'strona-internetowa-czy-facebook'],
-        'zmiana': DZIS,
+        'zmiana': WYCENA,
         'curtain': ('Ceny stron', 'Ile naprawdę kosztuje strona internetowa w 2026 roku.', 'Site costs', 'What a website really costs in 2026.'),
         'bg': 'cennik',
     },
@@ -161,10 +170,10 @@ Najlepiej działa duet: **strona zdobywa nowych klientów, a social media zamien
             ('Czy strona jest potrzebna, jeśli mam dużo obserwujących?', 'Tak. Obserwujący to w większości ludzie, którzy już Cię znają. Nowi klienci szukają w Google — a tam profil w social mediach przegrywa ze stroną i Wizytówką Google.'),
             ('Czy social media pomagają w pozycjonowaniu strony?', 'Pośrednio. Same posty nie podnoszą pozycji strony w Google, ale budują rozpoznawalność, a link do strony w profilu kieruje do niej ruch.'),
             ('Co jest ważniejsze na start — strona czy social media?', 'Jeśli zależy Ci na nowych klientach: Wizytówka Google i prosta strona. Social media dołóż, żeby utrzymać relację z tymi, którzy już przyszli.'),
-            ('Czy mogę zlecić stronę i prowadzenie social mediów jednej osobie?', 'Tak — projektuję strony i prowadzę Facebooka oraz Instagrama dla firm, więc wszystko jest spójne. Prowadzenie social mediów zaczyna się od 600 zł miesięcznie.'),
+            ('Czy mogę zlecić stronę i prowadzenie social mediów jednej osobie?', 'Tak — projektuję strony i prowadzę Facebooka oraz Instagrama dla firm, więc wszystko jest spójne. Wycenę przygotuję po krótkiej rozmowie — bezpłatnie.'),
         ],
         'related': ['jak-zalozyc-wizytowke-google', 'ile-kosztuje-strona-internetowa'],
-        'zmiana': DZIS,
+        'zmiana': WYCENA,
         'curtain': ('Strona czy FB', 'Co wybrać dla lokalnej firmy — i dlaczego oba.', 'Site vs FB', 'What a local business needs — and why both.'),
         'bg': 'uslugi',
     },
@@ -239,10 +248,10 @@ Opinie to tylko jeden element widoczności lokalnej firmy. Jeśli zastanawiasz s
             ('Jak znaleźć link do opinii mojej firmy w Google?', 'Zaloguj się na konto, na którym masz Profil Firmy w Google, wyszukaj nazwę swojej firmy i wybierz „Poproś o opinie”. Dostaniesz krótki link, który możesz wysyłać klientom albo zamienić w kod QR.'),
             ('Czy można usunąć negatywną opinię w Google?', 'Nie samodzielnie. Możesz zgłosić opinię, która łamie zasady Google (np. spam, obraźliwe treści albo opinia o innej firmie). W pozostałych przypadkach najlepsze, co możesz zrobić, to rzeczowo odpowiedzieć.'),
             ('Czy karta NFC do opinii działa na każdym telefonie?', 'Na większości współczesnych smartfonów tak: iPhone XR/XS i nowsze odczytują ją bez aplikacji, a na Androidzie NFC musi być włączone. Dla telefonów bez NFC warto mieć obok kod QR.'),
-            ('Ile kosztuje karta NFC do opinii Google?', 'U mnie karta NFC z podstawką kosztuje 60 zł, a duża naklejka NFC 80 zł — każdą programuję pod profil Twojej firmy. Wysyłam w całej Polsce.'),
+            ('Ile kosztuje karta NFC do opinii Google?', 'U mnie wycena zależy od liczby kart i naklejek — napisz, ile sztuk potrzebujesz, a podam konkretną kwotę. Każdą programuję pod profil Twojej firmy i wysyłam w całej Polsce.'),
         ],
         'related': ['jak-zalozyc-wizytowke-google', 'czy-twoja-firma-jest-widoczna-w-google'],
-        'zmiana': DZIS,
+        'zmiana': WYCENA,
         'curtain': ('Opinie Google', '7 sposobów na więcej opinii dla lokalnej firmy.', 'Reviews', '7 ways to get more Google reviews.'),
         'bg': 'kontakt',
     },
@@ -252,22 +261,23 @@ _NOWE = [
     {
         'slug': 'landing-page-czy-strona-wizytowka',
         'data': DZIS,
+        'zmiana': WYCENA,
         'title': 'Landing page czy strona wizytówka — co wybrać? | Marcel GraphicSite',
         'og_title': 'Landing page czy strona wizytówka — co wybrać?',
-        'description': 'Landing page to jedna strona z jednym celem, strona wizytówka to pełna strona firmowa. Porównanie: cena, czas, SEO i dla kogo — oraz kiedy zacząć od landingu.',
+        'description': 'Landing page to jedna strona z jednym celem, strona wizytówka to pełna strona firmowa. Porównanie: zakres, czas, SEO i dla kogo — oraz kiedy zacząć od landingu.',
         'h1': 'Landing page czy strona wizytówka — <em>co wybrać?</em>',
         'headline': 'Landing page czy strona wizytówka — co wybrać dla firmy?',
         'lead': 'Najkrótsza odpowiedź: landing, jeśli masz jedną główną usługę i chcesz szybko wystartować. Wizytówka, jeśli masz kilka usług i chcesz być widoczny w Google na więcej zapytań. Poniżej różnice w liczbach.',
-        'excerpt': 'Jedna strona z jednym celem czy pełna strona firmowa? Porównanie ceny, czasu realizacji i widoczności w Google.',
+        'excerpt': 'Jedna strona z jednym celem czy pełna strona firmowa? Porównanie zakresu, czasu realizacji i widoczności w Google.',
         'og_kicker': 'Poradnik · rodzaje stron',
-        'keywords': ['landing page czy strona wizytówka', 'co to jest landing page', 'strona wizytówka co to', 'landing page cena',
+        'keywords': ['landing page czy strona wizytówka', 'co to jest landing page', 'strona wizytówka co to',
                      'strona one page czy wielostronicowa', 'jaka strona dla małej firmy'],
         'tldr': [
-            '<strong>Landing page</strong> = jedna strona z jednym celem (telefon, zapis, zamówienie). U mnie od 2 000 zł, 4–8 dni.',
-            '<strong>Strona wizytówka</strong> = pełna strona firmowa: oferta, o firmie, cennik, FAQ, galeria, mapa. Od 3 000 zł, 7–16 dni.',
+            '<strong>Landing page</strong> = jedna strona z jednym celem (telefon, zapis, zamówienie). U mnie gotowa w 4–8 dni.',
+            '<strong>Strona wizytówka</strong> = pełna strona firmowa: oferta, o firmie, cennik, FAQ, galeria, mapa. Gotowa w 7–16 dni.',
             '<strong>W Google lepiej radzi sobie wizytówka</strong> — więcej treści to więcej zapytań, na które możesz się pokazać.',
             '<strong>Landing sprawdza się</strong> przy reklamach, jednej usłudze i starcie z małym budżetem.',
-            '<strong>Landing możesz później rozbudować</strong> — dodatkowa podstrona kosztuje u mnie 300–500 zł.',
+            '<strong>Landing możesz później rozbudować</strong> — o kolejne sekcje i podstrony, wycenione z góry.',
         ],
         'body': '''
 ## Czym jest landing page
@@ -289,7 +299,6 @@ W moim pakiecie Wizytówka dostajesz indywidualny projekt graficzny, animacje pr
 | Cel | jedna akcja: telefon, zapis, zamówienie | przedstawia całą firmę i ofertę |
 | Zawartość | nagłówek, oferta, kontakt | oferta, o firmie, cennik, FAQ, galeria, mapa |
 | Projekt graficzny | szablon w kolorach Twojej marki | indywidualny |
-| Cena u mnie | od 2 000 zł | od 3 000 zł |
 | Czas realizacji | 4–8 dni | 7–16 dni |
 | Poprawki w cenie | 2 rundy | 5 rund |
 | Widoczność w Google | podstawowa | szersza: SEO i Wizytówka Google |
@@ -322,13 +331,13 @@ Jeśli chcesz sprzedawać online — produkty albo bony podarunkowe — i przyjm
 2. **Skąd mają przychodzić klienci?** Z reklam — landing. Z Google — wizytówka.
 3. **Ile masz czasu i budżetu?** Mało — landing teraz, rozbudowa później. Więcej — od razu wizytówka.
 
-Nadal nie wiesz? Napisz — doradzę po krótkiej rozmowie, a darmowy projekt pokaże Ci, jak to będzie wyglądać. Ceny i dodatki sprawdzisz w [cenniku](cennik#www), a pełny obraz kosztów w artykule [ile kosztuje strona internetowa](ile-kosztuje-strona-internetowa).
+Nadal nie wiesz? Napisz — doradzę po krótkiej rozmowie, a darmowy projekt pokaże Ci, jak to będzie wyglądać. Pakiety i dodatki sprawdzisz w zakładce [Wycena](cennik#www), a pełny obraz kosztów w artykule [ile kosztuje strona internetowa](ile-kosztuje-strona-internetowa).
 ''',
         'faq': [
             ('Czy landing page jest dobry do SEO?', 'Pod jedno konkretne hasło — tak. Ale strona z jednym tematem pokaże się na mniej zapytań niż rozbudowana strona firmowa. Jeśli zależy Ci na klientach z Google, lepsza będzie strona wizytówka.'),
-            ('Czy z landing page można później zrobić stronę wizytówkę?', 'Tak. Landing możesz rozbudować o kolejne sekcje i podstrony — u mnie dodatkowa podstrona kosztuje 300–500 zł. Indywidualny projekt, galeria, mapa i SEO z Wizytówką Google to już zakres pakietu Wizytówka.'),
+            ('Czy z landing page można później zrobić stronę wizytówkę?', 'Tak. Landing możesz rozbudować o kolejne sekcje i podstrony — każdą wyceniam z góry, zanim zaczniemy. Indywidualny projekt, galeria, mapa i SEO z Wizytówką Google to już zakres pakietu Wizytówka.'),
             ('Czym różni się strona wizytówka od Wizytówki Google?', 'Strona wizytówka to Twoja własna strona internetowa. Wizytówka Google (Profil Firmy w Google) to darmowy wpis w Mapach i wynikach Google. Najlepiej mieć jedno i drugie.'),
-            ('Ile kosztuje landing page, a ile strona wizytówka?', 'U mnie landing page kosztuje od 2 000 zł (4–8 dni), a strona wizytówka od 3 000 zł (7–16 dni). Do tego domena, hosting i SSL: 200 zł w pierwszym roku, potem 500 zł rocznie.'),
+            ('Ile kosztuje landing page, a ile strona wizytówka?', 'Każdą stronę wyceniam indywidualnie, więc kwota zależy od zakresu, a nie od samej nazwy pakietu. Landing jest zwykle tańszy i szybszy (4–8 dni), wizytówka to więcej pracy (7–16 dni). Wycena jest bezpłatna, a koszt domeny i hostingu znasz z góry.'),
         ],
         'related': ['ile-kosztuje-strona-internetowa', 'jak-zalozyc-wizytowke-google'],
         'curtain': ('Landing czy wizytówka', 'Którą stronę wybrać dla swojej firmy.', 'Landing or showcase', 'Which website fits your business.'),
@@ -521,6 +530,7 @@ Widoczność w Google to nie jeden trik, tylko trzy rzeczy, które działają ra
     {
         'slug': 'strona-internetowa-dla-restauracji',
         'data': DZIS,
+        'zmiana': WYCENA,
         'title': 'Strona internetowa dla restauracji — co musi mieć? | Marcel GraphicSite',
         'og_title': 'Strona internetowa dla restauracji — co musi mieć?',
         'description': 'Menu jako tekst, godziny, mapa, zamówienia i rezerwacje, prawdziwe zdjęcia. 10 rzeczy, które musi mieć strona restauracji, żeby goście wybierali Ciebie.',
@@ -604,13 +614,13 @@ Tytuł strony z rodzajem kuchni i miastem (np. „Burgery Sieradz — nazwa Twoj
 
 ## Ile kosztuje strona internetowa dla restauracji
 
-| Potrzeba | Pakiet | Cena u mnie | Czas |
-|---|---|---|---|
-| Menu, godziny, adres i kontakt (food truck, mały lokal) | Landing page | od 2 000 zł | 4–8 dni |
-| Pełna strona: menu, galeria, formularz rezerwacji, o lokalu, SEO | Strona wizytówka | od 3 000 zł | 7–16 dni |
-| Zamówienia i płatności online na stronie | Strona + sklep | wycena indywidualna | po ustaleniu zakresu |
+| Potrzeba | Pakiet | Czas |
+|---|---|---|
+| Menu, godziny, adres i kontakt (food truck, mały lokal) | Landing page | 4–8 dni |
+| Pełna strona: menu, galeria, formularz rezerwacji, o lokalu, SEO | Strona wizytówka | 7–16 dni |
+| Zamówienia i płatności online na stronie | Strona + sklep | po ustaleniu zakresu |
 
-Zanim zapłacisz złotówkę, dostajesz darmowy projekt ze znakiem wodnym — najczęściej na zdjęciach z Twojego Facebooka lub Instagrama. Więcej o cenach: [ile kosztuje strona internetowa](ile-kosztuje-strona-internetowa).
+Każdą stronę wyceniam indywidualnie i bezpłatnie — kwota zależy od zakresu, a nie od branży. Zanim zapłacisz złotówkę, dostajesz darmowy projekt ze znakiem wodnym — najczęściej na zdjęciach z Twojego Facebooka lub Instagrama. Ogólne widełki cen znajdziesz w artykule [ile kosztuje strona internetowa](ile-kosztuje-strona-internetowa).
 
 ## Przykład: koncept ŻAR Burger
 
@@ -619,7 +629,7 @@ Jak to wygląda w praktyce, pokazuję w koncepcie [ŻAR Burger](zar-burger) — 
         'faq': [
             ('Czy menu w PDF wystarczy na stronie restauracji?', 'Lepiej nie. PDF trzeba powiększać na telefonie, długo się ładuje, a Google i asystenci AI nie zawsze odczytają jego treść. Menu jako zwykły tekst na stronie jest wygodniejsze dla gości i lepsze dla widoczności.'),
             ('Czy restauracja może przyjmować zamówienia online bez Pyszne.pl?', 'Tak — przez własny system zamówień na stronie, bez prowizji dla pośrednika. To większa praca na start (koszyk, płatności), dlatego wyceniam ją indywidualnie. Wiele lokali łączy własne zamówienia z platformami.'),
-            ('Ile kosztuje strona internetowa dla restauracji?', 'U mnie landing page z menu, godzinami i adresem kosztuje od 2 000 zł, a pełna strona wizytówka z galerią i formularzem rezerwacji od 3 000 zł. Zamówienia z płatnościami online wyceniam indywidualnie.'),
+            ('Ile kosztuje strona internetowa dla restauracji?', 'Wyceniam indywidualnie — kwota zależy od zakresu: czy wystarczy menu z godzinami i adresem (landing page), czy potrzebujesz pełnej strony z galerią i rezerwacjami (strona wizytówka), czy zamówień z płatnościami online. Wycena jest bezpłatna, a na start dostajesz darmowy projekt.'),
             ('Ile trwa zrobienie strony dla restauracji?', 'Landing page 4–8 dni, strona wizytówka 7–16 dni. Jeśli zależy Ci na czasie, ekspresowa realizacja skraca termin nawet o połowę.'),
             ('Czy potrzebuję profesjonalnej sesji zdjęciowej?', 'Na start nie. Dobre zdjęcia z telefonu przy dziennym świetle wystarczą — na nich przygotuję też darmowy projekt strony. Sesję zawsze można dołożyć później.'),
         ],
@@ -630,6 +640,7 @@ Jak to wygląda w praktyce, pokazuję w koncepcie [ŻAR Burger](zar-burger) — 
     {
         'slug': 'strona-internetowa-dla-salonu-urody',
         'data': DZIS,
+        'zmiana': WYCENA,
         'title': 'Strona internetowa dla salonu urody — co musi mieć? | Marcel GraphicSite',
         'og_title': 'Strona internetowa dla salonu urody — co musi mieć?',
         'description': 'Cennik, rezerwacja online, galeria metamorfoz, zespół i opinie. Co musi mieć strona salonu urody, fryzjera lub barbera, żeby klienci rezerwowali u Ciebie.',
@@ -707,11 +718,13 @@ Kolory, zdjęcia i klimat strony powinny zgadzać się z tym, co klientka zobacz
 
 ## Ile kosztuje strona salonu urody
 
-| Potrzeba | Pakiet | Cena u mnie | Czas |
-|---|---|---|---|
-| Cennik, przycisk rezerwacji, kontakt i adres | Landing page | od 2 000 zł | 4–8 dni |
-| Pełna strona: galeria, zespół, cennik, przycisk rezerwacji, SEO | Strona wizytówka | od 3 000 zł | 7–16 dni |
-| Sprzedaż bonów i produktów online | Strona + sklep | wycena indywidualna | po ustaleniu zakresu |
+| Potrzeba | Pakiet | Czas |
+|---|---|---|
+| Cennik, przycisk rezerwacji, kontakt i adres | Landing page | 4–8 dni |
+| Pełna strona: galeria, zespół, cennik, przycisk rezerwacji, SEO | Strona wizytówka | 7–16 dni |
+| Sprzedaż bonów i produktów online | Strona + sklep | po ustaleniu zakresu |
+
+Każdą stronę wyceniam indywidualnie i bezpłatnie — kwota zależy od zakresu, a nie od branży.
 
 Jak może wyglądać strona Twojego salonu, pokazuję w koncepcie [Luxe Salon](luxe-salon): spokojny klimat japandi, cennik usług, przycisk „Zarezerwuj” przy każdej usłudze, galeria metamorfoz i tryb ciemny. Zanim cokolwiek zapłacisz, przygotuję darmowy projekt na zdjęciach z Twojego Instagrama.
 ''',
@@ -719,7 +732,7 @@ Jak może wyglądać strona Twojego salonu, pokazuję w koncepcie [Luxe Salon](l
             ('Czy salon potrzebuje strony, skoro ma Booksy i Instagrama?', 'Tak. Instagram pokazuje klimat, Booksy przyjmuje rezerwacje, a strona zbiera wszystko w jednym miejscu i pokazuje Cię w Google — tam, gdzie szuka wiele nowych klientek. Booksy podepniesz do strony przyciskiem „Umów wizytę”.'),
             ('Jak połączyć stronę z Booksy?', 'Najprościej przyciskiem „Umów wizytę”, który prowadzi do Twojego profilu w Booksy. Klientka klika i od razu wybiera termin.'),
             ('Czy mogę pokazywać na stronie zdjęcia klientek?', 'Tylko za ich zgodą — najlepiej pisemną, bo tego wymaga prawo do wizerunku (art. 81 prawa autorskiego). Bezpieczna alternatywa to zdjęcia samych efektów, bez twarzy.'),
-            ('Ile kosztuje strona internetowa dla salonu urody?', 'U mnie landing page z cennikiem i przyciskiem rezerwacji kosztuje od 2 000 zł, a pełna strona z galerią i zespołem od 3 000 zł. Sprzedaż bonów online wyceniam indywidualnie.'),
+            ('Ile kosztuje strona internetowa dla salonu urody?', 'Wyceniam indywidualnie — kwota zależy od zakresu: landing page z cennikiem i przyciskiem rezerwacji, pełna strona z galerią i zespołem albo sprzedaż bonów online. Wycena jest bezpłatna, a na start dostajesz darmowy projekt na zdjęciach z Twojego Instagrama.'),
             ('Ile trwa zrobienie strony dla salonu?', 'Landing page 4–8 dni, strona wizytówka 7–16 dni. Na start dostajesz darmowy projekt ze znakiem wodnym.'),
         ],
         'related': ['jak-zdobyc-opinie-google', 'landing-page-czy-strona-wizytowka'],

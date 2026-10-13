@@ -2,33 +2,35 @@
 """Treść stron usług (źródło). Strony HTML buduje zbuduj_poradnik.py.
 
 Każda strona: odpowiedź na górze („W skrócie”), treść w Markdown, FAQ.
-[[blok:www]], [[blok:nfc]], [[blok:social]] = karty z cenami skopiowane z cennik.html przy budowaniu,
-więc ceny zmieniasz tylko w cenniku (i w tekstach poniżej, jeśli je wymieniasz).
+[[blok:www]], [[blok:nfc]], [[blok:social]] = karty pakietów skopiowane z cennik.html przy budowaniu,
+więc pakiety zmieniasz tylko tam. Cen usług nie podajemy — wszędzie wycena indywidualna i bezpłatna.
 Bez zmyślonych statystyk i obietnic, których nie ma w ofercie.
 """
 
 DZIS = '2026-10-06'
+WYCENA = '2026-10-13'  # ceny usług zamienione na wycenę indywidualną
 B = 'https://marcelgraphicsite.pl/'
 
 USLUGI = [
     {
         'slug': 'strony-internetowe-sieradz',
         'data': DZIS,
+        'zmiana': WYCENA,
         'title': 'Strony internetowe Sieradz — tworzenie stron www dla firm | Marcel GraphicSite',
         'og_title': 'Strony internetowe w Sieradzu — Marcel Struszczak',
-        'description': 'Tworzę strony internetowe dla firm z Sieradza i okolic: od 2 000 zł, gotowe w 4–16 dni. Spotkam się na miejscu i pokażę darmowy projekt, zanim zapłacisz.',
+        'description': 'Tworzę strony internetowe dla firm z Sieradza i okolic: gotowe w 4–16 dni, z bezpłatną wyceną. Spotkam się na miejscu i pokażę darmowy projekt, zanim zapłacisz.',
         'h1': 'Strony internetowe <em>w Sieradzu.</em>',
         'crumb': 'Sieradz',
         'name': 'Strony internetowe Sieradz',
         'lead': 'Jestem z Sieradza i projektuję strony dla lokalnych firm — restauracji, salonów, warsztatów i usługodawców. Spotkamy się u Ciebie, pokażę darmowy projekt na laptopie, a Ty zdecydujesz, czy idziemy dalej.',
         'side': ['Sieradz i okolice', 'Spotkanie na miejscu', 'Darmowy projekt na start'],
         'og_kicker': 'Sieradz',
-        'og_sub': 'Od 2 000 zł · gotowe w 4–16 dni · spotkanie na miejscu',
+        'og_sub': 'Bezpłatna wycena · gotowe w 4–16 dni · spotkanie na miejscu',
         'keywords': ['strony internetowe Sieradz', 'tworzenie stron internetowych Sieradz', 'projektowanie stron www Sieradz',
                      'strona www dla firmy Sieradz', 'strony internetowe Zduńska Wola', 'strony internetowe powiat sieradzki'],
         'tldr': [
             '<strong>Kto:</strong> Marcel GraphicSite, czyli Marcel Struszczak — projektant stron z Sieradza. Pracujesz bezpośrednio ze mną, bez pośredników.',
-            '<strong>Ceny:</strong> landing page od 2 000 zł, strona wizytówka od 3 000 zł, sklep — wycena indywidualna. Domena, hosting i SSL: 200 zł w pierwszym roku, potem 500 zł rocznie.',
+            '<strong>Wycena:</strong> indywidualna i bezpłatna — po rozmowie albo spotkaniu dostajesz jedną konkretną kwotę. Koszt domeny, hostingu i SSL znasz z góry, bo jest w wycenie.',
             '<strong>Czas:</strong> landing 4–8 dni, wizytówka 7–16 dni.',
             '<strong>Na start:</strong> darmowy projekt ze znakiem wodnym. Płacisz dopiero, gdy chcesz iść dalej — możliwe raty.',
             '<strong>Gdzie:</strong> Sieradz i okolice — spotkamy się u Ciebie. Zduńska Wola, Łask, Wieluń — po umówieniu albo zdalnie; reszta Polski — online.',
@@ -74,13 +76,15 @@ Robię też strony dla firm ze **Zduńskiej Woli, Szadku, Łasku, Wielunia, Podd
 
 ## Ile kosztuje strona internetowa w Sieradzu
 
-| Pakiet | Cena | Czas | Dla kogo |
-|---|---|---|---|
-| Landing page | od 2 000 zł | 4–8 dni | jedna główna usługa, szybki start, mały budżet |
-| Strona wizytówka | od 3 000 zł | 7–16 dni | firma z kilkoma usługami, która chce klientów z Google |
-| Strona + sklep | wycena indywidualna | po ustaleniu zakresu | sprzedaż online, płatności BLIK i kartą |
+Każdą stronę wyceniam indywidualnie — kwota zależy od liczby podstron, funkcji i tego, czy masz już teksty i zdjęcia. Wycena jest bezpłatna: po rozmowie albo spotkaniu dostajesz jedną konkretną kwotę, razem z kosztem domeny, hostingu i SSL. Zasady są takie same dla firm z Sieradza i z całej Polski, a spotkanie na miejscu nic nie kosztuje.
 
-Do tego domena, hosting i SSL: **200 zł za pierwszy rok, potem 500 zł rocznie**. Ceny są takie same dla firm z Sieradza i z całej Polski, a spotkanie na miejscu nic nie kosztuje. Szczegóły rozpisałem w artykule [ile kosztuje strona internetowa](ile-kosztuje-strona-internetowa), a wstępną kwotę policzysz w [kalkulatorze wyceny](cennik#kalkulator). Nie wiesz, który pakiet wybrać? Przeczytaj [landing page czy strona wizytówka](landing-page-czy-strona-wizytowka).
+| Pakiet | Czas | Dla kogo |
+|---|---|---|
+| Landing page | 4–8 dni | jedna główna usługa, szybki start |
+| Strona wizytówka | 7–16 dni | firma z kilkoma usługami, która chce klientów z Google |
+| Strona + sklep | po ustaleniu zakresu | sprzedaż online, płatności BLIK i kartą |
+
+Od czego zależy cena strony i jakie są widełki na rynku, rozpisałem w artykule [ile kosztuje strona internetowa](ile-kosztuje-strona-internetowa), a zapytanie złożysz w 30 sekund w [formularzu wyceny](cennik#kalkulator). Nie wiesz, który pakiet wybrać? Przeczytaj [landing page czy strona wizytówka](landing-page-czy-strona-wizytowka).
 
 ## Strona to połowa sukcesu. Druga połowa to Wizytówka Google
 
@@ -91,10 +95,10 @@ W lokalnych wynikach Google najwięcej uwagi zbiera mapka z firmami — czyli **
 - Gdzie dziś tracisz klientów — [test widoczności w Google w 10 minut](czy-twoja-firma-jest-widoczna-w-google).
 ''',
         'faq': [
-            ('Ile kosztuje strona internetowa w Sieradzu?', 'Landing page od 2 000 zł, strona wizytówka od 3 000 zł, a sklep wyceniam indywidualnie. Do tego domena, hosting i SSL: 200 zł w pierwszym roku, potem 500 zł rocznie. Ceny są takie same jak dla firm z reszty Polski.'),
+            ('Ile kosztuje strona internetowa w Sieradzu?', 'Każdą stronę wyceniam indywidualnie — kwota zależy od liczby podstron, funkcji i materiałów. Wycena jest bezpłatna: po rozmowie albo spotkaniu dostajesz jedną konkretną kwotę, razem z kosztem domeny, hostingu i SSL. Zasady są takie same jak dla firm z reszty Polski.'),
             ('Czy możemy spotkać się osobiście?', 'Tak. W Sieradzu i okolicy przyjadę do Twojej firmy i pokażę projekt na laptopie. Jeśli wolisz, wszystko załatwimy przez telefon, WhatsApp albo e-mail.'),
-            ('Czy robisz strony dla firm ze Zduńskiej Woli, Łasku albo Wielunia?', 'Tak. Pracuję z firmami z całego regionu — spotykamy się po umówieniu albo działamy zdalnie. Ceny i terminy są takie same jak w Sieradzu.'),
-            ('Ile trwa zrobienie strony internetowej?', 'Landing page 4–8 dni, strona wizytówka 7–16 dni. Ekspresowa realizacja skraca czas nawet o połowę (+25–50% ceny pakietu).'),
+            ('Czy robisz strony dla firm ze Zduńskiej Woli, Łasku albo Wielunia?', 'Tak. Pracuję z firmami z całego regionu — spotykamy się po umówieniu albo działamy zdalnie. Zasady wyceny i terminy są takie same jak w Sieradzu.'),
+            ('Ile trwa zrobienie strony internetowej?', 'Landing page 4–8 dni, strona wizytówka 7–16 dni. Ekspresowa realizacja skraca czas nawet o połowę — uwzględnię ją w wycenie.'),
             ('Kiedy moja nowa strona pojawi się w Google?', 'Zwykle od kilku dni do kilku tygodni od publikacji. Wysokie pozycje na popularne hasła to praca na miesiące — pomagają w niej Wizytówka Google, opinie i konkretna treść na stronie.'),
             ('Czy pomożesz z Wizytówką Google?', 'Tak. W pakiecie Wizytówka podpinam stronę do Twojego Profilu Firmy w Google i pomagam go uzupełnić. Jeśli wizytówki jeszcze nie masz, przeprowadzę Cię przez jej założenie.'),
             ('Nie mam zdjęć ani tekstów. Co teraz?', 'Na start wystarczą zdjęcia z Twojego Facebooka lub Instagrama — na nich przygotuję też darmowy projekt. Teksty ułożymy razem.'),
@@ -114,33 +118,32 @@ W lokalnych wynikach Google najwięcej uwagi zbiera mapka z firmami — czyli **
                 {'@type': 'City', 'name': 'Szadek'}, {'@type': 'City', 'name': 'Poddębice'}, {'@type': 'City', 'name': 'Turek'},
                 {'@type': 'City', 'name': 'Kalisz'}, {'@type': 'City', 'name': 'Łódź'}],
             'offers': [
-                {'@type': 'Offer', 'name': 'Landing page', 'description': 'Jedna strona z ofertą i kontaktem, realizacja 4–8 dni.',
-                 'priceSpecification': {'@type': 'PriceSpecification', 'minPrice': 2000, 'priceCurrency': 'PLN'}, 'url': B + 'cennik#www'},
-                {'@type': 'Offer', 'name': 'Strona wizytówka', 'description': 'Rozbudowana strona firmowa z galerią, mapą, SEO i Wizytówką Google, realizacja 7–16 dni.',
-                 'priceSpecification': {'@type': 'PriceSpecification', 'minPrice': 3000, 'priceCurrency': 'PLN'}, 'url': B + 'cennik#www'},
-                {'@type': 'Offer', 'name': 'Strona + sklep internetowy', 'description': 'Katalog, koszyk i płatności online — wycena indywidualna.', 'url': B + 'cennik#www'},
+                {'@type': 'Offer', 'name': 'Landing page', 'description': 'Jedna strona z ofertą i kontaktem, realizacja 4–8 dni. Wycena indywidualna.', 'url': B + 'cennik#www'},
+                {'@type': 'Offer', 'name': 'Strona wizytówka', 'description': 'Rozbudowana strona firmowa z galerią, mapą, SEO i Wizytówką Google, realizacja 7–16 dni. Wycena indywidualna.', 'url': B + 'cennik#www'},
+                {'@type': 'Offer', 'name': 'Strona + sklep internetowy', 'description': 'Katalog, koszyk i płatności online. Wycena indywidualna po rozmowie o zakresie.', 'url': B + 'cennik#www'},
             ],
         },
     },
     {
         'slug': 'karty-nfc-opinie-google',
         'data': DZIS,
-        'title': 'Karty NFC do opinii Google — od 60 zł, wysyłka w Polsce | Marcel GraphicSite',
-        'og_title': 'Karty NFC do opinii Google — od 60 zł',
-        'description': 'Karta NFC z podstawką 60 zł, duża naklejka 80 zł. Programuję je pod Twój profil w Google: klient przykłada telefon i od razu wystawia opinię. Wysyłka w Polsce.',
+        'zmiana': WYCENA,
+        'title': 'Karty NFC do opinii Google — wysyłka w całej Polsce | Marcel GraphicSite',
+        'og_title': 'Karty NFC do opinii Google',
+        'description': 'Karty i naklejki NFC programowane pod Twój profil w Google: klient przykłada telefon i od razu wystawia opinię. Wycena zależna od liczby sztuk, wysyłka w całej Polsce.',
         'h1': 'Karty NFC do opinii <em>Google.</em>',
         'crumb': 'Karty NFC',
         'name': 'Karty NFC do opinii Google',
         'lead': 'Klient przykłada telefon do karty i od razu widzi okno opinii Twojej firmy. Bez szukania, bez aplikacji, bez przepisywania linków. Każdą kartę programuję osobiście pod Twój profil.',
-        'side': ['Karta 60 zł · naklejka 80 zł', 'Wysyłka w całej Polsce', 'Montaż: Sieradz i okolice'],
+        'side': ['Wycena wg liczby sztuk', 'Wysyłka w całej Polsce', 'Montaż: Sieradz i okolice'],
         'og_kicker': 'Opinie Google',
-        'og_sub': 'Karta z podstawką 60 zł · naklejka 80 zł · wysyłka w Polsce',
+        'og_sub': 'Karta z podstawką · duża naklejka · wysyłka w całej Polsce',
         'keywords': ['karta nfc opinie google', 'karty nfc do opinii google', 'naklejka nfc opinie google', 'karta do opinii google',
-                     'jak zbierać opinie google', 'nfc opinie google cena'],
+                     'jak zbierać opinie google'],
         'blok_gora': 'nfc',
         'tldr': [
             '<strong>Jak działa:</strong> w karcie jest chip NFC z linkiem do opinii Twojej firmy. Klient przykłada telefon i od razu widzi okno z gwiazdkami.',
-            '<strong>Ceny:</strong> karta NFC z podstawką 60 zł, duża naklejka NFC 80 zł. Każdą programuję pod Twój Profil Firmy w Google.',
+            '<strong>Wycena:</strong> zależy od liczby kart i naklejek — napisz, ile sztuk potrzebujesz, a podam konkretną kwotę. Każdą programuję pod Twój Profil Firmy w Google.',
             '<strong>Telefony:</strong> iPhone XR/XS i nowsze oraz Android z włączonym NFC — bez żadnej aplikacji.',
             '<strong>Dostawa:</strong> wysyłka w całej Polsce albo montaż na miejscu w Sieradzu i okolicy.',
             '<strong>Uwaga:</strong> NFC nie działa na metalu — doradzę, gdzie postawić kartę, żeby działała za każdym razem.',
@@ -160,7 +163,6 @@ Karta nie ma baterii i nie potrzebuje prądu ani internetu. Internet musi mieć 
 
 | | Karta NFC z podstawką | Duża naklejka NFC |
 |---|---|---|
-| Cena | 60 zł | 80 zł |
 | Gdzie | lada, kasa, stolik, recepcja | drzwi, witryna, lada |
 | Zalety | podasz ją klientowi do ręki, łatwo ją przestawić | widoczna z daleka, nie zginie |
 | Programowanie | pod Twój profil w Google | pod Twój profil w Google |
@@ -182,7 +184,7 @@ Jeśli masz jedno miejsce obsługi, wystarczy karta przy kasie. Jeśli klienci c
 
 ## Jak zamówić
 
-1. **Napisz albo zadzwoń** — podaj nazwę firmy z Google i liczbę kart lub naklejek.
+1. **Napisz albo zadzwoń** — podaj nazwę firmy z Google i liczbę kart lub naklejek, a odeślę konkretną wycenę.
 2. **Programuję każdą sztukę** pod link do opinii Twojej firmy i sprawdzam, czy otwiera właściwe okno.
 3. **Wysyłam w całej Polsce** albo przywożę i montuję na miejscu w Sieradzu i okolicy.
 
@@ -201,7 +203,7 @@ Więcej sposobów znajdziesz w artykule [jak zdobyć więcej opinii w Google](ja
             ('Czy karta NFC działa na iPhonie?', 'Tak — iPhone XR/XS i nowsze odczytują kartę bez aplikacji; link otwiera się po stuknięciu powiadomienia. Na Androidzie wystarczy włączone NFC. Dla telefonów bez NFC warto mieć obok kod QR.'),
             ('Czy karta potrzebuje baterii albo internetu?', 'Nie. Karta działa bez baterii i bez prądu. Internet musi mieć tylko telefon klienta, żeby otworzyć stronę z opinią.'),
             ('Czy karta zadziała na metalowej ladzie?', 'Nie bezpośrednio na metalu — metal blokuje sygnał NFC. Postaw kartę na podstawce albo przyklej naklejkę na szybę lub drewno. Doradzę, gdzie ją umieścić.'),
-            ('Ile kosztuje karta NFC do opinii Google?', 'Karta NFC z podstawką kosztuje 60 zł, a duża naklejka NFC 80 zł za sztukę. Każdą programuję pod Twój Profil Firmy w Google i wysyłam w całej Polsce.'),
+            ('Ile kosztuje karta NFC do opinii Google?', 'Wyceniam indywidualnie — kwota zależy od liczby kart i naklejek. Napisz, ile sztuk potrzebujesz, a podam konkretną kwotę. Każdą programuję pod Twój Profil Firmy w Google i wysyłam w całej Polsce.'),
             ('Czy mogę zamówić kilka kart do jednej firmy?', 'Tak. Każdą kartę i naklejkę programuję pod ten sam profil — możesz rozmieścić je przy kasie, na stolikach i na drzwiach.'),
             ('Czy zbieranie opinii przez kartę NFC jest zgodne z zasadami Google?', 'Tak, o ile nie dajesz nic w zamian za opinię i prosisz o nią wszystkich klientów, a nie tylko zadowolonych. Karta tylko skraca drogę do okna opinii.'),
         ],
@@ -214,36 +216,33 @@ Więcej sposobów znajdziesz w artykule [jak zdobyć więcej opinii w Google](ja
             'description': 'Karty i naklejki NFC programowane pod Profil Firmy w Google: klient przykłada telefon i od razu wystawia opinię. Wysyłka w całej Polsce, montaż w Sieradzu i okolicy.',
             'areaServed': {'@type': 'Country', 'name': 'Polska'},
             'offers': [
-                {'@type': 'Offer', 'name': 'Karta NFC do opinii Google z podstawką', 'price': 60, 'priceCurrency': 'PLN', 'availability': 'https://schema.org/InStock', 'url': B + 'karty-nfc-opinie-google'},
-                {'@type': 'Offer', 'name': 'Duża naklejka NFC do opinii Google', 'price': 80, 'priceCurrency': 'PLN', 'availability': 'https://schema.org/InStock', 'url': B + 'karty-nfc-opinie-google'},
+                {'@type': 'Offer', 'name': 'Karta NFC do opinii Google z podstawką', 'description': 'Format karty płatniczej, z podstawką, zaprogramowana pod Profil Firmy w Google. Wycena zależna od liczby sztuk.', 'url': B + 'karty-nfc-opinie-google'},
+                {'@type': 'Offer', 'name': 'Duża naklejka NFC do opinii Google', 'description': 'Na drzwi, witrynę lub ladę, zaprogramowana pod Profil Firmy w Google. Wycena zależna od liczby sztuk.', 'url': B + 'karty-nfc-opinie-google'},
             ],
         },
-        'produkty': [
-            ('karta', 'Karta NFC do opinii Google z podstawką', 'Karta NFC w formacie karty płatniczej, z podstawką, zaprogramowana pod Profil Firmy w Google — klient przykłada telefon i od razu wystawia opinię.', 60),
-            ('naklejka', 'Duża naklejka NFC do opinii Google', 'Duża naklejka NFC na drzwi, witrynę lub ladę, zaprogramowana pod Profil Firmy w Google.', 80),
-        ],
     },
     {
         'slug': 'prowadzenie-social-media',
         'data': DZIS,
-        'title': 'Prowadzenie social mediów dla firm — od 600 zł / mies. | Marcel GraphicSite',
+        'zmiana': WYCENA,
+        'title': 'Prowadzenie social mediów dla firm — Facebook i Instagram | Marcel GraphicSite',
         'og_title': 'Prowadzenie social mediów dla firm',
-        'description': 'Facebook i Instagram dla lokalnych firm: 8 lub 12–13 postów i karuzel miesięcznie w stylu Twojej marki. Od 600 zł / mies., bez umów na lata.',
+        'description': 'Facebook i Instagram dla lokalnych firm: 8 lub 12–13 postów i karuzel miesięcznie w stylu Twojej marki. Wycena indywidualna, bez umów na lata.',
         'h1': 'Prowadzenie social mediów <em>dla firm.</em>',
         'crumb': 'Social media',
         'name': 'Prowadzenie social mediów',
         'lead': 'Profil, który wygląda jak marka, a nie jak przypadek. Przygotowuję i publikuję posty oraz karuzele na Facebooku i Instagramie — Ty prowadzisz firmę, ja profil.',
-        'side': ['Facebook · Instagram', 'Od 600 zł / mies.', 'Bez umów na lata'],
+        'side': ['Facebook · Instagram', 'Wycena indywidualna', 'Bez umów na lata'],
         'og_kicker': 'Social media',
-        'og_sub': '8 lub 12–13 postów miesięcznie · od 600 zł / mies.',
+        'og_sub': '8 lub 12–13 postów miesięcznie · bez umów na lata',
         'keywords': ['prowadzenie social media', 'prowadzenie facebooka dla firm', 'prowadzenie instagrama dla firm',
-                     'social media dla firm cennik', 'prowadzenie social media Sieradz', 'ile kosztuje prowadzenie social media'],
+                     'prowadzenie social media Sieradz', 'ile kosztuje prowadzenie social media'],
         'blok_gora': 'social',
         'tldr': [
-            '<strong>Pakiet Start:</strong> 8 postów i karuzel miesięcznie (ok. 2 w tygodniu) — 600 zł za Facebooka, 800 zł za Facebooka i Instagrama.',
-            '<strong>Pakiet Pro:</strong> 12–13 postów i karuzel miesięcznie (ok. 3 w tygodniu) — 800 zł za Facebooka, 1 100 zł za Facebooka i Instagrama.',
-            '<strong>W cenie:</strong> grafiki w stylu Twojej marki, opisy i hashtagi pod Twoją branżę, publikacja według harmonogramu.',
-            '<strong>Bez umów na lata:</strong> rozliczamy się co miesiąc.',
+            '<strong>Pakiet Start:</strong> 8 postów i karuzel miesięcznie (ok. 2 w tygodniu) — na Facebooku albo na Facebooku i Instagramie.',
+            '<strong>Pakiet Pro:</strong> 12–13 postów i karuzel miesięcznie (ok. 3 w tygodniu) — na Facebooku albo na Facebooku i Instagramie.',
+            '<strong>W pakiecie:</strong> grafiki w stylu Twojej marki, opisy i hashtagi pod Twoją branżę, publikacja według harmonogramu.',
+            '<strong>Wycena:</strong> indywidualna i bezpłatna — zależy od pakietu i liczby platform. Rozliczamy się co miesiąc, bez umów na lata.',
             '<strong>Dla kogo:</strong> lokalne firmy, które chcą regularnie przypominać się klientom, ale nie mają na to czasu.',
         ],
         'body': '''
@@ -268,9 +267,7 @@ Pakiety obejmują posty graficzne i karuzele. Rozliczamy się co miesiąc — be
 | | Start | Pro |
 |---|---|---|
 | Postów i karuzel w miesiącu | 8 (ok. 2 w tygodniu) | 12–13 (ok. 3 w tygodniu) |
-| Facebook | 600 zł / mies. | 800 zł / mies. |
-| Facebook + Instagram | 800 zł / mies. | 1 100 zł / mies. |
-| Cena za post (Facebook) | ok. 75 zł | ok. 62–67 zł |
+| Platformy | Facebook albo Facebook + Instagram | Facebook albo Facebook + Instagram |
 
 Jeśli w Twojej firmie co tydzień dzieje się coś nowego — nowe dania, promocje, sezonowe usługi — wybierz **Pro**. Jeśli chcesz po prostu regularnie przypominać się klientom, wystarczy **Start**.
 
@@ -286,10 +283,10 @@ Jeśli masz na to czas i oko do grafiki — rób sam. Jeśli wolisz zająć się
 
 ## Social media i strona — razem działają najlepiej
 
-Social media utrzymują relację z ludźmi, którzy już Cię znają. Nowych klientów z Google zdobywają strona internetowa i Wizytówka Google. Najlepiej działa duet: strona przyciąga, profil przypomina. Porównanie znajdziesz w artykule [strona internetowa czy Facebook](strona-internetowa-czy-facebook), a ceny stron w [cenniku](cennik#www). Jeśli działasz w Sieradzu lub okolicy, zobacz też [strony internetowe w Sieradzu](strony-internetowe-sieradz).
+Social media utrzymują relację z ludźmi, którzy już Cię znają. Nowych klientów z Google zdobywają strona internetowa i Wizytówka Google. Najlepiej działa duet: strona przyciąga, profil przypomina. Porównanie znajdziesz w artykule [strona internetowa czy Facebook](strona-internetowa-czy-facebook), a pakiety stron w zakładce [Wycena](cennik#www). Jeśli działasz w Sieradzu lub okolicy, zobacz też [strony internetowe w Sieradzu](strony-internetowe-sieradz).
 ''',
         'faq': [
-            ('Ile kosztuje prowadzenie social mediów?', 'Pakiet Start (8 postów i karuzel miesięcznie): 600 zł za Facebooka lub 800 zł za Facebooka i Instagrama. Pakiet Pro (12–13 postów i karuzel): 800 zł za Facebooka lub 1 100 zł za Facebooka i Instagrama.'),
+            ('Ile kosztuje prowadzenie social mediów?', 'Wyceniam indywidualnie — kwota zależy od pakietu (8 albo 12–13 postów i karuzel miesięcznie) i od tego, czy prowadzę sam Facebook, czy Facebook i Instagram. Wycena jest bezpłatna, a rozliczamy się co miesiąc, bez umów na lata.'),
             ('Czy muszę podpisać umowę na rok?', 'Nie. Rozliczamy się co miesiąc, bez umów na lata.'),
             ('Czy mogę zacząć od samego Facebooka?', 'Tak. Możesz zacząć od Facebooka, a Instagram dołożyć później — pakiet możesz zmienić od kolejnego miesiąca.'),
             ('Co, jeśli nie mam dobrych zdjęć?', 'Na start wystarczą zdjęcia, które już masz — z telefonu albo z Twojego profilu. Resztę dopracuję w grafikach.'),
@@ -305,14 +302,8 @@ Social media utrzymują relację z ludźmi, którzy już Cię znają. Nowych kli
             'description': 'Posty graficzne i karuzele na Facebooku i Instagramie w stylu marki: opisy, hashtagi i publikacja według harmonogramu. Rozliczenie miesięczne, bez umów na lata.',
             'areaServed': {'@type': 'Country', 'name': 'Polska'},
             'offers': [
-                {'@type': 'Offer', 'name': 'Pakiet Start — Facebook (8 postów miesięcznie)', 'price': 600, 'priceCurrency': 'PLN',
-                 'priceSpecification': {'@type': 'UnitPriceSpecification', 'price': 600, 'priceCurrency': 'PLN', 'unitText': 'miesiąc'}},
-                {'@type': 'Offer', 'name': 'Pakiet Start — Facebook i Instagram (8 postów miesięcznie)', 'price': 800, 'priceCurrency': 'PLN',
-                 'priceSpecification': {'@type': 'UnitPriceSpecification', 'price': 800, 'priceCurrency': 'PLN', 'unitText': 'miesiąc'}},
-                {'@type': 'Offer', 'name': 'Pakiet Pro — Facebook (12–13 postów miesięcznie)', 'price': 800, 'priceCurrency': 'PLN',
-                 'priceSpecification': {'@type': 'UnitPriceSpecification', 'price': 800, 'priceCurrency': 'PLN', 'unitText': 'miesiąc'}},
-                {'@type': 'Offer', 'name': 'Pakiet Pro — Facebook i Instagram (12–13 postów miesięcznie)', 'price': 1100, 'priceCurrency': 'PLN',
-                 'priceSpecification': {'@type': 'UnitPriceSpecification', 'price': 1100, 'priceCurrency': 'PLN', 'unitText': 'miesiąc'}},
+                {'@type': 'Offer', 'name': 'Pakiet Start — 8 postów i karuzel miesięcznie', 'description': 'Facebook albo Facebook i Instagram. Wycena indywidualna, rozliczenie miesięczne.', 'url': B + 'prowadzenie-social-media'},
+                {'@type': 'Offer', 'name': 'Pakiet Pro — 12–13 postów i karuzel miesięcznie', 'description': 'Facebook albo Facebook i Instagram. Wycena indywidualna, rozliczenie miesięczne.', 'url': B + 'prowadzenie-social-media'},
             ],
         },
     },

@@ -3,7 +3,7 @@
 
 Uruchom z katalogu repozytorium:  python3 _zrodla/zbuduj_llms.py
 FAQ bierze z danych strukturalnych cennik.html, artykuły z poradnik_tresc.py,
-więc AI widzi dokładnie te same ceny i odpowiedzi co klienci na stronie.
+więc AI widzi dokładnie te same pakiety i odpowiedzi co klienci na stronie (bez cen — wycena indywidualna).
 """
 import html
 import json
@@ -34,21 +34,22 @@ def abs_links(md):
 
 HEAD = '''# Marcel GraphicSite (Marcel Struszczak) — strony internetowe, social media i opinie Google
 
-> Marcel GraphicSite (marcelgraphicsite.pl) to marka Marcela Struszczaka — projektanta stron internetowych z Sieradza (woj. łódzkie). Projektuje strony internetowe dla firm, prowadzi profile firm na Facebooku i Instagramie oraz programuje karty i naklejki NFC do opinii Google. Pracuje bezpośrednio z klientem, bez pośredników: w Sieradzu i okolicy spotyka się na miejscu, z resztą Polski pracuje zdalnie. Na start bezpłatny projekt strony ze znakiem wodnym, płatność końcowa dopiero po akceptacji, możliwe raty.
+> Marcel GraphicSite (marcelgraphicsite.pl) to marka Marcela Struszczaka — projektanta stron internetowych z Sieradza (woj. łódzkie). Projektuje strony internetowe dla firm, prowadzi profile firm na Facebooku i Instagramie oraz programuje karty i naklejki NFC do opinii Google. Pracuje bezpośrednio z klientem, bez pośredników: w Sieradzu i okolicy spotyka się na miejscu, z resztą Polski pracuje zdalnie. Każdy projekt wycenia indywidualnie i bezpłatnie. Na start bezpłatny projekt strony ze znakiem wodnym, płatność końcowa dopiero po akceptacji, możliwe raty.
 
 Hasło: „Cyfrowy rozwój lokalnych firm”. Inne nazwy: Marcel Struszczak, marcel.graphicsite (Instagram). Branże: każda — szczególnie gastronomia, salony urody i firmy usługowe. Odpowiedź na zapytanie w ciągu 24 godzin. Strona jest po polsku (z przełącznikiem PL/EN); można pisać po angielsku.
 
 Obszar działania na miejscu: Sieradz i powiat sieradzki (Błaszki, Brąszewice, Brzeźnio, Burzenin, Goszczanów, Klonowa, Warta, Wróblew, Złoczew); po umówieniu także Zduńska Wola, Szadek, Łask, Wieluń, Poddębice, Turek, Kalisz i Łódź. Zdalnie: cała Polska.
 
-## Oferta i ceny (ceny startowe; stan na {data})
-- Landing page (jedna strona: oferta i kontakt): od 2 000 zł, realizacja 4–8 dni, 2 rundy poprawek
-- Strona wizytówka (rozbudowana strona firmowa: oferta, o firmie, cennik, FAQ, galeria, mapa, SEO i Wizytówka Google): od 3 000 zł, realizacja 7–16 dni, 5 rund poprawek
-- Strona + sklep internetowy (katalog, koszyk, płatności online BLIK i karta, szkolenie): wycena indywidualna
-- Dodatki: dodatkowa podstrona 300–500 zł; indywidualne grafiki i banery 200–400 zł; wersja językowa 400–600 zł; ekspresowa realizacja +25–50% ceny pakietu; drobna poprawka poza pakietem 80 zł; projekt ze znakiem wodnym bezpłatnie
-- Domena + hosting + SSL: 200 zł za pierwszy rok, 500 zł rocznie w kolejnych latach; domena rejestrowana na e-mail klienta (należy do klienta w 100%)
-- Social media, pakiet Start (8 postów i karuzel miesięcznie): 600 zł/mies. za Facebooka lub 800 zł/mies. za Facebooka i Instagram
-- Social media, pakiet Pro (12–13 postów i karuzel miesięcznie): 800 zł/mies. za Facebooka lub 1 100 zł/mies. za Facebooka i Instagram; bez długich umów, rozliczenie miesięczne
-- Karta NFC do opinii Google z podstawką: 60 zł/szt.; duża naklejka NFC: 80 zł/szt.; programowane pod profil firmy, wysyłka w całej Polsce
+## Oferta (stan na {data})
+Na stronie nie ma cennika z kwotami: każdy projekt Marcel wycenia indywidualnie i bezpłatnie. Najpierw krótka rozmowa i darmowy projekt ze znakiem wodnym, potem jedna konkretna kwota — stała i znana przed jakąkolwiek płatnością.
+- Landing page (jedna strona: oferta i kontakt): realizacja 4–8 dni, 2 rundy poprawek
+- Strona wizytówka (rozbudowana strona firmowa: oferta, o firmie, cennik, FAQ, galeria, mapa, SEO i Wizytówka Google): realizacja 7–16 dni, 5 rund poprawek
+- Strona + sklep internetowy (katalog, koszyk, płatności online BLIK i karta, szkolenie): termin po ustaleniu zakresu
+- Dodatki (w jednej wycenie z pakietem): dodatkowe podstrony, indywidualne grafiki i banery, wersje językowe, ekspresowa realizacja (do −50% czasu); projekt ze znakiem wodnym bezpłatnie
+- Domena + hosting + SSL: po stronie Marcela, koszt znany z góry (w wycenie strony), przypomnienie 30 dni przed odnowieniem; domena rejestrowana na e-mail klienta (należy do klienta w 100%)
+- Social media, pakiet Start: 8 postów i karuzel miesięcznie (Facebook albo Facebook i Instagram)
+- Social media, pakiet Pro: 12–13 postów i karuzel miesięcznie (Facebook albo Facebook i Instagram); bez długich umów, rozliczenie miesięczne
+- Karty NFC do opinii Google z podstawką i duże naklejki NFC: programowane pod profil firmy, wycena zależna od liczby sztuk, wysyłka w całej Polsce
 - Płatność: zaliczka od 40% po akceptacji projektu, reszta po odbiorze gotowej strony, możliwe raty
 
 ## Jak wygląda współpraca
@@ -64,7 +65,7 @@ LINKS = '''
 - [Start]({B}): oferta w skrócie
 - [Usługi]({B}uslugi): strony internetowe, social media, karty NFC do opinii Google, proces współpracy
 {uslugi}
-- [Cennik]({B}cennik): pakiety, dodatki, kalkulator wyceny, FAQ
+- [Wycena]({B}cennik): pakiety, dodatki, formularz zapytania o bezpłatną wycenę, FAQ
 - [Prace]({B}prace): trzy projekty koncepcyjne do przewinięcia na żywo (salon urody, barbershop, burgerownia) — koncepty, nie realizacje dla klientów
 - [O mnie]({B}o-mnie): kim jest Marcel i jak pracuje
 - [Kontakt]({B}kontakt): formularz (darmowy projekt), e-mail, telefon
@@ -92,7 +93,7 @@ def faq_from_pricing():
     j = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', s, re.S).group(1))
     for n in j['@graph']:
         if n.get('@type') == 'FAQPage':
-            return [(q['name'], q['acceptedAnswer']['text'].replace('w kalkulatorze wyżej', 'w kalkulatorze na stronie Cennik (' + B + 'cennik#kalkulator)')) for q in n['mainEntity']]
+            return [(q['name'], q['acceptedAnswer']['text']) for q in n['mainEntity']]
     return []
 
 

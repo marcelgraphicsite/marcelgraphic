@@ -9,13 +9,13 @@ Strona: https://marcelgraphicsite.pl/
 | `index.html` | Start: intro z nazwiskiem, hero, belka z hasłami, wybrane projekty (poziomy scroll), usługi w skrócie, liczby, CTA |
 | `prace.html` | Podgląd projektów na żywo (komputer / telefon) + opis każdego konceptu |
 | `uslugi.html` | „Trzy sposoby…” z animowanymi ilustracjami + współpraca krok po kroku |
-| `cennik.html` | Zakładki cennika (każda z własną animacją), kalkulator, FAQ |
+| `cennik.html` | Wycena: zakładki z pakietami (każda z własną animacją), formularz zapytania o wycenę, FAQ |
 | `o-mnie.html` | Cytat, podpis rysujący się na żywo, tekst, zasady pracy |
 | `kontakt.html` | Formularz + wizytówka 3D (obraca się, QR do Facebooka, podpis, „Zapisz kontakt”) |
 | `luxe-salon.html`, `vesper-barber.html`, `zar-burger.html` | Projekty koncepcyjne |
 | `404.html` | Własna strona błędu (GitHub Pages używa jej automatycznie) |
 | `assets/css/style.css` | Wygląd wszystkich podstron (jeden plik) |
-| `assets/js/app.js` | Przejścia między stronami, tło, animacje, kalkulator, formularz, wizytówka |
+| `assets/js/app.js` | Przejścia między stronami, tło, animacje, zapytanie o wycenę, formularz, wizytówka |
 | `assets/js/i18n.js` | Wersja angielska (przełącznik PL/EN) |
 | `assets/js/lenis.min.js` | Płynne przewijanie myszką (biblioteka Lenis, licencja MIT) |
 | `assets/fonts/` | Czcionki (lokalnie — bez Google Fonts) |
@@ -43,7 +43,7 @@ Stare linki z wersji jednostronicowej (np. `…/marcelgraphic/#kontakt`, `#cenni
 - Pasek ładowania to Twój podpis z wizytówki (wygładzona, schludna wersja). Rysuje się od kliknięcia, na nowej stronie dorysowuje się do końca i dopiero wtedy kurtyna się odsuwa.
 - Napis na kurtynie stoi w miejscu i ma stały rozmiar przed i po zmianie strony (osobny, osadzony mini-krój — nic się nie doczytuje w trakcie).
 - Kurtyna jedzie na karcie graficznej (transform), więc jest płynna także na starszych telefonach.
-- Wybór pakietu w cenniku, wynik kalkulatora albo „Chcę taką stronę” przy projekcie przenosi się do formularza w Kontakcie (z krótką notką, co zostało wybrane).
+- Wybór pakietu w zakładce Wycena, zapytanie o wycenę albo „Chcę taką stronę” przy projekcie przenosi się do formularza w Kontakcie (z krótką notką, co zostało wybrane).
 - Osoby z wyłączonymi animacjami w systemie przechodzą między stronami od razu, bez kurtyny.
 
 ## Słabsze urządzenia
@@ -81,7 +81,7 @@ Stare linki z wersji jednostronicowej (np. `…/marcelgraphic/#kontakt`, `#cenni
 - Nazwy marki dla wyszukiwarek i AI: „Marcel Struszczak”, „Marcel GraphicSite”, „marcelgraphicsite.pl”, „marcel.graphicsite”.
 - Osobny obrazek podglądu linku dla każdej podstrony i artykułu: `assets/img/og/`.
 - `robots.txt` jawnie wpuszcza roboty wyszukiwarek AI (ChatGPT, Perplexity, Claude, Gemini, Apple, Bing/Copilot).
-- `llms.txt` i `llms-full.txt` — wizytówka i pełna treść strony dla asystentów AI (ceny, obszar działania, usługi, FAQ, artykuły).
+- `llms.txt` i `llms-full.txt` — wizytówka i pełna treść strony dla asystentów AI (pakiety, zasady wyceny, obszar działania, usługi, FAQ, artykuły).
 - `sitemap.xml` (generowana: wszystkie strony bez „noindex”, data = ostatni commit pliku), `feed.xml` (kanał RSS poradnika), IndexNow (automat w `.github/workflows/indexnow.yml` po każdym pushu na gałąź strony).
 - Google Search Console: plik weryfikacyjny `google1a4fd6f90fdf66e4.html` — **nie usuwaj go**, bo Search Console straci weryfikację.
 
@@ -104,10 +104,12 @@ Zgłoszenia z `kontakt.html` idą na `marcel.graphicsite@gmail.com` przez darmow
 - Gdyby wysyłka się nie udała (brak sieci itp.), klientowi otwiera się program pocztowy z gotową wiadomością — nic nie przepada.
 - Wyłączenie: `FORM_ENDPOINT = ''`.
 
-## Zmiana cen
+## Ceny i wycena
 
-- `cennik.html` — karty pakietów: atrybuty `data-price`, `data-fb`, `data-fbig`, `data-min`, `data-max` oraz liczba w tekście obok. Kalkulator czyta ceny z tych atrybutów.
-- Te same kwoty są też w: odpowiedziach FAQ (`cennik.html` + `assets/js/i18n.js`), cenach „od …” na `index.html` i `uslugi.html` oraz w gotowych wiadomościach „Interesuje mnie pakiet…” (`assets/js/i18n.js`, sekcje `pick` i `pickLabel`).
+- Na stronie nie ma kwot za usługi: wszędzie jest **wycena indywidualna i bezpłatna** (zakładka Wycena, adres `/cennik` bez zmian). Kwoty zostały tylko w projektach koncepcyjnych (ŻAR, Luxe, Vesper, Gmina Warta — to ceny wymyślonych lokali) i jako ogólne widełki rynkowe w artykule „Ile kosztuje strona internetowa”.
+- `cennik.html` — karty pakietów (zakres, czas realizacji, poprawki) i formularz zapytania o wycenę. Formularz nie liczy kwot: zbiera, czego klient potrzebuje, liczy czas realizacji (atrybut `data-days` na kartach) i przenosi listę do formularza w Kontakcie.
+- Teksty FAQ są w `cennik.html` (PL) i `assets/js/i18n.js` (EN); gotowe wiadomości „Interesuje mnie pakiet…” w `assets/js/i18n.js` (sekcje `pick` i `pickLabel`).
+- Strony usług i poradnik budujesz z `_zrodla` (`python3 _zrodla/zbuduj_poradnik.py`, potem `python3 _zrodla/zbuduj_llms.py`); karty pakietów kopiują się tam z `cennik.html`.
 
 ## Wizytówka
 

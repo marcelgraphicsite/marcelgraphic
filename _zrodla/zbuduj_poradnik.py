@@ -4,7 +4,7 @@
 Uruchom z katalogu repozytorium:  python3 _zrodla/zbuduj_poradnik.py
 Treść: poradnik_tresc.py (artykuły) i uslugi_tresc.py (strony usług: Sieradz, karty NFC, social media).
 Szablonem (nagłówek, menu, kurtyna, stopka) jest polityka-prywatnosci.html.
-Karty z cenami na stronach usług kopiuję przy budowaniu z cennik.html — ceny zmieniasz tylko w cenniku.
+Karty pakietów na stronach usług kopiuję przy budowaniu z cennik.html — pakiety zmieniasz tylko tam.
 Na końcu powstają: feed.xml (kanał RSS poradnika) i sitemap.xml (wszystkie strony bez „noindex”;
 data zmiany = data ostatniego commita pliku albo dzisiejsza, jeśli plik jest zmieniony).
 Folder _zrodla nie jest publikowany przez GitHub Pages (Jekyll pomija foldery z „_”).
@@ -31,7 +31,7 @@ MIESIACE = ['stycznia', 'lutego', 'marca', 'kwietnia', 'maja', 'czerwca', 'lipca
 ORG = {'@type': 'ProfessionalService', '@id': B + '#firma', 'name': 'Marcel GraphicSite',
        'alternateName': ['Marcel Struszczak — strony internetowe', 'marcelgraphicsite.pl', 'marcel.graphicsite'], 'url': B,
        'logo': B + 'assets/img/apple-touch-icon.png', 'image': B + 'assets/img/og.jpg',
-       'telephone': '+48 511 808 498', 'email': 'marcel.graphicsite@gmail.com', 'priceRange': '60–3000+ zł',
+       'telephone': '+48 511 808 498', 'email': 'marcel.graphicsite@gmail.com',
        'address': {'@type': 'PostalAddress', 'addressLocality': 'Sieradz', 'postalCode': '98-200', 'addressRegion': 'łódzkie', 'addressCountry': 'PL'}}
 PER = {'@type': 'Person', '@id': B + '#marcel', 'name': 'Marcel Struszczak', 'url': B + 'o-mnie',
        'jobTitle': 'Projektant stron internetowych', 'homeLocation': {'@type': 'City', 'name': 'Sieradz'},
@@ -242,7 +242,7 @@ def crumbs(items):
         {'@type': 'ListItem', 'position': i + 1, 'name': n, 'item': u} for i, (n, u) in enumerate(items)]}
 
 
-# ---------- bloki z cennika (karty z cenami) ----------
+# ---------- bloki z cennika (karty pakietów) ----------
 def balanced_div(s, start):
     depth = 0
     for m in re.finditer(r'<div\b|</div>', s[start:]):

@@ -1,5 +1,5 @@
 // Generuje obrazki podglądu linku (1200×630) dla każdej podstrony i poradnika.
-// Uruchom z katalogu repozytorium:  NODE_PATH=$(npm root -g) node _zrodla/zbuduj_og.js [og/cennik.jpg ...]
+// Uruchom z katalogu repozytorium:  NODE_PATH=$(npm root -g) node _zrodla/zbuduj_og.js [og/wycena.jpg ...]
 // (bez argumentów generuje wszystkie; z argumentami tylko podane pliki)
 // Wynik: assets/img/og/<strona>.jpg oraz assets/img/og.jpg (strona główna).
 const fs = require('fs');
@@ -13,16 +13,16 @@ const PAGES = [
   { file: 'og.jpg', home: true },
   { file: 'og/prace.jpg', n: '01', k: 'Prace', t: 'Przewiń projekt tak, jak zrobiłby to <em>Twój klient.</em>' },
   { file: 'og/uslugi.jpg', n: '02', k: 'Usługi', t: 'Trzy sposoby, żeby klienci wybierali <em>Ciebie.</em>' },
-  { file: 'og/cennik.jpg', n: '03', k: 'Wycena', t: 'Wycena szyta na miarę. <em>Zero ukrytych kosztów.</em>', s: 'Strony www · Social media · Karty NFC — bezpłatna wycena' },
+  { file: 'og/wycena.jpg', n: '03', k: 'Wycena', t: 'Wycena szyta na miarę. <em>Zero ukrytych kosztów.</em>', s: 'Strony www · Social media · Karty NFC — bezpłatna wycena' },
   { file: 'og/o-mnie.jpg', n: '04', k: 'O mnie', t: 'Nie sprzedaję stron. <em>Sprzedaję pierwsze wrażenie.</em>' },
   { file: 'og/kontakt.jpg', n: '05', k: 'Kontakt', t: 'Zobacz swoją nową stronę, <em>zanim wydasz złotówkę.</em>', s: 'Darmowy projekt · Odpowiedź w 24 godziny' },
   { file: 'og/poradnik.jpg', n: '06', k: 'Poradnik', t: 'Poradnik dla firm. <em>Bez lania wody.</em>', s: 'Ceny stron · Wizytówka Google · Opinie · Restauracje i salony' },
   { file: 'og/ile-kosztuje-strona-internetowa.jpg', n: '06', k: 'Poradnik', t: 'Ile kosztuje strona internetowa <em>w 2026 roku?</em>', s: 'Realne ceny, koszty stałe i jak nie przepłacić' },
   { file: 'og/strona-internetowa-czy-facebook.jpg', n: '06', k: 'Poradnik', t: 'Strona internetowa czy Facebook — <em>co wybrać?</em>', s: 'Strona zdobywa nowych klientów, social media zamieniają ich w stałych' },
   { file: 'og/jak-zdobyc-opinie-google.jpg', n: '06', k: 'Poradnik', t: 'Jak zdobyć więcej opinii <em>w Google?</em>', s: '7 sposobów dla lokalnej firmy: link, kod QR, karta NFC' },
-  { file: 'og/strony-internetowe-sieradz.jpg', n: '02', k: 'Usługi · Sieradz', t: 'Strony internetowe <em>w Sieradzu.</em>', s: 'Bezpłatna wycena · gotowe w 4–16 dni · spotkanie na miejscu' },
-  { file: 'og/karty-nfc-opinie-google.jpg', n: '02', k: 'Usługi · Opinie Google', t: 'Karty NFC do opinii <em>Google.</em>', s: 'Karta z podstawką · duża naklejka · wysyłka w całej Polsce' },
-  { file: 'og/prowadzenie-social-media.jpg', n: '02', k: 'Usługi · Social media', t: 'Prowadzenie social mediów <em>dla firm.</em>', s: '8 lub 12–13 postów miesięcznie · bez umów na lata' },
+  { file: 'og/sieradz.jpg', n: '02', k: 'Usługi · Sieradz', t: 'Strony internetowe <em>w Sieradzu.</em>', s: 'Bezpłatna wycena · gotowe w 4–16 dni · spotkanie na miejscu' },
+  { file: 'og/karty-nfc.jpg', n: '02', k: 'Usługi · Opinie Google', t: 'Karty NFC do opinii <em>Google.</em>', s: 'Karta z podstawką · duża naklejka · wysyłka w całej Polsce' },
+  { file: 'og/social-media.jpg', n: '02', k: 'Usługi · Social media', t: 'Prowadzenie social mediów <em>dla firm.</em>', s: '8 lub 12–13 postów miesięcznie · bez umów na lata' },
   { file: 'og/landing-page-czy-strona-wizytowka.jpg', n: '06', k: 'Poradnik', t: 'Landing page czy strona wizytówka — <em>co wybrać?</em>', s: 'Zakres, czas realizacji i widoczność w Google — porównanie' },
   { file: 'og/jak-zalozyc-wizytowke-google.jpg', n: '06', k: 'Poradnik', t: 'Jak założyć Wizytówkę Google — <em>krok po kroku</em>', s: 'Nazwa, kategoria, obszar działania i weryfikacja wideo' },
   { file: 'og/czy-twoja-firma-jest-widoczna-w-google.jpg', n: '06', k: 'Poradnik', t: 'Czy Twoja firma jest widoczna <em>w Google?</em>', s: 'Test w 10 minut: wyszukiwarka, Mapy, opinie i asystenci AI' },

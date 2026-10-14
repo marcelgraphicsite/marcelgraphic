@@ -14,6 +14,7 @@ B = 'https://marcelgraphicsite.pl/'
 USLUGI = [
     {
         'slug': 'strony-internetowe-sieradz',
+        'og_img': 'sieradz',  # nowa nazwa: stara grafika miała ceny
         'data': DZIS,
         'zmiana': WYCENA,
         'title': 'Strony internetowe Sieradz — tworzenie stron www dla firm | Marcel GraphicSite',
@@ -126,6 +127,7 @@ W lokalnych wynikach Google najwięcej uwagi zbiera mapka z firmami — czyli **
     },
     {
         'slug': 'karty-nfc-opinie-google',
+        'og_img': 'karty-nfc',  # nowa nazwa: stara grafika miała ceny
         'data': DZIS,
         'zmiana': WYCENA,
         'title': 'Karty NFC do opinii Google — wysyłka w całej Polsce | Marcel GraphicSite',
@@ -223,6 +225,7 @@ Więcej sposobów znajdziesz w artykule [jak zdobyć więcej opinii w Google](ja
     },
     {
         'slug': 'prowadzenie-social-media',
+        'og_img': 'social-media',  # nowa nazwa: stara grafika miała ceny
         'data': DZIS,
         'zmiana': WYCENA,
         'title': 'Prowadzenie social mediów dla firm — Facebook i Instagram | Marcel GraphicSite',

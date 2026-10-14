@@ -924,6 +924,25 @@
     langHooks.push(() => calcRender());
   });
 
+  /* ---------- widełki dla orientacji: kwoty dopiero po kliknięciu ---------- */
+  // Strona nie publikuje cennika: kwot nie ma w HTML, więc wyszukiwarki i asystenci AI ich nie cytują.
+  // Klient widzi widełki po jednym kliknięciu (teksty: i18n.js, window.__T.pl.ori / en.ori).
+  mod('ori', () => {
+    const btn = $('#oriShow'), list = $('#oriList');
+    if (!btn || !list) return;
+    let open = false;
+    const render = () => { list.innerHTML = (t().ori || []).map(([a, b]) => `<li><span>${a}</span><b>${b}</b></li>`).join(''); };
+    btn.addEventListener('click', () => {
+      open = true;
+      render();
+      list.hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+      btn.hidden = true;
+      list.focus({ preventScroll: true });
+    });
+    langHooks.push(() => { if (open) render(); });
+  });
+
   /* ---------- wybór pakietu → gotowa wiadomość w formularzu (między podstronami) ---------- */
   mod('prefill', () => {
     const save = (text, needs, label) => sess.set('ms-prefill', JSON.stringify({ text, needs, label }));

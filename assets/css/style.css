@@ -544,6 +544,7 @@ html.lite .pc--cta .pc__media::before{animation:none}
 .tabs:not(.has-ind) .tab[aria-selected="true"]{box-shadow:inset 0 -1px 0 var(--ink)}
 .tp{animation:tpIn .6s var(--ease) both}
 .tp[hidden]{display:none}
+.btn[hidden],.alist[hidden]{display:none}
 @keyframes tpIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 .tintro{display:grid;gap:28px;align-items:center;margin-bottom:64px}
 @media (min-width:900px){.tintro{grid-template-columns:5fr 6fr;gap:56px}}

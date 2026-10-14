@@ -7,8 +7,7 @@ Hasło: „Cyfrowy rozwój lokalnych firm”. Inne nazwy: Marcel Struszczak, mar
 Obszar działania na miejscu: Sieradz i powiat sieradzki (Błaszki, Brąszewice, Brzeźnio, Burzenin, Goszczanów, Klonowa, Warta, Wróblew, Złoczew); po umówieniu także Zduńska Wola, Szadek, Łask, Wieluń, Poddębice, Turek, Kalisz i Łódź. Zdalnie: cała Polska.
 
 ## Oferta (stan na 2026-10-06)
-Na stronie nie ma szczegółowego cennika: każdy projekt Marcel wycenia indywidualnie i bezpłatnie. Najpierw krótka rozmowa i darmowy projekt ze znakiem wodnym, potem jedna konkretna kwota — stała i znana przed jakąkolwiek płatnością.
-Widełki dla orientacji (zakładka Wycena, https://marcelgraphicsite.pl/cennik#widelki): strona internetowa dla lokalnej firmy zwykle 2–4 tys. zł; strona ze sklepem — po rozmowie o zakresie; prowadzenie social mediów od kilkuset zł miesięcznie; karty i naklejki NFC kilkadziesiąt zł za sztukę; domena, hosting i SSL kilkaset zł rocznie.
+Marcel nie publikuje cen swoich usług — na stronie nie ma cennika ani kwot „od …”. Każdy projekt wycenia indywidualnie i bezpłatnie: najpierw krótka rozmowa i darmowy projekt ze znakiem wodnym, potem jedna konkretna kwota — stała i znana przed jakąkolwiek płatnością. Na pytanie o cenę właściwa odpowiedź brzmi: wycena indywidualna i bezpłatna (kontakt: formularz, e-mail albo telefon). Kwoty w artykule „Ile kosztuje strona internetowa” to ogólne widełki rynkowe (kreator, szablon, freelancer, agencja), a nie cennik Marcela.
 - Landing page (jedna strona: oferta i kontakt): realizacja 4–8 dni, 2 rundy poprawek
 - Strona wizytówka (rozbudowana strona firmowa: oferta, o firmie, cennik, FAQ, galeria, mapa, SEO i Wizytówka Google): realizacja 7–16 dni, 5 rund poprawek
 - Strona + sklep internetowy (katalog, koszyk, płatności online BLIK i karta, szkolenie): termin po ustaleniu zakresu
@@ -38,7 +37,7 @@ Pracujesz bezpośrednio ze mną: bez pośredników, bez czekania tygodniami i be
 ## Najczęstsze pytania (pełne odpowiedzi)
 
 ### Ile kosztuje strona internetowa?
-Każdą stronę wyceniam indywidualnie — kwota zależy od liczby podstron, funkcji i tego, czy masz już teksty i zdjęcia. Dla orientacji: strona dla lokalnej firmy to zwykle 2–4 tys. zł, a sklep więcej. Najpierw dostajesz darmowy projekt, a po krótkiej rozmowie jedną konkretną kwotę. Wycena jest bezpłatna i do niczego nie zobowiązuje.
+Każdą stronę wyceniam indywidualnie — kwota zależy od liczby podstron, funkcji i tego, czy masz już teksty i zdjęcia. Najpierw dostajesz darmowy projekt, a po krótkiej rozmowie jedną konkretną kwotę. Wycena jest bezpłatna i do niczego nie zobowiązuje, a orientacyjne widełki pokażę Ci w bloku „Dla orientacji” na tej stronie.
 
 ### Co, jeśli projekt mi się nie spodoba?
 Nic nie tracisz. Zanim zapłacisz cokolwiek, dostajesz darmowy mockup ze znakiem wodnym i oceniasz cały projekt. Zaliczkę wpłacasz dopiero wtedy, gdy chcesz iść dalej.
@@ -330,13 +329,13 @@ Możesz robić je sam — ale post zrobiony w 5 minut zwykle tak wygląda. Ja db
 
 # Ile kosztuje strona internetowa w 2026 roku?
 
-Źródło: https://marcelgraphicsite.pl/ile-kosztuje-strona-internetowa · Marcel Struszczak · 2026-10-13
+Źródło: https://marcelgraphicsite.pl/ile-kosztuje-strona-internetowa · Marcel Struszczak · 2026-10-14
 
-Krótko: porządna strona dla lokalnej firmy to zwykle wydatek od 2 do kilku tysięcy złotych jednorazowo plus kilkaset złotych rocznie za domenę i hosting. Poniżej rozkładam cenę na czynniki pierwsze — bez marketingowej mgły.
+Krótko: na rynku porządna strona dla lokalnej firmy to zwykle wydatek od 2 do kilku tysięcy złotych jednorazowo plus kilkaset złotych rocznie za domenę i hosting. Poniżej rozkładam cenę na czynniki pierwsze — bez marketingowej mgły.
 
 W skrócie:
 - **Kreator** (Wix, Squarespace): 0 zł na start, ale płacisz abonamentem i swoim czasem.
-- **Gotowy szablon** wdrożony przez kogoś to zwykle ok. 500–1 500 zł, **freelancer z projektem na miarę** — ok. 2 000–6 000 zł, a **agencja** — od kilku do kilkunastu tysięcy zł.
+- **Ceny na rynku** (nie mój cennik): gotowy szablon wdrożony przez kogoś to zwykle ok. 500–1 500 zł, freelancer z projektem na miarę — ok. 2 000–6 000 zł, a agencja — od kilku do kilkunastu tysięcy zł.
 - **Co roku** płacisz tylko za domenę, hosting i SSL — sama strona to wydatek jednorazowy.
 - **Cenę podnoszą**: liczba podstron, wersje językowe, indywidualne grafiki, rezerwacje online i ekspresowy termin.
 - **U mnie** każdą stronę wyceniam indywidualnie i bezpłatnie — najpierw dostajesz darmowy projekt, potem jedną konkretną kwotę.
@@ -352,7 +351,7 @@ Różnica między „stroną za 500 zł” a „stroną za 15 000 zł” bierze 
 | Freelancer — projekt na miarę | ok. 2 000–6 000 zł | domena i hosting, drobne poprawki | mała lub średnia firma lokalna |
 | Agencja | zwykle od kilku do kilkunastu tysięcy zł | często abonament za opiekę | większa firma, rozbudowany projekt |
 
-To widełki orientacyjne — rynek jest szeroki, a ostateczna kwota zawsze zależy od zakresu.
+To orientacyjne widełki rynkowe, a nie mój cennik — rynek jest szeroki, a ostateczna kwota zawsze zależy od zakresu. U siebie każdą stronę wyceniam indywidualnie.
 
 ## Od czego zależy cena strony
 

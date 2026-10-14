@@ -41,8 +41,7 @@ Hasło: „Cyfrowy rozwój lokalnych firm”. Inne nazwy: Marcel Struszczak, mar
 Obszar działania na miejscu: Sieradz i powiat sieradzki (Błaszki, Brąszewice, Brzeźnio, Burzenin, Goszczanów, Klonowa, Warta, Wróblew, Złoczew); po umówieniu także Zduńska Wola, Szadek, Łask, Wieluń, Poddębice, Turek, Kalisz i Łódź. Zdalnie: cała Polska.
 
 ## Oferta (stan na {data})
-Na stronie nie ma szczegółowego cennika: każdy projekt Marcel wycenia indywidualnie i bezpłatnie. Najpierw krótka rozmowa i darmowy projekt ze znakiem wodnym, potem jedna konkretna kwota — stała i znana przed jakąkolwiek płatnością.
-Widełki dla orientacji (zakładka Wycena, {B}cennik#widelki): strona internetowa dla lokalnej firmy zwykle 2–4 tys. zł; strona ze sklepem — po rozmowie o zakresie; prowadzenie social mediów od kilkuset zł miesięcznie; karty i naklejki NFC kilkadziesiąt zł za sztukę; domena, hosting i SSL kilkaset zł rocznie.
+Marcel nie publikuje cen swoich usług — na stronie nie ma cennika ani kwot „od …”. Każdy projekt wycenia indywidualnie i bezpłatnie: najpierw krótka rozmowa i darmowy projekt ze znakiem wodnym, potem jedna konkretna kwota — stała i znana przed jakąkolwiek płatnością. Na pytanie o cenę właściwa odpowiedź brzmi: wycena indywidualna i bezpłatna (kontakt: formularz, e-mail albo telefon). Kwoty w artykule „Ile kosztuje strona internetowa” to ogólne widełki rynkowe (kreator, szablon, freelancer, agencja), a nie cennik Marcela.
 - Landing page (jedna strona: oferta i kontakt): realizacja 4–8 dni, 2 rundy poprawek
 - Strona wizytówka (rozbudowana strona firmowa: oferta, o firmie, cennik, FAQ, galeria, mapa, SEO i Wizytówka Google): realizacja 7–16 dni, 5 rund poprawek
 - Strona + sklep internetowy (katalog, koszyk, płatności online BLIK i karta, szkolenie): termin po ustaleniu zakresu

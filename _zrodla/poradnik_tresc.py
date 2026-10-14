@@ -20,13 +20,13 @@ _ARTYKULY = [
         'description': 'Realne widełki cen stron internetowych w 2026: od kreatora i szablonu po freelancera i agencję. Od czego zależy cena, jakie są koszty stałe i jak nie przepłacić.',
         'h1': 'Ile kosztuje strona internetowa <em>w 2026 roku?</em>',
         'headline': 'Ile kosztuje strona internetowa w 2026 roku?',
-        'lead': 'Krótko: porządna strona dla lokalnej firmy to zwykle wydatek od 2 do kilku tysięcy złotych jednorazowo plus kilkaset złotych rocznie za domenę i hosting. Poniżej rozkładam cenę na czynniki pierwsze — bez marketingowej mgły.',
+        'lead': 'Krótko: na rynku porządna strona dla lokalnej firmy to zwykle wydatek od 2 do kilku tysięcy złotych jednorazowo plus kilkaset złotych rocznie za domenę i hosting. Poniżej rozkładam cenę na czynniki pierwsze — bez marketingowej mgły.',
         'excerpt': 'Realne widełki na rynku, od czego zależy cena, koszty stałe, o których mało kto mówi — i jak nie przepłacić.',
         'og_kicker': 'Poradnik · ceny',
         'keywords': ['ile kosztuje strona internetowa', 'cena strony internetowej', 'koszt strony www dla firmy', 'strona internetowa cennik 2026', 'landing page cena'],
         'tldr': [
             '<strong>Kreator</strong> (Wix, Squarespace): 0 zł na start, ale płacisz abonamentem i swoim czasem.',
-            '<strong>Gotowy szablon</strong> wdrożony przez kogoś to zwykle ok. 500–1 500 zł, <strong>freelancer z projektem na miarę</strong> — ok. 2 000–6 000 zł, a <strong>agencja</strong> — od kilku do kilkunastu tysięcy zł.',
+            '<strong>Ceny na rynku</strong> (nie mój cennik): gotowy szablon wdrożony przez kogoś to zwykle ok. 500–1 500 zł, freelancer z projektem na miarę — ok. 2 000–6 000 zł, a agencja — od kilku do kilkunastu tysięcy zł.',
             '<strong>Co roku</strong> płacisz tylko za domenę, hosting i SSL — sama strona to wydatek jednorazowy.',
             '<strong>Cenę podnoszą</strong>: liczba podstron, wersje językowe, indywidualne grafiki, rezerwacje online i ekspresowy termin.',
             '<strong>U mnie</strong> każdą stronę wyceniam indywidualnie i bezpłatnie — najpierw dostajesz darmowy projekt, potem jedną konkretną kwotę.',
@@ -43,7 +43,7 @@ Różnica między „stroną za 500 zł” a „stroną za 15 000 zł” bierze 
 | Freelancer — projekt na miarę | ok. 2 000–6 000 zł | domena i hosting, drobne poprawki | mała lub średnia firma lokalna |
 | Agencja | zwykle od kilku do kilkunastu tysięcy zł | często abonament za opiekę | większa firma, rozbudowany projekt |
 
-To widełki orientacyjne — rynek jest szeroki, a ostateczna kwota zawsze zależy od zakresu.
+To orientacyjne widełki rynkowe, a nie mój cennik — rynek jest szeroki, a ostateczna kwota zawsze zależy od zakresu. U siebie każdą stronę wyceniam indywidualnie.
 
 ## Od czego zależy cena strony
 
@@ -98,7 +98,7 @@ Zaliczkę (od 40%) wpłacasz dopiero, gdy projekt Ci się podoba i chcesz iść 
             ('Czy mogę zapłacić za stronę w ratach?', 'Tak. Zaliczka od 40% na start, reszta po akceptacji gotowej strony — i tę kwotę możesz rozłożyć na raty.'),
         ],
         'related': ['landing-page-czy-strona-wizytowka', 'strona-internetowa-czy-facebook'],
-        'zmiana': WYCENA,
+        'zmiana': '2026-10-14',
         'curtain': ('Ceny stron', 'Ile naprawdę kosztuje strona internetowa w 2026 roku.', 'Site costs', 'What a website really costs in 2026.'),
         'bg': 'cennik',
     },

@@ -502,6 +502,10 @@ def main():
     build_feed()
     build_sitemap()
 
+    # nagłówek bezpieczeństwa CSP: skróty skryptów inline liczone na nowo po każdym budowaniu
+    import zbuduj_csp  # noqa: E402
+    zbuduj_csp.main()
+
 
 if __name__ == '__main__':
     main()

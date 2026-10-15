@@ -1067,11 +1067,18 @@
     };
     langHooks.push(() => { if ($('.field.err', form)) validate(false); });
     [fName, fContact].forEach(i => i.addEventListener('input', () => { if (i.closest('.field').classList.contains('err')) validate(false); }));
+    // długość pól przycięta także tutaj (maxlength w HTML da się obejść)
+    const cut = (v, n) => v.trim().slice(0, n);
     const collect = () => ({
-      name: fName.value.trim(), biz: $('#f-biz').value.trim(), contact: fContact.value.trim(),
+      name: cut(fName.value, 80), biz: cut($('#f-biz').value, 120), contact: cut(fContact.value, 120),
       needs: $$('input[name="need"]:checked', form).map(c => c.nextElementSibling.textContent.trim()).join(', '),
-      link: $('#f-link').value.trim(), msg: msg.value.trim()
+      link: cut($('#f-link').value, 300), msg: cut(msg.value, 3000)
     });
+    // limit wysyłek z jednej przeglądarki: kolejna wiadomość po minucie, najwyżej 5 na dobę
+    // (chroni skrzynkę przed seryjnym klikaniem; prawdziwe ograniczenia ma też Web3Forms po swojej stronie)
+    const SENT_KEY = 'ms-sent', COOL = 60 * 1000, DAY = 24 * 3600 * 1000, PER_DAY = 5;
+    const sentLog = () => { let a = []; try { a = JSON.parse(store.get(SENT_KEY) || '[]'); } catch (e) { a = []; } return (Array.isArray(a) ? a : []).filter(x => Date.now() - x < DAY); };
+    const blocked = () => { const a = sentLog(); if (a.length >= PER_DAY) return 'limit'; if (a.length && Date.now() - a[a.length - 1] < COOL) return 'wait'; return ''; };
     const mailtoHref = d => {
       const F = t().form;
       const subject = `${F.mailSubject}${d.biz ? ' — ' + d.biz : ''}`;
@@ -1091,6 +1098,8 @@
       if (!validate()) return;
       const d = collect();
       if ($('input[name="_honey"]', form).value) { showSent('ajax', d); return; }
+      const why = blocked();
+      if (why) { toast(t().form[why]); return; }
       const btn = $('button[type="submit"]', form), lbl = $('span', btn), old = lbl.textContent;
       btn.disabled = true; lbl.textContent = t().form.sending;
       let ok = false;
@@ -1115,7 +1124,7 @@
         } catch (err) { ok = false; }
       }
       btn.disabled = false; lbl.textContent = old;
-      if (ok) showSent('ajax', d);
+      if (ok) { store.set(SENT_KEY, JSON.stringify(sentLog().concat(Date.now()))); showSent('ajax', d); }
       else { location.href = mailtoHref(d); showSent('mailto', d); }
     });
     $('#okAgain').addEventListener('click', () => {

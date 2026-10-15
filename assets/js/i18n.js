@@ -43,7 +43,7 @@ window.__T = {
     ori: [["Strona internetowa (landing albo wizytówka)", "zwykle 2–4 tys. zł"], ["Strona ze sklepem", "po rozmowie o zakresie"],
       ["Prowadzenie social mediów", "od kilkuset zł / mies."], ["Karty i naklejki NFC do opinii", "kilkadziesiąt zł / szt."], ["Domena, hosting i SSL", "kilkaset zł / rok"]],
     form: {
-      sending: "Wysyłam…", errName: "Podaj swoje imię.", errContact: "Podaj telefon albo e-mail.", errContactBad: "To nie wygląda na telefon ani e-mail.",
+      sending: "Wysyłam…", wait: "Wiadomość już poszła. Kolejną możesz wysłać za minutę.", limit: "To już kilka wiadomości dziś. Napisz na e-mail albo zadzwoń: 511 808 498.", errName: "Podaj swoje imię.", errContact: "Podaj telefon albo e-mail.", errContactBad: "To nie wygląda na telefon ani e-mail.",
       mailSubject: "Darmowy projekt — zapytanie ze strony", lblName: "Imię", lblBiz: "Firma", lblContact: "Kontakt", lblNeeds: "Czego potrzebuje", lblLink: "Link", lblMsg: "Wiadomość",
       okAjaxT: n => `Dzięki, ${n}! Wiadomość poszła.`,
       okAjaxD: "Odezwę się w ciągu 24 godzin. Do usłyszenia!",
@@ -89,7 +89,7 @@ window.__T = {
     ori: [["Website (landing or showcase)", "usually 2,000–4,000 PLN"], ["Website with a shop", "after a scope call"],
       ["Social media management", "from a few hundred PLN / mo"], ["NFC review cards and stickers", "under 100 PLN each"], ["Domain, hosting and SSL", "a few hundred PLN / year"]],
     form: {
-      sending: "Sending…", errName: "Please enter your name.", errContact: "Please enter a phone number or email.", errContactBad: "That doesn't look like a phone number or email.",
+      sending: "Sending…", wait: "Your message is on its way. You can send another one in a minute.", limit: "That is a few messages today already. Please email me or call +48 511 808 498.", errName: "Please enter your name.", errContact: "Please enter a phone number or email.", errContactBad: "That doesn't look like a phone number or email.",
       mailSubject: "Free mockup — website enquiry", lblName: "Name", lblBiz: "Business", lblContact: "Contact", lblNeeds: "Needs", lblLink: "Link", lblMsg: "Message",
       okAjaxT: n => `Thanks, ${n}! Message sent.`,
       okAjaxD: "I'll get back to you within 24 hours. Talk soon!",

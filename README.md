@@ -104,6 +104,14 @@ Zgłoszenia z `kontakt.html` idą na `marcel.graphicsite@gmail.com` przez darmow
 - Gdyby wysyłka się nie udała (brak sieci itp.), klientowi otwiera się program pocztowy z gotową wiadomością — nic nie przepada.
 - Wyłączenie: `FORM_ENDPOINT = ''`.
 
+## Bezpieczeństwo
+
+- **CSP (Content-Security-Policy)** w `<meta>` na każdej podstronie (GitHub Pages nie pozwala ustawić nagłówków HTTP): tylko pliki z tej domeny + wysyłka formularza do Web3Forms; obce i wstrzyknięte skrypty są blokowane. Skrypty inline są dozwolone po skrócie SHA-256 — **po każdej zmianie skryptu inline uruchom `python3 _zrodla/zbuduj_csp.py`** (robi to też `zbuduj_poradnik.py`), inaczej przeglądarka go zablokuje. Projekty koncepcyjne nie mają CSP.
+- **Formularz:** walidacja, limity długości pól (HTML i JS), pułapka na boty (`_honey`), limit wysyłek z jednej przeglądarki (1 na minutę, 5 na dobę). Dane z formularza nigdy nie trafiają do HTML (tylko `textContent`).
+- **Klucze:** jedyny klucz to publiczny klucz Web3Forms (z założenia jawny — pozwala tylko wysłać wiadomość na Twój e-mail). Plik klucza IndexNow i plik weryfikacji Google muszą być publiczne. Żadnych `.env`, haseł ani tokenów w repo i w historii.
+- **Biblioteki:** wszystko z tej domeny; Vesper używa lokalnych kopii Alpine.js i GSAP z `assets/vendor/` (zamiast CDN).
+- **Konta:** prawdziwe „wejście administratora” to konta GitHub, Google, rejestratora domeny i Web3Forms — wszędzie weryfikacja dwuetapowa.
+
 ## Ceny i wycena
 
 - Na stronie nie ma cennika: wszędzie jest **wycena indywidualna i bezpłatna** (zakładka Wycena, adres `/cennik` bez zmian). Jedyne kwoty to **widełki dla orientacji** w bloku „Dla orientacji” na stronie Wycena (`#widelki`), pokazywane **dopiero po kliknięciu** „Pokaż widełki” — wartości są w `assets/js/i18n.js` (`window.__T.pl.ori` i `en.ori`), a nie w HTML, więc Google i asystenci AI ich nie cytują (blok ma też `data-nosnippet`). FAQ, dane strukturalne i `llms.txt` nie zawierają kwot; inne strony tylko odsyłają do bloku. Kwoty zostały tylko w projektach koncepcyjnych (ŻAR, Luxe, Vesper, Gmina Warta — to ceny wymyślonych lokali) i jako ogólne widełki rynkowe w artykule „Ile kosztuje strona internetowa”.

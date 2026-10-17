@@ -120,6 +120,24 @@ html.is-arriving .curtain__n,html.is-arriving .curtain__t,html.is-arriving .curt
 @keyframes seam{to{opacity:1}}
 @keyframes cinemaOff{to{visibility:hidden}}
 html.no-cinema #cinema{display:none}
+/* wejście: kurtyna stoi zamknięta, a na środku logo wypełnia się bielą od lewej do prawej, jak pasek ładowania
+   (--fill ustawia app.js). Gdy jest całe białe, gaśnie i kurtyna rozsuwa się jak dawniej (.go dodaje app.js).
+   Bez JS — stary, automatyczny start. Padding z ujemnym marginesem: zawijasy pisma wystające poza linię też się wypełniają. */
+#cinema .cin__logo{position:absolute;top:50%;left:50%;z-index:2;transform:translate3d(-50%,-50%,0);color:#f4f3ef;opacity:0;pointer-events:none}
+.js #cinema .cin__logo{opacity:1;transition:opacity .42s ease,transform .6s var(--ease)}
+.cin__name{--fill:-8%;display:block;margin:-.3em -.25em;padding:.3em .25em;font-family:var(--script);font-size:clamp(3.3rem,13vw,6.2rem);line-height:.9;letter-spacing:.01em;white-space:nowrap;text-align:left}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .js .cin__name{color:transparent;background-image:linear-gradient(104deg,#f4f3ef calc(var(--fill) - 8%),rgba(244,243,239,.16) calc(var(--fill) + 8%));-webkit-background-clip:text;background-clip:text}
+}
+.js #cinema:not(.go){animation:none;pointer-events:auto;cursor:progress}
+.js #cinema:not(.go) i,.js #cinema:not(.go) b{animation:none}
+#cinema.go{animation:cinemaOff 0s linear 1.8s forwards}
+#cinema.go i:nth-child(1){animation:curtainL 1.15s var(--ease-io) .42s forwards}
+#cinema.go i:nth-child(2){animation:curtainR 1.15s var(--ease-io) .42s forwards}
+#cinema.go b{animation:seam .5s ease .42s forwards}
+.js #cinema.go .cin__logo{opacity:0;transform:translate3d(-50%,calc(-50% - 12px),0);transition-delay:.1s}
+/* nazwisko na starcie czeka za kurtyną i wjeżdża razem z jej rozsunięciem */
+html.is-intro .pin-word,html.is-intro .pin-cap{animation-play-state:paused}
 .no-scroll{overflow:hidden!important}
 
 /* ---------- pasek postępu ---------- */

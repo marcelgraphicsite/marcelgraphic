@@ -48,6 +48,7 @@
   const runScroll = () => { ticking = false; scrollFns.forEach(f => { try { f(); } catch (e) { /* ok */ } }); };
   const requestScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(runScroll); } };
   const ARRIVING = root.classList.contains('is-arriving');
+  const INTRO = root.classList.contains('is-intro'); // pierwsze wejście na stronę główną: logo, potem kurtyna
   let lenis = null;
   let gateOpen = false, openGate;
   const gate = new Promise(r => { openGate = () => { gateOpen = true; r(); }; }); // start animacji wejścia (po kurtynie)
@@ -279,7 +280,7 @@
     setTimeout(reveal, 1500); // bezpiecznik
   };
   mod('arrive', () => {
-    if (!ARRIVING) { openGate(); return; }
+    if (!ARRIVING) { if (!INTRO) openGate(); return; } // przy wejściu bramę otwiera kurtyna (moduł cinema)
     const fonts = document.fonts && document.fonts.ready ? Promise.race([document.fonts.ready, wait(600)]) : wait(0);
     fonts.then(finishThenReveal, finishThenReveal);
   });
@@ -346,12 +347,58 @@
     (window.requestIdleCallback || (f => setTimeout(f, 1200)))(check, { timeout: 3000 });
   });
 
-  /* ---------- kurtyna intro (pierwsza wizyta na starcie) ---------- */
+  /* ---------- wejście na stronę (pierwsza wizyta w sesji na stronie głównej) ---------- */
+  // Kurtyna stoi zamknięta, a napis „Marcel Struszczak” na środku wypełnia się bielą jak pasek ładowania.
+  // Przy szybkim łączu wypełnia się w ~1,4 s od wejścia (przy wolniejszym — płynnie, w min. 0,8 s od startu
+  // skryptu); dopóki nie wczytają się obrazki i czcionki, staje przy ~90% i powoli pełznie dalej (najdłużej
+  // czekamy ~5 s). Gdy jest cały biały — gaśnie i kurtyna rozsuwa się jak dawniej. Klik albo klawisz pomija.
   mod('cinema', () => {
     const c = $('#cinema');
     if (!c) return;
-    if (root.classList.contains('no-cinema')) { c.remove(); return; }
-    setTimeout(() => c.remove(), RM ? 0 : 1700);
+    if (root.classList.contains('no-cinema') || !INTRO) {
+      root.classList.remove('is-intro', 'no-scroll');
+      if (root.classList.contains('no-cinema')) c.remove(); else setTimeout(() => c.remove(), RM ? 0 : 1700);
+      return;
+    }
+    const name = $('.cin__name', c);
+    const since = () => (window.performance && performance.now ? performance.now() : 0);
+    const FILL = 1400, MAX = 5000, SOFT = 8; // SOFT: miękka krawędź wypełnienia (jak w CSS), w %
+    const ease = x => (x <= 0 ? 0 : x >= 1 ? 1 : x * x * (3 - 2 * x));
+    const t0 = since(), dur = Math.max(FILL - t0, 800);
+    let loaded = false, rush = false, gone = false, p = 0, raf = 0, full = 0;
+    const open = () => {
+      if (gone) return;
+      gone = true;
+      if (raf) cancelAnimationFrame(raf);
+      c.classList.add('go');
+      root.classList.remove('no-scroll');
+      setTimeout(() => { root.classList.remove('is-intro'); openGate(); }, 420);
+      setTimeout(() => c.remove(), 1900);
+      removeEventListener('keydown', skip);
+    };
+    const paint = () => {
+      raf = 0;
+      const now = since();
+      let target = rush ? 1 : ease((now - t0) / dur);
+      if (!loaded && !rush) target = Math.min(target, 0.9 + 0.07 * (1 - Math.exp(-Math.max(0, now - t0 - dur) / 1500)));
+      p += (target - p) * (rush ? 0.3 : 0.2);
+      if (target === 1 && p > 0.996) p = 1;
+      if (name) name.style.setProperty('--fill', (p * (100 + 2 * SOFT) - SOFT).toFixed(2) + '%');
+      if (p === 1) {
+        if (!full) full = now;
+        if (now - full >= (rush ? 60 : 240)) { open(); return; } // chwila na cały biały napis, potem kurtyna
+      }
+      raf = requestAnimationFrame(paint);
+    };
+    raf = requestAnimationFrame(paint);
+    const skip = () => { rush = true; };
+    c.addEventListener('click', skip);
+    addEventListener('keydown', skip);
+    const done = document.readyState === 'complete' ? Promise.resolve() : new Promise(r => addEventListener('load', r, { once: true }));
+    const fonts = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
+    const ok = () => { loaded = true; };
+    Promise.race([Promise.all([done, fonts]), wait(Math.max(0, MAX - since()))]).then(ok, ok);
+    setTimeout(open, MAX + 3000); // bezpiecznik: strona nigdy nie zostaje zasłonięta
   });
 
   /* ---------- żywe tło: miękkie światło na papierze (canvas w małej rozdzielczości) ---------- */

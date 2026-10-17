@@ -1,60 +1,44 @@
 # -*- coding: utf-8 -*-
-"""Ruch wypełniania logo na wejściu strony (#cinema): najpierw „Marcel”, potem „Struszczak” — jednym ruchem.
+"""Ruch wypełniania logo na wejściu strony (#cinema): litera po literze — najpierw „Marcel”, potem „Struszczak”.
 
-Miękka krawędź bieli biegnie po „ścieżce tuszu”: przez cały tusz „Marcel”, a potem bez przerwy przez tusz
-„Struszczak”, po jednej łagodnej krzywej (KRZYWA). Każda linijka ma swoje okno (.cin__f), które jedzie tylko
-wtedy, gdy ścieżka przechodzi przez jego zakres. Fragment krzywej Béziera to znowu krzywa Béziera, więc ruch
-każdej linijki jest zapisany dokładnie jako cubic-bezier w @keyframes; obie animacje mają ten sam czas i start
-(style.css: 1.9s, opóźnienie .15s), więc idą idealnie razem. Wszystko na transformacjach — liczy karta graficzna.
+Miękka krawędź bieli to „pióro”, które biegnie po ścieżce tuszu: przez cały tusz „Marcel”, a potem bez przerwy
+przez tusz „Struszczak”. Tempo: łagodny rozbieg (ROZBIEG), potem STAŁA prędkość (TEMPO — każda litera wypełnia
+się po kolei, w tym samym rytmie), na końcu miękkie wyhamowanie (HAMOWANIE). Rozbieg i hamowanie mają stałe
+przyspieszenie, więc prędkość zmienia się płynnie, bez skoków.
+
+Każda linijka ma swoje okno (.cin__f), które jedzie tylko wtedy, gdy pióro przechodzi przez jej zakres.
+Wycinek takiego ruchu to dokładnie krzywa cubic-bezier (paraboli albo prostej), więc @keyframes są małe
+i dokładne; obie animacje mają ten sam czas i start, więc idą idealnie razem. Wszystko na transformacjach —
+liczy karta graficzna, nie zamarza przy wczytywaniu strony.
 
 Uruchom z katalogu repozytorium:  python3 _zrodla/zbuduj_intro.py
-Wpisuje @keyframes cinW1/cinI1/cinW2/cinI2 do assets/css/style.css (między znacznikami zbuduj_intro.py).
-TUSZ to zmierzone (w em) szerokości i krawędzie tuszu napisów w kroju GV Script: zmierz ponownie,
-jeśli zmieni się napis, krój albo odstęp liter (ink = skrajne białe piksele zrzutu w stosunku do początku tekstu).
+Wpisuje animacje cinW1/cinI1/cinW2/cinI2 (i ich czas) do assets/css/style.css, między znaczniki zbuduj_intro.py.
+TUSZ to zmierzone (w em) szerokości i krawędzie tuszu napisów w kroju GV Script przy letter-spacing -.01em:
+zmierz ponownie, jeśli zmieni się napis, krój, odstęp liter albo interlinia (LH).
 """
 import math
 import os
 import re
 
-KRZYWA = (0.37, 0.0, 0.63, 1.0)    # łagodny start i koniec, prawie stałe tempo w środku
-TUSZ = [  # adv: szerokość tekstu; ink_l / ink_r: tusz od początku tekstu (em, krój GV Script, letter-spacing .01em)
-    dict(adv=2.7616, ink_l=0.0197, ink_r=2.8877),   # Marcel
-    dict(adv=3.8198, ink_l=0.0500, ink_r=3.8756),   # Struszczak
+TEMPO = 3.0                        # em/s — prędkość pióra w środku (mała litera ≈ 0,1 s, „M” ≈ 0,45 s)
+ROZBIEG, HAMOWANIE = 0.45, 0.55    # s — łagodny start i miękkie wyhamowanie
+OPOZNIENIE = 0.15                  # s — zanim pióro ruszy (przygaszony napis już widać)
+TUSZ = [  # adv: szerokość tekstu; ink_l / ink_r: tusz od początku tekstu (em)
+    dict(adv=2.6418, ink_l=0.0206, ink_r=2.7877),   # Marcel
+    dict(adv=3.6199, ink_l=0.0508, ink_r=3.6950),   # Struszczak
 ]
-PL, PR = 0.25, 1.15                # padding linijki (.cin__l) z lewej i z prawej, em
+LH = 0.82                          # interlinia napisu (.cin__name)
+PL, PR = 0.25, 0.93                # padding linijki (.cin__l) z lewej i z prawej, em (jak w style.css)
 KAT = math.radians(100)            # kąt maski (lekki skos jak w piśmie)
-H = 0.9 + 0.6                      # wysokość okna: linia .9em + padding .3em u góry i u dołu
-MASKA = (0.95, 0.40)               # maska: pełna do 100% - .95em, przezroczysta od 100% - .4em
+MASKA = (0.78, 0.36)               # maska: pełna do 100% - .78em, przezroczysta od 100% - .36em
 EPS = 0.03
 
+H = LH + 0.6                       # wysokość okna: linia + padding .3em u góry i u dołu
 COT, SIN = abs(math.cos(KAT) / math.sin(KAT)), math.sin(KAT)
 X_PELNA = H / 2 * COT - MASKA[0] / SIN       # krawędź maski na środku wysokości, od prawego brzegu okna
 X_PUSTA = H / 2 * COT - MASKA[1] / SIN
 SRODEK = (X_PELNA + X_PUSTA) / 2
 GORA, DOL = 0.6 * COT, 0.33 * COT            # tusz sięga ~.6em nad i ~.33em pod środek okna
-
-
-def bez(p0, p1, p2, p3, u):
-    return (1 - u) ** 3 * p0 + 3 * (1 - u) ** 2 * u * p1 + 3 * (1 - u) * u ** 2 * p2 + u ** 3 * p3
-
-
-def odwrotnie(f, v):
-    lo, hi = 0.0, 1.0
-    for _ in range(90):
-        m = (lo + hi) / 2
-        if f(m) < v:
-            lo = m
-        else:
-            hi = m
-    return (lo + hi) / 2
-
-
-def podziel(P, u):
-    lerp = lambda a, b: (a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u)
-    a, b, c = lerp(P[0], P[1]), lerp(P[1], P[2]), lerp(P[2], P[3])
-    d, e = lerp(a, b), lerp(b, c)
-    f = lerp(d, e)
-    return [P[0], a, d, f], [f, e, c, P[3]]
 
 
 def liczba(v):
@@ -64,7 +48,8 @@ def liczba(v):
     return s.replace('0.', '.', 1) if s.startswith('0.') else s.replace('-0.', '-.', 1)
 
 
-def keyframes():
+def ruch():
+    """Geometria okien + profil ruchu pióra. Zwraca (linie, czas D w s, funkcje s(t), s'(t), granice odcinków)."""
     linie = []
     for t in TUSZ:
         s, e, W = PL + t['ink_l'], PL + t['ink_r'], PL + t['adv'] + PR
@@ -75,38 +60,84 @@ def keyframes():
     for L, o in zip(linie, przes):
         L['a'], L['b'] = L['c0'] - L['s'] + o, L['c1'] - L['s'] + o
     lo, hi = linie[0]['a'], linie[1]['b']
-    P = [(0, 0), KRZYWA[:2], KRZYWA[2:], (1, 1)]
-    by = lambda u: bez(0, KRZYWA[1], KRZYWA[3], 1, u)
+    S = hi - lo                                                    # cała droga pióra (em)
+    D = ROZBIEG + HAMOWANIE + (S - TEMPO * (ROZBIEG + HAMOWANIE) / 2) / TEMPO
+    ta, tc = ROZBIEG / D, HAMOWANIE / D
+    vm = 1 / (1 - ta / 2 - tc / 2)                                 # prędkość w środku (droga 0..1 na czas 0..1)
+
+    def s_(t):
+        if t <= ta:
+            return vm * t * t / (2 * ta)
+        if t <= 1 - tc:
+            return vm * ta / 2 + vm * (t - ta)
+        return 1 - vm * (1 - t) ** 2 / (2 * tc)
+
+    def v_(t):
+        return vm * t / ta if t <= ta else vm if t <= 1 - tc else vm * (1 - t) / tc
+
+    def t_(s):
+        lo_, hi_ = 0.0, 1.0
+        for _ in range(90):
+            m = (lo_ + hi_) / 2
+            if s_(m) < s:
+                lo_ = m
+            else:
+                hi_ = m
+        return (lo_ + hi_) / 2
+
+    for L in linie:
+        L['sa'], L['sb'] = (L['a'] - lo) / S, (L['b'] - lo) / S
+        L['ta'], L['tb'] = t_(L['sa']), t_(L['sb'])
+    return linie, D, s_, v_, (ta, 1 - tc), S, lo
+
+
+def keyframes():
+    linie, D, s_, v_, granice, _, _ = ruch()
     out = []
     for i, L in enumerate(linie, 1):
-        ua, ub = odwrotnie(by, (L['a'] - lo) / (hi - lo)), odwrotnie(by, (L['b'] - lo) / (hi - lo))
-        _, R = podziel(P, ua)
-        Q, _ = podziel(R, (ub - ua) / (1 - ua) if ua < 1 else 1)
-        (x0, y0), (x3, y3) = Q[0], Q[3]
-        cb = [(Q[1][0] - x0) / (x3 - x0), (Q[1][1] - y0) / (y3 - y0), (Q[2][0] - x0) / (x3 - x0), (Q[2][1] - y0) / (y3 - y0)]
-        cb[0], cb[2] = min(max(cb[0], 0), 1), min(max(cb[2], 0), 1)
-        tf = 'cubic-bezier(%s)' % ','.join(liczba(v) for v in cb)
-        for nazwa, start in (('cinW%d' % i, 'calc(-100%% + %sem)' % liczba(L['K'])), ('cinI%d' % i, 'calc(100%% - %sem)' % liczba(L['K']))):
-            t0 = 'transform:translate3d(%s,0,0)' % start
-            if x0 < 1e-6:
-                body = '0%%{%s;animation-timing-function:%s}%s%%,to{transform:translate3d(0,0,0)}' % (t0, tf, liczba(x3 * 100))
-            else:
-                body = '0%%,%s%%{%s;animation-timing-function:%s}to{transform:translate3d(0,0,0)}' % (liczba(x0 * 100), t0, tf)
-            out.append('@keyframes %s{%s}' % (nazwa, body))
-    return '\n'.join(out)
+        pkt = [L['ta']] + [g for g in granice if L['ta'] + 1e-6 < g < L['tb'] - 1e-6] + [L['tb']]
+        f = lambda t: (s_(t) - L['sa']) / (L['sb'] - L['sa'])
+        for nazwa, znak in (('cinW%d' % i, ''), ('cinI%d' % i, '-')):
+            start = 'calc(%s100%% %s %sem)' % ('-' if not znak else '', '+' if not znak else '-', liczba(L['K']))
+
+            def poz(fr):
+                if fr <= 1e-6:
+                    return 'translate3d(%s,0,0)' % start
+                if fr >= 1 - 1e-6:
+                    return 'translate3d(0,0,0)'
+                return 'translate3d(calc((%s) * %s),0,0)' % (start[5:-1], liczba(1 - fr))
+            klatki = []
+            for j in range(len(pkt) - 1):
+                t1, t2 = pkt[j], pkt[j + 1]
+                ds = s_(t2) - s_(t1)
+                a = v_(t1) * (t2 - t1) / ds if ds > 0 else 1                # nachylenie na starcie wycinka
+                tf = 'linear' if abs(a - 1) < 1e-4 else 'cubic-bezier(.3333,%s,.6667,%s)' % (liczba(a / 3), liczba((a + 1) / 3))
+                sel = ('0%%,%s%%' % liczba(t1 * 100)) if (j == 0 and t1 > 1e-6) else ('0%' if j == 0 else '%s%%' % liczba(t1 * 100))
+                klatki.append('%s{transform:%s;animation-timing-function:%s}' % (sel, poz(f(t1)), tf))
+            koniec = 'to' if L['tb'] > 1 - 1e-6 else '%s%%,to' % liczba(L['tb'] * 100)
+            klatki.append('%s{transform:translate3d(0,0,0)}' % koniec)
+            out.append('@keyframes %s{%s}' % (nazwa, ''.join(klatki)))
+    czas = '%ss' % liczba(round(D, 2))
+    opoz = '%ss' % liczba(OPOZNIENIE)
+    css = ['.js #cinema .cin__f{animation:cinW1 %s linear %s both}' % (czas, opoz),
+           '.js #cinema .cin__f>span{animation:cinI1 %s linear %s both}' % (czas, opoz),
+           '.js #cinema .cin__l+.cin__l .cin__f{animation-name:cinW2}',
+           '.js #cinema .cin__l+.cin__l .cin__f>span{animation-name:cinI2}']
+    return '\n'.join(css + out), D
 
 
 def main():
     os.chdir(os.path.join(os.path.dirname(__file__), '..'))
     f = 'assets/css/style.css'
     s = open(f, encoding='utf-8').read()
-    blok = '/* >>> zbuduj_intro.py */\n' + keyframes() + '\n/* <<< zbuduj_intro.py */'
+    kf, D = keyframes()
+    blok = '/* >>> zbuduj_intro.py */\n' + kf + '\n/* <<< zbuduj_intro.py */'
     nowy, n = re.subn(r'/\* >>> zbuduj_intro\.py \*/.*?/\* <<< zbuduj_intro\.py \*/', lambda m: blok, s, flags=re.S)
     if n != 1:
         raise SystemExit('brak znaczników zbuduj_intro.py w ' + f)
     if nowy != s:
         open(f, 'w', encoding='utf-8').write(nowy)
-    print('intro: keyframes ' + ('zaktualizowane' if nowy != s else 'bez zmian'))
+    print('intro: wypełnianie %.2f s (+%.2f s opóźnienia) — keyframes %s' % (D, OPOZNIENIE, 'zaktualizowane' if nowy != s else 'bez zmian'))
 
 
 if __name__ == '__main__':

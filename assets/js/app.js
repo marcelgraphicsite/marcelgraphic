@@ -348,10 +348,11 @@
   });
 
   /* ---------- wejście na stronę (pierwsza wizyta w sesji na stronie głównej) ---------- */
-  // Kurtyna stoi zamknięta, a logo wypełnia się bielą: najpierw „Marcel”, potem „Struszczak”, jednym ruchem — to animacja
-  // CSS (style.css, #cinema), płynna nawet przy wczytywaniu strony. Tu tylko czekamy, aż wypełnianie się skończy
-  // i strona się wczyta (najdłużej ~5 s od wejścia; jeśli dłużej — napis spokojnie „oddycha”). Potem logo gaśnie
-  // w miejscu i kurtyna rozsuwa się jak dawniej. Klik albo klawisz przyspiesza.
+  // Kurtyna stoi zamknięta, a logo wypełnia się bielą litera po literze: najpierw „Marcel”, potem „Struszczak”,
+  // jednym spokojnym ruchem — to animacja CSS (style.css, #cinema; ruch liczy _zrodla/zbuduj_intro.py), płynna
+  // nawet przy wczytywaniu strony. Tu tylko czekamy, aż wypełnianie się skończy i strona się wczyta (najdłużej
+  // ~5,5 s od wejścia; jeśli dłużej — napis spokojnie „oddycha”). Potem logo gaśnie w miejscu i kurtyna rozsuwa się
+  // jak dawniej. Klik albo klawisz przyspiesza.
   mod('cinema', () => {
     const c = $('#cinema');
     if (!c) return;
@@ -361,7 +362,7 @@
       return;
     }
     const since = () => (window.performance && performance.now ? performance.now() : 0);
-    const MAX = 5000, HOLD = 200; // HOLD: chwila na cały biały napis, zanim zgaśnie
+    const MAX = 5500, HOLD = 120; // HOLD: chwila na cały biały napis, zanim zgaśnie (plus spokojne wyhamowanie pióra)
     const anims = () => (c.getAnimations ? c.getAnimations({ subtree: true }) : []);
     let gone = false, breathe = 0, hurry;
     const hurried = new Promise(r => { hurry = r; });
@@ -381,9 +382,9 @@
     setTimeout(open, MAX + 3000); // bezpiecznik: strona nigdy nie zostaje zasłonięta (nawet gdyby coś niżej się wysypało)
     c.addEventListener('click', skip);
     addEventListener('keydown', skip);
-    // koniec wypełniania = koniec animacji cinW1/cinI1/cinW2/cinI2; bez Web Animations API — ok. 2,2 s od wejścia
+    // koniec wypełniania = koniec animacji cinW1/cinI1/cinW2/cinI2; bez Web Animations API — ok. 3,3 s od wejścia
     const fill = anims().filter(a => /^cin[WI][12]$/.test(a.animationName || ''));
-    const filled = fill.length ? Promise.all(fill.map(a => a.finished.catch(() => {}))) : wait(Math.max(0, 2200 - since()));
+    const filled = fill.length ? Promise.all(fill.map(a => a.finished.catch(() => {}))) : wait(Math.max(0, 3300 - since()));
     const done = document.readyState === 'complete' ? Promise.resolve() : new Promise(r => addEventListener('load', r, { once: true }));
     const fonts = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
     const page = Promise.race([Promise.all([done, fonts]), wait(Math.max(0, MAX - since())), hurried]);

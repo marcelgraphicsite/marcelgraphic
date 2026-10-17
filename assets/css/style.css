@@ -120,34 +120,26 @@ html.is-arriving .curtain__n,html.is-arriving .curtain__t,html.is-arriving .curt
 @keyframes seam{to{opacity:1}}
 @keyframes cinemaOff{to{visibility:hidden}}
 html.no-cinema #cinema{display:none}
-/* wejście: kurtyna stoi zamknięta, a logo na środku wypełnia się bielą litera po literze — najpierw „Marcel”, potem
-   „Struszczak”, jednym spokojnym ruchem w stałym tempie (jak ręka, która pisze). To czysta animacja CSS na transformacjach: liczy ją karta graficzna,
-   więc idzie płynnie także wtedy, gdy telefon w tym samym czasie wczytuje stronę, i rusza od pierwszej klatki.
-   Każda linijka = przygaszony napis + „okno” (.cin__f, szerokie dokładnie na słowo) z białą kopią (z data-t):
-   okno jedzie w prawo, kopia w lewo dokładnie o tyle samo — biel stoi w miejscu i odsłania się od lewej,
-   z miękką, lekko pochyloną krawędzią (maska). Ruch obu okien: _zrodla/zbuduj_intro.py (@keyframes niżej).
+/* wejście: kurtyna stoi zamknięta, a logo na środku PISZE SIĘ PIÓREM — dokładnie tak, jak pisze się je ręką:
+   „M” od ogonka (zawijas w pętli), pętla, nóżki, potem „arcel”, „S” od haczyka, „truszczak”, na końcu poprzeczka „t”.
+   SVG (z kroju GV Script, _zrodla/zbuduj_intro.py): przygaszone logo + białe logo pod maską, w której pióro rysuje
+   kolejne pociągnięcia (stroke-dashoffset; czas każdego w atrybucie style: --l długość, --d czas, --t start, --e krzywa).
+   Pióro rusza (klasa .pen), gdy app.js skończy start strony i procesor jest wolny — maska rysuje się na głównym wątku.
    Logo przez cały czas stoi w jednym miejscu: na koniec tylko gaśnie, a kurtyna się rozsuwa (.go dodaje app.js).
    Bez JS — stary, automatyczny start. */
 #cinema .cin__logo{position:absolute;top:50%;left:50%;z-index:2;transform:translate3d(-50%,-50%,0);opacity:0;pointer-events:none}
 .js #cinema .cin__logo{opacity:1;animation:cinIn .4s ease both}
 .js #cinema.go .cin__logo{animation:cinOut .45s ease both}
-.cin__name{display:block;font-family:var(--script);font-size:clamp(3.3rem,13vw,6.2rem);line-height:.82;letter-spacing:-.01em;white-space:nowrap;text-align:left}
-.cin__l{position:relative;display:block;width:max-content;margin:-.3em -.93em -.3em -.25em;padding:.3em .93em .3em .25em;color:rgba(244,243,239,.16)}
-.cin__f{position:absolute;top:0;right:0;bottom:0;left:0;overflow:hidden;-webkit-mask-image:linear-gradient(100deg,#000 calc(100% - .78em),transparent calc(100% - .36em));mask-image:linear-gradient(100deg,#000 calc(100% - .78em),transparent calc(100% - .36em))}
-.cin__f>span{display:block;height:100%;padding:.3em .93em .3em .25em;color:#f4f3ef}
-.cin__f>span::before{content:attr(data-t)}
-/* >>> zbuduj_intro.py */
-.js #cinema .cin__f{animation:cinW1 2.89s linear .15s both}
-.js #cinema .cin__f>span{animation:cinI1 2.89s linear .15s both}
-.js #cinema .cin__l+.cin__l .cin__f{animation-name:cinW2}
-.js #cinema .cin__l+.cin__l .cin__f>span{animation-name:cinI2}
-@keyframes cinW1{0%{transform:translate3d(calc(-100% + .37em),0,0);animation-timing-function:cubic-bezier(.3333,0,.6667,.3333)}15.5767%{transform:translate3d(calc((-100% + .37em) * .8044),0,0);animation-timing-function:linear}47.6162%,to{transform:translate3d(0,0,0)}}
-@keyframes cinI1{0%{transform:translate3d(calc(100% - .37em),0,0);animation-timing-function:cubic-bezier(.3333,0,.6667,.3333)}15.5767%{transform:translate3d(calc((100% - .37em) * .8044),0,0);animation-timing-function:linear}47.6162%,to{transform:translate3d(0,0,0)}}
-@keyframes cinW2{0%,39.7136%{transform:translate3d(calc(-100% + .4em),0,0);animation-timing-function:linear}80.9618%{transform:translate3d(calc((-100% + .4em) * .1875),0,0);animation-timing-function:cubic-bezier(.3333,.6667,.6667,1)}to{transform:translate3d(0,0,0)}}
-@keyframes cinI2{0%,39.7136%{transform:translate3d(calc(100% - .4em),0,0);animation-timing-function:linear}80.9618%{transform:translate3d(calc((100% - .4em) * .1875),0,0);animation-timing-function:cubic-bezier(.3333,.6667,.6667,1)}to{transform:translate3d(0,0,0)}}
-/* <<< zbuduj_intro.py */
+.cin__svg{display:block;width:3.592em;height:1.64em;overflow:visible;font-size:clamp(3.3rem,13vw,6.2rem)}
+.cin__ghost{fill:rgba(244,243,239,.16)}
+.cin__ink{fill:#f4f3ef}
+.cin__pen{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round}
+.cin__pen path{stroke-dasharray:var(--l) var(--l);stroke-dashoffset:var(--l)}
+.js #cinema .cin__pen path{animation:cinPen var(--d) var(--e,linear) var(--t) both;animation-play-state:paused}
+#cinema.pen .cin__pen path{animation-play-state:running} /* pióro rusza, gdy procesor jest wolny (app.js) — bez zacięć na słabych telefonach */
+@keyframes cinPen{to{stroke-dashoffset:0}}
 /* strona jeszcze się wczytuje, a napis jest już cały biały: spokojnie „oddycha” (jasność, bez ruchu) */
-#cinema.is-wait .cin__name{animation:cinBreath 1.8s ease-in-out infinite}
+#cinema.is-wait .cin__svg{animation:cinBreath 1.8s ease-in-out infinite}
 @keyframes cinIn{from{opacity:0}to{opacity:1}}
 @keyframes cinOut{from{opacity:1}to{opacity:0}}
 @keyframes cinBreath{50%{opacity:.6}}

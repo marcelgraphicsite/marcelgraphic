@@ -348,11 +348,10 @@
   });
 
   /* ---------- wejście na stronę (pierwsza wizyta w sesji na stronie głównej) ---------- */
-  // Kurtyna stoi zamknięta, a logo wypełnia się bielą litera po literze: najpierw „Marcel”, potem „Struszczak”,
-  // jednym spokojnym ruchem — to animacja CSS (style.css, #cinema; ruch liczy _zrodla/zbuduj_intro.py), płynna
-  // nawet przy wczytywaniu strony. Tu tylko czekamy, aż wypełnianie się skończy i strona się wczyta (najdłużej
-  // ~5,5 s od wejścia; jeśli dłużej — napis spokojnie „oddycha”). Potem logo gaśnie w miejscu i kurtyna rozsuwa się
-  // jak dawniej. Klik albo klawisz przyspiesza.
+  // Kurtyna stoi zamknięta, a logo pisze się piórem — od ogonka „M”, litera po literze, tak jak pisze się je ręką
+  // (SVG w index.html i animacja CSS cinPen; trasę pióra liczą _zrodla/intro_pioro.py i zbuduj_intro.py).
+  // Tu tylko czekamy, aż pióro skończy i strona się wczyta (najdłużej ~5,5 s od wejścia; jeśli dłużej — napis
+  // spokojnie „oddycha”). Potem logo gaśnie w miejscu i kurtyna rozsuwa się jak dawniej. Klik albo klawisz przyspiesza.
   mod('cinema', () => {
     const c = $('#cinema');
     if (!c) return;
@@ -362,7 +361,7 @@
       return;
     }
     const since = () => (window.performance && performance.now ? performance.now() : 0);
-    const MAX = 5500, HOLD = 120; // HOLD: chwila na cały biały napis, zanim zgaśnie (plus spokojne wyhamowanie pióra)
+    const MAX = 5500, HOLD = 300; // HOLD: chwila na całe napisane logo, zanim zgaśnie
     const anims = () => (c.getAnimations ? c.getAnimations({ subtree: true }) : []);
     let gone = false, breathe = 0, hurry;
     const hurried = new Promise(r => { hurry = r; });
@@ -382,9 +381,12 @@
     setTimeout(open, MAX + 3000); // bezpiecznik: strona nigdy nie zostaje zasłonięta (nawet gdyby coś niżej się wysypało)
     c.addEventListener('click', skip);
     addEventListener('keydown', skip);
-    // koniec wypełniania = koniec animacji cinW1/cinI1/cinW2/cinI2; bez Web Animations API — ok. 3,3 s od wejścia
-    const fill = anims().filter(a => /^cin[WI][12]$/.test(a.animationName || ''));
-    const filled = fill.length ? Promise.all(fill.map(a => a.finished.catch(() => {}))) : wait(Math.max(0, 3300 - since()));
+    // pióro rusza, gdy procesor jest wolny (po starcie skryptów) — inaczej na słabym telefonie pierwsze pociągnięcia by się cięły
+    (window.requestIdleCallback || (f => setTimeout(f, 50)))(() => c.classList.add('pen'), { timeout: 350 });
+    // koniec pisania = koniec wszystkich pociągnięć pióra (cinPen); bez Web Animations API — czas z data-koniec SVG
+    const fill = anims().filter(a => a.animationName === 'cinPen');
+    const svg = $('.cin__svg', c), end = (svg && parseFloat(svg.getAttribute('data-koniec'))) || 2.5;
+    const filled = fill.length ? Promise.all(fill.map(a => a.finished.catch(() => {}))) : wait(Math.max(0, end * 1000 + 200 - since()));
     const done = document.readyState === 'complete' ? Promise.resolve() : new Promise(r => addEventListener('load', r, { once: true }));
     const fonts = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
     const page = Promise.race([Promise.all([done, fonts]), wait(Math.max(0, MAX - since())), hurried]);

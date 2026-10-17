@@ -110,7 +110,7 @@ html.is-leaving .curtain__s{transition-delay:.16s,.14s}
 html.is-leaving .curtain__sig{transition-delay:.19s,.17s}
 html.is-arriving .curtain__n,html.is-arriving .curtain__t,html.is-arriving .curtain__s,html.is-arriving .curtain__sig{opacity:1;transform:none;transition:none}
 /* ---------- intro: czarna kurtyna (tylko pierwsza wizyta) ---------- */
-#cinema{position:fixed;top:0;right:0;bottom:0;left:0;z-index:200;pointer-events:none;animation:cinemaOff 0s linear 1.45s forwards}
+#cinema{position:fixed;top:0;right:0;bottom:0;left:0;z-index:200;overflow:hidden;pointer-events:none;animation:cinemaOff 0s linear 1.45s forwards}
 #cinema i{position:absolute;top:0;height:100%;width:50.2%;background:#0c0c0e;will-change:transform}
 #cinema i:nth-child(1){left:0;animation:curtainL 1.15s var(--ease-io) .24s forwards}
 #cinema i:nth-child(2){right:0;animation:curtainR 1.15s var(--ease-io) .24s forwards}
@@ -120,22 +120,43 @@ html.is-arriving .curtain__n,html.is-arriving .curtain__t,html.is-arriving .curt
 @keyframes seam{to{opacity:1}}
 @keyframes cinemaOff{to{visibility:hidden}}
 html.no-cinema #cinema{display:none}
-/* wejście: kurtyna stoi zamknięta, a na środku logo wypełnia się bielą od lewej do prawej, jak pasek ładowania
-   (--fill ustawia app.js). Gdy jest całe białe, gaśnie i kurtyna rozsuwa się jak dawniej (.go dodaje app.js).
-   Bez JS — stary, automatyczny start. Padding z ujemnym marginesem: zawijasy pisma wystające poza linię też się wypełniają. */
-#cinema .cin__logo{position:absolute;top:50%;left:50%;z-index:2;transform:translate3d(-50%,-50%,0);color:#f4f3ef;opacity:0;pointer-events:none}
-.js #cinema .cin__logo{opacity:1;transition:opacity .42s ease,transform .6s var(--ease)}
-.cin__name{--fill:-8%;display:block;margin:-.3em -.25em;padding:.3em .25em;font-family:var(--script);font-size:clamp(3.3rem,13vw,6.2rem);line-height:.9;letter-spacing:.01em;white-space:nowrap;text-align:left}
-@supports ((-webkit-background-clip:text) or (background-clip:text)){
-  .js .cin__name{color:transparent;background-image:linear-gradient(104deg,#f4f3ef calc(var(--fill) - 8%),rgba(244,243,239,.16) calc(var(--fill) + 8%));-webkit-background-clip:text;background-clip:text}
-}
+/* wejście: kurtyna stoi zamknięta, a logo na środku wypełnia się bielą — najpierw „Marcel”, potem „Struszczak”,
+   jednym płynnym ruchem (jak ręka, która pisze). To czysta animacja CSS na transformacjach: liczy ją karta graficzna,
+   więc idzie płynnie także wtedy, gdy telefon w tym samym czasie wczytuje stronę, i rusza od pierwszej klatki.
+   Każda linijka = przygaszony napis + „okno” (.cin__f, szerokie dokładnie na słowo) z białą kopią (z data-t):
+   okno jedzie w prawo, kopia w lewo dokładnie o tyle samo — biel stoi w miejscu i odsłania się od lewej,
+   z miękką, lekko pochyloną krawędzią (maska). Ruch obu okien: _zrodla/zbuduj_intro.py (@keyframes niżej).
+   Logo przez cały czas stoi w jednym miejscu: na koniec tylko gaśnie, a kurtyna się rozsuwa (.go dodaje app.js).
+   Bez JS — stary, automatyczny start. */
+#cinema .cin__logo{position:absolute;top:50%;left:50%;z-index:2;transform:translate3d(-50%,-50%,0);opacity:0;pointer-events:none}
+.js #cinema .cin__logo{opacity:1;animation:cinIn .4s ease both}
+.js #cinema.go .cin__logo{animation:cinOut .45s ease both}
+.cin__name{display:block;font-family:var(--script);font-size:clamp(3.3rem,13vw,6.2rem);line-height:.9;letter-spacing:.01em;white-space:nowrap;text-align:left}
+.cin__l{position:relative;display:block;width:max-content;margin:-.3em -1.15em -.3em -.25em;padding:.3em 1.15em .3em .25em;color:rgba(244,243,239,.16)}
+.cin__f{position:absolute;top:0;right:0;bottom:0;left:0;overflow:hidden;-webkit-mask-image:linear-gradient(100deg,#000 calc(100% - .95em),transparent calc(100% - .4em));mask-image:linear-gradient(100deg,#000 calc(100% - .95em),transparent calc(100% - .4em))}
+.cin__f>span{display:block;height:100%;padding:.3em 1.15em .3em .25em;color:#f4f3ef}
+.cin__f>span::before{content:attr(data-t)}
+.js #cinema .cin__f{animation:cinW1 1.9s linear .15s both}
+.js #cinema .cin__f>span{animation:cinI1 1.9s linear .15s both}
+.js #cinema .cin__l+.cin__l .cin__f{animation-name:cinW2}
+.js #cinema .cin__l+.cin__l .cin__f>span{animation-name:cinI2}
+/* >>> zbuduj_intro.py */
+@keyframes cinW1{0%{transform:translate3d(calc(-100% + .4em),0,0);animation-timing-function:cubic-bezier(.3698,0,.6852,.4971)}49.4475%,to{transform:translate3d(0,0,0)}}
+@keyframes cinI1{0%{transform:translate3d(calc(100% - .4em),0,0);animation-timing-function:cubic-bezier(.3698,0,.6852,.4971)}49.4475%,to{transform:translate3d(0,0,0)}}
+@keyframes cinW2{0%,42.004%{transform:translate3d(calc(-100% + .43em),0,0);animation-timing-function:cubic-bezier(.319,.4539,.6271,1)}to{transform:translate3d(0,0,0)}}
+@keyframes cinI2{0%,42.004%{transform:translate3d(calc(100% - .43em),0,0);animation-timing-function:cubic-bezier(.319,.4539,.6271,1)}to{transform:translate3d(0,0,0)}}
+/* <<< zbuduj_intro.py */
+/* strona jeszcze się wczytuje, a napis jest już cały biały: spokojnie „oddycha” (jasność, bez ruchu) */
+#cinema.is-wait .cin__name{animation:cinBreath 1.8s ease-in-out infinite}
+@keyframes cinIn{from{opacity:0}to{opacity:1}}
+@keyframes cinOut{from{opacity:1}to{opacity:0}}
+@keyframes cinBreath{50%{opacity:.6}}
 .js #cinema:not(.go){animation:none;pointer-events:auto;cursor:progress}
 .js #cinema:not(.go) i,.js #cinema:not(.go) b{animation:none}
-#cinema.go{animation:cinemaOff 0s linear 1.8s forwards}
-#cinema.go i:nth-child(1){animation:curtainL 1.15s var(--ease-io) .42s forwards}
-#cinema.go i:nth-child(2){animation:curtainR 1.15s var(--ease-io) .42s forwards}
-#cinema.go b{animation:seam .5s ease .42s forwards}
-.js #cinema.go .cin__logo{opacity:0;transform:translate3d(-50%,calc(-50% - 12px),0);transition-delay:.1s}
+#cinema.go{animation:cinemaOff 0s linear 1.5s forwards}
+#cinema.go i:nth-child(1){animation:curtainL 1.15s var(--ease-io) .3s forwards}
+#cinema.go i:nth-child(2){animation:curtainR 1.15s var(--ease-io) .3s forwards}
+#cinema.go b{animation:seam .5s ease .3s forwards}
 /* nazwisko na starcie czeka za kurtyną i wjeżdża razem z jej rozsunięciem */
 html.is-intro .pin-word,html.is-intro .pin-cap{animation-play-state:paused}
 .no-scroll{overflow:hidden!important}

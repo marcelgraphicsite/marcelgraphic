@@ -121,8 +121,8 @@ html.is-arriving .curtain__n,html.is-arriving .curtain__t,html.is-arriving .curt
 @keyframes cinemaOff{to{visibility:hidden}}
 html.no-cinema #cinema{display:none}
 /* wejście: kurtyna stoi zamknięta, a logo na środku PISZE SIĘ PIÓREM — dokładnie tak, jak pisze się je ręką:
-   „M” od ogonka (zawijas w pętli), pętla, nóżki, potem „arcel”, „S” od haczyka, „truszczak”, na końcu poprzeczka „t”.
-   SVG (z kroju GV Script, _zrodla/zbuduj_intro.py): przygaszone logo + białe logo pod maską, w której pióro rysuje
+   „M” od ogonka (zawijas w pętli), pętla, nóżki, „arcel”, „G” od ogonka, „raphic”, „S” od haczyka, „ite”, kropki nad „i”.
+   SVG (logo 1:1 z obrazka — assets/img/logo.svg, _zrodla/zbuduj_intro.py): przygaszone logo + białe logo pod maską, w której pióro rysuje
    kolejne pociągnięcia (stroke-dashoffset; czas każdego w atrybucie style: --l długość, --d czas, --t start, --e krzywa).
    Pióro rusza (klasa .pen), gdy app.js skończy start strony i procesor jest wolny — maska rysuje się na głównym wątku.
    Logo przez cały czas stoi w jednym miejscu: na koniec tylko gaśnie, a kurtyna się rozsuwa (.go dodaje app.js).
@@ -130,7 +130,7 @@ html.no-cinema #cinema{display:none}
 #cinema .cin__logo{position:absolute;top:50%;left:50%;z-index:2;transform:translate3d(-50%,-50%,0);opacity:0;pointer-events:none}
 .js #cinema .cin__logo{opacity:1;animation:cinIn .4s ease both}
 .js #cinema.go .cin__logo{animation:cinOut .45s ease both}
-.cin__svg{display:block;width:3.592em;height:1.64em;overflow:visible;font-size:clamp(3.3rem,13vw,6.2rem)}
+.cin__svg{display:block;overflow:visible;font-size:clamp(3.3rem,13vw,6.2rem)} /* szerokość i wysokość w em wstawia zbuduj_intro.py */
 .cin__ghost{fill:rgba(244,243,239,.16)}
 .cin__ink{fill:#f4f3ef}
 .cin__pen{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round}
@@ -885,7 +885,7 @@ html.lite .cta-card::before{animation:none}
 .foot__cols a[aria-current="page"]{color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
 .foot__cols p{font-size:14px;color:var(--ink-2);font-weight:300}
 .foot__word{display:block;font-family:var(--script);font-size:min(10.2vw,122px);line-height:1.35;margin-top:8px!important;white-space:nowrap;text-align:center;color:var(--ink);padding:0 .08em;margin:0 -.08em;user-select:none}
-.foot__word .logo-svg{width:min(74vw,520px);height:calc(min(74vw,520px) * .5445);margin:.12em auto calc(min(74vw,520px) * .065)}
+.foot__word .logo-svg{width:6.889em;height:1.2175em;margin:.08em auto .14em} /* logo w jednej linii (#logo-line), litery jak dawny napis */
 .js .foot__word{clip-path:inset(0 100% 0 0);transition:clip-path 1.8s var(--ease-io)}
 .js .foot__word.in{clip-path:inset(0 0 0 0)}
 .foot__bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--muted)}

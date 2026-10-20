@@ -552,6 +552,11 @@
     if (!pin) return;
     const ghosts = $$('.ghost-row', pin), blobs = $$('.blob', pin), hint = $('#scrollHint'), cap = $('#pinCap');
     let VH = innerHeight, W = innerWidth, last = -1;
+    // napisy w tle: przesunięcie od przewijania (xs, % szerokości wiersza) + dryf w bezruchu (ds, px)
+    const xs = ghosts.map((g, i) => (i % 2 ? -34 : 0)), ds = ghosts.map(() => 0);
+    const paint = () => ghosts.forEach((g, i) => {
+      g.style.transform = `translate3d(${xs[i].toFixed(3)}%,0,0)` + (ds[i] ? ` translate3d(${ds[i].toFixed(1)}px,0,0)` : '');
+    });
     addEventListener('resize', () => {
       if (innerWidth !== W || Math.abs(innerHeight - VH) > 160) { W = innerWidth; VH = innerHeight; }
     }, { passive: true });
@@ -563,19 +568,58 @@
       if (hint) hint.style.opacity = p > 0.06 ? '0' : '1';
       if (cap) cap.style.opacity = p > 0.06 ? '0' : '';
       if (RM) return;
-      ghosts.forEach((g, i) => {
-        const x = i % 2 === 0 ? -p * 34 : (p - 1) * 34;
-        g.style.transform = `translate3d(${x.toFixed(3)}%,0,0)`;
-      });
+      ghosts.forEach((g, i) => { xs[i] = i % 2 === 0 ? -p * 34 : (p - 1) * 34; });
+      paint();
       blobs.forEach((b, i) => {
         const d = i % 2 === 0 ? 1 : -1;
         b.style.transform = `translate3d(${(d * p * 60).toFixed(1)}px,${(d * p * -42).toFixed(1)}px,0) scale(${(1 + p * 0.35).toFixed(3)})`;
       });
     });
+
+    // bezruch: po minucie bez przewijania, myszki, dotyku i klawiatury napisy w tle same jadą dalej, tak jak przy
+    // przewijaniu (co drugi w lewo, co drugi w prawo); dowolny ruch łagodnie je zatrzymuje. Tylko gdy widać początek
+    // strony i karta jest na wierzchu; bez „ogranicz ruch” i w trybie lekkim nic nie jedzie.
+    if (RM || !ghosts.length) return;
+    const IDLE = 60000, SPEED = 0.032; // ms bezruchu; prędkość w szerokościach ekranu na sekundę
+    let lastAct = performance.now(), timer = 0, drifting = false, v = 0, raf = 0, prev = 0, vis = true, per = [];
+    const period = g => { // szerokość jednego „Marcel Struszczak · ” — o tyle napis może przeskoczyć bez śladu
+      const t = g.firstChild, txt = t && t.nodeType === 3 ? t.textContent : '', k = txt.indexOf(txt.slice(0, 6), 1);
+      if (k < 1) return 0;
+      const r = document.createRange();
+      r.setStart(t, 0); r.setEnd(t, k);
+      return r.getBoundingClientRect().width;
+    };
+    const step = now => {
+      const dt = Math.min(64, now - (prev || now)) / 1000;
+      prev = now;
+      v += ((drifting ? 1 : 0) - v) * Math.min(1, dt * (drifting ? 0.8 : 3)); // łagodny rozbieg i hamowanie
+      const px = v * SPEED * innerWidth * dt;
+      ghosts.forEach((g, i) => {
+        ds[i] += i % 2 ? px : -px;
+        if (per[i] > 0) ds[i] -= per[i] * Math.ceil(ds[i] / per[i]); // zostaje w (−okres, 0]: tekst zawsze pokrywa ekran
+      });
+      paint();
+      if (drifting || v > 0.003) raf = requestAnimationFrame(step); else { raf = 0; prev = 0; v = 0; }
+    };
+    const arm = () => { clearTimeout(timer); timer = setTimeout(check, Math.max(250, IDLE - (performance.now() - lastAct))); };
+    const check = () => {
+      if (performance.now() - lastAct < IDLE) return arm();
+      if (!vis || document.hidden || isLite()) { lastAct = performance.now(); return arm(); }
+      per = ghosts.map(period);
+      drifting = true;
+      if (!raf) raf = requestAnimationFrame(step);
+    };
+    const poke = () => { lastAct = performance.now(); if (drifting) { drifting = false; arm(); } };
+    ['scroll', 'wheel', 'pointermove', 'pointerdown', 'keydown', 'touchstart'].forEach(ev => addEventListener(ev, poke, { passive: true }));
+    document.addEventListener('visibilitychange', poke);
+    if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { vis = e.isIntersecting; if (!vis) poke(); }).observe($('.pin-stage', pin) || pin);
+    arm();
   });
 
-  /* ---------- start: litery nazwiska chudną pod kursorem (tylko myszka; krój zmienny 300–700) ---------- */
-  mod('nameWeight', () => {
+  /* ---------- start: litery nazwiska pod kursorem przechodzą w pismo z logo (tylko myszka) ---------- */
+  // Każda litera ma swoją odręczną wersję z kroju logo (GV Script, ::after w style.css): litery przy kursorze płynnie
+  // zamieniają się w pismo, a chwilę po odejściu kursora wracają. Telefony nic nie liczą (w trybie lekkim wyłączone).
+  mod('nameScript', () => {
     const word = $('.pin-word'), stage = word && word.closest('.pin-stage');
     if (!word || !stage || !FINE || RM) return;
     const letters = [];
@@ -583,34 +627,31 @@
       if (n.nodeType !== 3) return;
       const f = document.createDocumentFragment();
       Array.from(n.textContent).forEach(ch => {
-        const sp = document.createElement('span');
-        sp.className = 'pl'; sp.textContent = ch;
-        f.appendChild(sp); letters.push(sp);
+        const sp = document.createElement('span'), a = document.createElement('span');
+        sp.className = 'pl'; sp.setAttribute('data-l', ch); a.textContent = ch;
+        sp.appendChild(a); f.appendChild(sp); letters.push(sp);
       });
       n.replaceWith(f);
     });
-    const BASE = 600, THIN = 300;
-    const cur = letters.map(() => BASE);
+    const BACK = 480; // ms — tyle litera zostaje odręczna po odejściu kursora
+    const back = new Map();
     let mx = -1e4, my = -1e4, raf = 0;
     const tick = () => {
       raf = 0;
-      // odczyt pozycji przed zapisem (układ policzony w poprzedniej klatce — bez wymuszania)
-      const pos = letters.map(l => { const r = l.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2]; });
-      const R = Math.max(140, innerWidth * 0.16);
-      let moving = false;
-      letters.forEach((l, i) => {
-        const d = Math.hypot(pos[i][0] - mx, pos[i][1] - my);
-        const k = isLite() ? 0 : Math.max(0, 1 - d / R);
-        const target = BASE - (BASE - THIN) * k * k * (3 - 2 * k);
-        cur[i] += (target - cur[i]) * 0.16;
-        if (Math.abs(target - cur[i]) > 0.6) moving = true; else cur[i] = target;
+      const R = isLite() ? -1 : parseFloat(getComputedStyle(word).fontSize) * 0.62;
+      letters.forEach(l => {
+        const r = l.getBoundingClientRect();
+        if (Math.hypot(r.left + r.width / 2 - mx, (r.top + r.height / 2 - my) * 1.25) < R) {
+          clearTimeout(back.get(l)); back.delete(l); l.classList.add('is-s');
+        } else if (l.classList.contains('is-s') && !back.has(l)) {
+          back.set(l, setTimeout(() => { back.delete(l); l.classList.remove('is-s'); }, BACK));
+        }
       });
-      letters.forEach((l, i) => { l.style.fontWeight = Math.round(cur[i]); });
-      if (moving) raf = requestAnimationFrame(tick);
     };
     const go = () => { if (!raf) raf = requestAnimationFrame(tick); };
     stage.addEventListener('pointermove', e => { if (e.pointerType !== 'mouse') return; mx = e.clientX; my = e.clientY; go(); }, { passive: true });
     stage.addEventListener('pointerleave', () => { mx = my = -1e4; go(); });
+    scrollFns.push(() => { if (back.size || word.querySelector('.is-s')) go(); });
   });
 
   /* ---------- start: rotujące słowo w nagłówku ---------- */

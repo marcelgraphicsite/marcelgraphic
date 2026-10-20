@@ -20,7 +20,7 @@ body::after{content:"";position:fixed;top:0;right:0;bottom:0;left:0;pointer-even
 .ghost{position:fixed;left:0;white-space:nowrap;font-weight:600;letter-spacing:-.04em;color:rgba(23,23,26,.05);line-height:1;pointer-events:none;font-size:clamp(4rem,13vw,12rem);animation:drift 40s linear infinite alternate}
 .g1{top:4%}.g2{top:38%;animation-direction:alternate-reverse}.g3{top:72%}
 @keyframes drift{from{transform:translateX(-4%)}to{transform:translateX(-34%)}}
-.logo{position:fixed;top:18px;left:14px;font-family:"GV Script",cursive;font-size:1.1rem;line-height:.9;color:var(--ink);text-decoration:none}
+.logo{position:fixed;top:14px;left:14px;font-size:1.1rem;line-height:0;color:var(--ink);text-decoration:none}.logo-svg{display:block;width:4.15em;height:2.26em;fill:currentColor;overflow:visible}
 main{position:relative;z-index:2;width:100%;max-width:1072px;margin:0 auto;padding:110px 24px 64px}
 .tag{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 h1{margin:20px 0 22px;font-size:clamp(44px,9vw,96px);font-weight:600;letter-spacing:-.045em;line-height:.95}
@@ -43,7 +43,7 @@ nav a:hover i{opacity:1;transform:none}
 <div class="ghost g1" aria-hidden="true">Marcel Struszczak · Marcel Struszczak · Marcel Struszczak · Marcel Struszczak · Marcel Struszczak ·</div>
 <div class="ghost g2" aria-hidden="true">Marcel Struszczak · Marcel Struszczak · Marcel Struszczak · Marcel Struszczak · Marcel Struszczak ·</div>
 <div class="ghost g3" aria-hidden="true">Marcel Struszczak · Marcel Struszczak · Marcel Struszczak · Marcel Struszczak · Marcel Struszczak ·</div>
-<a class="logo" href="https://marcelgraphicsite.pl/" aria-label="Marcel Struszczak — strona główna">Marcel<br>Struszczak</a>
+<a class="logo" href="https://marcelgraphicsite.pl/" aria-label="Marcel GraphicSite — strona główna"><svg class="logo-svg" viewBox="0 0 3188 1736" aria-hidden="true" focusable="false"><use href="/assets/img/logo.svg?v=20261020a#logo"/></svg></a>
 <main>
   <p class="tag">(404)</p>
   <h1>Tej strony<br><em>tu nie ma.</em></h1>

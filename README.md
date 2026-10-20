@@ -37,6 +37,10 @@ Strona: https://marcelgraphicsite.pl/
 
 Stare linki z wersji jednostronicowej (np. `…/marcelgraphic/#kontakt`, `#cennik`, `#kalkulator`) same przekierowują na właściwą podstronę — nic, co już udostępniłeś, się nie zepsuje.
 
+## Logo
+
+- Logo „Marcel / GraphicSite” (lewy górny róg i stopka każdej strony) to wektor 1:1 z obrazka `_zrodla/logo/logo-marcel-graphicsite.png` — plik `assets/img/logo.svg`, wstawiany przez `<svg><use href="assets/img/logo.svg#logo"/></svg>` (kolor jak tekst). Po podmianie obrazka: `python3 _zrodla/zbuduj_logo.py` i podbij `?v=` przy `logo.svg`.
+
 ## Jak działają przejścia
 
 - Pierwsze wejście na stronę główną (raz na kartę przeglądarki): kurtyna stoi zamknięta, a na środku przygaszone logo pisze się piórem — tak, jak pisze się je ręką: „M” od ogonka (zawijas w pętli), pętla, nóżki, „arcel”, „S” od haczyka, „truszczak”, na końcu poprzeczka „t” (ok. 2 s, stałe tempo pióra z łagodnym rozbiegiem). Logo to SVG prosto z kroju GV Script; pióro to maska rysowana pociągnięcie po pociągnięciu. Logo cały czas stoi w jednym miejscu: gdy jest całe białe i strona się wczytała (najdłużej ok. 5,5 s; jeśli trzeba poczekać, napis spokojnie „oddycha”), gaśnie w miejscu i kurtyna się rozsuwa. Na czas intra pasek przeglądarki w telefonie jest czarny. Klik albo dowolny klawisz przyspiesza. Żeby zobaczyć intro jeszcze raz, otwórz stronę w nowej karcie (odświeżenie tej samej karty go nie pokazuje). Kod: `#cinema` w `index.html` i `style.css`, moduł `cinema` w `assets/js/app.js`; trasę pióra liczy `python3 _zrodla/intro_pioro.py` (tylko po zmianie napisu albo kroju; potrzebne biblioteki są w opisie skryptu), a SVG z czasami pociągnięć wstawia `python3 _zrodla/zbuduj_intro.py` — tam zmienisz tempo pióra jedną liczbą (TEMPO).

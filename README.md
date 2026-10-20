@@ -66,8 +66,8 @@ Stare linki z wersji jednostronicowej (np. `…/marcelgraphic/#kontakt`, `#cenni
 ## Smaczki
 
 - Pod nazwiskiem na starcie hasło z wizytówki „Cyfrowy rozwój lokalnych firm” (tym samym krojem co na karcie; znika przy przewijaniu).
-- Na komputerze litery nazwiska pod kursorem płynnie zamieniają się w pismo z logo (krój GV Script) i chwilę po odejściu kursora wracają — tylko myszka, telefony nie liczą nic (w trybie lekkim wyłączone).
-- Napisy w tle początku strony jadą przy przewijaniu, a po minucie bezruchu (bez przewijania, myszki, dotyku i klawiatury) same płyną dalej, aż ktoś się ruszy (`IDLE` i `SPEED` w module `pin` w `assets/js/app.js`; bez „ogranicz ruch” i w trybie lekkim stoją).
+- Na komputerze litery nazwiska chudną pod kursorem (krój zmienny) — tylko myszka, telefony nie liczą nic (w trybie lekkim wyłączone).
+- Napisy w tle początku strony jadą przy przewijaniu, a po 10 sekundach bezruchu (bez przewijania, myszki, dotyku i klawiatury) same płyną dalej, aż ktoś się ruszy (`IDLE` i `SPEED` w module `pin` w `assets/js/app.js`; bez „ogranicz ruch” i w trybie lekkim stoją).
 - Wielkie słowo „następna strona” na dole każdej podstrony wypełnia się atramentem, im bliżej końca.
 - Na Androidzie wizytówka lekko wibruje przy obracaniu.
 

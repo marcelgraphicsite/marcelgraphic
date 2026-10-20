@@ -163,6 +163,9 @@ html.is-intro .pin-word,html.is-intro .pin-cap{animation-play-state:paused}
 html.lite .nav.is-scrolled{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(244,243,239,.97)}
 .logo-mark{position:absolute;top:50%;left:14px;left:max(14px,env(safe-area-inset-left));transform:translateY(-50%);z-index:60;font-family:var(--script);font-size:clamp(.95rem,1.15vw,1.1rem);line-height:.9;letter-spacing:.01em;white-space:nowrap;transition:opacity .35s ease,transform .35s var(--ease)}
 .logo-mark:hover{opacity:.6;transform:translateY(calc(-50% - 1px))}
+/* logo „Marcel / GraphicSite” — wektor 1:1 z obrazka (assets/img/logo.svg, _zrodla/zbuduj_logo.py); kolor jak tekst.
+   Rozmiar w em: litery „Marcel” tej samej wielkości co dawny napis w nagłówku. */
+.logo-svg{display:block;width:4.15em;height:2.26em;fill:currentColor;overflow:visible}
 .nav-links{height:var(--nav-h);display:none;align-items:center;justify-content:center;gap:32px;font-family:var(--mono);font-size:12px}
 .nav-link{position:relative;color:var(--muted);transition:color .3s}
 .nav-link::after{content:"";position:absolute;left:0;bottom:-3px;height:1px;width:100%;background:var(--ink);transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
@@ -882,6 +885,7 @@ html.lite .cta-card::before{animation:none}
 .foot__cols a[aria-current="page"]{color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
 .foot__cols p{font-size:14px;color:var(--ink-2);font-weight:300}
 .foot__word{display:block;font-family:var(--script);font-size:min(10.2vw,122px);line-height:1.35;margin-top:8px!important;white-space:nowrap;text-align:center;color:var(--ink);padding:0 .08em;margin:0 -.08em;user-select:none}
+.foot__word .logo-svg{width:min(74vw,520px);height:calc(min(74vw,520px) * .5445);margin:.12em auto calc(min(74vw,520px) * .065)}
 .js .foot__word{clip-path:inset(0 100% 0 0);transition:clip-path 1.8s var(--ease-io)}
 .js .foot__word.in{clip-path:inset(0 0 0 0)}
 .foot__bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--muted)}

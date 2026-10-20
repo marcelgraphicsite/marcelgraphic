@@ -576,11 +576,11 @@
       });
     });
 
-    // bezruch: po minucie bez przewijania, myszki, dotyku i klawiatury napisy w tle same jadą dalej, tak jak przy
+    // bezruch: po 10 s bez przewijania, myszki, dotyku i klawiatury napisy w tle same jadą dalej, tak jak przy
     // przewijaniu (co drugi w lewo, co drugi w prawo); dowolny ruch łagodnie je zatrzymuje. Tylko gdy widać początek
     // strony i karta jest na wierzchu; bez „ogranicz ruch” i w trybie lekkim nic nie jedzie.
     if (RM || !ghosts.length) return;
-    const IDLE = 60000, SPEED = 0.032; // ms bezruchu; prędkość w szerokościach ekranu na sekundę
+    const IDLE = 10000, SPEED = 0.032; // ms bezruchu; prędkość w szerokościach ekranu na sekundę
     let lastAct = performance.now(), timer = 0, drifting = false, v = 0, raf = 0, prev = 0, vis = true, per = [];
     const period = g => { // szerokość jednego „Marcel Struszczak · ” — o tyle napis może przeskoczyć bez śladu
       const t = g.firstChild, txt = t && t.nodeType === 3 ? t.textContent : '', k = txt.indexOf(txt.slice(0, 6), 1);
@@ -616,10 +616,8 @@
     arm();
   });
 
-  /* ---------- start: litery nazwiska pod kursorem przechodzą w pismo z logo (tylko myszka) ---------- */
-  // Każda litera ma swoją odręczną wersję z kroju logo (GV Script, ::after w style.css): litery przy kursorze płynnie
-  // zamieniają się w pismo, a chwilę po odejściu kursora wracają. Telefony nic nie liczą (w trybie lekkim wyłączone).
-  mod('nameScript', () => {
+  /* ---------- start: litery nazwiska chudną pod kursorem (tylko myszka; krój zmienny 300–700) ---------- */
+  mod('nameWeight', () => {
     const word = $('.pin-word'), stage = word && word.closest('.pin-stage');
     if (!word || !stage || !FINE || RM) return;
     const letters = [];
@@ -627,31 +625,34 @@
       if (n.nodeType !== 3) return;
       const f = document.createDocumentFragment();
       Array.from(n.textContent).forEach(ch => {
-        const sp = document.createElement('span'), a = document.createElement('span');
-        sp.className = 'pl'; sp.setAttribute('data-l', ch); a.textContent = ch;
-        sp.appendChild(a); f.appendChild(sp); letters.push(sp);
+        const sp = document.createElement('span');
+        sp.className = 'pl'; sp.textContent = ch;
+        f.appendChild(sp); letters.push(sp);
       });
       n.replaceWith(f);
     });
-    const BACK = 480; // ms — tyle litera zostaje odręczna po odejściu kursora
-    const back = new Map();
+    const BASE = 600, THIN = 300;
+    const cur = letters.map(() => BASE);
     let mx = -1e4, my = -1e4, raf = 0;
     const tick = () => {
       raf = 0;
-      const R = isLite() ? -1 : parseFloat(getComputedStyle(word).fontSize) * 0.62;
-      letters.forEach(l => {
-        const r = l.getBoundingClientRect();
-        if (Math.hypot(r.left + r.width / 2 - mx, (r.top + r.height / 2 - my) * 1.25) < R) {
-          clearTimeout(back.get(l)); back.delete(l); l.classList.add('is-s');
-        } else if (l.classList.contains('is-s') && !back.has(l)) {
-          back.set(l, setTimeout(() => { back.delete(l); l.classList.remove('is-s'); }, BACK));
-        }
+      // odczyt pozycji przed zapisem (układ policzony w poprzedniej klatce — bez wymuszania)
+      const pos = letters.map(l => { const r = l.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2]; });
+      const R = Math.max(140, innerWidth * 0.16);
+      let moving = false;
+      letters.forEach((l, i) => {
+        const d = Math.hypot(pos[i][0] - mx, pos[i][1] - my);
+        const k = isLite() ? 0 : Math.max(0, 1 - d / R);
+        const target = BASE - (BASE - THIN) * k * k * (3 - 2 * k);
+        cur[i] += (target - cur[i]) * 0.16;
+        if (Math.abs(target - cur[i]) > 0.6) moving = true; else cur[i] = target;
       });
+      letters.forEach((l, i) => { l.style.fontWeight = Math.round(cur[i]); });
+      if (moving) raf = requestAnimationFrame(tick);
     };
     const go = () => { if (!raf) raf = requestAnimationFrame(tick); };
     stage.addEventListener('pointermove', e => { if (e.pointerType !== 'mouse') return; mx = e.clientX; my = e.clientY; go(); }, { passive: true });
     stage.addEventListener('pointerleave', () => { mx = my = -1e4; go(); });
-    scrollFns.push(() => { if (back.size || word.querySelector('.is-s')) go(); });
   });
 
   /* ---------- start: rotujące słowo w nagłówku ---------- */

@@ -258,14 +258,7 @@ html.is-arriving .pin-cap{animation-delay:.75s}
 @media (max-width:640px){.pin-cap{font-size:12.5px;letter-spacing:.14em;white-space:nowrap}}
 @media (max-width:360px){.pin-cap{font-size:11px;letter-spacing:.1em}}
 html.is-arriving:not(.is-revealing) .pin-cap{animation-play-state:paused}
-/* litery nazwiska pod kursorem przechodzą w pismo z logo (app.js, moduł nameScript — tylko myszka): litera i jej
-   odręczna wersja (::after, krój GV Script) leżą w jednej komórce siatki na wspólnej linii bazowej, a odręczna ma
-   zerową szerokość — napis nie drgnie. Odręczna bez tekstu dla czytników ekranu (content: … / ""). */
-.pin-word .pl{display:inline-grid;align-items:baseline;justify-items:center}
-.pin-word .pl>span,.pin-word .pl::after{grid-area:1/1;transition:opacity .5s ease,transform .7s var(--ease)}
-.pin-word .pl::after{content:attr(data-l);content:attr(data-l)/"";display:flex;justify-content:center;width:0;font:400 1.16em/0 var(--script);letter-spacing:0;opacity:0;transform:translate3d(0,.12em,0);pointer-events:none}
-.pin-word .pl.is-s>span{opacity:0;transform:translate3d(0,-.1em,0);transition-duration:.25s,.45s}
-.pin-word .pl.is-s::after{opacity:1;transform:none;transition-duration:.25s,.45s}
+.pin-word .pl{display:inline-block}
 @keyframes pinReveal{0%{opacity:0;transform:translate3d(0,52px,0)}100%{opacity:1;transform:none}}
 .scroll-hint{position:absolute;bottom:22px;right:26px;bottom:max(22px,env(safe-area-inset-bottom));right:max(26px,env(safe-area-inset-right));z-index:3;transition:opacity .4s ease;text-align:center}
 .scroll-hint .line{width:1px;height:34px;background:var(--ink);margin:0 auto 8px;transform-origin:top;animation:hintline 1.8s var(--ease-io) infinite}

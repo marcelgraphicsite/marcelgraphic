@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-"""Wejście na stronę (#cinema): logo „Marcel / Struszczak” pisze się piórem — litera po literze, w kolejności pisania.
+"""Wejście na stronę (#cinema): logo „Marcel / GraphicSite” pisze się piórem — litera po literze, w kolejności pisania.
 
 Z _zrodla/intro_pioro.json (kształty liter + trasa pióra, liczone przez intro_pioro.py) robi SVG w index.html
 (między znacznikami zbuduj_intro.py): przygaszone logo + białe logo pod maską, w której pióro rysuje kolejne
 pociągnięcia (stroke-dashoffset). Czas każdego pociągnięcia liczy tutaj:
   - stałe tempo pióra (TEMPO), łagodny rozbieg na pierwszym pociągnięciu (ogonek „M”) i miękkie wyhamowanie
-    na ostatnim (poprzeczka „t”),
+    na ostatnim (kropka nad „i”),
   - przerwa między pociągnięciami jak ręka w powietrzu (odległość / szybsze tempo, najwyżej POWIETRZE_MAX),
   - dociągnięcia do ostrych czubków ruszają, gdy pióro mija najbliższy punkt kreski.
 Uruchom z katalogu repozytorium:  python3 _zrodla/zbuduj_intro.py   (sama biblioteka standardowa)
@@ -19,7 +19,7 @@ TEMPO = 19.0          # em/s — prędkość pióra wzdłuż kreski (1 em = 1000
 START = 0.12          # s — od startu pióra (klasa .pen, gdy procesor wolny), przygaszone logo już widać
 POWIETRZE = 2.5       # ręka w powietrzu jest tyle razy szybsza od pióra
 POWIETRZE_MAX = 0.07  # s — najdłuższa przerwa między pociągnięciami
-WYDLUZ = 24           # jednostki — końce pociągnięć odrobinę dłuższe (szkielet jest krótszy niż litera)
+WYDLUZ = 0.024        # em — końce pociągnięć odrobinę dłuższe (szkielet jest krótszy niż litera)
 WYHAMOWANIE_MIN = 0.16  # s — ostatnie pociągnięcie (poprzeczka „t”) nie krócej niż tyle
 
 
@@ -42,8 +42,9 @@ def liczba(v, n=3):
 
 
 def svg(dane):
-    v = TEMPO * 1000
-    kreski = [wydluz(p, WYDLUZ) for p in dane['kreski']]
+    em = dane.get('em', 1000)                      # jednostki SVG na 1 em liter logo
+    v = TEMPO * em
+    kreski = [wydluz(p, WYDLUZ * em) for p in dane['kreski']]
     el, t, prev = [], START, None
     for i, p in enumerate(kreski):
         if prev is not None:
@@ -74,11 +75,11 @@ def svg(dane):
             liczba(k['d']), liczba(k['t']), (';--e:' + k['e']) if k['e'] else '')
         for k in el)
     box = dane['box']
-    return ('<svg class="cin__svg" viewBox="0 0 %d %d" aria-hidden="true" focusable="false" data-koniec="%s">'
-            '<defs><path id="cinT" d="%s"/><mask id="cinM" maskUnits="userSpaceOnUse" x="-400" y="-500" width="4500" height="2700">'
+    return ('<svg class="cin__svg" viewBox="0 0 %d %d" style="width:%sem;height:%sem" aria-hidden="true" focusable="false" data-koniec="%s">'
+            '<defs><path id="cinT" fill-rule="evenodd" d="%s"/><mask id="cinM" maskUnits="userSpaceOnUse" x="-400" y="-500" width="4500" height="2700">'
             '<g class="cin__pen" stroke-width="%d">%s</g></mask></defs>'
             '<use href="#cinT" class="cin__ghost"/><use href="#cinT" class="cin__ink" mask="url(#cinM)"/></svg>') % (
-        box['w'], box['h'], liczba(koniec, 2), dane['d'], dane['pioro'], sciezki), koniec, len(el)
+        box['w'], box['h'], liczba(box['w'] / em, 3), liczba(box['h'] / em, 3), liczba(koniec, 2), dane['d'], dane['pioro'], sciezki), koniec, len(el)
 
 
 def main():

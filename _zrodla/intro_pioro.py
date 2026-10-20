@@ -1,116 +1,91 @@
 # -*- coding: utf-8 -*-
-"""Trasa pióra dla wejścia na stronę: logo „Marcel / Struszczak” pisze się tak, jak pisze się je ręką.
+"""Trasa pióra dla wejścia na stronę: logo „Marcel / GraphicSite” pisze się tak, jak pisze się je ręką.
 
 Co robi (wynik: _zrodla/intro_pioro.json — z niego zbuduj_intro.py robi SVG w index.html):
-  1. Kształty liter prosto z kroju GV Script (assets/fonts/gv-script.woff2), ułożone jak w CSS
-     (HarfBuzz z kerningiem, letter-spacing -.01em, interlinia .82) — ścieżki SVG w jednostkach fontu (1 em = 1000).
+  1. Kształty liter prosto z logo (assets/img/logo.svg, #logo — wektor 1:1 z obrazka Marcela, zbuduj_logo.py):
+     „Marcel” nad „GraphicSite”, dokładnie jak na obrazku; linijki rozdzielone po przerwie bez tuszu.
   2. Szkielet każdej linijki osobno (środek każdej kreski), bez krótkich odrostów.
-  3. Kolejność pisania jak ręką: „Marcel” od ogonka (zawijas w pętli „M”), „Struszczak” od haczyka „S”;
+  3. Kolejność pisania jak ręką: „Marcel” od ogonka (zawijas w pętli „M”), „GraphicSite” od ogonka „G”;
      w każdym węźle najpierw haczyki/ogonki nad nim (od wolnego końca w dół — kreska w dół, jak w kaligrafii),
      potem najmniejszy skręt; gdy brak drogi — podniesienie pióra i powrót do ostatniego niedokończonego węzła
-     (dzięki temu np. poprzeczka „t” jest na końcu, jak przy pisaniu).
-  4. Dociągnięcia do ostrych czubków, których szkielet nie sięga (np. koniec haczyka „c”, stopka „k”).
+     (dzięki temu np. poprzeczka „t” i kropki nad „i” są na końcu, jak przy pisaniu).
+  4. Dociągnięcia do ostrych czubków i kropek, których szkielet nie sięga.
 
 Potrzebne (tylko do przeliczenia; sama strona ich nie używa):
-  pip install fonttools brotli uharfbuzz freetype-py numpy scipy scikit-image skan pillow
+  pip install fonttools freetype-py numpy scipy scikit-image skan pillow
 Uruchom z katalogu repozytorium:  python3 _zrodla/intro_pioro.py  &&  python3 _zrodla/zbuduj_intro.py
-Przelicz tylko po zmianie napisu, kroju, odstępu liter albo interlinii logo w intro.
+Przelicz po zmianie logo (po python3 _zrodla/zbuduj_logo.py).
 """
-import io
 import json
 import math
 import os
+import re
 
 import numpy as np
-import uharfbuzz as hb
-from fontTools.pens.basePen import BasePen
 from fontTools.pens.freetypePen import FreeTypePen
-from fontTools.pens.transformPen import TransformPen
-from fontTools.ttLib import TTFont
+from fontTools.svgLib.path import parse_path
 from scipy import ndimage as ndi
 from skan import Skeleton, summarize
 from skimage.morphology import skeletonize
 from PIL import Image, ImageDraw
 
-KROJ = 'assets/fonts/gv-script.woff2'
-LINIE = ('Marcel', 'Struszczak')
-LS, LH = -0.01, 0.82            # letter-spacing i interlinia (em) — jak .cin__svg w style.css
-PIORO = 112                     # grubość pióra-maski (jednostki fontu); musi przykryć najgrubszą kreskę z zapasem
-SC, VBX, VBY, VBW, VBH = 0.5, -300, -400, 4300, 2500   # raster roboczy: 0,5 px na jednostkę
-START = {0: (318, 296), 1: (588, 626)}                 # ogonek „M” i haczyk „S” (piksele rastra roboczego)
+LOGO, META = 'assets/img/logo.svg', '_zrodla/logo/logo.json'
+PIORO_EM = 0.112                # grubość pióra-maski (em); musi przykryć najgrubszą kreskę z zapasem
+PX_EM = 500                     # raster roboczy: 1 em = 500 px (progi niżej są w tych pikselach)
+START_EM = {0: (0.443, 0.398), 1: (0.125, 1.022)}   # ogonek „M” i ogonek „G” (em od lewego górnego rogu logo)
+ZACZNIJ_OD_EM = {1: [(3.2175, 1.2175)]}             # inne litery od ogonka: haczyk „S” w „Site”
 
 
-# ---------- 1. kształty liter ----------
-def font():
-    tt = TTFont(KROJ)
-    tt.flavor = None
-    buf = io.BytesIO(); tt.save(buf)
-    face = hb.Face(hb.Blob(buf.getvalue()))
-    return tt, hb.Font(face)
+# ---------- 1. kształty liter (z logo) ----------
+def kontury(d):
+    """kontury ścieżki (każdy od bezwzględnego M) z punktami do obrysu prostokąta"""
+    out = []
+    for kd in re.findall(r'M[^M]*', d):
+        toks = re.findall(r'[a-zA-Z]|-?\d+(?:\.\d+)?', kd)
+        x = y = 0.0; cmd = None; pts = []; i = 0
+        while i < len(toks):
+            t = toks[i]
+            if t.isalpha():
+                cmd = t; i += 1
+                if cmd in 'zZ':
+                    continue
+            n = {'M': 2, 'l': 2, 'L': 2, 'c': 6, 'C': 6}[cmd]
+            v = [float(q) for q in toks[i:i + n]]; i += n
+            if cmd == 'M':
+                x, y = v; pts.append((x, y)); cmd = 'l'
+            elif cmd in 'lc':
+                for k in range(0, n, 2):
+                    pts.append((x + v[k], y + v[k + 1]))
+                x, y = x + v[-2], y + v[-1]
+        out.append((kd, pts))
+    return out
 
 
-class RelPen(BasePen):
-    """Zwarta ścieżka SVG: komendy względne, współrzędne całkowite (bez kumulacji zaokrągleń), y w dół."""
-    def __init__(self, gs, dx, dy):
-        super().__init__(gs); self.dx, self.dy = dx, dy; self.out = []; self.cur = self.start = (0, 0)
-
-    def P(self, p):
-        return (round(p[0] + self.dx), round(self.dy - p[1]))
-
-    def rel(self, a):
-        return (a[0] - self.cur[0], a[1] - self.cur[1])
-
-    def _moveTo(self, p):
-        a = self.P(p); self.out.append(('M', [a])); self.cur = self.start = a
-
-    def _lineTo(self, p):
-        a = self.P(p); self.out.append(('l', [self.rel(a)])); self.cur = a
-
-    def _qCurveToOne(self, p1, p2):
-        a, b = self.P(p1), self.P(p2); self.out.append(('q', [self.rel(a), self.rel(b)])); self.cur = b
-
-    def _curveToOne(self, p1, p2, p3):
-        a, b, c = self.P(p1), self.P(p2), self.P(p3); self.out.append(('c', [self.rel(a), self.rel(b), self.rel(c)])); self.cur = c
-
-    def _closePath(self):
-        self.out.append(('z', [])); self.cur = self.start
+def linie_logo():
+    svg = open(LOGO, encoding='utf-8').read()
+    d = re.search(r'<path id="logo" fill-rule="evenodd" d="([^"]+)"', svg).group(1)
+    meta = json.load(open(META))
+    ks = kontury(d)
+    l1 = [k for k in ks if max(p[1] for p in k[1]) < meta['podzial']]
+    l2 = [k for k in ks if max(p[1] for p in k[1]) >= meta['podzial']]
+    return d, meta, [''.join(k[0] for k in l1), ''.join(k[0] for k in l2)]
 
 
-def svg_d(cmds):
-    s, last = [], None
-    for c, pts in cmds:
-        nums = ' '.join('%d %d' % p for p in pts).replace(' -', '-')
-        s.append(((' ' if nums and not nums.startswith('-') else '') + nums) if c == last and c != 'M' else c + nums)
-        last = c
-    return ''.join(s)
+def okno(meta):
+    em = meta['em']; SC = PX_EM / em
+    vb = meta['viewBox']
+    VBX, VBY = vb[0] - 0.25 * em, vb[1] - 0.25 * em
+    VBW, VBH = vb[2] + 0.5 * em, vb[3] + 0.5 * em
+    return SC, VBX, VBY, VBW, VBH
 
 
-def uloz(tt, hbf):
-    gs, order, upm = tt.getGlyphSet(), tt.getGlyphOrder(), tt['head'].unitsPerEm
-    asc, desc = tt['hhea'].ascent, -tt['hhea'].descent
-    base = [round(LH * upm / 2 - (asc + desc) / 2 + asc)]
-    base.append(base[0] + round(LH * upm))
-    linie = []
-    for li, text in enumerate(LINIE):
-        buf = hb.Buffer(); buf.add_str(text); buf.guess_segment_properties()
-        hb.shape(hbf, buf, {})
-        x, cmds, glify = 0.0, [], []
-        for info, pos in zip(buf.glyph_infos, buf.glyph_positions):
-            name = order[info.codepoint]
-            pen = RelPen(gs, x + pos.x_offset, base[li] - pos.y_offset); gs[name].draw(pen)
-            cmds += pen.out; glify.append((name, x + pos.x_offset, pos.y_offset)); x += pos.x_advance + LS * upm
-        linie.append(dict(d=svg_d(cmds), glify=glify, w=x - LS * upm, base=base[li]))
-    return linie, gs
-
-
-def raster(gs, linia):
-    """biało-czarny raster linijki (0,5 px na jednostkę, okno VB) — FreeType, wypełnienie nonzero"""
+def raster(d_linii, SC, VBX, VBY, VBW, VBH):
+    """biało-czarny raster linijki logo (FreeType, wypełnienie even-odd jak w SVG)"""
     W, H = round(VBW * SC), round(VBH * SC)
-    pen = FreeTypePen(gs)
-    for name, x, yo in linia['glify']:
-        gs[name].draw(TransformPen(pen, (1, 0, 0, 1, x, yo)))
-    a = pen.array(width=W, height=H, transform=(SC, 0, 0, SC, -VBX * SC, H - (linia['base'] - VBY) * SC))
-    return a > 0.5                                 # pokrycie piksela tuszem 0..1
+    pen = FreeTypePen(None)
+    parse_path(d_linii, pen)                    # współrzędne SVG (y w dół)
+    a = pen.array(width=W, height=H, transform=(SC, 0, 0, -SC, -VBX * SC, H + VBY * SC), evenOdd=True)
+    return a > 0.5
 
 
 # ---------- 2. szkielet ----------
@@ -175,7 +150,7 @@ def kierunek(pts, k=14):
     return v / n if n else v
 
 
-def trasa(br, start_xy, nad=10.0, drobne=12):
+def trasa(br, start_xy, nad=10.0, drobne=12, preferowane=()):
     nodes = {}
     for b in br:
         nodes.setdefault(b['a'], b['pts'][0]); nodes.setdefault(b['b'], b['pts'][-1])
@@ -197,11 +172,37 @@ def trasa(br, start_xy, nad=10.0, drobne=12):
         pts, _ = orient(next(b for b in br if b['a'] == n or b['b'] == n), n)
         return pts[0][1] < np.median(pts[:, 1]) - 4
 
+    def kawalek(n):  # węzły osiągalne po niedokończonych gałęziach
+        seen, stos = {n}, [n]
+        while stos:
+            m = stos.pop()
+            for b in wolne(m):
+                o = drugi(b, m)
+                if o not in seen:
+                    seen.add(o); stos.append(o)
+        return seen
+
+    def caly(n):  # całe słowo (kawałek liter połączonych kreskami), niezależnie od tego, co już napisane
+        seen, stos = {n}, [n]
+        while stos:
+            m = stos.pop()
+            for b in br:
+                if b['a'] == m or b['b'] == m:
+                    o = drugi(b, m)
+                    if o not in seen:
+                        seen.add(o); stos.append(o)
+        return seen
+
+    def wyjscie(b, n):  # ogonek wyjściowy słowa: najbardziej wysunięty w prawo wolny koniec słowa — pióro kończy na nim
+        t = drugi(b, n)
+        konce = [m for m in caly(n) if deg[m] == 1]
+        return t == max(konce, key=lambda m: nodes[m][0])
+
     def pisz(cur):
         out, kreska, kier = [], [nodes[cur][None, :]], None
         while True:
             for b in sorted([b for b in wolne(cur) if deg[drugi(b, cur)] == 1 and nodes[drugi(b, cur)][1] < nodes[cur][1] - nad
-                             and len(wolne(cur)) > 1], key=lambda b: nodes[drugi(b, cur)][0]):
+                             and len(wolne(cur)) > 1 and not wyjscie(b, cur)], key=lambda b: nodes[drugi(b, cur)][0]):
                 pts, _ = orient(b, drugi(b, cur))       # haczyk: od wolnego końca w dół do węzła
                 used.add(id(b))
                 s = np.vstack(kreska)
@@ -234,6 +235,11 @@ def trasa(br, start_xy, nad=10.0, drobne=12):
             konce = [n for n in nodes if deg[n] == 1 and wolne(n)]
             gora = [n for n in konce if gorny(n)]
             wroc = min(gora or konce or list({b['a'] for b in br if id(b) not in used}), key=lambda n: nodes[n][0])
+            # ogonek, od którego ta litera się zaczyna (np. haczyk „S”), jeśli należy do tego samego kawałka
+            k = kawalek(wroc)
+            pref = [n for n in konce if n in k and any(np.linalg.norm(nodes[n] - np.array(p)) < 40 for p in preferowane)]
+            if pref:
+                wroc = pref[0]
         kreski += pisz(wroc)
     return [s for s in kreski if np.sum(np.linalg.norm(np.diff(s, axis=0), axis=1)) >= drobne]
 
@@ -286,20 +292,24 @@ def czubki(im, kreski_u):
 
 
 def main():
+    global SC, VBX, VBY, VBW, VBH, PIORO
     os.chdir(os.path.join(os.path.dirname(__file__), '..'))
-    tt, hbf = font()
-    linie, gs = uloz(tt, hbf)
-    wynik = dict(box=dict(w=round(max(l['w'] for l in linie)), h=round(2 * LH * 1000)), d=''.join(l['d'] for l in linie),
-                 pioro=PIORO, kreski=[], czubki=[], linie=[])
-    for li, l in enumerate(linie):
-        im = raster(gs, l)
-        kreski = trasa(galezie(im), START[li])
+    d, meta, linie = linie_logo()
+    SC, VBX, VBY, VBW, VBH = okno(meta)
+    em = meta['em']
+    PIORO = round(PIORO_EM * em)
+    wynik = dict(box=dict(w=meta['viewBox'][2], h=meta['viewBox'][3]), em=em, d=d, pioro=PIORO, kreski=[], czubki=[], linie=[])
+    for li, dl in enumerate(linie):
+        im = raster(dl, SC, VBX, VBY, VBW, VBH)
+        sx, sy = START_EM[li]
+        pref = [((x * em - VBX) * SC, (y * em - VBY) * SC) for x, y in ZACZNIJ_OD_EM.get(li, [])]
+        kreski = trasa(galezie(im), ((sx * em - VBX) * SC, (sy * em - VBY) * SC), preferowane=pref)
         ku = [jednostki(rdp(wygladz(s), 0.5)).round(1).tolist() for s in kreski]
         off = len(wynik['kreski'])
         wynik['czubki'] += [dict(c, kreska=c['kreska'] + off) for c in czubki(im, ku)]
         wynik['kreski'] += ku
         wynik['linie'].append(off)
-        print('linijka %d (%s): %d pociągnięć, %d dociągnięć do czubków' % (li + 1, LINIE[li], len(ku), sum(1 for c in wynik['czubki'] if c['kreska'] >= off)))
+        print('linijka %d: %d pociągnięć, %d dociągnięć do czubków' % (li + 1, len(ku), sum(1 for c in wynik['czubki'] if c['kreska'] >= off)))
     json.dump(wynik, open('_zrodla/intro_pioro.json', 'w'), separators=(',', ':'))
     print('zapisano _zrodla/intro_pioro.json')
 

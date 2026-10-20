@@ -8,6 +8,8 @@ const { chromium } = require('playwright');
 
 const ROOT = path.join(__dirname, '..');
 const font = f => 'data:font/woff2;base64,' + fs.readFileSync(path.join(ROOT, 'assets/fonts', f)).toString('base64');
+// logo „Marcel / GraphicSite” — ten sam wektor co w nagłówku strony (assets/img/logo.svg, #logo)
+const LOGO = fs.readFileSync(path.join(ROOT, 'assets/img/logo.svg'), 'utf8').match(/<path id="logo"[^>]*\sd="([^"]+)"/)[1];
 
 const PAGES = [
   { file: 'og.jpg', home: true },
@@ -34,14 +36,13 @@ const PAGES = [
 const css = `
 @font-face{font-family:Inter;font-weight:300 700;src:url(${font('inter-var.woff2')}) format("woff2")}
 @font-face{font-family:Mono;src:url(${font('jetbrains-mono-400.woff2')}) format("woff2")}
-@font-face{font-family:Script;src:url(${font('gv-script.woff2')}) format("woff2")}
 @font-face{font-family:Card;font-weight:500;src:url(${font('eb-garamond-500.woff2')}) format("woff2")}
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:1200px;height:630px}
 body{position:relative;overflow:hidden;background:#f4f3ef;color:#17171a;font-family:Inter;-webkit-font-smoothing:antialiased;letter-spacing:-.011em}
 .light{position:absolute;inset:0;background:radial-gradient(60% 70% at 18% 12%,rgba(255,255,252,.95),rgba(255,255,252,0) 70%),radial-gradient(55% 60% at 88% 92%,rgba(222,217,203,.75),rgba(222,217,203,0) 70%)}
 .ghost{position:absolute;left:-40px;white-space:nowrap;font-weight:600;letter-spacing:-.04em;color:rgba(23,23,26,.035);font-size:190px;line-height:1}
-.logo{position:absolute;top:44px;left:56px;font-family:Script;font-size:30px;line-height:.92}
+.logo{position:absolute;top:40px;left:56px;width:125px;height:68px;fill:#17171a;overflow:visible}
 .num{position:absolute;top:-40px;right:-22px;font-weight:600;font-size:400px;letter-spacing:-.06em;line-height:.8;color:rgba(23,23,26,.04)}
 .k{position:absolute;top:58px;right:56px;font-family:Mono;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:#6f6d66}
 .t{position:absolute;left:56px;right:110px;bottom:150px;font-weight:600;font-size:76px;letter-spacing:-.045em;line-height:1.0}
@@ -56,7 +57,7 @@ const html = p => `<!doctype html><html><head><meta charset="utf-8"><style>${css
 <div class="light"></div>
 ${[0, 1, 2, 3].map(i => `<div class="ghost" style="top:${-30 + i * 170}px;left:${i % 2 ? -260 : -40}px">Marcel Struszczak · Marcel Struszczak ·</div>`).join('')}
 ${p.home ? '' : `<div class="num">${p.n}</div>`}
-<div class="logo">Marcel<br>Struszczak</div>
+<svg class="logo" viewBox="0 0 3188 1736"><path fill-rule="evenodd" d="${LOGO}"/></svg>
 ${p.home
     ? `<div class="name">Marcel<br>Struszczak</div><div class="cap">Cyfrowy rozwój lokalnych firm</div>
        <div class="foot"><span>Strony internetowe · Social media · Opinie Google</span><span>marcelgraphicsite.pl</span></div>`

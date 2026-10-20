@@ -30,7 +30,7 @@ TODAY = datetime.date.today().isoformat()
 MIESIACE = ['stycznia', 'lutego', 'marca', 'kwietnia', 'maja', 'czerwca', 'lipca', 'sierpnia', 'września', 'października', 'listopada', 'grudnia']
 ORG = {'@type': 'ProfessionalService', '@id': B + '#firma', 'name': 'Marcel GraphicSite',
        'alternateName': ['Marcel Struszczak — strony internetowe', 'marcelgraphicsite.pl', 'marcel.graphicsite'], 'url': B,
-       'logo': B + 'assets/img/apple-touch-icon.png', 'image': B + 'assets/img/og.jpg',
+       'logo': B + 'assets/img/apple-touch-icon.png', 'image': B + 'assets/img/og.jpg?v=2',
        'telephone': '+48 511 808 498', 'email': 'marcel.graphicsite@gmail.com',
        'address': {'@type': 'PostalAddress', 'addressLocality': 'Sieradz', 'postalCode': '98-200', 'addressRegion': 'łódzkie', 'addressCountry': 'PL'}}
 PER = {'@type': 'Person', '@id': B + '#marcel', 'name': 'Marcel Struszczak', 'url': B + 'o-mnie',
@@ -206,7 +206,7 @@ def set_current(s, slug):
 def build_page(shell, page, main_html, ld, og_type='website', article_meta='', num='06'):
     s = shell
     slug, url = page['slug'], B + page['slug']
-    og_img = B + 'assets/img/og/%s.jpg' % page.get('og_img', slug)
+    og_img = B + 'assets/img/og/%s.jpg?v=2' % page.get('og_img', slug)
     s = re.sub(r'<html lang="pl" data-page="[^"]*" data-bg="[^"]*">',
                '<html lang="pl" data-page="%s" data-bg="%s">' % (slug, page['bg']), s, count=1)
     reps = [
@@ -405,7 +405,7 @@ def main():
 %s''' % (''.join('<li>%s</li>' % li for li in a['tldr']), toc_html, body, faq_html(a['faq']), AUTHOR, CTA,
          related_html(a['related'], mins_by))
         words = len(strip_tags(a['lead'] + ' ' + body).split())
-        img = B + 'assets/img/og/%s.jpg' % a.get('og_img', slug)
+        img = B + 'assets/img/og/%s.jpg?v=2' % a.get('og_img', slug)
         ld = [
             {'@type': 'BlogPosting', '@id': url + '#artykul', 'headline': a['headline'], 'description': a['description'],
              'datePublished': pub(a), 'dateModified': mod(a), 'inLanguage': 'pl-PL', 'mainEntityOfPage': {'@id': url + '#strona'},
@@ -449,7 +449,7 @@ def main():
         parts.append('\n      %s\n      %s' % (faq_html(p['faq']), AUTHOR) + PROSE_CLOSE)
         parts.append('\n\n' + CTA + '\n\n' + related_html(p['related'], mins_by, 'Z poradnika'))
         main_html = '\n'.join(parts)
-        img = B + 'assets/img/og/%s.jpg' % p.get('og_img', slug)
+        img = B + 'assets/img/og/%s.jpg?v=2' % p.get('og_img', slug)
         service = {'@type': 'Service', '@id': url + '#usluga', 'url': url, 'provider': ORG}
         service.update(p['service'])
         ld = [
